@@ -1,0 +1,5 @@
+xst -intstyle ise -ifn "C:/Users/Francis/Documents/Proyecto final - TEC - FPU 2015.2016/HDL/Proyecto_version_inicial_Diego/FPU_Multiplication_Function.xst" -ofn "C:/Users/Francis/Documents/Proyecto final - TEC - FPU 2015.2016/HDL/Proyecto_version_inicial_Diego/FPU_Multiplication_Function.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 "FPU_Multiplication_Function.ngc" FPU_Multiplication_Function.ngd  
+map -intstyle ise -p xc7a100t-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o FPU_Multiplication_Function_map.ncd FPU_Multiplication_Function.ngd FPU_Multiplication_Function.pcf 
+par -w -intstyle ise -ol high -mt off FPU_Multiplication_Function_map.ncd FPU_Multiplication_Function.ncd FPU_Multiplication_Function.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml FPU_Multiplication_Function.twx FPU_Multiplication_Function.ncd -o FPU_Multiplication_Function.twr FPU_Multiplication_Function.pcf 
