@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Significands_Multiplication_Funct/P_SgfX_Register/Q_23</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">FPU_Multiplication_Function</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Significands_Multiplication_Funct/P_SgfY_Register/Q_23&gt; </arg>
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">Sel_5_P_exp/Q_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">FPU_Add_Subtract_Function</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Sel_5_P/Q_0&gt; &lt;Sel_4_P/Q_0&gt; </arg>
 </msg>
 
 </messages>
