@@ -122,7 +122,7 @@ module FSM_Add_Subtract
 parameter [5:0] 
 //First I'm going to declarate the registers of the first phase of execution
 					 zero = 6'd0, //This state evaluates the beg_FSM to begin operations
-				    load_oper = 6'd1, //This state enables the registers that contains
+				     load_oper = 6'd1, //This state enables the registers that contains
 											 //both operands and the operator
 					 off_load_oper = 6'd2, //Disable the load statement of the registers on load_oper,
 					 //moreover it's a steady state to combinational logic to do their stuff
@@ -158,7 +158,7 @@ parameter [5:0]
 					 norm_sgf_r_b = 6'd18, //Asking about the MSB's combination
 					 norm_sgf_r_c = 6'd17, //Shift left state
 					 norm_sgf_r_d = 6'd19, //Shift right state
-                norm_sgf_r_e = 6'd29, //Significand Normalized  
+                     norm_sgf_r_e = 6'd29, //Significand Normalized  
 					 norm_sgf_r_f = 6'd27, //Prepares the normalization process again
 					 norm_sgf_r_g = 6'd28, //Prepares the normalization process again
 					//*********************REVISADO
