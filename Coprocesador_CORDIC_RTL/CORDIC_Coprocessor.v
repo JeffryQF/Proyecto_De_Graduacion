@@ -84,7 +84,7 @@ wire sign;                                              //
 wire [3:0] cont_iter_out;                               //
 wire [1:0] cont_var_out;                                //
 wire [W-1:0] LUT32_data_out,LUT64_data_out, LUT_data;   //
-wire [E-1:0] exp_x, exp_y;                              //
+//wire [E-1:0] exp_x, exp_y;                              //
 wire [E-1:0] sh_exp_x, sh_exp_y;                        //
 wire [W-1:0] d_ff3_sh_x_out, d_ff3_sh_y_out;            //
 wire [W-1:0] d_ff3_LUT_out;                             //
@@ -107,7 +107,7 @@ wire [W-1:0] data_output2;
 d_ff_en	# (.W(1)) d_ff_operation
 (.clk(clk),.rst(rst_cordic),.enable(enab_d_ff_RB1),.D(operation),.Q(d_ff1_operation_out));
 
-//Instanciacion de un FF_D para guardar el dato de entrada que define si hay un desplazamiento hacia el rango de c·lculo del alg. CORDIC.
+//Instanciacion de un FF_D para guardar el dato de entrada que define si hay un desplazamiento hacia el rango de c√°lculo del alg. CORDIC.
 d_ff_en	# (.W(2)) d_ff_shift_region_flag
 (.clk(clk),.rst(rst_cordic),.enable(enab_d_ff_RB1),.D(shift_region_flag),.Q(d_ff1_shift_region_flag_out));
 
@@ -170,16 +170,16 @@ Mux_2x1 #(.W(W)) mux_2x1_LUT
 (.select(enab_LUT32),.ch_0(LUT64_data_out),.ch_1(LUT32_data_out),.data_out(LUT_data));
 
 //
-Simple_Subt #(.W(W)) shift_x
-(.A(exp_x),.B(cont_iter_out),.Y(sh_exp_x));
+Simple_Subt #(.W(E)) shift_x
+(.A(d_ff2_X[W-2:W-2-E]),.B(cont_iter_out),.Y(sh_exp_x));
 
 //
-Simple_Subt #(.W(W)) shift_y
-(.A(exp_y),.B(cont_iter_out),.Y(sh_exp_y));
+Simple_Subt #(.W(E)) shift_y
+(.A(d_ff2_Y[W-2:W-2-E]),.B(cont_iter_out),.Y(sh_exp_y));
 
 //
 d_ff_en	#(.W(W)) d_ff3_x_shift
-(.clk(clk),.rst(rst_cordic),.enable(enab_d_ff3_sh_exp_x),.D(sh_exp_x),.Q(d_ff3_sh_x_out));
+(.clk(clk),.rst(rst_cordic),.enable(enab_d_ff3_sh_exp_x),.D({d_ff2_X[W-1],sh_exp_x,d_ff2_Y[W-2-E]}),.Q(d_ff3_sh_x_out));
 
 //
 d_ff_en	#(.W(W)) d_ff3_y_shift
