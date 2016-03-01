@@ -42,7 +42,7 @@ reg [N-1:0] r_reg, r_next, data_max;
 
 //body
 //register
-always@(posedge clk, posedge reset)
+always@(clk, reset)
 begin
     if (reset)
         r_reg <= 0;
