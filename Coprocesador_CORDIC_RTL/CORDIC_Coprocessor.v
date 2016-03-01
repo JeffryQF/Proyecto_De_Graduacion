@@ -48,22 +48,22 @@ output reg [W-1:0] data_output          //	Bus de datos con el valor final del a
 generate
 	if(W==32)
 	begin
-		parameter x0 = 32'h3f1b74ee; 	//x0 = 0.607252935008881
-		parameter y0 = 32'h00000000; 	//y0 = 0
-		parameter up = 1'b0;    		//
-		parameter syn_clr = 1'b0;   	//
-		parameter d_var = 2'b10;		//
-		parameter d_iter = 5'b11111;	//
+		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
+		parameter y0 = 32'h00000000; 			//	y0 = 0, valor inicial de la variable Y.
+		parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
+		parameter syn_clr = 1'b0;   			//	
+		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
+		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
 	end
 	
 	else
 	begin
-		parameter x0 = 64'h3fe36e9db5086bc9;	//x0 = 0.607252935008881
-		parameter y0 = 64'h0000000000000000;	//y0 = 0
-		parameter up = 1'b0;    				//
+		parameter x0 = 64'h3fe36e9db5086bc9;	//	x0 = 0.607252935008881, valor inicial de la variable X.
+		parameter y0 = 64'h0000000000000000;	//	y0 = 0, valor inicial de la variable Y.
+		parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
 		parameter syn_clr = 1'b0;   			//
-		parameter d_var = 2'b10;				//
-		parameter d_iter = 5'b11111;			//
+		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
+		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
 	end
 endgenerate
 
@@ -83,7 +83,6 @@ wire enab_d_ff5;											//	Enable del registo que guarda el valor de salida a
 wire enab_d_ff5_data_out;									//	Enable del registo que guarda el valor de salida final, listo para enviarse al procesador.
 wire enab_cont_iter, enab_cont_var;                     	//	Enable de los contadores de variable e iteracion
 wire load_con_iter, load_cont_var;                      	//	Señal de carga de un valor en los contadores de variable e iteraciones.
-//wire beg_fsm_add__subt;                                 	//	
 
 
 
@@ -244,7 +243,7 @@ Mux_2x1 #(.W(1)) mux_2x1_signo
 generate
 	if(W==32)
 	begin
-		always @*
+		always @*//LUT de 32 bits
 		begin			
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 32'h3f490fdb;
@@ -318,7 +317,7 @@ generate
 	
 	else
 	begin
-		always @*
+		always @*//LUT de 64 bits
 		begin			
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 64'h3fe921fb54442d18;
@@ -554,7 +553,7 @@ d_ff_en	#(.W(W)) d_ff5_data_out
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //FSM and counters
 
-//
+//Contador que maneja cuantas iteraciones se deben realizar, activa una bandera cuando se alcanza la minima y maxima cuenta.
 univ_bin_counter #(.N(5)) cont_iter
 (
 .clk(clk),
@@ -569,7 +568,7 @@ univ_bin_counter #(.N(5)) cont_iter
 .q(cont_iter_out)
 );
 
-//
+//Contador que maneja cual variable se calcula, activa una bandera cuando se alcanza la minima y maxima cuenta.
 univ_bin_counter #(.N(2)) cont_var
 (
 .clk(clk),
@@ -584,9 +583,10 @@ univ_bin_counter #(.N(2)) cont_var
 .q(cont_var_out)
 );
 
-//
+//Maquina de estados que controla los procesos de enable, carga y controla los tiempos en que se activan cada etapa del calculo.
 CORDIC_FSM fsm_cordic
-(.clk(clk),
+(
+.clk(clk),
 .reset(rst_cordic),
 .beg_FSM_CORDIC(beg_fsm_cordic),
 .ACK_FSM_CORDIC(ack_cordic),
@@ -598,6 +598,7 @@ CORDIC_FSM fsm_cordic
 .min_tick_iter(min_tick_iter),
 .max_tick_var(max_tick_var),
 .min_tick_var(min_tick_var),
+
 .ready_CORDIC(ready_cordic),
 .beg_add_subt(beg_add_subt),
 .ack_add_subt(ack_add_subt),
@@ -611,7 +612,6 @@ CORDIC_FSM fsm_cordic
 .load_cont_var(load_cont_var),
 .enab_RB1(enab_d_ff1_RB1),
 .enab_RB2(enab_d_ff2_RB2),
-.enab_LUT(enab_LUT32),
 .enab_d_ff_Xn(enab_d_ff4_Xn),
 .enab_d_ff_Yn(enab_d_ff4_Yn),
 .enab_d_ff_Zn(enab_d_ff4_Zn),
@@ -620,6 +620,7 @@ CORDIC_FSM fsm_cordic
 .enab_dff_shifted_x(enab_d_ff3_sh_exp_x),
 .enab_dff_shifted_y(enab_d_ff3_sh_exp_y),
 .enab_dff_LUT(enab_d_ff3_LUT),
-.enab_dff_sign(enab_d_ff3_sign));
+.enab_dff_sign(enab_d_ff3_sign)
+);
 
 endmodule
