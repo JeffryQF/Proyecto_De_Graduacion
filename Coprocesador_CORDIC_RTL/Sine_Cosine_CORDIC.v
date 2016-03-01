@@ -36,8 +36,8 @@ input wire [1:0] shift_region_flag,     						//	Señal que indica si el ángulo
 output reg ready_cordic,                						//	Señal de salida que indica que se ha completado el calculo del seno/coseno.
 output reg [W-1:0] data_output,          						//	Bus de datos con el valor final del angulo calculado.
 
-output reg overflow_flag,										//
-output reg underflow_flag										//
+output reg overflow_flag,										//	Bandera de overflow de la operacion.
+output reg underflow_flag										//	Bandera de underflow de la operacion.
 
 );
 
@@ -77,18 +77,18 @@ CORDIC_Coprocessor #(.W(W),.E(W_Exp),.M(W_Sgf))		cordic_coprocessor_sin_cos
 
 FPU_Add_Subtract_Function # (.W(W),.W_Exp(W_Exp),.W_Sgf(W_Sgf),.S_Exp(S_Exp))		add_subt_module
 (
-.clk(clk),
-.rst(rst),
-.beg_FSM(beg_add_subt),
-.rst_FSM(ack_add_subt),
-.Data_X(add_subt_dataA),
-.Data_Y(add_subt_dataB),
-.add_subt(op_add_subt),
-.r_mode(r_mode),
-.overflow_flag(overflow_flag),
-.underflow_flag(underflow_flag),
-.ready(ready_add_subt),
-.final_result_ieee(result_add_subt)
+.clk(clk),														//	Reloj del sistema.
+.rst(rst),														//	Señal de reset del sistema.
+.beg_FSM(beg_add_subt),											//	Señal de salida que indica que se debe de iniciar el modulo de suma/resta.
+.rst_FSM(ack_add_subt),											//	Señal que le indica al modulo de suma/resta que se recibio el resultado de este modulo correctamente.
+.Data_X(add_subt_dataA),										//	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
+.Data_Y(add_subt_dataB),										//	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
+.add_subt(op_add_subt),											//	Señal hacia el módulo de suma/resta que indica si se va a realizar una suma(1'b0) o una resta(1'b1).
+.r_mode(r_mode),												//	Indica el modo de redondeo para el modulo de suma.
+.overflow_flag(overflow_flag),									//	Bandera de overflow de la operacion.
+.underflow_flag(underflow_flag),								//	Bandera de underflow de la operacion.
+.ready(ready_add_subt),											//	Señal que indica que se ha realizado la operacion de suma/resta en punto flotante.
+.final_result_ieee(result_add_subt)								//	Dato de entrada, contiene el resultado del módulo de suma/resta.
 );
 
 
