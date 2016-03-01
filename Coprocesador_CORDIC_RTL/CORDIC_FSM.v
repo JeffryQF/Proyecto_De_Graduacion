@@ -69,7 +69,7 @@ reg state_reg, state_next;
 
 //state register
 
-always @(posedge clk, posedge reset)
+always @(clk, reset)
     begin
         if(reset)
             state_reg <= est0;
