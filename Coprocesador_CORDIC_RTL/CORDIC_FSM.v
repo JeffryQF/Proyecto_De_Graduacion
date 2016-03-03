@@ -110,26 +110,26 @@ always@*
         case(state_reg)
         est0:
         begin
-            next_state = est1;
+            state_next = est1;
         end
         
         est1:
         begin
             if(beg_FSM_CORDIC)
             begin
-                next_state = est2;
+                state_next = est2;
                 enab_RB1 = 1'b1;
                 load_cont_iter = 1'b1;
                 load_cont_iter = 1'b1;
             end
             else
-                next_state = est1;
+                state_next = est1;
         end
         
         est2:
         begin
             enab_RB1 = 1'b1;
-            next_state = est3;
+            state_next = est3;
         end
         
         est3:
@@ -140,20 +140,19 @@ always@*
                 sel_mux_1 = 1'b0;
             else
                 sel_mux_1 = 1'b1;
-            next_state = est4;
+            state_next = est4;
         end
         
         est4:
         begin
             enab_RB2 = 1'b1;
             mode = 1'b0;
-            enab_LUT = 1'b1;
             enab_RB2 = 1'b0;
             enab_dff_shifted_x = 1'b1;
             enab_dff_shifted_y = 1'b1;
             enab_dff_LUT = 1'b1;
             enab_dff_sign = 1'b1;
-            next_state = est5;
+            state_next = est5;
         end
         
         est5:
@@ -180,10 +179,10 @@ always@*
                     else
                         sel_mux_2 = 2'b10;
                 end
-                next_state = est7;
+                state_next = est7;
             end
             else
-                next_state = est6;            
+                state_next = est6;            
         end
         
         est6:
@@ -191,20 +190,20 @@ always@*
             if(min_tick_var)
             begin
                 enab_cont_iter = 1'b1;
-                next_state = est3;
+                state_next = est3;
             end
             
             else
             begin
                 sel_mux_2 = cont_var;
-                next_state = est7;
+                state_next = est7;
             end
         end
         
         est7:
         begin
             beg_add_subt = 1'b1;
-            next_state = est8;
+            state_next = est8;
         end
         
         est8:
@@ -227,10 +226,10 @@ always@*
                     else
                         enab_d_ff_Yn = 1'b1;
                 end               
-                next_state = est9;
+                state_next = est9;
             end    
             else
-                next_state = est8;
+                state_next = est8;
         end
         est9:
         begin
@@ -250,29 +249,29 @@ always@*
                     else
                         sel_mux_3 = 1'b1;
                 end
-                next_state = est10;
+                state_next = est10;
                 enab_dff5 = 1'b1;                  
             end
             else
             begin
                 enab_cont_var = 1'b1;
-                next_state = est6; 
+                state_next = est6; 
             end
         end
         
         est10:
         begin
             enab_d_ff_out = 1'b1;
-            next_state = est11;
+            state_next = est11;
         end
         
         est11:
         begin
             ready_CORDIC = 1'b1;
             if(ACK_FSM_CORDIC)
-                next_state = est0;
+                state_next = est0;
             else
-                next_state = est11;
+                state_next = est11;
         end
         
         default : state_next = est0;
