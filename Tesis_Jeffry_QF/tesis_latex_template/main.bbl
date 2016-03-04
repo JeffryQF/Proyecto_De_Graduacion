@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{IEEE754}
+Ieee standard for floating-point arithmetic, Aug 2008.
+
+\bibitem{Oppenheim1998}
+A.~Oppenheim, A.~Willsky, and S.~H. Nawab.
+\newblock {\em Señales y Sistemas}.
+\newblock Prentice Hall, 2da edition, 1998.
+
+\bibitem{CORDIC}
+J.~E. Volder.
+\newblock The cordic trigonometric computing technique.
+\newblock {\em IRE Transactions on Electronic Computers}, EC-8(3):330--334,
+  1959.
+
+\end{thebibliography}

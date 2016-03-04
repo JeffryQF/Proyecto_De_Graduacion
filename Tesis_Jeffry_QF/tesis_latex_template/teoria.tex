@@ -3,17 +3,29 @@
 
 %\section{Descripción}
 
-En este capítulo se presentan los conceptos en los que se basa el sistema propuesto para la solución de operaciones trigonométricas, en el formato de representación estándar de números en coma flotante, IEEE 754-2008, en concreto las operaciones seno y coseno. A continuación se brinda información acerca del formato de palabra para la representación binaria de números en punto flotante, ya sea en precisión simple o precisión doble, 32 y 64 bits respectivamente, así como para el manejo de la excepción de resultados \textit{Not a Number, NaN}.\\
+En este capítulo se presentan los conceptos en los que se basa el sistema propuesto para la solución de operaciones trigonométricas, en el formato de representación estándar de números en coma flotante, IEEE 754-2008 \cite{IEEE754}, en concreto las operaciones seno y coseno. A continuación se brinda información acerca del formato de palabra para la representación binaria de números en punto flotante, ya sea en precisión simple o precisión doble, 32 y 64 bits respectivamente, así como para el manejo de la excepción de resultados \textit{Not a Number, NaN}.\\
 
 Se presenta además las bases teóricas de la rotación de vectores, fundamento teórico en el que se sustenta el algoritmo CORDIC, investigado e implementado para la resolución de las operaciones trigonométricas antes mencionadas.
 
 
-\section{Generalidades}
+\section{Estándar IEEE 754}
 
-Se recomienda revisar las guías de publicación de la \nt{IEEE} en
-\url{http://www.ieee.org/publications_standards/publications/authors/authors_journals.html},
-donde puede encontrar cómo hacer referencias bibliográficas correctamente, cómo
-citar ecuaciones, tablas y figuras, etc.  
+\subsection{Formato de representacion en punto flotante.}
+
+
+
+%Se recomienda revisar las guías de publicación de la \nt{IEEE} en
+%\url{http://www.ieee.org/publications_standards/publications/authors/authors_journals.html},
+%donde puede encontrar cómo hacer referencias bibliográficas correctamente, cómo
+%citar ecuaciones, tablas y figuras, etc.  
+
+
+\section{Algoritmo CORDIC para el cálculo de operaciones trigonométricas.}
+
+El algoritmo de Computación Digital para Rotación de Coordenadas, CORDIC por sus siglas en inglés (\textbf{CO}ordinate \textbf{R}otation \textbf{D}igital \textbf{C}omputer), fue desarrollado especialmente para usarse en computadoras digitales en tiempo real, donde la mayoría de la computación involucraba la resolución de las relaciones trigonométricas de las ecuaciones de navegación y una alta tasa de exactitud para las relaciones trigonométricas de las transformaciones de coordenadas \cite{CORDIC}.
+Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT). \cite{Oppenheim1998}
+
+
 
 \subsection{Redacción}
 
@@ -211,23 +223,23 @@ de la figura para poder ser encontrada.  Para lograr esto en \LaTeX se utiliza
 
 \subsection{Referencias bibliográficas}
 
-\index{referencias}\index{BibTeX}
-Todo concepto o idea tomado de otros autores contar con la respectiva
-referencia. En redacción técnica de ingeniería rara vez se utiliza la cita
-textual, así que es necesario reformular las ideas y conceptos con palabras
-propias. En ingeniería electrónica se utilizan los formatos de referencia de la
-IEEE o la ACM, que son numéricos, encerrados entre paréntesis cuadrados (por
-ejemplo, ``En \cite{Davis1963} se propuso un nuevo algoritmo'', o ``En
-\cite{ProakisManolakis1998} los autores proponen tomar las ventajas de los
-algorimos presentados en \cite{Oppenheim1998,Roberts2005,Haykin2001} por medio
-del método de Newton \cite{Burrus1998} conocido en el área de optimización
-lineal.''). La referencia es parte de las frases, así que si la frase termina
-con la referencia para indicar la idea, ésta debe estar antes del punto final o
-demás signos de puntuación: ``La capacidad de memoria también sigue una Ley
-similar a la de Moore \cite{Octave}. Los siguientes son los aspectos a tomar en
-cuenta en el diseño del sistema \cite{Lindner2002}:''
+%\index{referencias}\index{BibTeX}
+%Todo concepto o idea tomado de otros autores contar con la respectiva
+%referencia. En redacción técnica de ingeniería rara vez se utiliza la cita
+%textual, así que es necesario reformular las ideas y conceptos con palabras
+%propias. En ingeniería electrónica se utilizan los formatos de referencia de la
+%IEEE o la ACM, que son numéricos, encerrados entre paréntesis cuadrados (por
+%ejemplo, ``En \cite{Davis1963} se propuso un nuevo algoritmo'', o ``En
+%\cite{ProakisManolakis1998} los autores proponen tomar las ventajas de los
+%algorimos presentados en \cite{Oppenheim1998,Roberts2005,Haykin2001} por medio
+%del método de Newton \cite{Burrus1998} conocido en el área de optimización
+%lineal.''). La referencia es parte de las frases, así que si la frase termina
+%con la referencia para indicar la idea, ésta debe estar antes del punto final o
+%demás signos de puntuación: ``La capacidad de memoria también sigue una Ley
+%similar a la de Moore \cite{Octave}. Los siguientes son los aspectos a tomar en
+%cuenta en el diseño del sistema \cite{Lindner2002}:''
 
-Se recomienda utilizar BibTeX para administrar las referencias bibliográficas.
+%Se recomienda utilizar BibTeX para administrar las referencias bibliográficas.
 
 \subsection{Extensión}
 
