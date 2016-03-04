@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.6)  3 MAR 2016 20:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.6)  3 MAR 2016 21:30
 entering extended mode
 **./teoria.tex
 (teoria.tex
@@ -245,8 +245,6 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 8 in font nullfont!
-Missing character: There is no [ in font nullfont!
-Missing character: There is no ] in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no n in font nullfont!
@@ -535,8 +533,8 @@ Overfull \hbox (15.97208pt too wide) in paragraph at lines 6--7
  []
 
 
-Overfull \hbox (23.04431pt too wide) in paragraph at lines 6--7
-\OT1/cmr/m/it/10 NaN, 
+Overfull \hbox (19.97766pt too wide) in paragraph at lines 6--7
+\OT1/cmr/m/it/10 NaN 
  []
 
 
@@ -753,6 +751,27 @@ Missing character: There is no d in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
+! Undefined control sequence.
+l.8 ... trigonométricas antes mencionadas. \citep
+                                                  {Alvarado2005}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no A in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 5 in font nullfont!
 
 Overfull \hbox (20.0pt too wide) in paragraph at lines 8--9
 []
@@ -11920,5 +11939,5 @@ Here is how much of TeX's memory you used:
  3515 multiletter control sequences out of 15000+200000
  4815 words of font info for 18 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 18i,4n,25p,596b,181s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 18i,4n,25p,593b,181s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!
