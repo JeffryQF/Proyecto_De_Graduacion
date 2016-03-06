@@ -25,11 +25,23 @@ Las representaciones de un dato en punto flotante en un formato consiste en:
 
 \begin{itemize}
 	\item[-]	Triples (signo, exponente y significando); en una base b, el numero en punto flotante representado por un tripe tiene la siguiente forma:\\
-	$(-1)^{signo} \dot{•} b^{exponente} \dot{•} significando $
-	\item[-]	$+\inf, -\inf $
+    \begin{center} $(-1)^{signo} \times b^{exponente} \times significando $ \end{center}
+	\item[-]	$+\infty, -\infty $
 	\item[-]	$qNaN, sNaN$
-\end{itemize}0
+\end{itemize}
 
+El conjunto finito de números en punto flotante representables dentro de un formato en particular es determinado por determinados parámetros enteros, los cuales son: \\
+
+\begin{itemize}
+	\item[-]	b = la base, 2 (binaria) o 10 (decimal).
+	\item[-]	p = el número de dígitos en el significando, es decir, a precisión.
+	\item[-]	\textit{emax} = el máximo exponente.
+	\item[-]	\textit{emin} = el mínimo exponente.
+\end{itemize}
+
+Donde \textit{emin} = 1 - \textit{emax} para cada uno de los formatos.
+
+En la tabla  se presentan los valores de cada uno de los parámetros para cada uno de los formatos básicos, en el cuál cada formato está identificado por su base y el número de bits de su codificación.
 
 \subsection{Formato de representacion en punto flotante.}
 
