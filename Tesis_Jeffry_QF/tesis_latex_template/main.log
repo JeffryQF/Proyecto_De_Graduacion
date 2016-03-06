@@ -1,13 +1,19 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.6)  6 MAR 2016 16:12
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.4)  6 MAR 2016 16:30
+>>>>>>> parent of 9ea5c92... Revert "Sin"
 entering extended mode
-**./main.tex
-(main.tex
-LaTeX2e <2015/10/01> patch level 2
-Babel <3.9m> and hyphenation patterns for 69 languages loaded.
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
-Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk12.clo"
-File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -22,25 +28,23 @@ File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty
-"
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
- ("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2015/09/07 v1.1p UTF-8 support for inputenc
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00BB (decimal 187)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C0 (decimal 192)
@@ -161,10 +165,6 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+016F (decimal 367)
    defining Unicode char U+0170 (decimal 368)
    defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
    defining Unicode char U+0178 (decimal 376)
    defining Unicode char U+0179 (decimal 377)
    defining Unicode char U+017A (decimal 378)
@@ -172,10 +172,6 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+017C (decimal 380)
    defining Unicode char U+017D (decimal 381)
    defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+200C (decimal 8204)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
@@ -194,12 +190,10 @@ File: t1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
-   defining Unicode char U+00A0 (decimal 160)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AD (decimal 173)
    defining Unicode char U+00B8 (decimal 184)
    defining Unicode char U+00BF (decimal 191)
    defining Unicode char U+00C5 (decimal 197)
@@ -217,14 +211,6 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
    defining Unicode char U+0142 (decimal 322)
    defining Unicode char U+0152 (decimal 338)
    defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0174 (decimal 372)
-   defining Unicode char U+0175 (decimal 373)
-   defining Unicode char U+0176 (decimal 374)
-   defining Unicode char U+0177 (decimal 375)
-   defining Unicode char U+0218 (decimal 536)
-   defining Unicode char U+0219 (decimal 537)
-   defining Unicode char U+021A (decimal 538)
-   defining Unicode char U+021B (decimal 539)
    defining Unicode char U+2013 (decimal 8211)
    defining Unicode char U+2014 (decimal 8212)
    defining Unicode char U+2018 (decimal 8216)
@@ -234,8 +220,9 @@ File: ot1enc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
 )
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2015/09/07 v1.1p UTF-8 support for inputenc
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -285,8 +272,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 21.
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ifthen.sty"
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 ! Missing $ inserted.
 <inserted text> 
@@ -358,35 +345,30 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(macros.tex
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\exercise\exercise
-.sty"
-Package: exercise 2014/10/20 v1.6 Exercise package (P.Pichaureau)
+(./macros.tex (/usr/share/texlive/texmf-dist/tex/latex/exercise/exercise.sty
+Package: exercise 2012/05/08 v1.58 Exercise package (P.Pichaureau)
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.s
-ty"
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 \ExerciseSkipBefore=\skip43
 \ExerciseSkipAfter=\skip44
-\AnswerSkipBefore=\skip45
-\AnswerSkipAfter=\skip46
-\Exesep=\skip47
-\Exetopsep=\skip48
-\Exeparsep=\skip49
-\Exepartopsep=\skip50
-\Exeleftmargin=\skip51
-\Exerightmargin=\skip52
-\Exelabelwidth=\skip53
-\Exelabelsep=\skip54
-\ExerciseBefore=\skip55
-\QuestionBefore=\skip56
-\subQuestionBefore=\skip57
-\subsubQuestionBefore=\skip58
-\QuestionIndent=\skip59
-\subQuestionIndent=\skip60
-\subsubQuestionIndent=\skip61
+\Exesep=\skip45
+\Exetopsep=\skip46
+\Exeparsep=\skip47
+\Exepartopsep=\skip48
+\Exeleftmargin=\skip49
+\Exerightmargin=\skip50
+\Exelabelwidth=\skip51
+\Exelabelsep=\skip52
+\ExerciseBefore=\skip53
+\QuestionBefore=\skip54
+\subQuestionBefore=\skip55
+\subsubQuestionBefore=\skip56
+\QuestionIndent=\skip57
+\subQuestionIndent=\skip58
+\subsubQuestionIndent=\skip59
 \c@Exercise=\count88
 \c@Answer=\count89
 \c@ExePart=\count90
@@ -409,53 +391,41 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \ExePartDifficulty=\count102
 \@Answerbox=\box31
 \colonnesLevel=\count103
-\tempskipa=\skip62
-\tempskipb=\skip63
-\@savedmathindent=\skip64
+\tempskipa=\skip60
+\tempskipb=\skip61
+\@savedmathindent=\skip62
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.
-sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.sty
-"
-Package: babel 2015/08/03 3.9m The Babel package
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
 
-*************************************
-* Local config file bblopts.cfg used
-*
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/01/29 v5.0m Spanish support from the babel system
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\bblopts.
-cfg"
-File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
-)
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-spanish\spa
-nish.ldf"
-Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\babel\babel.def
-"
-File: babel.def 2015/08/03 3.9m Babel common definitions
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count104
 \U@D=\dimen103
 )
+\es@datefmt=\count105
 \es@quottoks=\toks17
-\es@quotdepth=\count105
-Package babel Info: Making " an active character on input line 516.
-Package babel Info: Making . an active character on input line 617.
-Package babel Info: Making < an active character on input line 662.
-Package babel Info: Making > an active character on input line 662.
+\es@quotdepth=\count106
+Package babel Info: Making " an active character on input line 496.
+Package babel Info: Making . an active character on input line 599.
+Package babel Info: Making < an active character on input line 644.
+Package babel Info: Making > an active character on input line 644.
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\babel-english\eng
-lish.ldf"
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\makeidx.sty"
-Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
 ! Undefined control sequence.
 \ifdraft #1#2->\ifthenelse 
@@ -491,47 +461,39 @@ l.53 }
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\nomencl\nomencl.s
-ty"
+(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
 Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
 \nomlabelwidth=\dimen104
 \nom@tempdim=\dimen105
-\nomitemsep=\skip65
+\nomitemsep=\skip63
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.s
-ty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip66
+\@mathmargin=\skip64
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.s
-ty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.st
-y"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks18
 \ex@=\dimen106
 ))
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.st
-y"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.st
-y"
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count106
+\inf@bad=\count107
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count107
-\leftroot@=\count108
+\uproot@=\count108
+\leftroot@=\count109
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count109
-\DOTSCASE@=\count110
+\classnum@=\count110
+\DOTSCASE@=\count111
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -540,15 +502,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen108
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count111
-\c@MaxMatrixCols=\count112
+\macc@depth=\count112
+\c@MaxMatrixCols=\count113
 \dotsspace@=\muskip10
-\c@parentequation=\count113
-\dspbrk@lvl=\count114
+\c@parentequation=\count114
+\dspbrk@lvl=\count115
 \tag@help=\toks19
-\row@=\count115
-\column@=\count116
-\maxfields@=\count117
+\row@=\count116
+\column@=\count117
+\maxfields@=\count118
 \andhelp@=\toks20
 \eqnshift@=\dimen109
 \alignsep@=\dimen110
@@ -557,98 +519,89 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \totwidth@=\dimen113
 \lineht@=\dimen114
 \@envbody=\toks21
-\multlinegap=\skip67
-\multlinetaggap=\skip68
+\multlinegap=\skip65
+\multlinetaggap=\skip66
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.
-sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts
-.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\jknappen\mathrsfs
-.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen115
 \extrarowheight=\dimen116
 \NC@list=\toks23
-\extratabsurround=\skip69
-\backup@length=\skip70
+\extratabsurround=\skip67
+\backup@length=\skip68
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\longtable.s
-ty"
-Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip71
-\LTright=\skip72
-\LTpre=\skip73
-\LTpost=\skip74
-\LTchunksize=\count118
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count119
 \LTcapwidth=\dimen117
 \LT@head=\box34
 \LT@firsthead=\box35
 \LT@foot=\box36
 \LT@lastfoot=\box37
-\LT@cols=\count119
-\LT@rows=\count120
-\c@LT@tables=\count121
-\c@LT@chunks=\count122
+\LT@cols=\count120
+\LT@rows=\count121
+\c@LT@tables=\count122
+\c@LT@chunks=\count123
 \LT@p@ftn=\toks24
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\tabularx.st
-y"
-Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 \TX@col@width=\dimen118
 \TX@old@table=\dimen119
 \TX@old@col=\dimen120
 \TX@target=\dimen121
 \TX@delta=\dimen122
-\TX@cols=\count123
+\TX@cols=\count124
 \TX@ftn=\toks25
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\afterpage.s
-ty"
-Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 1995/10/27 v1.08 After-Page Package (DPC)
 \AP@output=\toks26
 \AP@partial=\box38
 \AP@footins=\box39
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\multirow\multirow
-.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen123
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\multicol.st
-y"
-Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
-\c@tracingmulticols=\count124
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count125
 \mult@box=\box40
 \multicol@leftmargin=\dimen124
-\c@unbalance=\count125
-\c@collectmore=\count126
-\doublecol@number=\count127
-\multicoltolerance=\count128
-\multicolpretolerance=\count129
+\c@unbalance=\count126
+\c@collectmore=\count127
+\doublecol@number=\count128
+\multicoltolerance=\count129
+\multicolpretolerance=\count130
 \full@width=\dimen125
 \page@free=\dimen126
 \premulticols=\dimen127
 \postmulticols=\dimen128
-\multicolsep=\skip75
-\multicolbaselineskip=\skip76
+\multicolsep=\skip73
+\multicolbaselineskip=\skip74
 \partial@page=\box41
 \last@line=\box42
-\maxbalancingoverflow=\dimen129
 \mult@rightbox=\box43
 \mult@grightbox=\box44
 \mult@gfirstbox=\box45
@@ -670,75 +623,70 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \@tempa=\box61
 \@tempa=\box62
 \@tempa=\box63
-\c@columnbadness=\count130
-\c@finalcolumnbadness=\count131
-\last@try=\dimen130
-\multicolovershoot=\dimen131
-\multicolundershoot=\dimen132
+\c@columnbadness=\count131
+\c@finalcolumnbadness=\count132
+\last@try=\dimen129
+\multicolovershoot=\dimen130
+\multicolundershoot=\dimen131
 \mult@nat@firstbox=\box64
 \colbreak@box=\box65
-\mc@col@check@num=\count132
+\multicol@sort@counter=\count133
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\paralist\paralist
-.sty"
-Package: paralist 2015/12/30 v2.5 Extended list environments
-\pltopsep=\skip77
-\plpartopsep=\skip78
-\plitemsep=\skip79
-\plparsep=\skip80
+(/usr/share/texlive/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2013/06/09 v2.4 Extended list environments
+\pltopsep=\skip75
+\plpartopsep=\skip76
+\plitemsep=\skip77
+\plparsep=\skip78
 \pl@lab=\toks27
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption.s
-ty"
-Package: caption 2016/02/02 v3.3-136 Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\caption3.
-sty"
-Package: caption3 2016/02/02 v1.7-136 caption3 kernel (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen133
-\captionmargin@=\dimen134
-\captionwidth=\dimen135
-\caption@tempdima=\dimen136
-\caption@indent=\dimen137
-\caption@parindent=\dimen138
-\caption@hangindent=\dimen139
+\captionmargin=\dimen132
+\captionmargin@=\dimen133
+\captionwidth=\dimen134
+\caption@tempdima=\dimen135
+\caption@indent=\dimen136
+\caption@parindent=\dimen137
+\caption@hangindent=\dimen138
 )
-\c@ContinuedFloat=\count133
+\c@ContinuedFloat=\count134
 Package caption Info: longtable package is loaded.
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\caption\ltcaption
-.sty"
-Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 ))
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count134
+\c@float@type=\count135
 \float@exts=\toks28
 \float@box=\box66
 \@float@everytoks=\toks29
 \@floatcapt=\box67
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\booktabs\booktabs
-.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen140
-\lightrulewidth=\dimen141
-\cmidrulewidth=\dimen142
-\belowrulesep=\dimen143
-\belowbottomsep=\dimen144
-\aboverulesep=\dimen145
-\abovetopsep=\dimen146
-\cmidrulesep=\dimen147
-\cmidrulekern=\dimen148
-\defaultaddspace=\dimen149
-\@cmidla=\count135
-\@cmidlb=\count136
-\@aboverulesep=\dimen150
-\@belowrulesep=\dimen151
-\@thisruleclass=\count137
-\@lastruleclass=\count138
-\@thisrulewidth=\dimen152
+\heavyrulewidth=\dimen139
+\lightrulewidth=\dimen140
+\cmidrulewidth=\dimen141
+\belowrulesep=\dimen142
+\belowbottomsep=\dimen143
+\aboverulesep=\dimen144
+\abovetopsep=\dimen145
+\cmidrulesep=\dimen146
+\cmidrulekern=\dimen147
+\defaultaddspace=\dimen148
+\@cmidla=\count136
+\@cmidlb=\count137
+\@aboverulesep=\dimen149
+\@belowrulesep=\dimen150
+\@thisruleclass=\count138
+\@lastruleclass=\count139
+\@thisrulewidth=\dimen151
 )
 ! Undefined control sequence.
 \ifdraft #1#2->\ifthenelse 
@@ -774,45 +722,38 @@ l.87 }
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-(sty/tecStyle.sty
+(./sty/tecStyle.sty
 Package: sty/tecStyle 2004/12/21 v0.2 tecStyle
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\color.st
-y"
-Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\color.cf
-g"
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 142.
+Package color Info: Driver file: pdftex.def on input line 130.
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\pdftex-def\pdftex
-.def"
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwar
-err.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmd
-s.sty"
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count139
+\Gread@gobject=\count140
 ))
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\theorem.sty
-"
-Package: theorem 2014/10/28 v2.2c Theorem extension package (FMi)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/theorem.sty
+Package: theorem 1995/11/23 v2.2c Theorem extension package (FMi)
 \theorem@style=\toks30
 \theorem@bodyfont=\toks31
-\theorempreskipamount=\skip81
-\theorempostskipamount=\skip82
- ("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\thp.sty"
-File: thp.sty 2014/10/28 v2.2c Theorem extension package (FMi)
+\theorempreskipamount=\skip79
+\theorempostskipamount=\skip80
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/thp.sty
+File: thp.sty 1995/11/23 v2.2c Theorem extension package (FMi)
 )) 2009/02/15 tecStyle
-\c@Def=\count140
-\c@nexample=\count141
+\c@Def=\count141
+\c@nexample=\count142
 )
 
 ! LaTeX Error: \examplelistname undefined.
@@ -838,12 +779,11 @@ l.91 \renewcommand{\examplename}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tocbibind\tocbibi
-nd.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
@@ -925,27 +865,22 @@ Overfull \hbox (5.90561pt too wide) in paragraph at lines 103--109
 ray0.4 dkma-
  []
 
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx
-.sty"
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics
-.sty"
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty
-"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\00miktex\graphics
-.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 94.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 )
-\Gin@req@height=\dimen153
-\Gin@req@width=\dimen154
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
 )
 ! Undefined control sequence.
 \ifdraft #1#2->\ifthenelse 
@@ -981,20 +916,16 @@ l.178 }
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\hyperref
-.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub
--hyperref.sty"
-Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\hobsub
--generic.sty"
-Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
@@ -1251,7 +1182,7 @@ Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
 
 ! Undefined control sequence.
 l.488 \ltx@ifundefined
@@ -1263,7 +1194,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.545 \ltx@ifundefined
+l.546 \ltx@ifundefined
                       {AtEndPreamble}{}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1272,7 +1203,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.546 \ltx@ifundefined
+l.547 \ltx@ifundefined
                       {@endpreamblehook}{}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1281,7 +1212,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.547 \AtEndPreamble
+l.548 \AtEndPreamble
                     {\HOpatch@list}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1290,7 +1221,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.550 \ltx@ifundefined
+l.551 \ltx@ifundefined
                       {AfterEndPreamble}{}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1299,7 +1230,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.551 \ltx@ifundefined
+l.552 \ltx@ifundefined
                       {@afterendpreamblehook}{}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1308,7 +1239,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.552 \AfterEndPreamble
+l.553 \AfterEndPreamble
                        {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1320,7 +1251,7 @@ Package: xcolor-patch 2011/01/30 xcolor patch
 ! Undefined control sequence.
 \hopatch@AfterPackage #1->\ltx@ifpackageloaded 
                                                {#1}{\ltx@firstofone }{\HOpat...
-l.577 \hopatch@AfterPackage{xcolor}
+l.578 \hopatch@AfterPackage{xcolor}
                                    {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1331,7 +1262,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \hopatch@AfterPackage ...ded {#1}{\ltx@firstofone 
                                                   }{\HOpatch@AfterPackage {#1}}
-l.577 \hopatch@AfterPackage{xcolor}
+l.578 \hopatch@AfterPackage{xcolor}
                                    {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1342,7 +1273,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \HOpatch@AfterPackage ...{#1}\HOpatch@StepCounter 
                                                   \expandafter \HOpatch@@Aft...
-l.577 \hopatch@AfterPackage{xcolor}
+l.578 \hopatch@AfterPackage{xcolor}
                                    {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1353,7 +1284,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \HOpatch@@AfterPackage has an extra }.
 <inserted text> 
                 \par 
-l.577 \hopatch@AfterPackage{xcolor}
+l.578 \hopatch@AfterPackage{xcolor}
                                    {%
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1366,14 +1297,14 @@ Runaway argument?
 ! Paragraph ended before \HOpatch@@AfterPackage was complete.
 <to be read again> 
                    \par 
-l.577 \hopatch@AfterPackage{xcolor}
+l.578 \hopatch@AfterPackage{xcolor}
                                    {%
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Overfull \hbox (78.34656pt too wide) in paragraph at lines 4559--577
+Overfull \hbox (78.34656pt too wide) in paragraph at lines 4559--578
 \OT1/cmr/m/n/12 nu-m-expr        AtEnd-Pream-ble@endpreamblehook Af-terEnd-Prea
 m-ble@afterendpreamblehook
  []
@@ -1382,7 +1313,7 @@ Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \AP@enddocument detected (standard20110627).
 Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 ! Undefined control sequence.
-l.1553 \ltx@newif
+l.1554 \ltx@newif
                  \ifAtBegShi@Discarded
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1391,7 +1322,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.1553 \ltx@newif\ifAtBegShi@Discarded
+l.1554 \ltx@newif\ifAtBegShi@Discarded
                                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1401,7 +1332,7 @@ and I'll forget about whatever was undefined.
 
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 ! Undefined control sequence.
-l.2346 \ltx@IfUndefined
+l.2347 \ltx@IfUndefined
                        {@ifdefinable}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1416,13 +1347,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2346 \ltx@IfUndefined{@
+l.2347 \ltx@IfUndefined{@
                          ifdefinable}{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.2365 \ltx@IfUndefined
+l.2366 \ltx@IfUndefined
                        {protected}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1431,7 +1362,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2366 \ltx@IfUndefined
+l.2367 \ltx@IfUndefined
                        {DeclareRobustCommand}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1440,7 +1371,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2401 \ltx@IfUndefined
+l.2402 \ltx@IfUndefined
                        {newcommand}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1449,7 +1380,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2418 \rc@RobustDefOne
+l.2419 \rc@RobustDefOne
                        \long{}\setrefcountdefault{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1460,12 +1391,12 @@ and I'll forget about whatever was undefined.
 ! You can't use a prefix with `begin-group character {'.
 <to be read again> 
                    {
-l.2418 \rc@RobustDefOne\long{
+l.2419 \rc@RobustDefOne\long{
                              }\setrefcountdefault{%
 I'll pretend you didn't say \long or \outer or \global or \protected.
 
 ! Undefined control sequence.
-l.2418 \rc@RobustDefOne\long{}\setrefcountdefault
+l.2419 \rc@RobustDefOne\long{}\setrefcountdefault
                                                  {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1476,14 +1407,14 @@ and I'll forget about whatever was undefined.
 ! Illegal parameter number in definition of \rc@default.
 <to be read again> 
                    1
-l.2419 \def\rc@default{#1
+l.2420 \def\rc@default{#1
                          }%
 You meant to type ## instead of #, right?
 Or maybe a } was forgotten somewhere earlier, and things
 are all screwed up? I'm going to assume that you meant ##.
 
 ! Undefined control sequence.
-l.2421 \setrefcountdefault
+l.2422 \setrefcountdefault
                           {0}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1492,7 +1423,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2422 \ltx@IfUndefined
+l.2423 \ltx@IfUndefined
                        {G@refundefinedtrue}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1501,7 +1432,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2423 \rc@RobustDefOne
+l.2424 \rc@RobustDefOne
                        {}{*}\refused{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1510,7 +1441,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2423 \rc@RobustDefOne{}{*}\refused
+l.2424 \rc@RobustDefOne{}{*}\refused
                                     {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1519,7 +1450,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2426 \ltx@IfUndefined
+l.2427 \ltx@IfUndefined
                        {r@#1}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1528,7 +1459,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2426 \ltx@IfUndefined{r@#
+l.2427 \ltx@IfUndefined{r@#
                            1}{%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1536,7 +1467,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2428 \rc@WarningUndefined
+l.2429 \rc@WarningUndefined
                            {#1}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1545,7 +1476,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2428 \rc@WarningUndefined{#
+l.2429 \rc@WarningUndefined{#
                              1}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1553,7 +1484,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2433 \rc@RobustDefOne
+l.2434 \rc@RobustDefOne
                        {}{*}\refused{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1562,7 +1493,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2433 \rc@RobustDefOne{}{*}\refused
+l.2434 \rc@RobustDefOne{}{*}\refused
                                     {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1571,7 +1502,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2436 \ltx@IfUndefined
+l.2437 \ltx@IfUndefined
                        {r@#1}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1580,7 +1511,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2436 \ltx@IfUndefined{r@#
+l.2437 \ltx@IfUndefined{r@#
                            1}{%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1588,7 +1519,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2439 \rc@WarningUndefined
+l.2440 \rc@WarningUndefined
                            {#1}%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1597,7 +1528,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2439 \rc@WarningUndefined{#
+l.2440 \rc@WarningUndefined{#
                              1}%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1605,7 +1536,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2444 \ltx@IfUndefined
+l.2445 \ltx@IfUndefined
                        {@latex@warning}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1614,7 +1545,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2476 \rc@RobustDefZero
+l.2477 \rc@RobustDefZero
                         \setcounterref{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1623,7 +1554,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2476 \rc@RobustDefZero\setcounterref
+l.2477 \rc@RobustDefZero\setcounterref
                                       {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1634,7 +1565,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \rc@set has an extra }.
 <inserted text> 
                 \par 
-l.2478 }
+l.2479 }
         
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1647,20 +1578,20 @@ Runaway argument?
 ! Paragraph ended before \rc@set was complete.
 <to be read again> 
                    \par 
-l.2478 }
+l.2479 }
         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Overfull \hbox (118.97668pt too wide) in paragraph at lines 2346--2478
+Overfull \hbox (118.97668pt too wide) in paragraph at lines 2347--2479
 []\OT1/cmr/m/n/12 @ifdefinable pro-tected-De-clareR-o-bust-Com-mand new-com-man
 d  0 G@refundefinedtrue*r@11*r@11
  []
 
 ! Undefined control sequence.
-l.2479 \rc@RobustDefZero
+l.2480 \rc@RobustDefZero
                         \addtocounterref{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1669,7 +1600,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2479 \rc@RobustDefZero\addtocounterref
+l.2480 \rc@RobustDefZero\addtocounterref
                                         {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1680,7 +1611,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \rc@set has an extra }.
 <inserted text> 
                 \par 
-l.2481 }
+l.2482 }
         
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1693,14 +1624,14 @@ Runaway argument?
 ! Paragraph ended before \rc@set was complete.
 <to be read again> 
                    \par 
-l.2481 }
+l.2482 }
         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 ! Undefined control sequence.
-l.2482 \rc@RobustDefZero
+l.2483 \rc@RobustDefZero
                         \setcounterpageref{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1709,7 +1640,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2482 \rc@RobustDefZero\setcounterpageref
+l.2483 \rc@RobustDefZero\setcounterpageref
                                           {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1720,7 +1651,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \rc@set has an extra }.
 <inserted text> 
                 \par 
-l.2484 }
+l.2485 }
         
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1733,14 +1664,14 @@ Runaway argument?
 ! Paragraph ended before \rc@set was complete.
 <to be read again> 
                    \par 
-l.2484 }
+l.2485 }
         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 ! Undefined control sequence.
-l.2485 \rc@RobustDefZero
+l.2486 \rc@RobustDefZero
                         \addtocounterpageref{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1749,7 +1680,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2485 \rc@RobustDefZero\addtocounterpageref
+l.2486 \rc@RobustDefZero\addtocounterpageref
                                             {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1760,7 +1691,7 @@ and I'll forget about whatever was undefined.
 ! Argument of \rc@set has an extra }.
 <inserted text> 
                 \par 
-l.2487 }
+l.2488 }
         
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1773,14 +1704,14 @@ Runaway argument?
 ! Paragraph ended before \rc@set was complete.
 <to be read again> 
                    \par 
-l.2487 }
+l.2488 }
         
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 ! Undefined control sequence.
-l.2488 \rc@newcommand
+l.2489 \rc@newcommand
                      *{\getrefnumber}[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1795,13 +1726,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2488 \rc@newcommand*
+l.2489 \rc@newcommand*
                       {\getrefnumber}[1]{%
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 ! Undefined control sequence.
-l.2488 \rc@newcommand*{\getrefnumber
+l.2489 \rc@newcommand*{\getrefnumber
                                     }[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1810,7 +1741,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2490 \ltx@ifundefined
+l.2491 \ltx@ifundefined
                        {r@#1}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1821,14 +1752,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    {
-l.2490 \ltx@ifundefined{
+l.2491 \ltx@ifundefined{
                         r@#1}{%
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2490 \ltx@ifundefined{r@#
+l.2491 \ltx@ifundefined{r@#
                            1}{%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1836,7 +1767,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2492 \rc@default
+l.2493 \rc@default
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1847,7 +1778,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \ltx@zero 
                           
-l.2492 \rc@default
+l.2493 \rc@default
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1856,7 +1787,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2497 \expandafter{\rc@default
+l.2498 \expandafter{\rc@default
                                }\@nil
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1867,7 +1798,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \rc@extract@ 
                              
-l.2497 \expandafter{\rc@default
+l.2498 \expandafter{\rc@default
                                }\@nil
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1876,7 +1807,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2497 \expandafter{\rc@default}\@nil
+l.2498 \expandafter{\rc@default}\@nil
                                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1885,7 +1816,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2500 \rc@newcommand
+l.2501 \rc@newcommand
                      *{\getpagerefnumber}[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1894,7 +1825,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2500 \rc@newcommand*{\getpagerefnumber
+l.2501 \rc@newcommand*{\getpagerefnumber
                                         }[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1903,7 +1834,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2502 \ltx@ifundefined
+l.2503 \ltx@ifundefined
                        {r@#1}{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1914,14 +1845,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    {
-l.2502 \ltx@ifundefined{
+l.2503 \ltx@ifundefined{
                         r@#1}{%
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2502 \ltx@ifundefined{r@#
+l.2503 \ltx@ifundefined{r@#
                            1}{%
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1929,7 +1860,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2504 \rc@default
+l.2505 \rc@default
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1940,7 +1871,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \ltx@zero 
                           
-l.2504 \rc@default
+l.2505 \rc@default
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1949,7 +1880,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2511 \expandafter}\expandafter{\rc@default
+l.2512 \expandafter}\expandafter{\rc@default
                                             }\@nil
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1960,7 +1891,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \rc@default 
                             
-l.2511 \expandafter}\expandafter{\rc@default
+l.2512 \expandafter}\expandafter{\rc@default
                                             }\@nil
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1971,7 +1902,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \rc@extract@page 
                                  
-l.2511 \expandafter}\expandafter{\rc@default
+l.2512 \expandafter}\expandafter{\rc@default
                                             }\@nil
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1980,7 +1911,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2511 \expandafter}\expandafter{\rc@default}\@nil
+l.2512 \expandafter}\expandafter{\rc@default}\@nil
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1989,7 +1920,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2514 \rc@newcommand
+l.2515 \rc@newcommand
                      *{\getrefbykeydefault}[2]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1998,7 +1929,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2514 \rc@newcommand*{\getrefbykeydefault
+l.2515 \rc@newcommand*{\getrefbykeydefault
                                           }[2]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2009,7 +1940,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \rc@getrefbykeydefault 
                                        
-l.2518 \csname rc@extract@#2\endcsname
+l.2519 \csname rc@extract@#2\endcsname
                                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2020,14 +1951,14 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    \r@#1 
-l.2518 \csname rc@extract@#2\endcsname
+l.2519 \csname rc@extract@#2\endcsname
                                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 ! Undefined control sequence.
-l.2574 \rc@newcommand
+l.2575 \rc@newcommand
                      *{\IfRefUndefinedExpandable}[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2036,7 +1967,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2574 \rc@newcommand*{\IfRefUndefinedExpandable
+l.2575 \rc@newcommand*{\IfRefUndefinedExpandable
                                                 }[1]{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2045,7 +1976,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2575 \ltx@ifundefined
+l.2576 \ltx@ifundefined
                        {r@#1}\ltx@firstoftwo\ltx@secondoftwo
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2054,7 +1985,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! You can't use `macro parameter character #' in horizontal mode.
-l.2575 \ltx@ifundefined{r@#
+l.2576 \ltx@ifundefined{r@#
                            1}\ltx@firstoftwo\ltx@secondoftwo
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -2062,7 +1993,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 ! Undefined control sequence.
-l.2575 \ltx@ifundefined{r@#1}\ltx@firstoftwo
+l.2576 \ltx@ifundefined{r@#1}\ltx@firstoftwo
                                             \ltx@secondoftwo
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2071,7 +2002,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2575 ...ned{r@#1}\ltx@firstoftwo\ltx@secondoftwo
+l.2576 ...ned{r@#1}\ltx@firstoftwo\ltx@secondoftwo
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2080,7 +2011,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2577 \rc@RobustDefOne
+l.2578 \rc@RobustDefOne
                        {}*\IfRefUndefinedBabel{%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2089,7 +2020,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2577 \rc@RobustDefOne{}*\IfRefUndefinedBabel
+l.2578 \rc@RobustDefOne{}*\IfRefUndefinedBabel
                                               {%
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2100,7 +2031,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \ltx@firstoftwo 
                                 
-l.2585 \fi
+l.2586 \fi
           
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2109,13 +2040,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex
-.sty"
+) (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\auxhook.
-sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 ! Undefined control sequence.
@@ -2148,9 +2076,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoption
-s.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ! Undefined control sequence.
@@ -2370,12 +2296,10 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 )
-\@linkdim=\dimen155
-\Hy@linkcounter=\count142
-\Hy@pagecounter=\count143
-
-("C:\Users\Jeffry\AppData\Local\Programs\MiKTeX 2.9\tex\latex\hyperref\pd1enc.d
-ef"
+\@linkdim=\dimen154
+\Hy@linkcounter=\count143
+\Hy@pagecounter=\count144
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
@@ -2618,7 +2542,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-\Hy@SavedSpaceFactor=\count144
+\Hy@SavedSpaceFactor=\count145
 ! Undefined control sequence.
 \Hy@AtBeginDocument ->\ltx@LocalAppendToMacro 
                                               \Hy@AtBeginDocumentHook 
@@ -3176,12 +3100,12 @@ l.3085 }
         
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 7181 strings out of 493634
- 105708 string characters out of 3134832
- 185139 words of memory out of 3000000
- 10455 multiletter control sequences out of 15000+200000
- 6723 words of font info for 24 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 38i,1n,38p,287b,1969s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 7031 strings out of 493304
+ 100739 string characters out of 6139872
+ 182177 words of memory out of 5000000
+ 10381 multiletter control sequences out of 15000+600000
+ 6723 words of font info for 24 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,1n,38p,285b,1970s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
