@@ -8,7 +8,7 @@ Se presenta además las bases teóricas de la rotación de vectores, fundamento 
 
 \section{Estándar IEEE 754}
 
-El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia \cite{IEEE754_WEB}.\\
+El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia.\\
 
 Los formatos de representación de números en punto flotante del estándar, son usados para representar un subconjunto finito de los números reales. Los formatos se caracterizan por: su base (binaria, decimal), precisión (simple, doble, extendida) y por el rango de su exponente, y cada uno puede representar un conjunto único de datos en punto flotante \cite{IEEE754}.\\
 
@@ -31,10 +31,10 @@ Las representaciones de un dato en punto flotante en un formato consiste en:
 El conjunto finito de números en punto flotante representables dentro de un formato en particular es determinado por determinados parámetros enteros, los cuales son: \\
 
 \begin{itemize}
-	\item[-]		b = la base, 2 (binaria) o 10 (decimal).
-	\item[-]		p = el número de dígitos en el significando, es decir, a precisión.
-	\item[-]		\textit{emax} = el máximo exponente.
-	\item[-]		\textit{emin} = el mínimo exponente.
+	\item[-]	b = la base, 2 (binaria) o 10 (decimal).
+	\item[-]	p = el número de dígitos en el significando, es decir, a precisión.
+	\item[-]	\textit{emax} = el máximo exponente.
+	\item[-]	\textit{emin} = el mínimo exponente.
 \end{itemize}
 
 Donde \textit{emin} = 1 - \textit{emax} para cada uno de los formatos.
@@ -54,7 +54,7 @@ En la tabla  se presentan los valores de cada uno de los parámetros para cada u
 \section{Algoritmo CORDIC para el cálculo de operaciones trigonométricas.}
 
 El algoritmo de Computación Digital para Rotación de Coordenadas, CORDIC por sus siglas en inglés (\textbf{CO}ordinate \textbf{R}otation \textbf{D}igital \textbf{C}omputer), fue desarrollado especialmente para usarse en computadoras digitales en tiempo real, donde la mayoría de la computación involucraba la resolución de las relaciones trigonométricas de las ecuaciones de navegación y una alta tasa de exactitud para las relaciones trigonométricas de las transformaciones de coordenadas \cite{CORDIC}.
-Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT).
+Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT). \cite{Oppenheim1998}
 
 
 
