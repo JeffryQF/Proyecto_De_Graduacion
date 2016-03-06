@@ -1,6 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: main.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 A level-1 auxiliary file: titlepage.aux
 A level-1 auxiliary file: disclaimer.aux
 A level-1 auxiliary file: tribunal.aux
@@ -24,45 +22,5 @@ You're missing a field name---line 162 of file literatura.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in IEEE754
-You've used 3 entries,
-            2363 wiz_defined-function locations,
-            584 strings with 5087 characters,
-and the built_in function-call counts, 840 in all, are:
-= -- 98
-> -- 26
-< -- 0
-+ -- 12
-- -- 8
-* -- 50
-:= -- 146
-add.period$ -- 7
-call.type$ -- 3
-change.case$ -- 13
-chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 31
-empty$ -- 69
-format.name$ -- 8
-if$ -- 185
-int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 3
-newline$ -- 16
-num.names$ -- 4
-pop$ -- 15
-preamble$ -- 1
-purify$ -- 10
-quote$ -- 0
-skip$ -- 38
-stack$ -- 0
-substring$ -- 37
-swap$ -- 3
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 10
-warning$ -- 1
-while$ -- 5
-width$ -- 4
-write$ -- 30
+Warning--empty author in IEEE754
 (There was 1 error message)

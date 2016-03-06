@@ -1,7 +1,8 @@
 \begin{thebibliography}{1}
 
 \bibitem{IEEE754}
-Ieee standard for floating-point arithmetic, Aug 2008.
+Ieee standard for floating-point arithmetic.
+\newblock {\em IEEE Std 754-2008}, pages 18--21, Aug 2008.
 
 \bibitem{Oppenheim1998}
 A.~Oppenheim, A.~Willsky, and S.~H. Nawab.
