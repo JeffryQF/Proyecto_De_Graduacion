@@ -10,7 +10,26 @@ Se presenta además las bases teóricas de la rotación de vectores, fundamento 
 
 \section{Estándar IEEE 754}
 
-El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia.//
+El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia.\\
+
+Los formatos de representación de números en punto flotante del estándar, son usados para representar un subconjunto finito de los números reales. Los formatos se caracterizan por: su base (binaria, decimal), precisión (simple, doble, extendida) y por el rango de su exponente, y cada uno puede representar un conjunto único de datos en punto flotante.\\
+
+El estándar define 5 formatos básicos:\
+
+\begin{itemize}
+	\item[-]	Tres formatos binarios, con codificaciones en longitud de 32, 64 y 128 bits.
+	\item[-]	Dos formatos binarios, con codificaciones en longitud de 64 y 128 bits.
+\end{itemize}
+
+Las representaciones de un dato en punto flotante en un formato consiste en:
+
+\begin{itemize}
+	\item[-]	Triples (signo, exponente y significando); en una base b, el numero en punto flotante representado por un tripe tiene la siguiente forma:\\
+	$(-1)^{signo} \dot{•} b^{exponente} \dot{•} significando $
+	\item[-]	$+\inf, -\inf $
+	\item[-]	$qNaN, sNaN$
+\end{itemize}0
+
 
 \subsection{Formato de representacion en punto flotante.}
 
