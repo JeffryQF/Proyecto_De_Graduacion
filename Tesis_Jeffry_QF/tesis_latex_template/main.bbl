@@ -4,10 +4,11 @@
 Ieee standard for floating-point arithmetic.
 \newblock {\em IEEE Std 754-2008}, pages 13--21, Aug 2008.
 
-\bibitem{Oppenheim1998}
-A.~Oppenheim, A.~Willsky, and S.~H. Nawab.
-\newblock {\em Señales y Sistemas}.
-\newblock Prentice Hall, 2da edition, 1998.
+\bibitem{IEEE754_WEB}
+The Oxford~Math Center.
+\newblock Ieee 754 format [online].
+\newblock 2015 [visitado el \today].
+\newblock URL \url{http://www.oxfordmathcenter.com/drupal7/node/43}.
 
 \bibitem{CORDIC}
 J.~E. Volder.
