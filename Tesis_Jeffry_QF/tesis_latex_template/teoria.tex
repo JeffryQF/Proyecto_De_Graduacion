@@ -8,7 +8,7 @@ Se presenta además las bases teóricas de la rotación de vectores, fundamento 
 
 \section{Estándar IEEE 754}
 
-El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia.\\
+El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia\cite{IEEE754_WEB}.\\
 
 Los formatos de representación de números en punto flotante del estándar, son usados para representar un subconjunto finito de los números reales. Los formatos se caracterizan por: su base (binaria, decimal), precisión (simple, doble, extendida) y por el rango de su exponente, y cada uno puede representar un conjunto único de datos en punto flotante \cite{IEEE754}.\\
 
@@ -39,7 +39,35 @@ El conjunto finito de números en punto flotante representables dentro de un for
 
 Donde \textit{emin} = 1 - \textit{emax} para cada uno de los formatos.
 
-En la tabla  se presentan los valores de cada uno de los parámetros para cada uno de los formatos básicos, en el cuál cada formato está identificado por su base y el número de bits de su codificación.\\  
+En la tabla \ref{Tabla_Parametros}  se presentan los valores de cada uno de los parámetros para cada uno de los formatos básicos, en el cuál cada formato está identificado por su base y el número de bits de su codificación.\\
+
+\begin{table}[H]
+\centering
+\caption{Valores de los parámetros que definen los formatos básicos de números en punto flotante.7}
+\label{Tabla_Parametros}
+\begin{tabular}{c|c|c|c|c|c|}
+\cline{2-6}
+                                    & \multicolumn{3}{c|}{Formato Binario (b=2)}              & \multicolumn{2}{c|}{Formato Decimal (b=10)} \\ \hline
+\multicolumn{1}{|c|}{parametro}     & binario(32 bits) & binario(64 bits) & binario(128 bits) & decimal64           & decimal 128           \\ \hline
+\multicolumn{1}{|c|}{p, digitos}    & 24               &                  & 113               & 16                  & 34                    \\ \hline
+\multicolumn{1}{|c|}{\textit{emax}} & +127             & +1023            & +16383            & +384                & +6144                 \\ \hline
+\end{tabular}
+\end{table}
+
+Sin importar el formato escogido, los siguientes datos deberán poder ser representados:
+
+\begin{itemize}
+	\item[-]	Cualquier número en punto flotante igual o diferente a cero y con signo de la forma:
+	\begin{center} $(-1)^{s} \times b^{e} \times m $ \end{center}, donde
+	\begin{itemize}
+		\item	\textit{s} es igual a 1 o 0, donde 1 representa a los números negativos y el 0 a los números positivos.
+		\item	\textit{e} corresponde a cualquier numero entero entre $emin \leq e \leq emax$.
+		\item	\textit{m} es un número representado por una cadena de dígitos de la forma $ d0*d1d2...d_{p-1} $, donde $ d_{i} $ es un dígito entero entre $ 0 \leq di \leq b $, por lo tanto \textit{m} puede ser un valor  entre $ 0 \leq m \leq b $.
+		
+	\end{itemize}
+	\item[-]	Dos valores infinitos, $ +\infty,-\infty $.
+	\item[-]	Dos representaciones \textit{NaN}, \textit{qNaN} y \textit{sNaN}.
+\end{itemize}
 
 \subsection{Formato de representación en punto flotante.}
 
