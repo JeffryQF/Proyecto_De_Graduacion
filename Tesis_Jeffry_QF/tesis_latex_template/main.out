@@ -1,12 +1,14 @@
 \BOOKMARK [1][-]{Indice General.1}{Indice General}{}% 1
 \BOOKMARK [0][-]{chapter*.5}{\315ndice de figuras}{}% 2
-\BOOKMARK [0][-]{chapter*.6}{\315ndice de tablas}{}% 3
-\BOOKMARK [0][-]{chapter*.7}{Revisar}{}% 4
+\BOOKMARK [1][-]{section*.6}{\315ndice de figuras}{chapter*.5}% 3
+\BOOKMARK [0][-]{chapter*.7}{\315ndice de tablas}{}% 4
+\BOOKMARK [1][-]{section*.8}{\315ndice de tablas}{chapter*.7}% 5
+\BOOKMARK [0][-]{chapter*.9}{Revisar}{}% 6
 \BOOKMARK [0][-]{chapter.1}{1 Introducci\363n}{}% 5
 \BOOKMARK [1][-]{section.1.1}{1.1 Objetivos y estructura del documento}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{2 Marco te\363rico}{}% 7
 \BOOKMARK [1][-]{section.2.1}{2.1 Est\341ndar IEEE 754}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Formato de representacion en punto flotante.}{section.2.1}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Formato de representaci\363n en punto flotante.}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{2.2 Algoritmo CORDIC para el c\341lculo de operaciones trigonom\351tricas.}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Redacci\363n}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Ecuaciones}{section.2.2}% 12
@@ -19,5 +21,6 @@
 \BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 19
 \BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 20
 \BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 21
-\BOOKMARK [0][-]{chapter*.15}{Bibliograf\355a}{}% 22
-\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 23
+\BOOKMARK [0][-]{chapter*.17}{Bibliograf\355a}{}% 22
+\BOOKMARK [1][-]{section*.18}{Bibliograf\355a}{chapter*.17}% 23
+\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 24
