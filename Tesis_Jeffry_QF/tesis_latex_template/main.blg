@@ -21,6 +21,8 @@ You're missing a field name---line 162 of file literatura.bib
  : %keywords={Algorithms;Analog computers;Arithmetic;Computer aided instruction;Instruments;Polynomials;Programming profession;Registers;Resumes;Switches},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--entry type for "Tesis_Diego" isn't style-file defined
+--line 176 of file literatura.bib
 Warning--to sort, need author or key in IEEE754
 Warning--empty author in IEEE754
 (There was 1 error message)

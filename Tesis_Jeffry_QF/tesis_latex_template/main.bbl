@@ -10,6 +10,11 @@ The Oxford~Math Center.
 \newblock 2015 [visitado el \today].
 \newblock URL \url{http://www.oxfordmathcenter.com/drupal7/node/43}.
 
+\bibitem{Tesis_Diego}
+Diego Andrés~Rodríguez Valverde.
+\newblock Diseño e implementación de una unidad aritmético-lógica de coma
+  flotante para un procesador de aplicación específica., 2016.
+
 \bibitem{CORDIC}
 J.~E. Volder.
 \newblock The cordic trigonometric computing technique.
