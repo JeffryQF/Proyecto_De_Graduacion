@@ -71,7 +71,7 @@ Sin importar el formato escogido, los siguientes datos deberán poder ser repres
 
 El número positivo más pequeño representable en cada formato es $b^{emin}$, mientras que el más grande es $b^{emax}*(b-b^{1-p})$. Los números diferentes a cero con magnitudes menores a $b^{emin}$ son llamados subnormales, debido a que sus magnitudes caen en valores entre cero y el número normal más pequeño.\\
 
-En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por la Ecuación \ref{eq:Ec_esp_norm}  \cite{Tesis_Diego}.\\
+En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por (\ref{eq:Ec_esp_norm})  \cite{Tesis_Diego}.\\
 
 \begin{equation}\label{eq:Ec_esp_norm}
 Exponente\_normalizado = Exponente - emin
@@ -156,44 +156,17 @@ El algoritmo de Computación Digital para Rotación de Coordenadas, CORDIC por s
 
 Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT).\\
 
+El CORDIC es un algoritmo iterativo para rotar vectores a ciertos ángulos determinados, que efectúa operaciones matemáticas a alta velocidad en sistemas coordenados lineales, circulares e hiperbólicos y que solo utiliza operaciones de suma y desplazamiento para efectuar operaciones trigonométricas, exponenciales, logarítmicas, y otras funciones trascendentales \cite{DoubleCordic}.\\
 
 
-\subsection{Fundamento Teórico y descripción funcional.}
+\subsection{Fundamento Teórico.}
 
+El algoritmo originalmente propuesto \cite{CORDIC}, describe la rotación de un vector bidimensional en el plano cartesiano. El funcionamiento del algoritmo se deduce de la formula general de rotación de vectores:
 
-
-
-La \nt{redacción} en todo el documento debe seguir un estilo científico
-objetivo. Esto implica que se redacta de modo impersonal, sin utilizar primeras
-personas del singular o del plural, y se evita el uso de cualquier tipo de
-calificativo, sustituyéndolos siempre por datos concretos, vinculados a
-referencias bibliográficas o datos experimentales. Los comparativos también
-deben concretarse a hechos y datos, y nunca dejarse ``en el aire''. Por la
-naturaleza de la tesis, el tiempo verbal es usualmente presente, no perdiendo
-nunca de vista que se está explicando ``cómo hacer algo'', en vez de ``qué se
-hizo''.
-
-Las \nt{frases} deben ser cortas, y debe evitarse que el lector tenga que saltar
-constantemente entre partes de la tesis, lo que implica una exposición lineal
-clara, donde lo que se necesita ya ha sido explicado antes. Deben evitarse
-redundancias y por tanto cada concepto se exponen en un único lugar.
-
-Todo aspecto circunstancial es irrelevante para la tesis, es decir, si se ha
-desarrollado en el laboratorio $X$, o en el curso $Y$, con el profesor $Z$, o
-en la empresa $W$, el nombre de funciones o clases en su código, etc., es
-información irrelevante para reproducir el experimento, y por lo tanto sobra.
-Numeración del documento
-
-La primera página de la tesis es la correspondiente a la introducción, así que
-ésta debe ser la página 1. Desde la introducción, hasta antes de la
-bibliografía, las unidades son ``Capítulos''. La bibliografía y anexos no se
-consideran capítulos, así que ya no continúan con la misma numeración de los
-capítulos (la paginación sí continua). Los índices, notación, glosario, etc. se
-numeran con números romanos en minúscula (i,ii,iii,iv,v,vi...) y antes del
-índice (portada, resúmenes, agradecimientos, hoja de evaluadores, etc.) las
-páginas no llevan numeración. 
-
-Esta plantilla LaTeX ya se ocupa de todo lo anterior.
+\begin{eqnarray}
+x^{\prime} = xcos \theta - ysen \theta \\
+y^{\prime} = ycos \theta + xsen \theta
+\end{eqnarray}\label{eq:ec_rot_vectores}
 
 \subsection{Ecuaciones}
 

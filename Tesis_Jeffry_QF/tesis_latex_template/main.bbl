@@ -21,4 +21,11 @@ J.~E. Volder.
 \newblock {\em IRE Transactions on Electronic Computers}, EC-8(3):330--334,
   1959.
 
+\bibitem{DoubleCordic}
+Jie Zhou, Yong Dou, Yuanwu Lei, Jinbo Xu, and Yazhuo Dong.
+\newblock Double precision hybrid-mode floating-point fpga cordic co-processor.
+\newblock In {\em High Performance Computing and Communications, 2008. HPCC
+  '08. 10th IEEE International Conference on}, pages 182--189, 2008.
+\newblock ID: 1.
+
 \end{thebibliography}

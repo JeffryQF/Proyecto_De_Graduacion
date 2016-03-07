@@ -10,14 +10,14 @@
 \contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Simple.}{6}{section*.9}
 \contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Doble.}{8}{section*.11}
 \contentsline {section}{\numberline {2.2}Algoritmo CORDIC para el c\IeC {\'a}lculo de operaciones trigonom\IeC {\'e}tricas.}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Fundamento Te\IeC {\'o}rico y descripci\IeC {\'o}n funcional.}{9}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Fundamento Te\IeC {\'o}rico.}{9}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Ecuaciones}{9}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Figuras}{10}{subsection.2.2.3}
 \contentsline {subsubsection}{Im\IeC {\'a}genes raster}{10}{section*.13}
-\contentsline {subsubsection}{Im\IeC {\'a}genes vectoriales}{11}{section*.14}
+\contentsline {subsubsection}{Im\IeC {\'a}genes vectoriales}{10}{section*.14}
 \contentsline {subsubsection}{Figuras ltxfig/psfrag}{11}{section*.15}
 \contentsline {subsubsection}{Figuras pstricks}{11}{section*.16}
-\contentsline {subsubsection}{Entradas en el \IeC {\'\i }ndice de figuras}{12}{section*.17}
+\contentsline {subsubsection}{Entradas en el \IeC {\'\i }ndice de figuras}{11}{section*.17}
 \contentsline {subsection}{\numberline {2.2.4}Referencias bibliogr\IeC {\'a}ficas}{12}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Extensi\IeC {\'o}n}{12}{subsection.2.2.5}
 \contentsline {section}{\numberline {2.3}Sobre esta plantilla \LaTeX }{12}{section.2.3}
