@@ -71,24 +71,54 @@ Sin importar el formato escogido, los siguientes datos deberán poder ser repres
 
 El número positivo más pequeño representable en cada formato es $b^{emin}$, mientras que el más grande es $b^{emax}*(b-b^{1-p})$. Los números diferentes a cero con magnitudes menores a $b^{emin}$ son llamados subnormales, debido a que sus magnitudes caen en valores entre cero y el número normal más pequeño.\\
 
-En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por la Ec.\ref{Ec_esp_norm}  \cite{Tesis_Diego}.\\
+En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por la Ec.\ref{eq:Ec_esp_norm}  \cite{Tesis_Diego}.\\
 
-\begin{equation}\label{Ec_esp_norm}
+\begin{equation}\label{eq:Ec_esp_norm}
 Exponente\_normalizado = Exponente - emin
 \end{equation}
 
+\newpage
+
+\subsection{Formatos de precisión en punto flotante.}
+
+Como se menciona anteriormente, en el estándar IEEE 754 existen varios formatos de representación de números en punto flotante, ya sean binarios, decimales o formatos extendidos.\\
+
+Los formatos de precisión, o almacenamiento, determinan la cantidad de espacio en memoria que un valor en punto flotante necesita en memoria para ser almacenado, y son utilizados para representar un subconjunto definido finito de números reales. Cada formato se diferencia de los demás por la ubicación del punto decimal, la precisión del dato y el rango de su exponente, así como el hecho de que cada uno puede representar solo un determinado conjunto de números en punto flotante\cite{Tesis_Diego}.\\
+
+Los formatos que se desarrollan en este documento tienen una distribución definida de bits, para representar un valor en punto flotante. En la figura \ref{fig:acomodo_bits} se observa el acomodo de los diferentes campos que conforman la representación según el estándar IEEE 754 \cite{IEEE754}.
+
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{acomodo_bits}
+  \caption{Acomodo de bits para la representación binaria de un número en punto flotante utilizando el estándar IEEE 754-2008.}
+  \label{fig:acomodo_bits}
+\end{figure}
+
+
+En este documento solo se tratan dos formatos de precisión binarios, el formato de precisión simple y el de precisión doble, y al igual que los formatos decimales y extendidos, se caracterizan por tener un ancho de palabra definido.\\
+
+Según el patrón de bits presente en la representación binaria de un número en punto flotante, así será su interpretación. En la Tabla \ref{int_patron} se presenta la interpretación de dichos patrones según los valores en los campos de la representación, ya sea para precisión simple o doble\cite{Tesis_Diego}.
 
 
 
+\begin{table}[htb]
+\centering
+\caption{Interpretación de patrones de bits del estándar IEEE 754 para el formato de precisión simple y doble.}
+\label{int_patron}
+\begin{tabular}{c|c|c|}
+\cline{2-3}
+                                                                                                                              & \multicolumn{2}{c|}{Patrón de bits}                                                                                                                                                                                                                                                               \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Tipo de\\  Número\end{tabular}}                                               & Precisión Simple                                                                                                                                & Precisión Doble                                                                                                                                 \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Números \\ Normales\end{tabular}}                                             & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ $00_{h}<$Exponente Normalizado $< ff_{h}$\\ Fracción = Cualquier combinación \\ de bits\end{tabular} & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ $000_{h}<$Exponente Normalizado$<7ff_{h}$\\ Fracción = Cualquier combinación\\  de bits\end{tabular} \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Números \\ Subnormales\end{tabular}}                                          & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1 \\ Exponente Normalizado = $00_{h}$ \\  Fracción $\neq 00000_{h}$\end{tabular}                         & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ Exponente Normalizado = $000_{h}$\\ Fracción $\neq 0000000000000_{h}$\end{tabular}                   \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Caso Especial \\  Cero con Signo\end{tabular}}                                & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1 \\ Exponente Normalizado = $00_{h}$\\ Fracción $= 000000_{h}$\end{tabular}                             & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ Exponente Normalizado = $000_{h}$\\ Fracción $=0000000000000_{h}$\end{tabular}                       \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Caso Especial \\ Infinito Positivo\end{tabular}}                              & \begin{tabular}[c]{@{}c@{}}Signo = 0\\ Exponente Normalizado = $ff_{h}$\\ Fracción $= 00_{h}$\end{tabular}                                      & \begin{tabular}[c]{@{}c@{}}Signo = 0\\ Exponente Normalizado = $7ff_{h}$\\ Fracción $= 0000000000000_{h}$\end{tabular}                          \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Caso Especial\\ Infinito Negativo\end{tabular}}                               & \begin{tabular}[c]{@{}c@{}}Signo = 1\\ Exponente Normalizado = $ff_{h}$\\ Fracción $= 00_{h}$\end{tabular}                                      & \begin{tabular}[c]{@{}c@{}}Signo = 1\\ Exponente Normalizado = $7ff_{h}$\\ Fracción $= 000000000000_{h}$\end{tabular}                           \\ \hline
+\multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}Caso Especial\\  Números no\\  representables \\ (Not a Number)\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ Exponente Normalizado = $ff_{h}$\\  Fracción $\neq 00000_{h}$\end{tabular}                           & \begin{tabular}[c]{@{}c@{}}Signo = 0 ó 1\\ Exponente Normalizado = $7ff_{h}$ \\ Fracción $\neq 000000000000_{h}$\end{tabular}                   \\ \hline
+\end{tabular}
+\end{table}
 
-\subsection{Formato de representación en punto flotante.}
-
-
-
-%Se recomienda revisar las guías de publicación de la \nt{IEEE} en
-%\url{http://www.ieee.org/publications_standards/publications/authors/authors_journals.html},
-%donde puede encontrar cómo hacer referencias bibliográficas correctamente, cómo
-%citar ecuaciones, tablas y figuras, etc.  
 
 
 \section{Algoritmo CORDIC para el cálculo de operaciones trigonométricas.}

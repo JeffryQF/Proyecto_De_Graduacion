@@ -2,4 +2,7 @@
 \backcite {IEEE754_WEB}{{3}{2.1}{section.2.1}}
 \backcite {IEEE754}{{3}{2.1}{section.2.1}}
 \backcite {Tesis_Diego}{{5}{2.1}{table.2.1}}
-\backcite {CORDIC}{{6}{2.2}{section.2.2}}
+\backcite {Tesis_Diego}{{6}{2.1.1}{subsection.2.1.1}}
+\backcite {IEEE754}{{6}{2.1.1}{subsection.2.1.1}}
+\backcite {Tesis_Diego}{{6}{2.1.1}{figure.caption.8}}
+\backcite {CORDIC}{{7}{2.2}{section.2.2}}
