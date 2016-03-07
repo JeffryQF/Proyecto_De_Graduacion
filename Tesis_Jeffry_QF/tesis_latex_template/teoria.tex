@@ -8,7 +8,7 @@ Se presenta además las bases teóricas de la rotación de vectores, fundamento 
 
 \section{Estándar IEEE 754}
 
-El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia\cite{IEEE754_WEB}.\\
+El estándar IEEE 754 especifica formatos y métodos para aritmética en punto flotante en sistemas computacionales, permitiendo obtener el mismo resultado, dado el mismo dato de entrada, sin importar si el proceso es llevado a cabo en hardware, software, o una combinación de ambos \cite{IEEE754}. Para lograr esto, los diseñadores del estándar utilizaron el método de notación científica, permitiendo representar un número factorizándolo en dos partes, la magnitud y la potencia \cite{IEEE754_WEB}.\\
 
 Los formatos de representación de números en punto flotante del estándar, son usados para representar un subconjunto finito de los números reales. Los formatos se caracterizan por: su base (binaria, decimal), precisión (simple, doble, extendida) y por el rango de su exponente, y cada uno puede representar un conjunto único de datos en punto flotante \cite{IEEE754}.\\
 
@@ -37,9 +37,9 @@ El conjunto finito de números en punto flotante representables dentro de un for
 	\item[-]		\textit{emin} = el mínimo exponente.
 \end{itemize}
 
-Donde \textit{emin} = 1 - \textit{emax} para cada uno de los formatos.
+Donde \textit{emin} = 1 - \textit{emax} para cada uno de los formatos.\\
 
-En la tabla \ref{Tabla_Parametros}  se presentan los valores de cada uno de los parámetros para cada uno de los formatos básicos, en el cuál cada formato está identificado por su base y el número de bits de su codificación.\\
+En la Tabla \ref{Tabla_Parametros}  se presentan los valores de cada uno de los parámetros para cada uno de los formatos básicos, en el cuál cada formato está identificado por su base y el número de bits de su codificación.\\
 
 \begin{table}[H]
 \centering
@@ -71,7 +71,7 @@ Sin importar el formato escogido, los siguientes datos deberán poder ser repres
 
 El número positivo más pequeño representable en cada formato es $b^{emin}$, mientras que el más grande es $b^{emax}*(b-b^{1-p})$. Los números diferentes a cero con magnitudes menores a $b^{emin}$ son llamados subnormales, debido a que sus magnitudes caen en valores entre cero y el número normal más pequeño.\\
 
-En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por la Ec.\ref{eq:Ec_esp_norm}  \cite{Tesis_Diego}.\\
+En la notación científica, los números pueden tener exponentes tanto negativos como positivos. En la representación binaria, el exponente debe ser  normalizado para ser utilizado, ya que en un sistema computacional un exponente negativo debería ser almacenado utilizando una representación en complemento a 2, pero para fines de comparación entre valores, la comparación de valores en complemento a 2 es más compleja que comparar valores que no posean signo, por lo que al exponente se le suma un valor de sesgo para normalizar dicho exponente, para ubicarlo dentro de los valores positivos siempre. Este valor de sesgo tiene un valor igual a \textit{emin}, por lo que el valor del exponente normalizado vendría dado por la Ecuación \ref{eq:Ec_esp_norm}  \cite{Tesis_Diego}.\\
 
 \begin{equation}\label{eq:Ec_esp_norm}
 Exponente\_normalizado = Exponente - emin
@@ -83,9 +83,9 @@ Exponente\_normalizado = Exponente - emin
 
 Como se menciona anteriormente, en el estándar IEEE 754 existen varios formatos de representación de números en punto flotante, ya sean binarios, decimales o formatos extendidos.\\
 
-Los formatos de precisión, o almacenamiento, determinan la cantidad de espacio en memoria que un valor en punto flotante necesita en memoria para ser almacenado, y son utilizados para representar un subconjunto definido finito de números reales. Cada formato se diferencia de los demás por la ubicación del punto decimal, la precisión del dato y el rango de su exponente, así como el hecho de que cada uno puede representar solo un determinado conjunto de números en punto flotante\cite{Tesis_Diego}.\\
+Los formatos de precisión, o almacenamiento, determinan la cantidad de espacio en memoria que un valor en punto flotante necesita en memoria para ser almacenado, y son utilizados para representar un subconjunto definido finito de números reales. Cada formato se diferencia de los demás por la ubicación del punto decimal, la precisión del dato y el rango de su exponente, así como el hecho de que cada uno puede representar solo un determinado conjunto de números en punto flotante \cite{Tesis_Diego}.\\
 
-Los formatos que se desarrollan en este documento tienen una distribución definida de bits, para representar un valor en punto flotante. En la figura \ref{fig:acomodo_bits} se observa el acomodo de los diferentes campos que conforman la representación según el estándar IEEE 754 \cite{IEEE754}.
+Los formatos que se desarrollan en este documento tienen una distribución definida de bits, para representar un valor en punto flotante. En la Figura \ref{fig:acomodo_bits} se observa el acomodo de los diferentes campos que conforman la representación según el estándar IEEE 754 \cite{IEEE754}.\\
 
 
 \begin{figure}[htb]
@@ -98,7 +98,7 @@ Los formatos que se desarrollan en este documento tienen una distribución defin
 
 En este documento solo se tratan dos formatos de precisión binarios, el formato de precisión simple y el de precisión doble, y al igual que los formatos decimales y extendidos, se caracterizan por tener un ancho de palabra definido.\\
 
-Según el patrón de bits presente en la representación binaria de un número en punto flotante, así será su interpretación. En la Tabla \ref{int_patron} se presenta la interpretación de dichos patrones según los valores en los campos de la representación, ya sea para precisión simple o doble\cite{Tesis_Diego}.
+Según el patrón de bits presente en la representación binaria de un número en punto flotante, así será su interpretación. En la Tabla \ref{int_patron} se presenta la interpretación de dichos patrones según los valores en los campos de la representación, ya sea para precisión simple o doble \cite{Tesis_Diego}.\\
 
 
 
@@ -120,7 +120,7 @@ Según el patrón de bits presente en la representación binaria de un número e
 \end{table}
 
 
-\subsubsection*{Formato de Precisión Simple.}
+\subsubsection{Formato de Precisión Simple.}
 
 Este formato de precisión tiene un ancho de palabra definido de 32 bits, de los cuales el campo de signo ocupa 1 bit, el bit más significativo de la cadena de bits, y puede tomar dos valores únicamente, 0 que representa a los números positivos, y 1 que representa a los números negativos. El campo de exponente ocupa los 8 bits después del bit de signo, siguiendo la dirección del MSB al LSB, por lo que el exponente puede tomar cualquier valor desde 0 a 255, donde los valores desde 0 a 127 representan los exponentes negativos, y desde 128 a 255 representan los exponentes positivos. Por último, el campo de mantisa ocupa 23 bits.\\
 
@@ -135,7 +135,7 @@ En la Figura \ref{fig:dist_form_sim} se muestra la distribución de bits de cada
 
 La normalización del exponente para este formato se lleva a cabo con un valor de sesgo de 127.\\
 
-\subsubsection*{Formato de Precisión Doble.}
+\subsubsection{Formato de Precisión Doble.}
 
 En el formato de precisión doble se tiene un ancho de palabra definido de 64 bits, de los cuales el campo de signo, al igual que en el formato de precisión simple, ocupa 1 bit, el bit más significativo de la cadena de bits, y puede tomar dos valores únicamente, 0 que representa a los números positivos, y 1 que representa a los números negativos. El campo de exponente ocupa los once bits después del bit de signo, siguiendo la dirección del MSB al LSB.. Por último, el campo de mantisa ocupa 52 bits.\\
 
@@ -148,12 +148,13 @@ En la Figura \ref{fig:dist_form_dob} se muestra la distribución de bits de cada
   \label{fig:dist_form_dob}
 \end{figure}
 
-La normalización del exponente para este formato se lleva a cabo con un valor de sesgo de 1023.
+La normalización del exponente para este formato se lleva a cabo con un valor de sesgo de 1023.\\
 
 \section{Algoritmo CORDIC para el cálculo de operaciones trigonométricas.}
 
-El algoritmo de Computación Digital para Rotación de Coordenadas, CORDIC por sus siglas en inglés (\textbf{CO}ordinate \textbf{R}otation \textbf{D}igital \textbf{C}omputer), fue desarrollado especialmente para usarse en computadoras digitales en tiempo real, donde la mayoría de la computación involucraba la resolución de las relaciones trigonométricas de las ecuaciones de navegación y una alta tasa de exactitud para las relaciones trigonométricas de las transformaciones de coordenadas\cite{CORDIC}.
-Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT).
+El algoritmo de Computación Digital para Rotación de Coordenadas, CORDIC por sus siglas en inglés (\textbf{CO}ordinate \textbf{R}otation \textbf{D}igital \textbf{C}omputer), fue desarrollado especialmente para usarse en computadoras digitales en tiempo real, donde la mayoría de la computación involucraba la resolución de las relaciones trigonométricas de las ecuaciones de navegación y una alta tasa de exactitud para las relaciones trigonométricas de las transformaciones de coordenadas \cite{CORDIC}.\\
+
+Este algoritmo fue  originalmente propuesto por Jack Volder en el año 1959, con el propósito de calcular funciones trigonométricas mediante la rotación de vectores. La rotación de vectores es usada también para realizar la conversión de sistemas coordenados (polar a cartesiano y viceversa), y como parte de funciones matemáticas más complejas como lo son la Transformada Rápida de Fourier (FFT), y la transformada Coseno Discreta (DCT).\\
 
 
 
