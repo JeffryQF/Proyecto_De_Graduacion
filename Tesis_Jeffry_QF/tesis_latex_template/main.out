@@ -8,7 +8,7 @@
 \BOOKMARK [1][-]{section.2.1}{2.1 Est\341ndar IEEE 754}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Formatos de precisi\363n en punto flotante.}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{2.2 Algoritmo CORDIC para el c\341lculo de operaciones trigonom\351tricas.}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Redacci\363n}{section.2.2}% 11
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Fundamento Te\363rico y descripci\363n funcional.}{section.2.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Ecuaciones}{section.2.2}% 12
 \BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Figuras}{section.2.2}% 13
 \BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Referencias bibliogr\341ficas}{section.2.2}% 14
@@ -19,5 +19,5 @@
 \BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 19
 \BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 20
 \BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 21
-\BOOKMARK [0][-]{chapter*.20}{Bibliograf\355a}{}% 22
+\BOOKMARK [0][-]{chapter*.18}{Bibliograf\355a}{}% 22
 \BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 23
