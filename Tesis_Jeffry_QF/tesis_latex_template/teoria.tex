@@ -120,6 +120,19 @@ Según el patrón de bits presente en la representación binaria de un número e
 \end{table}
 
 
+\subsubsection{Formato de Precisión Simple.}
+
+Este formato de precisión tiene un ancho de palabra definido de 32 bits, de los cuales el campo de signo ocupa 1 bit, el bit más significativo de la cadena de bits, y puede tomar dos valores únicamente, 0 que representa a los números positivos, y 1 que representa a los números negativos. El campo de exponente ocupa los 8 bits después del bit de signo, siguiendo la dirección del MSB al LSB, por lo que el exponente puede tomar cualquier valor desde 0 a 255, donde los valores desde 0 a 127 representan los exponentes negativos, y desde 128 a 255 representan los exponentes positivos. Por último, el campo de mantisa ocupa 23 bits.\\
+
+En la Figura \ref{fig:dist_form_sim} se muestra la distribución de bits de cada campo para el formato de precisión simple.
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{dist_form_sim}
+  \caption{Ordenamiento de bits en el formato de Precisión Simple.}
+  \label{fig:dist_form_sim}
+\end{figure}
+
 
 \section{Algoritmo CORDIC para el cálculo de operaciones trigonométricas.}
 
