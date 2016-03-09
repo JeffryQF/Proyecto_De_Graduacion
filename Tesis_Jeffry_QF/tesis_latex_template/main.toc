@@ -6,25 +6,26 @@
 \contentsline {section}{\numberline {1.1}Objetivos y estructura del documento}{2}{section.1.1}
 \contentsline {chapter}{\numberline {2}Marco te\IeC {\'o}rico}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Est\IeC {\'a}ndar IEEE 754}{3}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Formatos de precisi\IeC {\'o}n en punto flotante.}{6}{subsection.2.1.1}
-\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Simple.}{6}{section*.9}
-\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Doble.}{8}{section*.11}
+\contentsline {subsection}{\numberline {2.1.1}Formatos de precisi\IeC {\'o}n en punto flotante.}{5}{subsection.2.1.1}
+\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Simple.}{7}{section*.9}
+\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Doble.}{7}{section*.11}
 \contentsline {section}{\numberline {2.2}Algoritmo CORDIC para el c\IeC {\'a}lculo de operaciones trigonom\IeC {\'e}tricas.}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Fundamento Te\IeC {\'o}rico.}{9}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Ecuaciones}{9}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Figuras}{10}{subsection.2.2.3}
-\contentsline {subsubsection}{Im\IeC {\'a}genes raster}{10}{section*.13}
-\contentsline {subsubsection}{Im\IeC {\'a}genes vectoriales}{10}{section*.14}
-\contentsline {subsubsection}{Figuras ltxfig/psfrag}{11}{section*.15}
-\contentsline {subsubsection}{Figuras pstricks}{11}{section*.16}
-\contentsline {subsubsection}{Entradas en el \IeC {\'\i }ndice de figuras}{11}{section*.17}
-\contentsline {subsection}{\numberline {2.2.4}Referencias bibliogr\IeC {\'a}ficas}{12}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Extensi\IeC {\'o}n}{12}{subsection.2.2.5}
-\contentsline {section}{\numberline {2.3}Sobre esta plantilla \LaTeX }{12}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Marcar asuntos pendientes}{12}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}\IeC {\'I}ndices}{13}{subsection.2.3.2}
-\contentsline {chapter}{\numberline {3}Soluci\IeC {\'o}n propuesta}{15}{chapter.3}
-\contentsline {chapter}{\numberline {4}Resultados y an\IeC {\'a}lisis}{17}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusiones}{19}{chapter.5}
-\contentsline {chapter}{Bibliograf\'{\i }a}{21}{chapter*.18}
-\contentsline {chapter}{\numberline {A}Demostraci\IeC {\'o}n del teorema de Nyquist}{23}{appendix.A}
+\contentsline {subsection}{\numberline {2.2.1}Fundamento Te\IeC {\'o}rico.}{8}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Arquitecturas de implementaci\IeC {\'o}n del algoritmo \textbf {CORDIC}.}{12}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Arquitectura Bit-Paralela Iterativa.}{12}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Ecuaciones}{13}{subsection.2.3.2}
+\contentsline {subsubsection}{Im\IeC {\'a}genes raster}{13}{section*.16}
+\contentsline {subsubsection}{Im\IeC {\'a}genes vectoriales}{13}{section*.17}
+\contentsline {subsubsection}{Figuras ltxfig/psfrag}{14}{section*.18}
+\contentsline {subsubsection}{Figuras pstricks}{14}{section*.19}
+\contentsline {subsubsection}{Entradas en el \IeC {\'\i }ndice de figuras}{14}{section*.20}
+\contentsline {subsection}{\numberline {2.3.3}Referencias bibliogr\IeC {\'a}ficas}{15}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Extensi\IeC {\'o}n}{15}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Sobre esta plantilla \LaTeX }{15}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Marcar asuntos pendientes}{15}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}\IeC {\'I}ndices}{16}{subsection.2.4.2}
+\contentsline {chapter}{\numberline {3}Soluci\IeC {\'o}n propuesta}{17}{chapter.3}
+\contentsline {chapter}{\numberline {4}Resultados y an\IeC {\'a}lisis}{19}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusiones}{21}{chapter.5}
+\contentsline {chapter}{Bibliograf\'{\i }a}{23}{chapter*.21}
+\contentsline {chapter}{\numberline {A}Demostraci\IeC {\'o}n del teorema de Nyquist}{25}{appendix.A}

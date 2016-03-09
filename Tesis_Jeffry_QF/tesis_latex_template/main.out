@@ -9,15 +9,16 @@
 \BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Formatos de precisi\363n en punto flotante.}{section.2.1}% 9
 \BOOKMARK [1][-]{section.2.2}{2.2 Algoritmo CORDIC para el c\341lculo de operaciones trigonom\351tricas.}{chapter.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Fundamento Te\363rico.}{section.2.2}% 11
-\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Ecuaciones}{section.2.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Figuras}{section.2.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Referencias bibliogr\341ficas}{section.2.2}% 14
-\BOOKMARK [2][-]{subsection.2.2.5}{2.2.5 Extensi\363n}{section.2.2}% 15
-\BOOKMARK [1][-]{section.2.3}{2.3 Sobre esta plantilla LaTeX}{chapter.2}% 16
-\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Marcar asuntos pendientes}{section.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 \315ndices}{section.2.3}% 18
-\BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 19
-\BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 20
-\BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 21
-\BOOKMARK [0][-]{chapter*.18}{Bibliograf\355a}{}% 22
-\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 23
+\BOOKMARK [1][-]{section.2.3}{2.3 Arquitecturas de implementaci\363n del algoritmo CORDIC.}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Arquitectura Bit-Paralela Iterativa.}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Ecuaciones}{section.2.3}% 14
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Referencias bibliogr\341ficas}{section.2.3}% 15
+\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Extensi\363n}{section.2.3}% 16
+\BOOKMARK [1][-]{section.2.4}{2.4 Sobre esta plantilla LaTeX}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Marcar asuntos pendientes}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 \315ndices}{section.2.4}% 19
+\BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 20
+\BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 21
+\BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 22
+\BOOKMARK [0][-]{chapter*.21}{Bibliograf\355a}{}% 23
+\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 24

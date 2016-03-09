@@ -3,7 +3,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Acomodo de bits para la representaci\IeC {\'o}n binaria de un n\IeC {\'u}mero en punto flotante utilizando el est\IeC {\'a}ndar IEEE 754-2008.\relax }}{6}{figure.caption.8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Ordenamiento de bits en el formato de Precisi\IeC {\'o}n Simple.\relax }}{7}{figure.caption.10}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Ordenamiento de bits en el formato de Precisi\IeC {\'o}n Doble.\relax }}{8}{figure.caption.12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ordenamiento de bits en el formato de Precisi\IeC {\'o}n Doble.\relax }}{7}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Vector bidimensional antes y despu\IeC {\'e}s de ser rotado.\relax }}{8}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Pseudorotaci\IeC {\'o}n de un vector bidimensional.\relax }}{9}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura Bit-Paralela Iterativa para la implementaci\IeC {\'o}n en hardware del algoritmo \textbf {CORDIC}.\relax }}{13}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
