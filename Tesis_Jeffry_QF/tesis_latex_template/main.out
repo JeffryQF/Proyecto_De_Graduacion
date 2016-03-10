@@ -12,14 +12,9 @@
 \BOOKMARK [1][-]{section.2.3}{2.3 Arquitecturas de implementaci\363n del algoritmo CORDIC.}{chapter.2}% 12
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Arquitectura Bit-Paralela Iterativa.}{section.2.3}% 13
 \BOOKMARK [2][-]{subsection.2.3.2}{2.3.2 Arquitectura Bit-Paralela Desplegada.}{section.2.3}% 14
-\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Ecuaciones}{section.2.3}% 15
-\BOOKMARK [2][-]{subsection.2.3.4}{2.3.4 Referencias bibliogr\341ficas}{section.2.3}% 16
-\BOOKMARK [2][-]{subsection.2.3.5}{2.3.5 Extensi\363n}{section.2.3}% 17
-\BOOKMARK [1][-]{section.2.4}{2.4 Sobre esta plantilla LaTeX}{chapter.2}% 18
-\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Marcar asuntos pendientes}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 \315ndices}{section.2.4}% 20
-\BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 21
-\BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 22
-\BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 23
-\BOOKMARK [0][-]{chapter*.22}{Bibliograf\355a}{}% 24
-\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 25
+\BOOKMARK [2][-]{subsection.2.3.3}{2.3.3 Arquitectura Bit-Serie Iterativa.}{section.2.3}% 15
+\BOOKMARK [0][-]{chapter.3}{3 Soluci\363n propuesta}{}% 16
+\BOOKMARK [0][-]{chapter.4}{4 Resultados y an\341lisis}{}% 17
+\BOOKMARK [0][-]{chapter.5}{5 Conclusiones}{}% 18
+\BOOKMARK [0][-]{chapter*.18}{Bibliograf\355a}{}% 19
+\BOOKMARK [0][-]{appendix.A}{A Demostraci\363n del teorema de Nyquist}{}% 20

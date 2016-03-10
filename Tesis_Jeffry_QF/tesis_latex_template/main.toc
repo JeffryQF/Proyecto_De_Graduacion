@@ -14,19 +14,9 @@
 \contentsline {section}{\numberline {2.3}Arquitecturas de implementaci\IeC {\'o}n del algoritmo \textbf {CORDIC}.}{12}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Arquitectura Bit-Paralela Iterativa.}{12}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Arquitectura Bit-Paralela Desplegada.}{13}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Ecuaciones}{14}{subsection.2.3.3}
-\contentsline {subsubsection}{Im\IeC {\'a}genes raster}{14}{section*.17}
-\contentsline {subsubsection}{Im\IeC {\'a}genes vectoriales}{15}{section*.18}
-\contentsline {subsubsection}{Figuras ltxfig/psfrag}{15}{section*.19}
-\contentsline {subsubsection}{Figuras pstricks}{15}{section*.20}
-\contentsline {subsubsection}{Entradas en el \IeC {\'\i }ndice de figuras}{16}{section*.21}
-\contentsline {subsection}{\numberline {2.3.4}Referencias bibliogr\IeC {\'a}ficas}{16}{subsection.2.3.4}
-\contentsline {subsection}{\numberline {2.3.5}Extensi\IeC {\'o}n}{16}{subsection.2.3.5}
-\contentsline {section}{\numberline {2.4}Sobre esta plantilla \LaTeX }{16}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Marcar asuntos pendientes}{16}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}\IeC {\'I}ndices}{17}{subsection.2.4.2}
-\contentsline {chapter}{\numberline {3}Soluci\IeC {\'o}n propuesta}{19}{chapter.3}
-\contentsline {chapter}{\numberline {4}Resultados y an\IeC {\'a}lisis}{21}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusiones}{23}{chapter.5}
-\contentsline {chapter}{Bibliograf\'{\i }a}{25}{chapter*.22}
-\contentsline {chapter}{\numberline {A}Demostraci\IeC {\'o}n del teorema de Nyquist}{27}{appendix.A}
+\contentsline {subsection}{\numberline {2.3.3}Arquitectura Bit-Serie Iterativa.}{14}{subsection.2.3.3}
+\contentsline {chapter}{\numberline {3}Soluci\IeC {\'o}n propuesta}{17}{chapter.3}
+\contentsline {chapter}{\numberline {4}Resultados y an\IeC {\'a}lisis}{19}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusiones}{21}{chapter.5}
+\contentsline {chapter}{Bibliograf\'{\i }a}{23}{chapter*.18}
+\contentsline {chapter}{\numberline {A}Demostraci\IeC {\'o}n del teorema de Nyquist}{25}{appendix.A}
