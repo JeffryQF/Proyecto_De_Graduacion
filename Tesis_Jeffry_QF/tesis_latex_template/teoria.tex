@@ -342,9 +342,25 @@ Esta arquitectura tiene como ventaja el uso eficiente de hardware, debido a que 
 \subsection{Arquitectura Bit-Paralela Desplegada.}
 
 
-A diferencia de la arquitectura anterior
+Esta arquitectura, en vez de almacenar el resultado de cada iteración en registros y volver a utilizar los mismos recursos, tal como lo hacia la arquitectura anterior, despliega su diseño de manera que se separa en etapas correspondientes a cada iteración. Cada una de las etapas está compuesta por los mismos componentes, las dos unidades de desplazamiento y tres sumadores algebraicos, por lo que las salidas de una etapa corresponden a la entrada de la siguiente, y el diseño se vuelve completamente combinatorio.
+
+El desarrollar el algoritmo CORDIC por medio de esta arquitectura provee dos ventajas: 
+\begin{itemize}
+\item[-]	Las unidades de desplazamiento y las constantes correspondientes a cada iteración pueden ser cableadas.
+\item[-]	Al ser el diseño completamente combinatorio, no se requiere de una maquina de control, lo que simplifica bastante el diseño.
+\end{itemize}
+
+Pero, presenta una gran desventaja, debido a la gran cantidad de recursos de hardware que consume, ya que en este diseño se requiere replicar cada etapa n veces, igual a la cantidad de iteraciones que tomaria en la arquitectura bit-paralela iterativa, para conseguir un resultado similar.
+
+En la Figura \ref{fig:bit_paralela2} se observa el esquema de la arquitectura Bit- Paralela Desplegada, donde se observa que cada componente presente en la arquitectura Bit-Paralela Iterativa, a excepción de los registros y de la \textit{LUT}, que es cambiada por constantes en cada sumador algebraico utilizado en el acumulador algebraico, la variable \textit{z}, se debe repetir \textit{n} veces.
 
 
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bit_paralela2}
+  \caption{Arquitectura Bit-Paralela Desplegada para la implementación en hardware del algoritmo \textbf{CORDIC}.}
+  \label{fig:bit_paralela2}
+\end{figure}
 
 
 
