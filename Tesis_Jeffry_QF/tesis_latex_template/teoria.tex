@@ -362,13 +362,28 @@ En la Figura \ref{fig:bit_paralela2} se observa el esquema de la arquitectura Bi
   \label{fig:bit_paralela2}
 \end{figure}
 
+\subsection{Arquitectura Bit-Serie Iterativa.}
 
 
+En esta arquitectura, se procesa un bit a la vez, con lo que las conexiones se reducen a un bit de ancho. En este diseño, cada etapa del algoritmo está conformada por tres multiplexores, dos registros de desplazamiento y 3 sumadores algebraico bit-serie. Estos sumadores se implementan como un sumador completo, en el que la resta se lleva a cabo sumando el complemento a dos del valor a restar.
 
+El desempeño de esta arquitectura pude ser calculado como
 
+\begin{equation}\label{eq:desem-serie}
+\delta = \dfrac{f}{n \dot{•} W}
+\end{equation}
+,donde \textit{f} es la frecuencia de reloj del sistema, \textit{n} la cantidad de iteraciones a realizar y \textit{W} el ancho de palabra. En la Figura \ref{fig:bit_serie} se observa el esquema de esta arquitectura.
 
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{bit_serie}
+  \caption{Arquitectura Bit-Serie Iterativa para la implementación en hardware del algoritmo \textbf{CORDIC}.}
+  \label{fig:bit_serie}
+\end{figure}
 
+La ventaja que presenta esta arquitectura es que los buses de interconexión son del ancho de un bit y que el registro de desplazamiento está integrado al registro intermedio que se utilizaba en la arquitectura Bit-Paralela Iterativa, lo que minimiza el espacio a la hora de la implementación, en comparación con dicha arquitectura. 
 
+Pero por otro lado presenta dos grandes desventajas. Primero que introduce un retardo proporcional al ancho de palabra en cada etapa, esto ocasionado por los registros de desplazamiento, y segundo, es que esta arquitectura requeriría una maquina de control más compleja que la que se necesita en la arquitectura Bit-Paralela Iterativa.
 
 
 
