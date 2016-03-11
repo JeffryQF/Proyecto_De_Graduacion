@@ -15,8 +15,8 @@
 \contentsline {chapter}{\numberline {2}Marco te\IeC {\'o}rico}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Est\IeC {\'a}ndar IEEE 754}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Formatos de precisi\IeC {\'o}n en punto flotante.}{7}{subsection.2.1.1}
-\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Simple.}{9}{section*.9}
-\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Doble.}{9}{section*.11}
+\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Simple.}{8}{section*.9}
+\contentsline {subsubsection}{Formato de Precisi\IeC {\'o}n Doble.}{8}{section*.11}
 \contentsline {section}{\numberline {2.2}Algoritmo CORDIC para el c\IeC {\'a}lculo de operaciones trigonom\IeC {\'e}tricas.}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Fundamento Te\IeC {\'o}rico.}{10}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Arquitecturas de implementaci\IeC {\'o}n del algoritmo \textbf {CORDIC}.}{14}{section.2.3}

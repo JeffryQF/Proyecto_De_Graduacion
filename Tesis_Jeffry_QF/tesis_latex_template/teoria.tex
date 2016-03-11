@@ -54,7 +54,7 @@ En la Tabla \ref{Tabla_Parametros}  se presentan los valores de cada uno de los 
 \end{tabular}
 \end{table}
 
-Sin importar el formato escogido, los siguientes datos deberán poder ser representados:
+Sin importar el formato escogido, los siguientes datos deberán poder ser representados \cite{IEEE754}:
 
 \begin{itemize}
 	\item[-]	Cualquier número en punto flotante igual o diferente a cero y con signo de la forma:
@@ -159,7 +159,7 @@ El CORDIC es un algoritmo iterativo para rotar vectores a ciertos ángulos deter
 
 \subsection{Fundamento Teórico.}
 
-El algoritmo originalmente propuesto \cite{CORDIC}, describe la rotación de un vector bidimensional en el plano cartesiano, como el mostrado en la Figura \ref{fig:rot_vector}. El funcionamiento del algoritmo se deduce de la formula general de rotación de vectores:
+El algoritmo originalmente propuesto \cite{CORDIC}, describe la rotación de un vector bidimensional en el plano cartesiano, como el mostrado en la Figura \ref{fig:rot_vector}. El funcionamiento del algoritmo se deduce de la formula general de rotación de vectores \cite{scalable_CORDIC}
 
 \begin{equation}\label{eq:ec_rot_vectores}
 \begin{array}{l}
@@ -175,7 +175,7 @@ El algoritmo originalmente propuesto \cite{CORDIC}, describe la rotación de un 
   \label{fig:rot_vector}
 \end{figure}
 
-Sacando a factor común el $cos\theta$ en la Ecuación (\ref{eq:ec_rot_vectores}), asumiendo que $cos\theta \neq 0$, se obtiene
+Sacando a factor común el $cos\theta$ en la Ecuación (\ref{eq:ec_rot_vectores}), asumiendo que $cos\theta \neq 0$, se obtiene \cite{scalable_CORDIC}
 
 \begin{equation}\label{eq:ec_rot_vectores2}
 \begin{array}{l}
@@ -259,7 +259,7 @@ Tomando como punto de partida las Ecuaciones (\ref{eq:ec_rot_vectores2}),sustitu
 \end{array}
 \end{equation}
 
-en donde $K_{i}=\dfrac{1}{\sqrt{1+2^{-2i}}}$ y $d_{i} = \pm 1 $ dependiendo del sentido de rotación.
+en donde $K_{i}=\dfrac{1}{\sqrt{1+2^{-2i}}}$ y $d_{i} = \pm 1 $ dependiendo del sentido de rotación \cite{scalable_CORDIC}.
 
 Esta valor $K_{i}$, debe ser multiplicado por las ecuaciones correspondientes a las pseudorotaciones, para obtener la rotación real, ya que como se menciono anteriormente, las pseudorotaciones aumentan el tamaño del vector, por lo que el valor $K_{i}$ contrarrestaría este efecto.
 
@@ -279,7 +279,7 @@ z_{i+1}=z_{i}-d_{i}arctan(2^{-i})
 
 El algoritmo CORDIC puede trabajar u operar en dos modos, \textit{rotación}(rotation) o \textit{vectorización}(vectoring). En primero rota el vector de entrada un ángulo específico que se introduce como parámetro. El segundo modo rota el vector de entrada hacia el eje \textit{X}, acumulando el ángulo necesario para efectuar dicha rotación.
 
-En el caso del modo de \textit{rotación}, el acumulador angular es inicializado con el ángulo a rotar, y la decisión sobre el sentido de rotación en cada iteración, se realiza para minimizar la magnitud del ángulo acumulado, hasta llegar a cero, con lo que el signo que determina el sentido de rotación, se obtiene del valor del acumulador angular en cada iteración.
+En el caso del modo de \textit{rotación}, el acumulador angular es inicializado con el ángulo a rotar, y la decisión sobre el sentido de rotación en cada iteración, se realiza para minimizar la magnitud del ángulo acumulado, hasta llegar a cero, con lo que el signo que determina el sentido de rotación, se obtiene del valor del acumulador angular en cada iteración \cite{DoubleCordic}.
 
 Para el modo de \textit{rotación}, las ecuaciones iterativas son
 

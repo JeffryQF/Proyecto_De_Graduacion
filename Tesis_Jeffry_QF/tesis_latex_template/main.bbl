@@ -4,6 +4,14 @@
 Ieee standard for floating-point arithmetic.
 \newblock {\em IEEE Std 754-2008}, pages 13--21, Aug 2008.
 
+\bibitem{scalable_CORDIC}
+T.~Adiono and R.~S. Purba.
+\newblock Scalable pipelined cordic architecture design and implementation in
+  fpga.
+\newblock In {\em Electrical Engineering and Informatics, 2009. ICEEI '09.
+  International Conference on}, volume~02, pages 646--649, 2009.
+\newblock ID: 1.
+
 \bibitem{HMM}
 Matthew Butler.
 \newblock Hidden markov model clustering of acoustic data [online].
