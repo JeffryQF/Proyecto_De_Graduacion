@@ -68,15 +68,19 @@ begin
 	#30 $stop;
 end
 
-integer f;
+integer f,i;
 
 initial
 begin
-f=$fopen("output.txt");
+f=$fopen("output.txt","w");
 $timeformat(-9,1,"ns",12);
-$display(f," Time clk rst EN D Q");
-$monitor(f,"%t %b %b %b %b %b", $realtime,clk,rst,enable,D,Q);
-#100
+$display(" 	Time 	clk 	rst	 EN	 D 	Q");
+$monitor("%t %b %b %b %b %b", $realtime,clk,rst,enable,D,Q);
+for(i=0; i<44;i=i+1)
+begin
+@(clk)
+$fwrite(f,"%t %b %b %b %b %b\n", $realtime,clk,rst,enable,D,Q);
+end
 $fclose(f);
 
 end
