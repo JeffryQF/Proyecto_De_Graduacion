@@ -26,7 +26,7 @@ input wire [W-1:0] data,
 input wire [1:0] shift_region_flag,
 input wire operation,
 
-output wire [W-1:0] data_out
+output reg [W-1:0] data_out
 );
 
 always@*
@@ -41,11 +41,11 @@ begin
         begin
             if((shift_region_flag == 2'b01) && (data[W-1] == 1'b0))
             begin
-                data_out = {1'b1,data[w-2:0]};
+                data_out = {1'b1,data[W-2:0]};
             end
             else if((shift_region_flag == 2'b01) && (data[W-1] == 1'b1))
             begin
-                data_out = {1'b0,data[w-2:0]};
+                data_out = {1'b0,data[W-2:0]};
             end
             else
             begin
@@ -63,11 +63,11 @@ begin
         begin
             if((shift_region_flag == 2'b10) && (data[W-1] == 1'b0))
             begin
-                data_out = {1'b1,data[w-2:0]};
+                data_out = {1'b1,data[W-2:0]};
             end
             else if((shift_region_flag == 2'b10) && (data[W-1] == 1'b1))
             begin
-                data_out = {1'b0,data[w-2:0]};
+                data_out = {1'b0,data[W-2:0]};
             end
             else
             begin
