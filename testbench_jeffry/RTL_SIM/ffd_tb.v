@@ -2,17 +2,6 @@
 
 module ffd_tb;
 
-// Declare a clock period constant.
-parameter W = 5;
-// Clock Generation method 1:
-/*initial begin
-forever Clock = #(ClockPeriod / 2) ~ Clock;
-end*/
-// Clock Generation method 2:
-/*initial begin
-always #(ClockPeriod / 2) Clock = ~Clock;
-end*/
-
 
 //declaration of signals
 
