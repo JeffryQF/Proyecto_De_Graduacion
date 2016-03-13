@@ -11,7 +11,7 @@ reg enable; //load signal
 reg [W-1:0] D; //input signal
 wire [W-1:0] Q; //output signal
 
-//Instantiation of the D flip flop desing below
+//Instantiation of the D flip flop
 d_ff_en	#(.W(W)) dut 
 (
 	.clk(clk), 			//system clock
