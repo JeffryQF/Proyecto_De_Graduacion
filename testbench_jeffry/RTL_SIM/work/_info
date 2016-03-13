@@ -52,13 +52,13 @@ R6
 !i113 1
 R7
 vffd_tb
-Z8 !s110 1457899888
+!s110 1457909027
 !i10b 1
-!s100 7Clb>=QLcW>GnMCZN;CEC3
-IhdT8S=i7D1BP]mcSi:FoC0
+!s100 Bm9h0[hHf<J^=8>Blhf9_2
+ICH88Hh1hKl8I6GgzTNmUR2
 R2
 R0
-w1457885713
+w1457909023
 8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/ffd_tb.v
 FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/ffd_tb.v
 L0 3
@@ -66,9 +66,9 @@ R5
 r1
 !s85 0
 31
-Z9 !s108 1457899888.000000
+!s108 1457909027.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/ffd_tb.v|
-!s90 -reportprogress|300|-work|work|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/ffd_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/ffd_tb.v|
 !s101 -O0
 !i113 1
 R7
@@ -139,7 +139,7 @@ R6
 R7
 n@op_@select
 vsign_inverter
-R8
+Z8 !s110 1457899888
 !i10b 1
 !s100 VE`EBVbjEV0[Hof6E[X;l1
 ITGc0z;g2IjN4545>>8j:n2
@@ -174,7 +174,7 @@ R5
 r1
 !s85 0
 31
-R9
+Z9 !s108 1457899888.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Simple_Subt.v|
 !s90 -reportprogress|300|-work|work|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Simple_Subt.v|
 !s101 -O0

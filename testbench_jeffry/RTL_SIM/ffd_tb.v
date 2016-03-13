@@ -4,7 +4,7 @@ module ffd_tb;
 
 
 //declaration of signals
-
+parameter W = 5;
 reg clk; //system clock
 reg rst; //system reset
 reg enable; //load signal
