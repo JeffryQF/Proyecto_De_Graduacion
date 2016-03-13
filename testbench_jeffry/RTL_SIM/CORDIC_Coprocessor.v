@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CORDIC_Coprocessor #(parameter W=32 , E=8, M=23)
+module CORDIC_Coprocessor #(parameter W=32 , parameter E=8, parameter M=23)
 (
 //Input Signals
 input wire clk,                         //	Reloj del sistema.
