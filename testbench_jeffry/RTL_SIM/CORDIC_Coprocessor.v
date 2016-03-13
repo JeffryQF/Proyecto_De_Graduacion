@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CORDIC_Coprocessor #(parameter W=32 , parameter E=8, parameter M=23)
+module CORDIC_Coprocessor #(parameter W=32,parameter E=8,parameter M=23)
 (
 //Input Signals
 input wire clk,                         //	Reloj del sistema.
@@ -54,8 +54,7 @@ generate
 		parameter syn_clr = 1'b0;   			//	
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
 		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
-	end
-	
+	end	
 	else
 	begin
 		parameter x0 = 64'h3fe36e9db5086bc9;	//	x0 = 0.607252935008881, valor inicial de la variable X.
@@ -78,7 +77,7 @@ wire enab_d_ff2_RB2;                                    	// 	Enable de la segund
 wire enab_d_ff3_sh_exp_x, enab_d_ff3_sh_exp_y;          	// 	Enable de los registros que guardan el valor desplazado de X y Y.
 wire enab_d_ff3_LUT;				                 		//	Enable del registro que guarda el valor obtenido de la LUT
 wire enab_d_ff3_sign;										//	Enable del registro que guarda el valor del signo, dependiendo del modo del algoritmo.
-wire enab_d_ff4_Xn, enab_d_ff4_Yn, enab_d_ff4_Yn;       	//	Enable de los registros que guardan los datos provenientes del modulo de suma/resta.
+wire enab_d_ff4_Xn, enab_d_ff4_Yn, enab_d_ff4_Zn;       	//	Enable de los registros que guardan los datos provenientes del modulo de suma/resta.
 wire enab_d_ff5;											//	Enable del registo que guarda el valor de salida antes de pasar por el moduo de cambio de signo.
 wire enab_d_ff5_data_out;									//	Enable del registo que guarda el valor de salida final, listo para enviarse al procesador.
 wire enab_cont_iter, enab_cont_var;                     	//	Enable de los contadores de variable e iteracion
@@ -118,7 +117,7 @@ wire min_tick_var,max_tick_var;                         	//	Señales que indican
 //Primera Etapa
 
 //FF_D para guardar la señal de entrada proveniente del procesador que define si se quiere realizar el calculo de un seno o un coseno.
-d_ff_en	# (.W(1)) d_ff_operation
+d_ff_en	#(.W(1)) d_ff_operation
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -128,7 +127,7 @@ d_ff_en	# (.W(1)) d_ff_operation
 );
 
 //FF_D para guardar el dato de entrada que define si hay un desplazamiento hacia el rango de cálculo del alg. CORDIC.
-d_ff_en	# (.W(2)) d_ff_shift_region_flag
+d_ff_en	#(.W(2)) d_ff_shift_region_flag
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -138,7 +137,7 @@ d_ff_en	# (.W(2)) d_ff_shift_region_flag
 );
 
 //FF_D para guardar el dato de entrada que define el valor inicial de la variable X.
-d_ff_en	# (.W(W)) d_ff1_x
+d_ff_en	#(.W(W)) d_ff1_x
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -148,7 +147,7 @@ d_ff_en	# (.W(W)) d_ff1_x
 );
 
 //FF_D para guardar el dato de entrada que define el valor inicial de la variable Y.
-d_ff_en	# (.W(W)) d_ff1_y
+d_ff_en	#(.W(W)) d_ff1_y
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -158,7 +157,7 @@ d_ff_en	# (.W(W)) d_ff1_y
 );
 
 //FF_D para guardar el dato de entrada que define el valor inicial de la variable Z.
-d_ff_en	# (.W(W)) d_ff1_z
+d_ff_en	#(.W(W)) d_ff1_z
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -198,7 +197,7 @@ Mux_2x1 #(.W(W)) mux_2x1_z
 );
 
 //FF_D para guardar el dato de salida de los mux 2x1 de la variable X.
-d_ff_en	# (.W(W)) d_ff2_x
+d_ff_en	#(.W(W)) d_ff2_x
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -208,7 +207,7 @@ d_ff_en	# (.W(W)) d_ff2_x
 );
 
 //FF_D para guardar el dato de salida de los mux 2x1 de la variable Y.
-d_ff_en	# (.W(W)) d_ff2_y
+d_ff_en	#(.W(W)) d_ff2_y
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -218,7 +217,7 @@ d_ff_en	# (.W(W)) d_ff2_y
 );
 
 //FF_D para guardar el dato de salida de los mux 2x1 de la variable Z.
-d_ff_en	# (.W(W)) d_ff2_z
+d_ff_en	#(.W(W)) d_ff2_z
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -244,7 +243,7 @@ generate
 	if(W==32)
 	begin
 		always @*//LUT de 32 bits
-		begin			
+		begin
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 32'h3f490fdb;
 				 5'b00001: data_out_LUT <= 32'h3eed6338;
@@ -311,14 +310,13 @@ generate
 				 5'b111110: data_out_LUT <= 32'h3c10000000000000;
 				 5'b111111: data_out_LUT <= 32'h3c00000000000000;*/
 				 default:   data_out_LUT <= 32'h00000000;
-		  endcase			
+		  endcase
 		end
-	end
-	
+	end	
 	else
 	begin
 		always @*//LUT de 64 bits
-		begin			
+		begin
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 64'h3fe921fb54442d18;
 				 5'b00001: data_out_LUT <= 64'h3fddac670561bb4f;
@@ -385,7 +383,8 @@ generate
 				 5'b111110: data_out_LUT <= 64'h3c10000000000000;
 				 5'b111111: data_out_LUT <= 64'h3c00000000000000;*/
 				 default:   data_out_LUT <= 64'h0000000000000000;
-		  endcase				
+		  endcase
+		end
 	end
 endgenerate
 
@@ -413,7 +412,8 @@ d_ff_en	#(.W(W)) d_ff3_x_shift
 .rst(rst_cordic),
 .enable(enab_d_ff3_sh_exp_x),
 .D({d_ff2_X[W-1],sh_exp_x,d_ff2_X[M-1:0]}),
-.Q(d_ff3_sh_x_out));
+.Q(d_ff3_sh_x_out)
+);
 
 ////FF_D que guarda el nuevo valor de y en punto flotante despues de realizarse el desplazamiento.
 d_ff_en	#(.W(W)) d_ff3_y_shift
