@@ -200,7 +200,7 @@ always@*
             end
         end
         
-        est7://se puede eliminar
+        est7://se puede eliminar y fusionar con el estado siguiente
         begin
             beg_add_subt = 1'b1;
             state_next = est8;
