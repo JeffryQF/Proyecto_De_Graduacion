@@ -65,11 +65,11 @@ localparam [3:0]    est0 = 4'b0000,
                     est11 = 4'b1011;
 
 //signal declaration
-reg state_reg, state_next;	//	Guardan el estado actual y el estado futuro, respectivamente.
+reg [3:0] state_reg, state_next;	//	Guardan el estado actual y el estado futuro, respectivamente.
 
 //state register
 
-always @(clk, reset)
+always @(posedge clk, reset)
     begin
         if(reset)	// Si hay reset, el estado actual es el estado inicial.
             state_reg <= est0;
@@ -120,7 +120,7 @@ always@*
                 state_next = est2;
                 enab_RB1 = 1'b1;
                 load_cont_iter = 1'b1;
-                load_cont_iter = 1'b1;
+                load_cont_var = 1'b1;
             end
             else
                 state_next = est1;

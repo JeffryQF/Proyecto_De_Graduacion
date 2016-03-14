@@ -109,6 +109,7 @@ end
 initial
 begin
 	//inicializacion de señales
+	#100
 	reset = 0;												
 	beg_FSM_CORDIC = 0;
 	ACK_FSM_CORDIC = 0;
@@ -119,15 +120,28 @@ begin
 	max_tick_iter = 0;
 	min_tick_iter = 0;
 	max_tick_var = 0;
-	min_tick_var = 0;
-	
-	#100
+	min_tick_var = 0;	
 	reset = 1;
 	
 	#10
 	reset = 0;
+	
+	#10
 	beg_FSM_CORDIC = 1;
 	
+	#10
+	beg_FSM_CORDIC = 0;
 	
+	#100
+	ready_add_subt = 1;
 	
+	#10
+	min_tick_iter = 1;
+	
+	#60	
+	ACK_FSM_CORDIC = 1;	
+	
+	#40 $stop;
 end
+
+endmodule
