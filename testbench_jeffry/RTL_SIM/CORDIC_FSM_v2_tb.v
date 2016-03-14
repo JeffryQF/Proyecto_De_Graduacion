@@ -96,7 +96,6 @@ CORDIC_FSM cordic_fsm
 initial
 begin
 	clk = 1;
-	#100
 	forever #5 clk = ~clk;
 end
 
