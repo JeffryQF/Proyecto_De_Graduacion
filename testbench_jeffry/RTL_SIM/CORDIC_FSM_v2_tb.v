@@ -109,38 +109,48 @@ initial
 begin
 	//inicializacion de señales
 	reset = 0;
-	#100												
 	beg_FSM_CORDIC = 0;
 	ACK_FSM_CORDIC = 0;
 	operation = 0;
 	shift_region_flag = 2'b00;
-	cont_var = 2'b00;
+	cont_var = 2'b10;
 	ready_add_subt = 0;
 	max_tick_iter = 0;
 	min_tick_iter = 0;
 	max_tick_var = 0;
-	min_tick_var = 0;	
+	min_tick_var = 0;
+
+	#100
 	reset = 1;
-	
+	operation = 1;
+	shift_region_flag = 2'b01;
+
 	#10
 	reset = 0;
 	
 	#10
 	beg_FSM_CORDIC = 1;
-	
+
 	#10
 	beg_FSM_CORDIC = 0;
 	
-	#95
-	ready_add_subt = 1;
-	
 	#10
+	max_tick_iter = 1;
+
+	#20
 	min_tick_iter = 1;
-	
-	#60	
-	ACK_FSM_CORDIC = 1;	
-	
-	#40 $stop;
+
+	#20
+	ready_add_subt = 1;
+
+	#40
+	ACK_FSM_CORDIC=1;
+	ready_add_subt = 0;
+
+	#10
+	ACK_FSM_CORDIC=0;
+
+	#20 $stop;
 end
 
 endmodule
