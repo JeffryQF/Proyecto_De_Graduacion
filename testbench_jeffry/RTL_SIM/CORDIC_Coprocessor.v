@@ -45,7 +45,7 @@ output reg [W-1:0] add_subt_dataB,      //	Bus de datos hacia el modulo de suma/
 output reg [W-1:0] data_output          //	Bus de datos con el valor final del angulo calculado.
 );
 
-generate
+/*generate
 	if(W==32)
 	begin
 		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
@@ -64,7 +64,7 @@ generate
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
 		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
 	end
-endgenerate
+endgenerate*/
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,7 +127,7 @@ d_ff_en	#(.W(1)) d_ff_operation
 );
 
 //FF_D para guardar el dato de entrada que define si hay un desplazamiento hacia el rango de cálculo del alg. CORDIC.
-d_ff_en	#(.W(2)) d_ff_shift_region_flag
+/*d_ff_en	#(.W(2)) d_ff_shift_region_flag
 (
 .clk(clk),
 .rst(rst_cordic),
@@ -242,7 +242,7 @@ Mux_2x1 #(.W(1)) mux_2x1_signo
 generate
 	if(W==32)
 	begin
-		always @*//LUT de 32 bits
+		always @* //LUT de 32 bits
 		begin
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 32'h3f490fdb;
@@ -308,14 +308,14 @@ generate
 				 5'b111100: data_out_LUT <= 32'h3c30000000000000;
 				 5'b111101: data_out_LUT <= 32'h3c20000000000000;
 				 5'b111110: data_out_LUT <= 32'h3c10000000000000;
-				 5'b111111: data_out_LUT <= 32'h3c00000000000000;*/
+				 5'b111111: data_out_LUT <= 32'h3c00000000000000;
 				 default:   data_out_LUT <= 32'h00000000;
 		  endcase
 		end
 	end	
 	else
 	begin
-		always @*//LUT de 64 bits
+		always @* //LUT de 64 bits
 		begin
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 64'h3fe921fb54442d18;
@@ -381,7 +381,7 @@ generate
 				 5'b111100: data_out_LUT <= 64'h3c30000000000000;
 				 5'b111101: data_out_LUT <= 64'h3c20000000000000;
 				 5'b111110: data_out_LUT <= 64'h3c10000000000000;
-				 5'b111111: data_out_LUT <= 64'h3c00000000000000;*/
+				 5'b111111: data_out_LUT <= 64'h3c00000000000000;
 				 default:   data_out_LUT <= 64'h0000000000000000;
 		  endcase
 		end
@@ -621,6 +621,6 @@ CORDIC_FSM fsm_cordic
 .enab_dff_shifted_y(enab_d_ff3_sh_exp_y),
 .enab_dff_LUT(enab_d_ff3_LUT),
 .enab_dff_sign(enab_d_ff3_sign)
-);
+);*/
 
 endmodule

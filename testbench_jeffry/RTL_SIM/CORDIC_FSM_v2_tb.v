@@ -123,24 +123,27 @@ begin
 	#100
 	reset = 1;
 	operation = 1;
-	shift_region_flag = 2'b01;
+	shift_region_flag = 2'b00;
 
 	#10
 	reset = 0;
 	
 	#10
-	beg_FSM_CORDIC = 1;
+	beg_FSM_CORDIC = 1;//Estado 0
 
 	#10
-	beg_FSM_CORDIC = 0;
+	beg_FSM_CORDIC = 0;//Estado 1
+		
+	#10
+	min_tick_iter = 1;//Estado 2
 	
-	#10
-	max_tick_iter = 1;
+	//#10 Estado 3 
+	//#10 Estado 4
 
-	#20
-	min_tick_iter = 1;
+	/*#20 //Estado 5
+	min_tick_var = 1;*/
 
-	#20
+	#30
 	ready_add_subt = 1;
 
 	#40
