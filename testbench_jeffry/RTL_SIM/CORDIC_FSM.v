@@ -108,7 +108,7 @@ always@*
     enab_dff5 = 1'b0;
     
         case(state_reg)
-        est0:
+        est0://se puede eliminar a menos que el reset se desee hacer desde la maquina de control y no un reset externo
         begin
             state_next = est1;
         end
@@ -134,7 +134,7 @@ always@*
         
         est3:
         begin
-            enab_RB1 = 1'b0;
+            //enab_RB1 = 1'b0;
             enab_RB2 = 1'b1;
             if(max_tick_iter)
                 sel_mux_1 = 1'b0;
@@ -145,9 +145,9 @@ always@*
         
         est4:
         begin
-            enab_RB2 = 1'b1;
-            mode = 1'b0;
-            enab_RB2 = 1'b0;
+            //enab_RB2 = 1'b1;
+            //mode = 1'b0;
+            //enab_RB2 = 1'b0;
             enab_dff_shifted_x = 1'b1;
             enab_dff_shifted_y = 1'b1;
             enab_dff_LUT = 1'b1;
@@ -200,7 +200,7 @@ always@*
             end
         end
         
-        est7:
+        est7://se puede eliminar
         begin
             beg_add_subt = 1'b1;
             state_next = est8;

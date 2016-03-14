@@ -95,7 +95,7 @@ CORDIC_FSM cordic_fsm
 //Generation of the clock
 initial
 begin
-	clk = 0;
+	clk = 1;
 	#100
 	forever #5 clk = ~clk;
 end
@@ -109,8 +109,8 @@ end
 initial
 begin
 	//inicializacion de señales
-	#100
-	reset = 0;												
+	reset = 0;
+	#100												
 	beg_FSM_CORDIC = 0;
 	ACK_FSM_CORDIC = 0;
 	operation = 0;
@@ -132,7 +132,7 @@ begin
 	#10
 	beg_FSM_CORDIC = 0;
 	
-	#100
+	#95
 	ready_add_subt = 1;
 	
 	#10
