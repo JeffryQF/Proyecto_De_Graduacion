@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module CORDIC_FSM
+module CORDIC_FSM_v2
 (
 //Input Signals 
 input wire clk,											//	Reloj del sitema.
