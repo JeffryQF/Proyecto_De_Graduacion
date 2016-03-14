@@ -49,7 +49,7 @@ wire enab_dff_sign;										//	Señales de habilitacion para los registros	que 
 
 //Instantiation of the FSM
 
-CORDIC_FSM cordic_fsm
+CORDIC_FSM_v2 cordic_fsm_v2
 (
 //Input Signals 
 .clk(clk),												//	Reloj del sitema.
