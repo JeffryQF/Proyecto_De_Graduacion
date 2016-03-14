@@ -52,6 +52,28 @@ r1
 !i113 1
 R4
 n@c@o@r@d@i@c_@f@s@m_tb
+vCORDIC_FSM_v2_tb
+!s110 1457973517
+!i10b 1
+!s100 e3]UkSc2gLhUb3oYofJ?F2
+In:dN_oRoF?gg6Rm]1XzHY2
+R1
+R0
+w1457973454
+8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2_tb.v
+FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1457973517.000000
+!s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2_tb.v|
+!s101 -O0
+!i113 1
+R4
+n@c@o@r@d@i@c_@f@s@m_v2_tb
 vd_ff_en
 Z5 !s110 1457913487
 !i10b 1
