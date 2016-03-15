@@ -1,4 +1,4 @@
-﻿`timescale 1ns / 1ps
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -584,7 +584,7 @@ univ_bin_counter #(.N(2)) cont_var
 );
 
 //Maquina de estados que controla los procesos de enable, carga y controla los tiempos en que se activan cada etapa del calculo.
-CORDIC_FSM fsm_cordic
+CORDIC_FSM_v2 fsm_cordic
 (
 .clk(clk),
 .reset(rst_cordic),

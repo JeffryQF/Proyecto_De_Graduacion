@@ -59,10 +59,10 @@ localparam [3:0]    est0 = 4'b0000,
                     est5 = 4'b0101,
                     est6 = 4'b0110,
                     est7 = 4'b0111,
-                    est8 = 4'b1000,
-                    est9 = 4'b1001,
-                    est10 = 4'b1010,
-                    est11 = 4'b1011;
+                    est8 = 4'b1000;
+                    //est9 = 4'b1001,
+                    //est10 = 4'b1010,
+                    //est11 = 4'b1011;
 
 //signal declaration
 reg [3:0] state_reg, state_next;	//	Guardan el estado actual y el estado futuro, respectivamente.

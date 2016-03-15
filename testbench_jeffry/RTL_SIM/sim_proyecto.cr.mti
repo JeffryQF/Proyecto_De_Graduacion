@@ -9,13 +9,6 @@ Top level modules:
 End time: 19:49:54 on Mar 14,2016, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 
-} {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2.v {1 {vlog -work work -stats=none C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module CORDIC_FSM_v2
-
-Top level modules:
-	CORDIC_FSM_v2
-
 } {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/univ_bin_counter.v {1 {vlog -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/univ_bin_counter.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 Start time: 19:49:54 on Mar 14,2016
@@ -100,21 +93,7 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	CORDIC_FSM_v2_tb
 
-} {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v {0 {vlog -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
-Start time: 19:49:55 on Mar 14,2016
-vlog -reportprogress 300 -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v 
-** Error: (vlog-13067) C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v(1.0): Syntax error, unexpected non-printable character with the hex value '0xef'.
-
-** Error: (vlog-13067) C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v(1.1): Syntax error, unexpected non-printable character with the hex value '0xbb'.
-
-** Error: (vlog-13067) C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_Coprocessor.v(1.2): Syntax error, unexpected non-printable character with the hex value '0xbf'.
-
--- Compiling module CORDIC_Coprocessor
-End time: 19:49:55 on Mar 14,2016, Elapsed time: 0:00:00
-Errors: 3, Warnings: 0
-
-} {5.0 6.0 7.0 8.0 9.0 10.0} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Mux_3x1.v {1 {vlog -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Mux_3x1.v
+} {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Mux_3x1.v {1 {vlog -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Mux_3x1.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 Start time: 19:49:53 on Mar 14,2016
 vlog -reportprogress 300 -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/Mux_3x1.v 
