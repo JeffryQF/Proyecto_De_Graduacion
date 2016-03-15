@@ -112,7 +112,7 @@ begin
 	beg_FSM_CORDIC = 0;
 	ACK_FSM_CORDIC = 0;
 	operation = 0;
-	shift_region_flag = 2'b00;
+	shift_region_flag = 2'b10;
 	cont_var = 2'b10;
 	ready_add_subt = 0;
 	max_tick_iter = 0;
@@ -122,8 +122,8 @@ begin
 
 	#100
 	reset = 1;
-	operation = 1;
-	shift_region_flag = 2'b00;
+	operation = 0;
+	shift_region_flag = 2'b01;
 
 	#10
 	reset = 0;
