@@ -72,7 +72,7 @@ begin
 	
 	#100
 	rst = 0;
-	data_in = 32'h42820000;
+	data_in = 32'h3f91361e;
 	shift_region_flag = 2'b00;
 	
 	#10
