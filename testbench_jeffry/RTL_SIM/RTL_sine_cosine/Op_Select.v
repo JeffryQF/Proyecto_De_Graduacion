@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 22.02.2016 10:11:53
+// Create Date: 22.02.2016 00:16:33
 // Design Name: 
-// Module Name: Simple_Subt
+// Module Name: Op_Select
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,14 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Simple_Subt #(parameter W=8) /*#(W=11)*/   //tamño del exponente en 32 y 64 bits respectivamente
+module Op_Select
 (
-input wire [W-1:0] A,
-input wire [4:0] B,
+input wire variable,
+input wire sign,
 
-output wire [W-1:0] Y
+output reg operation
 );
 
-assign Y = A-B;
-
+always @*
+begin
+    operation = ~(variable ^ sign);
+end  
 endmodule
