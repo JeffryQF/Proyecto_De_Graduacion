@@ -69,7 +69,7 @@ reg [3:0] state_reg, state_next;	//	Guardan el estado actual y el estado futuro,
 
 //state register
 
-always @(posedge clk, reset)
+always @( posedge clk, posedge reset)
     begin
         if(reset)	// Si hay reset, el estado actual es el estado inicial.
             state_reg <= est0;
