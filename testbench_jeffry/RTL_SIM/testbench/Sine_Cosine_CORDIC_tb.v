@@ -80,8 +80,6 @@ begin
 	#10
 	beg_fsm_cordic = 1;
 	
-	#10
-	beg_fsm_cordic = 0;
 	
 end
 

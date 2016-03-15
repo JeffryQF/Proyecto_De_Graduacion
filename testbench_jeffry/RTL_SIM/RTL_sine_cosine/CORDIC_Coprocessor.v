@@ -35,26 +35,26 @@ input wire [1:0] shift_region_flag,     //	Señal que indica si el ángulo a cal
 input wire [W-1:0] result_add_subt,     //	Dato de entrada, contiene el resultado del módulo de suma/resta.
 
 //Output Signals
-output reg ready_cordic,                //	Señal de salida que indica que se ha completado el calculo del seno/coseno.
-output reg beg_add_subt,                //	Señal de salida que indica que se debe de iniciar el modulo de suma/resta.
-output reg ack_add_subt,                //	Señal que le indica al modulo de suma/resta que se recibio el resultado de este modulo correctamente.
-output reg op_add_subt,                 //	Señal hacia el módulo de suma/resta que indica si se va a realizar una suma(1'b0) o una resta(1'b1).
+output wire ready_cordic,                //	Señal de salida que indica que se ha completado el calculo del seno/coseno.
+output wire beg_add_subt,                //	Señal de salida que indica que se debe de iniciar el modulo de suma/resta.
+output wire ack_add_subt,                //	Señal que le indica al modulo de suma/resta que se recibio el resultado de este modulo correctamente.
+output wire op_add_subt,                 //	Señal hacia el módulo de suma/resta que indica si se va a realizar una suma(1'b0) o una resta(1'b1).
 
-output reg [W-1:0] add_subt_dataA,      //	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
-output reg [W-1:0] add_subt_dataB,      //	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
-output reg [W-1:0] data_output          //	Bus de datos con el valor final del angulo calculado.
+output wire [W-1:0] add_subt_dataA,      //	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
+output wire [W-1:0] add_subt_dataB,      //	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
+output wire [W-1:0] data_output          //	Bus de datos con el valor final del angulo calculado.
 );
 
-generate
+/*generate
 	if(W==32)
-	begin
+	begin*/
 		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
 		parameter y0 = 32'h00000000; 			//	y0 = 0, valor inicial de la variable Y.
 		parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
 		parameter syn_clr = 1'b0;   			//	
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
-		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
-	end	
+		parameter d_iter = 3'b111;			//	Valor por defecto que se le carga al contador de iteraciones.
+	/*end	
 	else
 	begin
 		parameter x0 = 64'h3fe36e9db5086bc9;	//	x0 = 0.607252935008881, valor inicial de la variable X.
@@ -64,7 +64,7 @@ generate
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
 		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
 	end
-endgenerate
+endgenerate*/
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -98,7 +98,7 @@ wire [W-1:0] first_mux_X, first_mux_Y, first_mux_Z;     	//	Salidas de los mux q
 wire [W-1:0] d_ff2_X, d_ff2_Y, d_ff2_Z;                 	//	Salidas de los registros que guardan los valores provenientes de la primera linea de mux.
 wire sign;                                              	//	Salida del mux que escoge entre el signo de Y o Z, dependiendo del modo, ya sea rotacion o vectorizacion.
 reg [W-1:0] data_out_LUT;									//	Salida del modulo generate que genera la LUT necesaria dependiendo del ancho de palabra.
-wire [4:0] cont_iter_out;                               	//	Salida del contador que cuenta las iteraciones realizadas.
+wire [2:0] cont_iter_out;                               	//	Salida del contador que cuenta las iteraciones realizadas.
 wire [E-1:0] sh_exp_x, sh_exp_y;                        	//	Salidas de los sumadores de punto fijo que realizan los desplazamientos.
 wire [W-1:0] d_ff3_sh_x_out, d_ff3_sh_y_out;            	//	Salida del registro que guarda el valor de X y Y luego de realizar los desplazamientos.
 wire [W-1:0] d_ff3_LUT_out;                             	//	Salida del registro que guarda el valor de la LUT.
@@ -239,21 +239,21 @@ Mux_2x1 #(.W(1)) mux_2x1_signo
 );
 
 // Sintetiza las LUT de 32 o 64 bits, dependiendo del ancho de palabra que se especifica al inicio a la hora de la sintesis.
-generate
+/*generate
 	if(W==32)
-	begin
+	begin*/
 		always @* //LUT de 32 bits
 		begin
 			case (cont_iter_out)
-				 5'b00000: data_out_LUT <= 32'h3f490fdb;
-				 5'b00001: data_out_LUT <= 32'h3eed6338;
-				 5'b00010: data_out_LUT <= 32'h3e7adbb0;
-				 5'b00011: data_out_LUT <= 32'h3dfeadd5;
-				 5'b00100: data_out_LUT <= 32'h3d7faade;
-				 5'b00101: data_out_LUT <= 32'h3cffeaae;
-				 5'b00110: data_out_LUT <= 32'h3c7ffaab;
-				 5'b00111: data_out_LUT <= 32'h3bfffeab;
-				 5'b01000: data_out_LUT <= 32'h3b7fffab;
+				 3'b000: data_out_LUT <= 32'h3f490fdb;
+				 3'b001: data_out_LUT <= 32'h3eed6338;
+				 3'b010: data_out_LUT <= 32'h3e7adbb0;
+				 3'b011: data_out_LUT <= 32'h3dfeadd5;
+				 3'b100: data_out_LUT <= 32'h3d7faade;
+				 3'b101: data_out_LUT <= 32'h3cffeaae;
+				 3'b110: data_out_LUT <= 32'h3c7ffaab;
+				 3'b111: data_out_LUT <= 32'h3bfffeab;
+				/*  5'b01000: data_out_LUT <= 32'h3b7fffab;
 				 5'b01001: data_out_LUT <= 32'h3affffeb;
 				 5'b01010: data_out_LUT <= 32'h3a7ffffb;
 				 5'b01011: data_out_LUT <= 32'h39ffffff;
@@ -312,7 +312,7 @@ generate
 				 default:   data_out_LUT <= 32'h00000000;
 		  endcase
 		end
-	end	
+	/*end	
 	else
 	begin
 		always @* //LUT de 64 bits
@@ -382,11 +382,11 @@ generate
 				 5'b111101: data_out_LUT <= 64'h3c20000000000000;
 				 5'b111110: data_out_LUT <= 64'h3c10000000000000;
 				 5'b111111: data_out_LUT <= 64'h3c00000000000000;
-				 default:   data_out_LUT <= 64'h0000000000000000;*/
+				 default:   data_out_LUT <= 64'h0000000000000000;*
 		  endcase
 		end
 	end
-endgenerate
+endgenerate*/
 
 
 //Modulo de resta en punto fijo que le resta al exponente de x el valor de la iteracion actual, y con esto se realiza el desplazamiento en punto flotante.
@@ -554,7 +554,7 @@ d_ff_en	#(.W(W)) d_ff5_data_out
 //FSM and counters
 
 //Contador que maneja cuantas iteraciones se deben realizar, activa una bandera cuando se alcanza la minima y maxima cuenta.
-univ_bin_counter #(.N(5)) cont_iter
+univ_bin_counter #(.N(3)) cont_iter
 (
 .clk(clk),
 .reset(rst_cordic),

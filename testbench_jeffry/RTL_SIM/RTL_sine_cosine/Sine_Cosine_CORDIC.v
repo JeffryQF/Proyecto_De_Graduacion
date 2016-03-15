@@ -33,11 +33,11 @@ input wire [W-1:0] data_in,             						//	Dato de entrada, contiene el an
 input wire [1:0] shift_region_flag,     						//	Señal que indica si el ángulo a calcular esta fuera del rango de calculo del algoritmo CORDIC.
 
 //Output Signals
-output reg ready_cordic,                						//	Señal de salida que indica que se ha completado el calculo del seno/coseno.
-output reg [W-1:0] data_output,          						//	Bus de datos con el valor final del angulo calculado.
+output wire ready_cordic,                						//	Señal de salida que indica que se ha completado el calculo del seno/coseno.
+output wire [W-1:0] data_output,          						//	Bus de datos con el valor final del angulo calculado.
 
-output reg overflow_flag,										//	Bandera de overflow de la operacion.
-output reg underflow_flag										//	Bandera de underflow de la operacion.
+output wire overflow_flag,										//	Bandera de overflow de la operacion.
+output wire underflow_flag										//	Bandera de underflow de la operacion.
 
 );
 
@@ -52,6 +52,8 @@ wire op_add_subt;												//	Señal hacia el módulo de suma/resta que indica
 wire [W-1:0] result_add_subt;									//	Dato de entrada del modulo CORDIC, contiene el resultado del módulo de suma/resta.
 wire [W-1:0] add_subt_dataA;									//	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
 wire [W-1:0] add_subt_dataB;									//	Bus de datos hacia el modulo de suma/resta con el valor al que se le desea aplicar dicha operacion.
+//wire READY_;
+//wire [W-1:0] data_output;
 
 
 CORDIC_Coprocessor #(.W(W),.E(W_Exp),.M(W_Sgf))		cordic_coprocessor_sin_cos

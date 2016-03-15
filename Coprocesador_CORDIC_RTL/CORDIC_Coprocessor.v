@@ -45,16 +45,16 @@ output reg [W-1:0] add_subt_dataB,      //	Bus de datos hacia el modulo de suma/
 output reg [W-1:0] data_output          //	Bus de datos con el valor final del angulo calculado.
 );
 
-generate
+/*generate
 	if(W==32)
-	begin
-		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
+	begin*/
+		parameter x0 = 32'h3f1b74ee; 	 		//	x0 = 0.607252935008881, valor inicial de la variable X.
 		parameter y0 = 32'h00000000; 			//	y0 = 0, valor inicial de la variable Y.
 		parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
 		parameter syn_clr = 1'b0;   			//	
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
 		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
-	end
+	/*end
 	
 	else
 	begin
@@ -65,7 +65,7 @@ generate
 		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
 		parameter d_iter = 5'b11111;			//	Valor por defecto que se le carga al contador de iteraciones.
 	end
-endgenerate
+endgenerate*/
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -240,9 +240,9 @@ Mux_2x1 #(.W(1)) mux_2x1_signo
 );
 
 // Sintetiza las LUT de 32 o 64 bits, dependiendo del ancho de palabra que se especifica al inicio a la hora de la sintesis.
-generate
+/*generate
 	if(W==32)
-	begin
+	begin*/
 		always @*//LUT de 32 bits
 		begin			
 			case (cont_iter_out)
@@ -313,11 +313,11 @@ generate
 				 default:   data_out_LUT <= 32'h00000000;
 		  endcase			
 		end
-	end
+	/*end
 	
 	else
 	begin
-		always @*//LUT de 64 bits
+		always @* //LUT de 64 bits
 		begin			
 			case (cont_iter_out)
 				 5'b00000: data_out_LUT <= 64'h3fe921fb54442d18;
@@ -383,11 +383,11 @@ generate
 				 5'b111100: data_out_LUT <= 64'h3c30000000000000;
 				 5'b111101: data_out_LUT <= 64'h3c20000000000000;
 				 5'b111110: data_out_LUT <= 64'h3c10000000000000;
-				 5'b111111: data_out_LUT <= 64'h3c00000000000000;*/
+				 5'b111111: data_out_LUT <= 64'h3c00000000000000;
 				 default:   data_out_LUT <= 64'h0000000000000000;
 		  endcase				
 	end
-endgenerate
+endgenerate*/
 
 
 //Modulo de resta en punto fijo que le resta al exponente de x el valor de la iteracion actual, y con esto se realiza el desplazamiento en punto flotante.

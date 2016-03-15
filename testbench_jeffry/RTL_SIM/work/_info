@@ -95,29 +95,29 @@ R6
 R7
 n@comparator_@less
 vCORDIC_Coprocessor
-Z10 !s110 1458065691
+!s110 1458069777
 !i10b 1
-!s100 IK@bPnEEQI`IE`^lcK>So2
-Ii4<`jUDnmgOA5Uz:EDZfL0
+!s100 MD9_2BQd0Y?7a1KdIgWk71
+IAPLfFV2H6f3b^Njl`PF^M2
 R1
 R2
-w1458054503
-8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v
-FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v
+w1458069763
+8C:\Users\Jeffry\Dropbox\Proyecto_De_Graduacion\Proyecto_De_Graduacion_2\Proyecto_De_Graduacion\testbench_jeffry\RTL_SIM\RTL_sine_cosine\CORDIC_Coprocessor.v
+FC:\Users\Jeffry\Dropbox\Proyecto_De_Graduacion\Proyecto_De_Graduacion_2\Proyecto_De_Graduacion\testbench_jeffry\RTL_SIM\RTL_sine_cosine\CORDIC_Coprocessor.v
 R4
 R5
 r1
 !s85 0
 31
-Z11 !s108 1458065691.000000
-!s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v|
+!s108 1458069777.000000
+!s107 C:\Users\Jeffry\Dropbox\Proyecto_De_Graduacion\Proyecto_De_Graduacion_2\Proyecto_De_Graduacion\testbench_jeffry\RTL_SIM\RTL_sine_cosine\CORDIC_Coprocessor.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Jeffry\Dropbox\Proyecto_De_Graduacion\Proyecto_De_Graduacion_2\Proyecto_De_Graduacion\testbench_jeffry\RTL_SIM\RTL_sine_cosine\CORDIC_Coprocessor.v|
 !s101 -O0
 !i113 1
 R7
 n@c@o@r@d@i@c_@coprocessor
 vCORDIC_FSM
-R10
+Z10 !s110 1458065691
 !i10b 1
 !s100 W0VCPco2Ue0UVoXn;EGkH1
 Idcjh62RA<ZX2gEaS_XCP`1
@@ -131,7 +131,7 @@ R5
 r1
 !s85 0
 31
-R11
+Z11 !s108 1458065691.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM.v|
 !s101 -O0
@@ -161,13 +161,13 @@ Z13 !s108 1458065692.000000
 R7
 n@c@o@r@d@i@c_@f@s@m_tb
 vCORDIC_FSM_v2
-R10
+!s110 1458069284
 !i10b 1
-!s100 U20;PT8Xeh8HDfzHNFBk_2
-IO5a3D[NOfJWahR92XeV6L0
+!s100 Iif`oDf>9m^H9`TbQRDL91
+IoIi9Y_?NDc1fU>ZPSe;Y@2
 R1
 R2
-w1458060413
+w1458069273
 8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM_v2.v
 FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM_v2.v
 R4
@@ -175,7 +175,7 @@ R5
 r1
 !s85 0
 31
-R11
+!s108 1458069284.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM_v2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_FSM_v2.v|
 !s101 -O0
@@ -643,13 +643,13 @@ R13
 !i113 1
 R7
 vSimple_Subt
-R12
+!s110 1458070077
 !i10b 1
-!s100 JWkCR>6@B_OdAU[k5@l^h2
-I8[FFKBb]O:<YIVzHi`EV[2
+!s100 B_Ad6RPnU^lBPBZfV`6In2
+IP^Q:h02PlomRVCYBUo3aj2
 R1
 R2
-w1457898299
+w1458070065
 8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Simple_Subt.v
 FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Simple_Subt.v
 R4
@@ -657,7 +657,7 @@ R5
 r1
 !s85 0
 31
-R13
+!s108 1458070077.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Simple_Subt.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Simple_Subt.v|
 !s101 -O0
@@ -665,13 +665,13 @@ R13
 R7
 n@simple_@subt
 vSine_Cosine_CORDIC
-R12
+!s110 1458066657
 !i10b 1
-!s100 04[4EWiGTW:m77gl6^9Po0
-ImjSnzHW0c_Qcc9Sd1cQ3>0
+!s100 9:ZII2Dd@hl<INSE9GmUT0
+IGZJCcBd8`n8=TaoBaK@[e1
 R1
 R2
-R14
+w1458066629
 8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Sine_Cosine_CORDIC.v
 FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Sine_Cosine_CORDIC.v
 R4
@@ -679,7 +679,7 @@ R5
 r1
 !s85 0
 31
-R13
+!s108 1458066657.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Sine_Cosine_CORDIC.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Sine_Cosine_CORDIC.v|
 !s101 -O0
@@ -687,13 +687,13 @@ R13
 R7
 n@sine_@cosine_@c@o@r@d@i@c
 vSine_Cosine_CORDIC_tb
-R0
+!s110 1458067784
 !i10b 1
-!s100 >aAPAO3U2AnFC^bOO:]Id2
-IgeHa;@PD8b]ge=KM[zR_n1
+!s100 N<WWfa76Z7`]ZLnVc`Bz?0
+IPz3a__219n^7:P6:>48Z=0
 R1
 R2
-w1458065622
+w1458067750
 8C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/testbench/Sine_Cosine_CORDIC_tb.v
 FC:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/testbench/Sine_Cosine_CORDIC_tb.v
 L0 3
@@ -701,7 +701,7 @@ R5
 r1
 !s85 0
 31
-R6
+!s108 1458067783.000000
 !s107 C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/testbench/Sine_Cosine_CORDIC_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/testbench/Sine_Cosine_CORDIC_tb.v|
 !s101 -O0

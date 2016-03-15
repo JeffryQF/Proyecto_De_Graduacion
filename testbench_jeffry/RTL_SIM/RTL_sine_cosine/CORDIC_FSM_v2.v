@@ -221,6 +221,7 @@ always@*
         end
         est6:
         begin
+			ack_add_subt = 1'b1;
             if(min_tick_iter)
             begin
                 if(operation == 1'b0)
