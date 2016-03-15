@@ -9,6 +9,13 @@ Top level modules:
 End time: 19:49:54 on Mar 14,2016, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0
 
+} {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2.v {1 {vlog -work work -stats=none C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/CORDIC_FSM_v2.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module CORDIC_FSM_v2
+
+Top level modules:
+	CORDIC_FSM_v2
+
 } {} {}} C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/univ_bin_counter.v {1 {vlog -work work C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/univ_bin_counter.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 Start time: 19:49:54 on Mar 14,2016
