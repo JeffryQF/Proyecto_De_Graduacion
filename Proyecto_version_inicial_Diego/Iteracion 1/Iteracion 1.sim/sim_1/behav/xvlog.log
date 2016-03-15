@@ -1,0 +1,15 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TestBench_32_New.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TestBench_32_New
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TBMULTZERO32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TBMULTZERO32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TB32_ZDetector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB32_ZDetector
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FPU_Add_Subtract_Function
+INFO: [VRFC 10-2458] undeclared symbol load_9, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:146]
+INFO: [VRFC 10-2458] undeclared symbol load_10, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:147]
+INFO: [VRFC 10-2458] undeclared symbol load_11, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:150]
+INFO: [VRFC 10-2458] undeclared symbol load_18, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:158]
+INFO: [VRFC 10-2458] undeclared symbol load_19, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

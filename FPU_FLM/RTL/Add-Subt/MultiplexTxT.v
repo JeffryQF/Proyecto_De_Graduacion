@@ -24,10 +24,10 @@ module MultiplexTxT
     # (parameter W = 8) //Ignore this value, just for reference on the instantiation
     (
     input wire select,
-    input wire [W:0] D0_i,
-    input wire [W:0] D1_i,
-    output reg [W:0] S0_o,
-    output reg [W:0] S1_o
+    input wire [W-1:0] D0_i,
+    input wire [W-1:0] D1_i,
+    output reg [W-1:0] S0_o,
+    output reg [W-1:0] S1_o
     );
     
     always @(select, D0_i, D1_i)

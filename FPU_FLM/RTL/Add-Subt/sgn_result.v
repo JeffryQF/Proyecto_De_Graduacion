@@ -21,7 +21,7 @@
 
 
 module sgn_result(
-    input wire AddSubt_i, //Operation bit
+    input wire Add_Subt_i, //Operation bit
     input wire sgn_X_i, //Sign bit of DATA_X
     input wire sgn_Y_i, //Sign bit of DATA_Y
     input wire gtXY_i, // X > Y flag from Magnitude_comparator
@@ -29,5 +29,5 @@ module sgn_result(
     output wire sgn_result_o 
     );
     
-    assign sgn_result_o = (gtXY_i | ((AddSubt_i | sgn_Y_i) & (~AddSubt_i | ~sgn_Y_i))) & ( sgn_X_i | ~(eqXY_i | gtXY_i));
+    assign sgn_result_o = (gtXY_i | ((Add_Subt_i | sgn_Y_i) & (~Add_Subt_i | ~sgn_Y_i))) & ( sgn_X_i | ~(eqXY_i | gtXY_i));
 endmodule

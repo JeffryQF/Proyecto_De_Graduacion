@@ -20,11 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module xor_tri(
-    input wire A_i,
-    input wire B_i,
-    input wire C_i,
-    output wire Z_o
+module xor_tri
+	# (parameter W = 0)
+	(
+        input wire A_i,
+        input wire B_i,
+        input wire C_i,
+        output wire Z_o
     );
     
     assign Z_o = A_i ^ B_i ^C_i;

@@ -2,11 +2,11 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:44:32 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Thu Mar  3 14:25:28 2016
-# Process ID: 4030
+# Start of session at: Mon Mar 14 10:39:13 2016
+# Process ID: 2576
 # Current directory: /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.runs/synth_1
-# Command line: vivado -log Temporal_op_result_sign.vds -mode batch -messageDb vivado.pb -notrace -source Temporal_op_result_sign.tcl
-# Log file: /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.runs/synth_1/Temporal_op_result_sign.vds
+# Command line: vivado -log FPU_Add_Subtract_Function.vds -mode batch -messageDb vivado.pb -notrace -source FPU_Add_Subtract_Function.tcl
+# Log file: /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.runs/synth_1/FPU_Add_Subtract_Function.vds
 # Journal file: /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source Temporal_op_result_sign.tcl -notrace
+source FPU_Add_Subtract_Function.tcl -notrace

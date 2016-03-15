@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log MultiplexTxT.vds -m64 -mode batch -messageDb vivado.pb -notrace -source MultiplexTxT.tcl
+EAStep vivado -log Barrel_Shifter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Barrel_Shifter.tcl

@@ -6,4 +6,4 @@
 # Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log MultiplexTxT.vds -m64 -mode batch -messageDb vivado.pb -notrace -source MultiplexTxT.tcl
+vivado -log Barrel_Shifter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Barrel_Shifter.tcl

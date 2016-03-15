@@ -1,0 +1,19 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: /opt/Xilinx/Vivado/2015.4/bin/unwrapped/lnx64.o/xelab -wto 36f1cfea73054869b536686a8cc3f809 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot TB32_ZDetector_behav xil_defaultlib.TB32_ZDetector xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <FSM_Add_Subtract> not found while processing module instance <FS_Module> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:123]
+ERROR: [VRFC 10-2063] Module <RegisterAdd> not found while processing module instance <Sel_4_P> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:169]
+ERROR: [VRFC 10-2063] Module <First_Phase> not found while processing module instance <Operands_Classification> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:242]
+ERROR: [VRFC 10-2063] Module <Zero_InfAdd_Unit> not found while processing module instance <Zero_Except_Module> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:261]
+ERROR: [VRFC 10-2063] Module <Second_Phase> not found while processing module instance <Normalization_Smallest_Significand> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:272]
+ERROR: [VRFC 10-2063] Module <Third_Phase> not found while processing module instance <Add_Sub_Significands> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:285]
+ERROR: [VRFC 10-2063] Module <Fourth_Phase> not found while processing module instance <Fourth_Module> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:298]
+ERROR: [VRFC 10-2063] Module <Fifth_Phase> not found while processing module instance <Update_Exponent_First_Time> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:315]
+ERROR: [VRFC 10-2063] Module <Sixth_Phase> not found while processing module instance <First_Und_Ov_Search> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:332]
+ERROR: [VRFC 10-2063] Module <Seventh_Phase> not found while processing module instance <Round_Resultant_Significand> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:342]
+ERROR: [VRFC 10-2063] Module <Eight_N_Phase> not found while processing module instance <Select_Final_Significand> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:354]
+ERROR: [VRFC 10-2063] Module <Eight_NE_Phase> not found while processing module instance <Select_Final_Exponent> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:363]
+ERROR: [VRFC 10-2063] Module <Tenth_Phase> not found while processing module instance <Tenth_Module> [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:374]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.

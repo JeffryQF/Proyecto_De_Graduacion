@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Temporal_op_result_sign.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Temporal_op_result_sign.tcl
+EAStep vivado -log FPU_Add_Subtract_Function.vds -m64 -mode batch -messageDb vivado.pb -notrace -source FPU_Add_Subtract_Function.tcl

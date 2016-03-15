@@ -1,0 +1,30 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.sim/sim_1/synth/func/Testbench_Barrel_Shifter_func_synth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Barrel_Shifter
+INFO: [VRFC 10-311] analyzing module RegisterAdd
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/sim_1/new/Testbench_Barrel_Shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Testbench_Barrel_Shifter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Invert_Sign.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Invert_Sign
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterAdd
+WARNING: [VRFC 10-1195] overwriting previous definition of module RegisterAdd [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux_Array
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/MultiplexTxT.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MultiplexTxT
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Oper_Start_In
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Exp_Operation
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Rotate_Mux_Array.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rotate_Mux_Array
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/sgn_result.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sgn_result
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module shift_mux_array
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Barrel_shifter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Barrel_Shifter
+WARNING: [VRFC 10-1195] overwriting previous definition of module Barrel_Shifter [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Barrel_shifter.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiplexer_AC
