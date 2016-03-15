@@ -4,6 +4,8 @@ module Sine_Cosine_CORDIC_tb;
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+parameter W=32, W_Exp = 8, W_Sgf = 23,  S_Exp = 9;
+
 //declaration of signals
 //Input Signals
 reg clk;                         						//	Reloj del sistema.
@@ -23,8 +25,8 @@ wire overflow_flag;										//	Bandera de overflow de la operacion.
 wire underflow_flag;									//	Bandera de underflow de la operacion.
 
 
-parameter W=32, W_Exp = 8, W_Sgf = 23,  S_Exp = 9;
-integer i;
+
+//integer i;
 
 Sine_Cosine_CORDIC #(.W(W),.W_Exp(W_Exp),.W_Sgf(W_Sgf),.S_Exp(S_Exp)) Sine_Cosine_CORDIC_dut //Single Precision */ # (parameter W = 64, W_Exp = 11, W_Sgf = 52, S_Exp = 12) //-- Double Precision */
 (
@@ -82,3 +84,5 @@ begin
 	beg_fsm_cordic = 0;
 	
 end
+
+endmodule
