@@ -25,7 +25,7 @@ module Exp_Operation
     (
         input wire clk, //system clock
         input wire rst, //reset of the module
-        input wire ctrl_a_i,
+        input wire FSM_Load_i,
         input wire [EW-1:0] Oper0_A_i,
         input wire [EW-1:0] Oper0_B_i,
         input wire [EW-1:0] Oper1_A_i,
@@ -79,7 +79,7 @@ assign Underflow_flag_o = anomaly & FSM_Add_Subt_i;
 RegisterAdd #(.W(EW)) exp_result(
     .clk (clk),
     .rst (rst),
-    .load (ctrl_a_i),
+    .load (FSM_Load_i),
     .D (Data_S),
     .Q (Data_Result_o)
     );

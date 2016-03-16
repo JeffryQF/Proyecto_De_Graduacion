@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1457974479">
-  <File Type="VDS-TIMING-PB" Name="Barrel_Shifter_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Barrel_Shifter_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="Barrel_Shifter.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Barrel_Shifter_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Barrel_Shifter_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Barrel_Shifter_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="Barrel_Shifter.vds"/>
-  <File Type="PA-TCL" Name="Barrel_Shifter.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1458071997">
+  <File Type="VDS-TIMING-PB" Name="Add_Subt_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Add_Subt_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="Add_Subt.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="Add_Subt_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="Add_Subt_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="Add_Subt_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="Add_Subt.vds"/>
+  <File Type="PA-TCL" Name="Add_Subt.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
@@ -104,9 +104,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Full_Adder_PG_1b.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Full_Adder_PG.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Add_Subt.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Barrel_Shifter"/>
+      <Option Name="TopModule" Val="Add_Subt"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

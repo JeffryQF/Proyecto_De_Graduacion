@@ -1,13 +1,13 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Mon Mar 14 10:55:22 2016
+| Date         : Tue Mar 15 14:00:34 2016
 | Host         : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
-| Command      : report_utilization -file Barrel_Shifter_utilization_synth.rpt -pb Barrel_Shifter_utilization_synth.pb
-| Design       : Barrel_Shifter
+| Command      : report_utilization -file Add_Subt_utilization_synth.rpt -pb Add_Subt_utilization_synth.pb
+| Design       : Add_Subt
 | Device       : 7a100tcsg324-1
 | Design State : Synthesized
------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  116 |     0 |     63400 |  0.18 |
-|   LUT as Logic          |  116 |     0 |     63400 |  0.18 |
+| Slice LUTs*             |  129 |     0 |     63400 |  0.20 |
+|   LUT as Logic          |  129 |     0 |     63400 |  0.20 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   26 |     0 |    126800 |  0.02 |
-|   Register as Flip Flop |   26 |     0 |    126800 |  0.02 |
+| Slice Registers         |   78 |     0 |    126800 |  0.06 |
+|   Register as Flip Flop |   78 |     0 |    126800 |  0.06 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -55,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 26    |          Yes |           - |        Reset |
+| 78    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   99 |     0 |       210 | 47.14 |
+| Bonded IOB                  |  189 |     0 |       210 | 90.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -147,13 +147,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |   97 |                 LUT |
-| IBUF     |   73 |                  IO |
-| OBUF     |   26 |                  IO |
-| FDCE     |   26 |        Flop & Latch |
-| LUT5     |   16 |                 LUT |
-| LUT3     |    5 |                 LUT |
-| LUT4     |    2 |                 LUT |
+| IBUF     |  110 |                  IO |
+| OBUF     |   79 |                  IO |
+| FDCE     |   78 |        Flop & Latch |
+| LUT6     |   76 |                 LUT |
+| LUT5     |   41 |                 LUT |
+| LUT2     |   10 |                 LUT |
+| LUT3     |    3 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

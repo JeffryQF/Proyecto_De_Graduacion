@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Barrel_Shifter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Barrel_Shifter.tcl" );
+         "-log Add_Subt.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Add_Subt.tcl" );
 
 
 

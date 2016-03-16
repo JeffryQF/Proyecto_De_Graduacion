@@ -3,29 +3,30 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    14:29:25 08/20/2015 
+// Create Date: 03/15/2016 02:04:39 PM
 // Design Name: 
-// Module Name:    Comparator_Less 
+// Module Name: LZA
 // Project Name: 
 // Target Devices: 
-// Tool versions: 
+// Tool Versions: 
 // Description: 
-//
+// 
 // Dependencies: 
-//
-// Revision: 
+// 
+// Revision:
 // Revision 0.01 - File Created
-// Additional Comments: 
-//
+// Additional Comments:
+// 
 //////////////////////////////////////////////////////////////////////////////////
-module Comparator_Less
-	# (parameter W = 8)
-	(
-		input wire [W-1:0] Data_A,
-		input wire [W-1:0] Data_B,
-		output wire less
-	 );
 
-assign less = (Data_A < Data_B) ? 1'b1 : 1'b0;
 
+module LZA
+	#(parameter SWR=26, parameter EW=8)(
+    input clk,
+    input rst,
+    input FSM_load_i,
+    input [SWR-1:0] P_i,
+    input [SWR-1:0] G_i,
+    output [EW-1:0] Shift_Value_o
+    );
 endmodule

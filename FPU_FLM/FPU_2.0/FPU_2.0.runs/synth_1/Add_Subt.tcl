@@ -27,10 +27,13 @@ read_verilog -library xil_defaultlib {
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Barrel_shifter.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG_1b.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Add_Subt.v
 }
 read_xdc /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc
 set_property used_in_implementation false [get_files /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc]
 
-synth_design -top Barrel_Shifter -part xc7a100tcsg324-1
-write_checkpoint -noxdef Barrel_Shifter.dcp
-catch { report_utilization -file Barrel_Shifter_utilization_synth.rpt -pb Barrel_Shifter_utilization_synth.pb }
+synth_design -top Add_Subt -part xc7a100tcsg324-1
+write_checkpoint -noxdef Add_Subt.dcp
+catch { report_utilization -file Add_Subt_utilization_synth.rpt -pb Add_Subt_utilization_synth.pb }
