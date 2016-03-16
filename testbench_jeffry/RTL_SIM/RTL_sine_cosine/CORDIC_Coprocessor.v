@@ -574,7 +574,7 @@ univ_bin_counter #(.N(2)) cont_var
 .clk(clk),
 .reset(rst_cordic),
 .syn_clr(syn_clr),
-.load(load_con_var),
+.load(load_cont_var),
 .en(enab_cont_var),
 .up(up),
 .d(d_var),
