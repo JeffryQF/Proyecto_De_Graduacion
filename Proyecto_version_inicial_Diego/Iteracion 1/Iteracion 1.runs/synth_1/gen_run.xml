@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1455575753">
-  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
-  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1457973553">
+  <File Type="VDS-TIMING-PB" Name="FPU_Add_Subtract_Function_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FPU_Add_Subtract_Function_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FPU_Add_Subtract_Function.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FPU_Add_Subtract_Function_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FPU_Add_Subtract_Function_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FPU_Add_Subtract_Function_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FPU_Add_Subtract_Function.vds"/>
+  <File Type="PA-TCL" Name="FPU_Add_Subtract_Function.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="PA-TCL" Name="Temporal_op_result_sign.tcl"/>
-  <File Type="RDS-RDS" Name="Temporal_op_result_sign.vds"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Temporal_op_result_sign_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Temporal_op_result_sign_timing_summary_synth.pb"/>
-  <File Type="RDS-DCP" Name="Temporal_op_result_sign.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Temporal_op_result_sign_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Temporal_op_result_sign_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Temporal_op_result_sign_drc_synth.rpt"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../../RTL/Fifth_Phase_M.v">
@@ -366,16 +366,9 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/import_ise_summary.txt"/>
-    <File Path="$PPRDIR/../Diseños_FLM/RTL/Temporal_op_result_sign.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Temporal_op_result_sign"/>
+      <Option Name="TopModule" Val="FPU_Add_Subtract_Function"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

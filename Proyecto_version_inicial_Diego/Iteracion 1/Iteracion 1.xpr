@@ -381,16 +381,9 @@
         </FileInfo>
       </File>
       <File Path="$PPRDIR/import_ise_summary.txt"/>
-      <File Path="$PPRDIR/../Diseños_FLM/RTL/Temporal_op_result_sign.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Temporal_op_result_sign"/>
+        <Option Name="TopModule" Val="FPU_Add_Subtract_Function"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -425,10 +418,28 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_B.txt"/>
+      <File Path="$PPRDIR/../../TXTVerification/ResultadoSumaXilinx.txt"/>
+      <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_A.txt"/>
+      <File Path="$PPRDIR/TB32_ZDetector_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../RTL/FPU_Add_Subtract_Function.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="work.TB32_ZDetector"/>
-        <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="TopModule" Val="TB32_ZDetector"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="SrcSet" Val=""/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/TB32_ZDetector_behav.wcfg"/>
+        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>

@@ -1,0 +1,19 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../FPU_2.0.srcs/sim_1/new/Testbench_Barrel_Shifter.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Invert_Sign.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/RegisterAdd.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Mux_Array.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/MultiplexTxT.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Oper_Start_In.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/exp_operation.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Rotate_Mux_Array.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/sgn_result.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/shift_mux.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Barrel_shifter.v"
+verilog xil_defaultlib  "../../../../RTL/Add-Subt/Multiplexer_AC.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

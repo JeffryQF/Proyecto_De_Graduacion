@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="TB32_ZDetector_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="TB32_ZDetector" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2054745000000fs"></ZoomStartTime>
+      <ZoomEndTime time="2059065000001fs"></ZoomEndTime>
+      <Cursor1Time time="2058345000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="19" />
+   <wave_markers>
+      <marker label="" time="398085000000" />
+      <marker label="" time="444315000000" />
+      <marker label="" time="538785000000" />
+   </wave_markers>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/beg_FSM">
+      <obj_property name="ElementShortName">beg_FSM</obj_property>
+      <obj_property name="ObjectShortName">beg_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/rst_FSM">
+      <obj_property name="ElementShortName">rst_FSM</obj_property>
+      <obj_property name="ObjectShortName">rst_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Data_X">
+      <obj_property name="ElementShortName">Data_X[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_X[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Data_Y">
+      <obj_property name="ElementShortName">Data_Y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Y[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/add_subt">
+      <obj_property name="ElementShortName">add_subt</obj_property>
+      <obj_property name="ObjectShortName">add_subt</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/r_mode">
+      <obj_property name="ElementShortName">r_mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">r_mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/overflow_flag">
+      <obj_property name="ElementShortName">overflow_flag</obj_property>
+      <obj_property name="ObjectShortName">overflow_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/underflow_flag">
+      <obj_property name="ElementShortName">underflow_flag</obj_property>
+      <obj_property name="ObjectShortName">underflow_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/TB32_ZDetector/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/final_result_ieee">
+      <obj_property name="ElementShortName">final_result_ieee[31:0]</obj_property>
+      <obj_property name="ObjectShortName">final_result_ieee[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Array_IN">
+      <obj_property name="ElementShortName">Array_IN[0:1023][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Array_IN[0:1023][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Array_IN_2">
+      <obj_property name="ElementShortName">Array_IN_2[0:1023][31:0]</obj_property>
+      <obj_property name="ObjectShortName">Array_IN_2[0:1023][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/contador">
+      <obj_property name="ElementShortName">contador[31:0]</obj_property>
+      <obj_property name="ObjectShortName">contador[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/FileSaveData">
+      <obj_property name="ElementShortName">FileSaveData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FileSaveData[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Cont_CLK">
+      <obj_property name="ElementShortName">Cont_CLK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Cont_CLK[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/Recept">
+      <obj_property name="ElementShortName">Recept[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Recept[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/TB32_ZDetector/width">
+      <obj_property name="ElementShortName">width[31:0]</obj_property>
+      <obj_property name="ObjectShortName">width[31:0]</obj_property>
+   </wvobject>
+</wave_config>

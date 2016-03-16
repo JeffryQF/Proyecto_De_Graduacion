@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  "../../../../../RTL/TestBench_32_New.v"
+verilog xil_defaultlib  "../../../../../RTL/TBMULTZERO32.v"
+verilog xil_defaultlib  "../../../../../RTL/TB32_ZDetector.v"
+verilog xil_defaultlib  "../../../../../RTL/FPU_Add_Subtract_Function.v"
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
