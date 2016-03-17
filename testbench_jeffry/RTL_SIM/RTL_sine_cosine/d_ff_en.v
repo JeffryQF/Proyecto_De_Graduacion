@@ -29,7 +29,7 @@ input wire [W-1:0] D, //input signal
 output reg [W-1:0] Q //output signal
 );
 
-always @(clk, rst)
+always @(posedge clk,posedge rst)
 begin
     if(rst)
         Q <= 0;

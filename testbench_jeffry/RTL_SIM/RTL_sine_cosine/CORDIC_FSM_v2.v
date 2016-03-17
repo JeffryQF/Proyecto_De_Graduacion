@@ -59,9 +59,9 @@ localparam [3:0]    est0 = 4'b0000,
                     est5 = 4'b0101,
                     est6 = 4'b0110,
                     est7 = 4'b0111,
-                    est8 = 4'b1000;
-                    //est9 = 4'b1001,
-                    //est10 = 4'b1010,
+                    est8 = 4'b1000,
+                    est9 = 4'b1001,
+                    est10 = 4'b1010;
                     //est11 = 4'b1011;
 
 //signal declaration
@@ -88,7 +88,7 @@ always@*
     beg_add_subt = 1'b0;
     ack_add_subt = 1'b0;
     sel_mux_1 = 1'b0;
-    sel_mux_2 = 2'b10;
+    //sel_mux_2 = 2'b10;
     sel_mux_3 = 1'b0;
     mode = 1'b0;
     enab_cont_iter = 1'b0;
@@ -113,41 +113,67 @@ always@*
             if(beg_FSM_CORDIC)
             begin
                 state_next = est1;
-                enab_RB1 = 1'b1;
-                load_cont_iter = 1'b1;
-                load_cont_var = 1'b1;
+				sel_mux_2 = 2'b10;
+				enab_RB1 = 1'b1;
             end
             else
                 state_next = est0;
-        end        
-             
-        est1:
+        end
+		
+		est1:
+        begin
+            enab_RB1 = 1'b1;
+			enab_cont_iter = 1'b1;
+			enab_cont_var = 1'b1;
+            load_cont_iter = 1'b1;
+            load_cont_var = 1'b1;
+			state_next = est2;
+		end
+		
+		est2:
+		begin
+			if((min_tick_var == 1'b1) && (max_tick_iter==1'b0))
+			begin
+				load_cont_var = 1'b1;
+				enab_cont_var = 1'b1;
+			end
+			
+			else if((min_tick_var == 1'b1) && (max_tick_iter==1'b1))
+			begin
+				load_cont_var = 1'b1;
+				enab_cont_var = 1'b1;
+				load_cont_iter = 1'b1;
+				enab_cont_iter = 1'b1;
+			end
+			state_next = est3;
+		end
+		
+        est3:
         begin            
-            enab_RB2 = 1'b1;
-            if(max_tick_iter)
+            if(min_tick_iter)
                 sel_mux_1 = 1'b0;
             else
                 sel_mux_1 = 1'b1;
-            state_next = est2;
+            state_next = est4;
         end
         
-        est2:
+        est4:
         begin
-            enab_dff_shifted_x = 1'b1;
-            enab_dff_shifted_y = 1'b1;
-            enab_dff_LUT = 1'b1;
-            enab_dff_sign = 1'b1;
-			
-            state_next = est3;
+			enab_RB2 = 1'b1;
+            //enab_dff_shifted_x = 1'b1;
+            //enab_dff_shifted_y = 1'b1;
+            //enab_dff_LUT = 1'b1;
+            //enab_dff_sign = 1'b1;			
+            state_next = est5;
         end
         
-        est3:
+        est5:
         begin
             enab_dff_shifted_x = 1'b1;
             enab_dff_shifted_y = 1'b1;
             enab_dff_LUT = 1'b1;
             enab_dff_sign = 1'b1;            
-            if(min_tick_iter)
+            if(max_tick_iter)
             begin
                 if(operation == 1'b0)
                 begin
@@ -172,33 +198,33 @@ always@*
                     else
                         sel_mux_2 = 2'b01;
                 end
-                state_next = est5;
+                state_next = est7;
             end
             else
-                state_next = est4;            
+                state_next = est6;            
         end
         
-        est4:
+        est6:
         begin
             if(min_tick_var)
             begin
                 enab_cont_iter = 1'b1;
-                state_next = est1;
+                state_next = est2;
             end
             
             else
             begin
-                sel_mux_2 = cont_var;
-                state_next = est5;
+                sel_mux_2 = cont_var - 1'b1; //cont_var-1'b1;
+                state_next = est7;
             end
         end
         
-        est5:
+        est7:
         begin
 			beg_add_subt = 1'b1;
             if(ready_add_subt)
             begin
-                if(min_tick_iter)
+                if(max_tick_iter)
                 begin
                     if(operation == 1'b0)
                         enab_d_ff_Xn = 1'b1;
@@ -207,22 +233,23 @@ always@*
                 end
                 else
                 begin
-                    if(max_tick_var)
+                    if(cont_var == 2'b11)
                         enab_d_ff_Xn = 1'b1;
-                    else if(min_tick_var)
+                    else if(cont_var == 2'b01)
                         enab_d_ff_Zn = 1'b1;
                     else
                         enab_d_ff_Yn = 1'b1;
-                end               
-                state_next = est6;
+                end
+                state_next = est8;
+				//ack_add_subt = 1'b1;
             end    
             else
-                state_next = est5;
+                state_next = est7;
         end
-        est6:
+        est8:
         begin
 			ack_add_subt = 1'b1;
-            if(min_tick_iter)
+            if(max_tick_iter)
             begin
                 if(operation == 1'b0)
                 begin
@@ -246,29 +273,29 @@ always@*
                     else
                         sel_mux_3 = 1'b1;
                 end
-                state_next = est7;
+                state_next = est9;
                 enab_dff5 = 1'b1;                  
             end
             else
             begin
                 enab_cont_var = 1'b1;
-                state_next = est4; 
+                state_next = est6; 
             end
         end
         
-        est7:
+        est9:
         begin
             enab_d_ff_out = 1'b1;
-            state_next = est8;
+            state_next = est10;
         end
         
-        est8:
+        est10:
         begin
             ready_CORDIC = 1'b1;
             if(ACK_FSM_CORDIC)
                 state_next = est0;
             else
-                state_next = est8;
+                state_next = est10;
         end
         
         default : state_next = est0;

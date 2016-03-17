@@ -50,10 +50,10 @@ output wire [W-1:0] data_output          //	Bus de datos con el valor final del 
 	begin*/
 		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
 		parameter y0 = 32'h00000000; 			//	y0 = 0, valor inicial de la variable Y.
-		parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
-		parameter syn_clr = 1'b0;   			//	
-		parameter d_var = 2'b10;				//	Valor por defecto que se le carga al contador de variables.
-		parameter d_iter = 3'b111;			//	Valor por defecto que se le carga al contador de iteraciones.
+		//parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
+		//parameter syn_clr = 1'b0;   			//	
+		parameter d_var = 2'b11;				//	Valor por defecto que se le carga al contador de variables.
+		parameter d_iter = 3'b000;			//	Valor por defecto que se le carga al contador de iteraciones.
 	/*end	
 	else
 	begin
@@ -72,7 +72,7 @@ endgenerate*/
 //Signal declaration
 
 //ENABLE
-wire enab_d_ff1_RB1;                                    	// 	Enable de la primera linea de registros.
+wire enab_d_ff_RB1;                                    	// 	Enable de la primera linea de registros.
 wire enab_d_ff2_RB2;                                    	// 	Enable de la segunda linea de registros.
 wire enab_d_ff3_sh_exp_x, enab_d_ff3_sh_exp_y;          	// 	Enable de los registros que guardan el valor desplazado de X y Y.
 wire enab_d_ff3_LUT;				                 		//	Enable del registro que guarda el valor obtenido de la LUT
@@ -81,7 +81,7 @@ wire enab_d_ff4_Xn, enab_d_ff4_Yn, enab_d_ff4_Zn;       	//	Enable de los regist
 wire enab_d_ff5;											//	Enable del registo que guarda el valor de salida antes de pasar por el moduo de cambio de signo.
 wire enab_d_ff5_data_out;									//	Enable del registo que guarda el valor de salida final, listo para enviarse al procesador.
 wire enab_cont_iter, enab_cont_var;                     	//	Enable de los contadores de variable e iteracion
-wire load_con_iter, load_cont_var;                      	//	Señal de carga de un valor en los contadores de variable e iteraciones.
+wire load_cont_iter, load_cont_var;                      	//	Señal de carga de un valor en los contadores de variable e iteraciones.
 
 
 
@@ -452,9 +452,9 @@ d_ff_en	#(.W(1)) d_ff3_sign
 Mux_3x1 #(.W(W)) mux_3x1_var1
 (
 .select(sel_mux_2),
-.ch_0(d_ff2_X),
+.ch_0(d_ff2_Z),
 .ch_1(d_ff2_Y),
-.ch_2(d_ff2_Z),
+.ch_2(d_ff2_X),
 .data_out(add_subt_dataA)
 );
 
@@ -462,9 +462,9 @@ Mux_3x1 #(.W(W)) mux_3x1_var1
 Mux_3x1 #(.W(W)) mux_3x1_var2
 (
 .select(sel_mux_2),
-.ch_0(d_ff3_sh_y_out),
+.ch_0(d_ff3_LUT_out),
 .ch_1(d_ff3_sh_x_out),
-.ch_2(d_ff3_LUT_out),
+.ch_2(d_ff3_sh_y_out),
 .data_out(add_subt_dataB)
 );
 
@@ -554,7 +554,7 @@ d_ff_en	#(.W(W)) d_ff5_data_out
 //FSM and counters
 
 //Contador que maneja cuantas iteraciones se deben realizar, activa una bandera cuando se alcanza la minima y maxima cuenta.
-univ_bin_counter #(.N(3)) cont_iter
+/*univ_bin_counter #(.N(3)) cont_iter
 (
 .clk(clk),
 .reset(rst_cordic),
@@ -566,10 +566,24 @@ univ_bin_counter #(.N(3)) cont_iter
 .max_tick(max_tick_iter),
 .min_tick(min_tick_iter),
 .q(cont_iter_out)
+);*/
+
+counter_d #(.W(3)) cont_iter
+(
+.clk(clk),
+.rst(rst_cordic),
+.load(load_cont_iter),
+.enable(enab_cont_iter),
+.d(d_iter),
+
+.max_tick(max_tick_iter),
+.min_tick(min_tick_iter),
+.q(cont_iter_out)
+
 );
 
 //Contador que maneja cual variable se calcula, activa una bandera cuando se alcanza la minima y maxima cuenta.
-univ_bin_counter #(.N(2)) cont_var
+/*univ_bin_counter #(.N(2)) cont_var
 (
 .clk(clk),
 .reset(rst_cordic),
@@ -581,6 +595,20 @@ univ_bin_counter #(.N(2)) cont_var
 .max_tick(max_tick_var),
 .min_tick(min_tick_var),
 .q(cont_var_out)
+);*/
+
+counter_up #(.W(2)) cont_var
+(
+.clk(clk),
+.rst(rst_cordic),
+.load(load_cont_var),
+.enable(enab_cont_var),
+.d(d_var),
+
+.max_tick(max_tick_var),
+.min_tick(min_tick_var),
+.q(cont_var_out)
+
 );
 
 //Maquina de estados que controla los procesos de enable, carga y controla los tiempos en que se activan cada etapa del calculo.
@@ -607,10 +635,10 @@ CORDIC_FSM_v2 fsm_cordic
 .sel_mux_2(sel_mux_2),
 .mode(mode),
 .enab_cont_iter(enab_cont_iter),
-.load_cont_iter(load_con_iter),
+.load_cont_iter(load_cont_iter),
 .enab_cont_var(enab_cont_var),
 .load_cont_var(load_cont_var),
-.enab_RB1(enab_d_ff1_RB1),
+.enab_RB1(enab_d_ff_RB1),
 .enab_RB2(enab_d_ff2_RB2),
 .enab_d_ff_Xn(enab_d_ff4_Xn),
 .enab_d_ff_Yn(enab_d_ff4_Yn),

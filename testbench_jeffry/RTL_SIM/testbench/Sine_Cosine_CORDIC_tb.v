@@ -77,10 +77,11 @@ begin
 	data_in = 32'h3f91361e;
 	shift_region_flag = 2'b00;
 	
-	#10
+	#5
 	beg_fsm_cordic = 1;
 	
-	
+	#10
+	beg_fsm_cordic = 0;
 end
 
 endmodule
