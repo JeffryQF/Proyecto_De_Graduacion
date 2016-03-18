@@ -165,8 +165,20 @@ begin
 	
 	#25
 	max_tick_var = 0;
-	min_tick_var = 1;
+	min_tick_var = 0;
 	max_tick_iter = 1;
+	
+	#5
+	max_tick_var = 1;
+	
+	#30
+	ready_add_subt = 1;
+	
+	#10
+	ready_add_subt = 0;
+	
+	#40
+	ACK_FSM_CORDIC = 1'b1;
 
 	#100 $stop;
 end

@@ -298,6 +298,7 @@ always@*
 				else
 					sel_mux_3 = 1'b1;
 			end
+			state_next = est11;
 		end
 
 		est11:
