@@ -132,11 +132,14 @@ begin
 	
 	#10
 	beg_FSM_CORDIC = 1;
+	min_tick_iter = 1;
+	min_tick_var = 1;
 	
-	#20
+	#10
 	beg_FSM_CORDIC = 0;
 	
-	#60
+	
+	#55
 	ready_add_subt = 1;
 
 

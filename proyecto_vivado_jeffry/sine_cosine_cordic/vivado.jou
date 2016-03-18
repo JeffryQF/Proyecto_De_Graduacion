@@ -13,3 +13,10 @@ start_gui
 open_project C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/proyecto_vivado_jeffry/sine_cosine_cordic/sine_cosine_cordic.xpr
 launch_simulation
 source CORDIC_FSM_v2_tb.tcl
+restart
+run 500 ns
+relaunch_sim
+restart
+run 500 ns
+relaunch_sim
+relaunch_sim
