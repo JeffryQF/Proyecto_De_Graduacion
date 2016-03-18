@@ -1,7 +1,4 @@
-Running: xsim.dir/CORDIC_FSM_v2_tb_behav/xsimk.exe -simmode gui -wdb CORDIC_FSM_v2_tb_behav.wdb -simrunnum 0 -socket 49486
+Running: xsim.dir/CORDIC_FSM_v2_tb_behav/xsimk.exe -simmode gui -wdb CORDIC_FSM_v2_tb_behav.wdb -simrunnum 0 -socket 49379
 Design successfully loaded
-Design Loading Memory Usage: 17628 KB (Peak: 17628 KB)
-Design Loading CPU Usage: 77 ms
-Simulation completed
-Simulation Memory Usage: 18040 KB (Peak: 18040 KB)
-Simulation CPU Usage: 93 ms
+Design Loading Memory Usage: 17636 KB (Peak: 17636 KB)
+Design Loading CPU Usage: 124 ms
