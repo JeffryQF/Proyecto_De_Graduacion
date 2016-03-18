@@ -141,6 +141,17 @@ begin
 	
 	#55
 	ready_add_subt = 1;
+	
+	#10
+	ready_add_subt = 0;
+	min_tick_var = 0;
+	cont_var = 2'b01;
+	
+	#25
+	ready_add_subt = 1;
+	
+	#20
+	ready_add_subt = 0;
 
 
 
