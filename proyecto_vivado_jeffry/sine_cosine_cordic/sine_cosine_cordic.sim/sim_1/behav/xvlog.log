@@ -71,9 +71,9 @@ INFO: [VRFC 10-2458] undeclared symbol load_18, assumed default net type wire [C
 INFO: [VRFC 10-2458] undeclared symbol load_19, assumed default net type wire [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:160]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module CORDIC_Coprocessor
-WARNING: [VRFC 10-159] /* in comment [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:280]
-WARNING: [VRFC 10-159] /* in comment [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:353]
-INFO: [VRFC 10-2458] undeclared symbol enab_dff5, assumed default net type wire [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:647]
+WARNING: [VRFC 10-159] /* in comment [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:282]
+WARNING: [VRFC 10-159] /* in comment [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:355]
+INFO: [VRFC 10-2458] undeclared symbol enab_dff5, assumed default net type wire [C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/CORDIC_Coprocessor.v:650]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/Sine_Cosine_CORDIC.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Sine_Cosine_CORDIC
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/testbench_jeffry/RTL_SIM/RTL_sine_cosine/univ_bin_counter.v" into library xil_defaultlib

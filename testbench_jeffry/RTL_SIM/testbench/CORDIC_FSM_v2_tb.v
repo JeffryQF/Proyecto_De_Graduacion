@@ -37,7 +37,7 @@ wire enab_RB2;											//	Señales de habilitacion para los registros de varia
 wire enab_d_ff_Xn;
 wire enab_d_ff_Yn;
 wire enab_d_ff_Zn;										//	Señales de habilitacion para los registros que guardan los resultados de cada variable en cada iteracion provenientes del modulo de suma/resta.
-wire enab_dff5;
+
 wire enab_d_ff_out;										//	Señales de habilitacion para los registros en la salida, el primero antes del cambio de signo y el segundo es el que se encuentra en la salida.
 wire enab_dff_shifted_x;
 wire enab_dff_shifted_y;								//	Señales de habilitacion para los registros que guardan el valor de las variables X y Y luego de realizarles los desplazamientos.
@@ -84,7 +84,7 @@ CORDIC_FSM_v2 cordic_fsm_v2
 .enab_d_ff_Xn(enab_d_ff_Xn),
 .enab_d_ff_Yn(enab_d_ff_Yn),
 .enab_d_ff_Zn(enab_d_ff_Zn),							//	Señales de habilitacion para los registros que guardan los resultados de cada variable en cada iteracion provenientes del modulo de suma/resta.
-.enab_dff5(enab_dff5),
+
 .enab_d_ff_out(enab_d_ff_out),							//	Señales de habilitacion para los registros en la salida, el primero antes del cambio de signo y el segundo es el que se encuentra en la salida.
 .enab_dff_shifted_x(enab_dff_shifted_x),
 .enab_dff_shifted_y(enab_dff_shifted_y),				//	Señales de habilitacion para los registros que guardan el valor de las variables X y Y luego de realizarles los desplazamientos.
@@ -127,15 +127,21 @@ begin
 	operation = 0;
 	shift_region_flag = 2'b00;
 	
-	#20
+	#10
+	reset = 0;
+	
+	#10
 	beg_FSM_CORDIC = 1;
 	
-	#80
+	#20
+	beg_FSM_CORDIC = 0;
+	
+	#60
 	ready_add_subt = 1;
 
 
 
-	#20 $stop;
+	#100 $stop;
 end
 
 endmodule
