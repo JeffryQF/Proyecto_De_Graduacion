@@ -150,10 +150,23 @@ begin
 	#25
 	ready_add_subt = 1;
 	
-	#20
+	#30
 	ready_add_subt = 0;
-
-
+	cont_var = 2'b10;
+	max_tick_var = 1;
+	
+	#35
+	ready_add_subt = 1;
+	
+	#10
+	ready_add_subt = 0;
+	min_tick_iter = 0;
+	
+	
+	#25
+	max_tick_var = 0;
+	min_tick_var = 1;
+	max_tick_iter = 1;
 
 	#100 $stop;
 end

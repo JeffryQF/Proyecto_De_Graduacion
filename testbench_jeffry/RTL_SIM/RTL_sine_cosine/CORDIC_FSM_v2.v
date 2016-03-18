@@ -169,18 +169,26 @@ always@*
 			begin
 				if(operation == 1'b0)
 				begin
-					if((shift_region_flag) == (2'b00 || 2'b11))
+					if(shift_region_flag == 2'b00)
 						sel_mux_2 = 2'b00;
-					else
+					else if(shift_region_flag == 2'b01)
 						sel_mux_2 = 2'b01;
+					else if(shift_region_flag == 2'b10)
+						sel_mux_2 = 2'b01;
+					else
+						sel_mux_2 = 2'b00;
 				end
 				
 				else
 				begin
-					if((shift_region_flag) == (2'b00 || 2'b11))
+					if(shift_region_flag == 2'b00)
 						sel_mux_2 = 2'b01;
-					else
+					else if(shift_region_flag == 2'b01)
 						sel_mux_2 = 2'b00;
+					else if(shift_region_flag == 2'b10)
+						sel_mux_2 = 2'b00;
+					else
+						sel_mux_2 = 2'b01;
 				end
 			end
 			
@@ -204,18 +212,26 @@ always@*
 				begin
 					if(operation == 1'b0)
 					begin
-						if((shift_region_flag) == (2'b00 || 2'b11))
+						if(shift_region_flag == 2'b00)
 							enab_d_ff_Xn = 1'b1;
-						else
+						else if(shift_region_flag == 2'b01)
 							enab_d_ff_Yn = 1'b1;
+						else if(shift_region_flag == 2'b10)
+							enab_d_ff_Yn = 1'b1;
+						else
+							enab_d_ff_Xn = 1'b1;
 					end
 					
 					else
 					begin
-						if((shift_region_flag) == (2'b00 || 2'b11))
+						if(shift_region_flag == 2'b00)
 							enab_d_ff_Yn = 1'b1;
-						else
+						else if(shift_region_flag == 2'b01)
 							enab_d_ff_Xn = 1'b1;
+						else if(shift_region_flag == 2'b10)
+							enab_d_ff_Xn = 1'b1;
+						else
+							enab_d_ff_Yn = 1'b1;
 					end
 				end
 				
@@ -261,18 +277,26 @@ always@*
         begin
 			if(operation == 1'b0)
 			begin
-				if((shift_region_flag) == (2'b00 || 2'b11))
+				if(shift_region_flag == 2'b00)
 					sel_mux_3 = 1'b0;
-				else
+				else if(shift_region_flag == 2'b01)
 					sel_mux_3 = 1'b1;
+				else if(shift_region_flag == 2'b10)
+					sel_mux_3 = 1'b1;
+				else
+					sel_mux_3 = 1'b0;
 			end
 			
 			else
 			begin
-				if((shift_region_flag) == (2'b00 || 2'b11))
+				if(shift_region_flag == 2'b00)
 					sel_mux_3 = 1'b1;
-				else
+				else if(shift_region_flag == 2'b01)
 					sel_mux_3 = 1'b0;
+				else if(shift_region_flag == 2'b10)
+					sel_mux_3 = 1'b0;
+				else
+					sel_mux_3 = 1'b1;
 			end
 		end
 
