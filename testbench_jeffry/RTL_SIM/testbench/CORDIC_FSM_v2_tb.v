@@ -20,6 +20,7 @@ reg max_tick_var;
 reg min_tick_var;										//	Señales que indican la maxima y minima cuenta, respectivamente, en el contador de variables.
 
 //Output Signals
+wire reset_reg_cordic;
 wire ready_CORDIC;										//	Señal que indica que el calculo CORDIC se ha terminado.
 wire beg_add_subt;										//	Señal que indica al modulo de suma/resta que inicie su operacion.
 wire ack_add_subt;										//	Señal que le indica al modulo de suma/resta que se ha recibido exitosamente el resultado que este entrega.
@@ -66,6 +67,7 @@ CORDIC_FSM_v2 cordic_fsm_v2
 .min_tick_var(min_tick_var),							//	Señales que indican la maxima y minima cuenta, respectivamente, en el contador de variables.
 
 //Output Signals
+.reset_reg_cordic(reset_reg_cordic),
 .ready_CORDIC(ready_CORDIC),							//	Señal que indica que el calculo CORDIC se ha terminado.
 .beg_add_subt(beg_add_subt),							//	Señal que indica al modulo de suma/resta que inicie su operacion.
 .ack_add_subt(ack_add_subt),							//	Señal que le indica al modulo de suma/resta que se ha recibido exitosamente el resultado que este entrega.
@@ -113,7 +115,7 @@ begin
 	ACK_FSM_CORDIC = 0;
 	operation = 0;
 	shift_region_flag = 2'b10;
-	cont_var = 2'b10;
+	cont_var = 2'b00;
 	ready_add_subt = 0;
 	max_tick_iter = 0;
 	min_tick_iter = 0;
@@ -123,35 +125,15 @@ begin
 	#100
 	reset = 1;
 	operation = 0;
-	shift_region_flag = 2'b01;
-
-	#10
-	reset = 0;
+	shift_region_flag = 2'b00;
 	
-	#10
-	beg_FSM_CORDIC = 1;//Estado 0
-
-	#10
-	beg_FSM_CORDIC = 0;//Estado 1
-		
-	#10
-	min_tick_iter = 1;//Estado 2
+	#20
+	beg_FSM_CORDIC = 1;
 	
-	//#10 Estado 3 
-	//#10 Estado 4
-
-	/*#20 //Estado 5
-	min_tick_var = 1;*/
-
-	#30
+	#80
 	ready_add_subt = 1;
 
-	#40
-	ACK_FSM_CORDIC=1;
-	ready_add_subt = 0;
 
-	#10
-	ACK_FSM_CORDIC=0;
 
 	#20 $stop;
 end
