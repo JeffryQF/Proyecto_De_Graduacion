@@ -91,6 +91,7 @@ always@*
     beg_add_subt = 1'b0;
     ack_add_subt = 1'b0;
     sel_mux_1 = 1'b0;
+    //sel_mux_2 = 2'b10;
     sel_mux_3 = 1'b0;
     mode = 1'b0;
     enab_cont_iter = 1'b0;
@@ -107,189 +108,198 @@ always@*
     enab_dff_shifted_y = 1'b0;
     enab_dff_LUT = 1'b0;
     enab_dff_sign = 1'b0;
-    reset_reg_cordic = 1'b0;
+    enab_dff5 = 1'b0;
     
         case(state_reg)
         est0:
         begin
-			reset_reg_cordic = 1'b1;
-			sel_mux_2 = 2'b00;
-			state_next = est1;
+            if(beg_FSM_CORDIC)
+            begin
+                state_next = est1;
+				sel_mux_2 = 2'b10;
+				enab_RB1 = 1'b1;
+            end
+            else
+                state_next = est0;
         end
-
+		
 		est1:
         begin
-			if(beg_FSM_CORDIC)
-			begin
-				enab_RB1 = 1'b1;
-				state_next = est2;
-			end
-			else
-				state_next = est1;
+            enab_RB1 = 1'b1;
+			enab_cont_iter = 1'b1;
+			enab_cont_var = 1'b1;
+            load_cont_iter = 1'b1;
+            load_cont_var = 1'b1;
+			state_next = est2;
 		end
-
+		
 		est2:
 		begin
-			enab_RB1 = 1'b1;
-			enab_cont_iter = 1'b1;
-			load_cont_iter = 1'b1;
+			if((min_tick_var == 1'b1) && (max_tick_iter==1'b0))
+			begin
+				load_cont_var = 1'b1;
+				enab_cont_var = 1'b1;
+			end
+			
+			else if((min_tick_var == 1'b1) && (max_tick_iter==1'b1))
+			begin
+				load_cont_var = 1'b1;
+				enab_cont_var = 1'b1;
+				load_cont_iter = 1'b1;
+				enab_cont_iter = 1'b1;
+			end
 			state_next = est3;
 		end
-
+		
         est3:
-        begin
+        begin            
             if(min_tick_iter)
-				sel_mux_1 =	1'b0;
-			else
-				sel_mux_1 = 1'b1;
-			state_next = est4;
+                sel_mux_1 = 1'b0;
+            else
+                sel_mux_1 = 1'b1;
+            state_next = est4;
         end
-
+        
         est4:
         begin
 			enab_RB2 = 1'b1;
-			mode = 1'b0;
-			state_next = est5;
+            //enab_dff_shifted_x = 1'b1;
+            //enab_dff_shifted_y = 1'b1;
+            //enab_dff_LUT = 1'b1;
+            //enab_dff_sign = 1'b1;			
+            state_next = est5;
         end
-
+        
         est5:
         begin
-			enab_dff_shifted_x = 1'b1;
-			enab_dff_shifted_y = 1'b1;
-			enab_dff_sign = 1'b1;
-			enab_dff_LUT = 1'b1;
-			enab_cont_var = 1'b1;
-			load_cont_var = 1'b1;
-			state_next = est6;
+            enab_dff_shifted_x = 1'b1;
+            enab_dff_shifted_y = 1'b1;
+            enab_dff_LUT = 1'b1;
+            enab_dff_sign = 1'b1;            
+            if(max_tick_iter)
+            begin
+                if(operation == 1'b0)
+                begin
+					if (shift_region_flag == 2'b00)
+						sel_mux_2 = 2'b10;
+                    else if(shift_region_flag == 2'b01)
+                        sel_mux_2 = 2'b01;
+					else if(shift_region_flag == 2'b10)
+						sel_mux_2 = 2'b01;
+                    else
+                        sel_mux_2 = 2'b10;
+                end
+                
+                else
+                begin
+					if (shift_region_flag == 2'b00)
+						sel_mux_2 = 2'b01;
+                    else if(shift_region_flag == 2'b01)
+                        sel_mux_2 = 2'b10;
+					else if(shift_region_flag == 2'b10)
+						sel_mux_2 = 2'b10;
+                    else
+                        sel_mux_2 = 2'b01;
+                end
+                state_next = est7;
+            end
+            else
+                state_next = est6;            
         end
-
+        
         est6:
         begin
-			if(max_tick_iter)
-			begin
-				if(operation == 1'b0)
-				begin
-					if((shift_region_flag) == (2'b00 || 2'b11))
-						sel_mux_2 = 2'b00;
-					else
-						sel_mux_2 = 2'b01;
-				end
-				
-				else
-				begin
-					if((shift_region_flag) == (2'b00 || 2'b11))
-						sel_mux_2 = 2'b01;
-					else
-						sel_mux_2 = 2'b00;
-				end
-			end
-			
-			else
-				sel_mux_2 = cont_var;
-				
-			state_next = est7;		
+            if(min_tick_var)
+            begin
+                enab_cont_iter = 1'b1;
+                state_next = est2;
+            end
+            
+            else
+            begin
+                sel_mux_2 = cont_var - 1'b1; //cont_var-1'b1;
+                state_next = est7;
+            end
         end
-
+        
         est7:
         begin
 			beg_add_subt = 1'b1;
-			state_next = est8;
+            if(ready_add_subt)
+            begin
+                if(max_tick_iter)
+                begin
+                    if(operation == 1'b0)
+                        enab_d_ff_Xn = 1'b1;
+                    else
+                        enab_d_ff_Yn = 1'b1;
+                end
+                else
+                begin
+                    if(cont_var == 2'b11)
+                        enab_d_ff_Xn = 1'b1;
+                    else if(cont_var == 2'b01)
+                        enab_d_ff_Zn = 1'b1;
+                    else
+                        enab_d_ff_Yn = 1'b1;
+                end
+                state_next = est8;
+				//ack_add_subt = 1'b1;
+            end    
+            else
+                state_next = est7;
         end
-
         est8:
         begin
-			if(ready_add_subt)
-			begin
-				if(max_tick_iter)
-				begin
-					if(operation == 1'b0)
-					begin
-						if((shift_region_flag) == (2'b00 || 2'b11))
-							enab_d_ff_Xn = 1'b1;
-						else
-							enab_d_ff_Yn = 1'b1;
-					end
-					
-					else
-					begin
-						if((shift_region_flag) == (2'b00 || 2'b11))
-							enab_d_ff_Yn = 1'b1;
-						else
-							enab_d_ff_Xn = 1'b1;
-					end
-				end
-				
-				else
-				begin
-					if(min_tick_var)
-						enab_d_ff_Xn = 1'b1;
-					else if(max_tick_var)
-						enab_d_ff_Zn = 1'b1;
-					else
-						enab_d_ff_Yn = 1'b1;
-				end
-				state_next = est9;
-			end
-			
-			else
-			state_next = est8;
+			ack_add_subt = 1'b1;
+            if(max_tick_iter)
+            begin
+                if(operation == 1'b0)
+                begin
+					if(shift_region_flag == 2'b00)
+						sel_mux_3 = 1'b0;
+                    else if(shift_region_flag == 2'b01 )
+                        sel_mux_3 = 1'b1;
+					else if(shift_region_flag == 2'b10 )
+                        sel_mux_3 = 1'b1;
+                    else
+                        sel_mux_3 = 1'b0;
+                end
+                else
+                begin
+					if(shift_region_flag == 2'b00)
+						sel_mux_3 = 1'b1;
+                    else if(shift_region_flag == 2'b01 )
+                        sel_mux_3 = 1'b0;
+					else if(shift_region_flag == 2'b10 )
+                        sel_mux_3 = 1'b0;
+                    else
+                        sel_mux_3 = 1'b1;
+                end
+                state_next = est9;
+                enab_dff5 = 1'b1;                  
+            end
+            else
+            begin
+                enab_cont_var = 1'b1;
+                state_next = est6; 
+            end
         end
-
+         
         est9:
         begin
-			ack_add_subt = 1'b1;
-			if(max_tick_iter)
-				state_next = est10;
-
-			else
-			begin
-				if(max_tick_var)
-				begin
-					enab_cont_iter = 1'b1;
-					state_next = est3;
-				end
-				
-				else
-				begin
-					enab_cont_var = 1'b1;
-					state_next = est6;
-				end
-			end
+            enab_d_ff_out = 1'b1;
+            state_next = est10;
         end
-
+        
         est10:
         begin
-			if(operation == 1'b0)
-			begin
-				if((shift_region_flag) == (2'b00 || 2'b11))
-					sel_mux_3 = 1'b0;
-				else
-					sel_mux_3 = 1'b1;
-			end
-			
-			else
-			begin
-				if((shift_region_flag) == (2'b00 || 2'b11))
-					sel_mux_3 = 1'b1;
-				else
-					sel_mux_3 = 1'b0;
-			end
-		end
-
-		est11:
-		begin
-			enab_d_ff_out = 1'b1;
-			state_next = est12;
-		end
-
-		est12:
-		begin
-			ready_CORDIC = 1'b1;
-			if(ACK_FSM_CORDIC)
-				state_next = est0;
-			else
-				state_next = est12;
-		end
+            ready_CORDIC = 1'b1;
+            if(ACK_FSM_CORDIC)
+                state_next = est0;
+            else
+                state_next = est10;
+        end
         
         default : state_next = est0;
         endcase
