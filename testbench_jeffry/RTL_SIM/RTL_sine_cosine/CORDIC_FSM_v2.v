@@ -46,7 +46,7 @@ output reg enab_cont_iter, load_cont_iter,				//	Señales de habilitacion y carg
 output reg enab_cont_var,  load_cont_var,				//	Señales de habilitacion y carga, respectivamente, en el contador de variables.
 output reg enab_RB1, enab_RB2,							//	Señales de habilitacion para los registros de variables de entrada y para los valores de las variables despues de los primeros mux, respectivamente.
 output reg enab_d_ff_Xn, enab_d_ff_Yn, enab_d_ff_Zn,	//	Señales de habilitacion para los registros que guardan los resultados de cada variable en cada iteracion provenientes del modulo de suma/resta.
-output reg enab_d_ff_out,					//	Señales de habilitacion para los registros en la salida, el primero antes del cambio de signo y el segundo es el que se encuentra en la salida.
+output reg enab_d_ff_out,enab_dff_5,					//	Señales de habilitacion para los registros en la salida, el primero antes del cambio de signo y el segundo es el que se encuentra en la salida.
 output reg enab_dff_shifted_x, enab_dff_shifted_y,		//	Señales de habilitacion para los registros que guardan el valor de las variables X y Y luego de realizarles los desplazamientos.
 output reg enab_dff_LUT, enab_dff_sign					//	Señales de habilitacion para los registros	que guardan los valores provenientes de la look-up table y del signo, respectivamente.
 );
@@ -57,14 +57,15 @@ localparam [3:0]    est0 = 4'b0000,
                     est2 = 4'b0010,
                     est3 = 4'b0011,
                     est4 = 4'b0100,
-                    est5 = 4'b0101,
+                    est5 = 4'b0101, 
                     est6 = 4'b0110,
                     est7 = 4'b0111,
                     est8 = 4'b1000,
                     est9 = 4'b1001,
                     est10 = 4'b1010,
                     est11 = 4'b1011,
-					est12 = 4'b1100;
+					est12 = 4'b1100,
+					est13 = 4'b1101;
 					
 
 //signal declaration
@@ -90,8 +91,8 @@ always@*
     ready_CORDIC = 1'b0;
     beg_add_subt = 1'b0;
     ack_add_subt = 1'b0;
-    sel_mux_1 = 1'b0;
-    sel_mux_3 = 1'b0;
+    //sel_mux_1 = 1'b0;
+    //sel_mux_3 = 1'b0;
     mode = 1'b0;
     enab_cont_iter = 1'b0;
     load_cont_iter = 1'b0;
@@ -108,6 +109,7 @@ always@*
     enab_dff_LUT = 1'b0;
     enab_dff_sign = 1'b0;
     reset_reg_cordic = 1'b0;
+    enab_dff_5 = 1'b0;
     
         case(state_reg)
         est0:
@@ -303,17 +305,23 @@ always@*
 
 		est11:
 		begin
-			enab_d_ff_out = 1'b1;
+			enab_dff_5 = 1'b1;
 			state_next = est12;
 		end
-
+		
 		est12:
+		begin
+			enab_d_ff_out = 1'b1;
+			state_next = est13;
+		end
+
+		est13:
 		begin
 			ready_CORDIC = 1'b1;
 			if(ACK_FSM_CORDIC)
 				state_next = est0;
 			else
-				state_next = est12;
+				state_next = est13;
 		end
         
         default : state_next = est0;

@@ -84,4 +84,20 @@ begin
 	beg_fsm_cordic = 0;
 end
 
+integer f,i;
+
+initial
+begin
+f=$fopen("Primera_prueba_1_dato.txt","w");
+$timeformat(-9,1,"ns",12);
+
+for(i=0; i<2;i=i+1)
+begin
+@(ready_cordic)
+$fwrite(f,"%t %h\n", $realtime, data_output);
+end
+$fclose(f);
+
+end
+
 endmodule

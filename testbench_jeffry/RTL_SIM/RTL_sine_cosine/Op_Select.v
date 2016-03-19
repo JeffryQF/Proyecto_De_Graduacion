@@ -30,6 +30,6 @@ output reg operation
 
 always @*
 begin
-    operation = (variable ^ sign);
+    operation = ~(variable ^ sign);
 end  
 endmodule

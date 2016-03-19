@@ -16,7 +16,7 @@ output wire [W-1:0] q
 
 
 
-reg [W-1:0] count, data_max;
+reg [W-1:0] count;
 
 
 always @(posedge clk, posedge rst)
@@ -28,15 +28,14 @@ begin
 		if (load)
 		begin
 			count <= d;
-			data_max <= d;
 		end
 		else
-			count <= count - 1'b1;
+			count <= count + 1'b1;
 	end
 end
 
 assign q = count;
-assign max_tick = (count == data_max) ? 1'b1 : 1'b0;
+assign max_tick = (count == 2'b10) ? 1'b1 : 1'b0;
 assign min_tick = (count == 0) ? 1'b1 : 1'b0;
 
 endmodule

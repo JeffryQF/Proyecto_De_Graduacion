@@ -20,10 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Simple_Subt #(parameter W=8) /*#(W=11)*/   //tamño del exponente en 32 y 64 bits respectivamente
+module Simple_Subt #(parameter W=8) /*#(W=11)*/   //tamï¿½o del exponente en 32 y 64 bits respectivamente
 (
 input wire [W-1:0] A,
-input wire [2:0] B,
+input wire [3:0] B,
 
 output wire [W-1:0] Y
 );

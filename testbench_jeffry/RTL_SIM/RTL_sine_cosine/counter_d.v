@@ -35,7 +35,7 @@ begin
 end
 
 assign q = count;
-assign max_tick = (count == (2**W)-1) ? 1'b1 : 1'b0;
+assign max_tick = (count == 4'b1111) ? 1'b1 : 1'b0;
 assign min_tick = (count == 0) ? 1'b1 : 1'b0;
 
 endmodule

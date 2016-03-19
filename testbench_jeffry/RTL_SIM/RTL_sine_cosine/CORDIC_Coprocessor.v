@@ -48,12 +48,14 @@ output wire [W-1:0] data_output          //	Bus de datos con el valor final del 
 /*generate
 	if(W==32)
 	begin*/
-		parameter x0 = 32'h3f1b74ee; 			//	x0 = 0.607252935008881, valor inicial de la variable X.
-		parameter y0 = 32'h00000000; 			//	y0 = 0, valor inicial de la variable Y.
-		//parameter up = 1'b0;    				//	Valor por defecto para que el contador realize la cuenta hacia abajo.
-		//parameter syn_clr = 1'b0;   			//	
-		parameter d_var = 2'b11;				//	Valor por defecto que se le carga al contador de variables.
-		parameter d_iter = 3'b000;			//	Valor por defecto que se le carga al contador de iteraciones.
+		parameter x0 = 32'h3f1b74ee; 			  //	x0 = 0.607252935008881, valor inicial de la variable X.
+		parameter y0 = 32'h00000000; 			  //	y0 = 0, valor inicial de la variable Y.
+		//parameter up = 1'b0;                    //	Valor por defecto para que el contador realize la cuenta hacia abajo.
+		//parameter syn_clr = 1'b0;   			  //	
+		parameter d_var = 2'b00;				  //	Valor por defecto que se le carga al contador de variables.
+		parameter d_iter = 4'b0000;                //	Valor por defecto que se le carga al contador de iteraciones.
+		parameter exp_max = 30;
+		parameter exp_min = 23;
 	/*end	
 	else
 	begin
@@ -80,10 +82,10 @@ wire enab_d_ff3_sh_exp_x, enab_d_ff3_sh_exp_y;          	// 	Enable de los regis
 wire enab_d_ff3_LUT;				                 		//	Enable del registro que guarda el valor obtenido de la LUT
 wire enab_d_ff3_sign;										//	Enable del registro que guarda el valor del signo, dependiendo del modo del algoritmo.
 wire enab_d_ff4_Xn, enab_d_ff4_Yn, enab_d_ff4_Zn;       	//	Enable de los registros que guardan los datos provenientes del modulo de suma/resta.
-wire enab_d_ff5;											//	Enable del registo que guarda el valor de salida antes de pasar por el moduo de cambio de signo.
 wire enab_d_ff5_data_out;									//	Enable del registo que guarda el valor de salida final, listo para enviarse al procesador.
 wire enab_cont_iter, enab_cont_var;                     	//	Enable de los contadores de variable e iteracion
 wire load_cont_iter, load_cont_var;                      	//	Señal de carga de un valor en los contadores de variable e iteraciones.
+wire enab_dff_5;
 
 
 
@@ -100,7 +102,7 @@ wire [W-1:0] first_mux_X, first_mux_Y, first_mux_Z;     	//	Salidas de los mux q
 wire [W-1:0] d_ff2_X, d_ff2_Y, d_ff2_Z;                 	//	Salidas de los registros que guardan los valores provenientes de la primera linea de mux.
 wire sign;                                              	//	Salida del mux que escoge entre el signo de Y o Z, dependiendo del modo, ya sea rotacion o vectorizacion.
 reg [W-1:0] data_out_LUT;									//	Salida del modulo generate que genera la LUT necesaria dependiendo del ancho de palabra.
-wire [2:0] cont_iter_out;                               	//	Salida del contador que cuenta las iteraciones realizadas.
+wire [3:0] cont_iter_out;                               	//	Salida del contador que cuenta las iteraciones realizadas.
 wire [E-1:0] sh_exp_x, sh_exp_y;                        	//	Salidas de los sumadores de punto fijo que realizan los desplazamientos.
 wire [W-1:0] d_ff3_sh_x_out, d_ff3_sh_y_out;            	//	Salida del registro que guarda el valor de X y Y luego de realizar los desplazamientos.
 wire [W-1:0] d_ff3_LUT_out;                             	//	Salida del registro que guarda el valor de la LUT.
@@ -247,23 +249,23 @@ Mux_2x1 #(.W(1)) mux_2x1_signo
 		always @* //LUT de 32 bits
 		begin
 			case (cont_iter_out)
-				 3'b000: data_out_LUT <= 32'h3f490fdb;
-				 3'b001: data_out_LUT <= 32'h3eed6338;
-				 3'b010: data_out_LUT <= 32'h3e7adbb0;
-				 3'b011: data_out_LUT <= 32'h3dfeadd5;
-				 3'b100: data_out_LUT <= 32'h3d7faade;
-				 3'b101: data_out_LUT <= 32'h3cffeaae;
-				 3'b110: data_out_LUT <= 32'h3c7ffaab;
-				 3'b111: data_out_LUT <= 32'h3bfffeab;
-				/*  5'b01000: data_out_LUT <= 32'h3b7fffab;
-				 5'b01001: data_out_LUT <= 32'h3affffeb;
-				 5'b01010: data_out_LUT <= 32'h3a7ffffb;
-				 5'b01011: data_out_LUT <= 32'h39ffffff;
-				 5'b01100: data_out_LUT <= 32'h39800000;
-				 5'b01101: data_out_LUT <= 32'h39000000;
-				 5'b01110: data_out_LUT <= 32'h38800000;
-				 5'b01111: data_out_LUT <= 32'h38000000;
-				 5'b10000: data_out_LUT <= 32'h37800000;
+				 4'b0000: data_out_LUT <= 32'h3f490fdb;
+				 4'b0001: data_out_LUT <= 32'h3eed6338;
+				 4'b0010: data_out_LUT <= 32'h3e7adbb0;
+				 4'b0011: data_out_LUT <= 32'h3dfeadd5;
+				 4'b0100: data_out_LUT <= 32'h3d7faade;
+				 4'b0101: data_out_LUT <= 32'h3cffeaae;
+				 4'b0110: data_out_LUT <= 32'h3c7ffaab;
+				 4'b0111: data_out_LUT <= 32'h3bfffeab;
+				 4'b1000: data_out_LUT <= 32'h3b7fffab;
+				 4'b1001: data_out_LUT <= 32'h3affffeb;
+				 4'b1010: data_out_LUT <= 32'h3a7ffffb;
+				 4'b1011: data_out_LUT <= 32'h39ffffff;
+				 4'b1100: data_out_LUT <= 32'h39800000;
+				 4'b1101: data_out_LUT <= 32'h39000000;
+				 4'b1110: data_out_LUT <= 32'h38800000;
+				 4'b1111: data_out_LUT <= 32'h38000000;
+				 /*5'b10000: data_out_LUT <= 32'h37800000;
 				 5'b10001: data_out_LUT <= 32'h37000000;
 				 5'b10010: data_out_LUT <= 32'h36800000;
 				 5'b10011: data_out_LUT <= 32'h36000000;
@@ -394,7 +396,7 @@ endgenerate*/
 //Modulo de resta en punto fijo que le resta al exponente de x el valor de la iteracion actual, y con esto se realiza el desplazamiento en punto flotante.
 Simple_Subt #(.W(E)) shift_x
 (
-.A(d_ff2_X[W-2:M]),
+.A(d_ff2_X[exp_max:exp_min]),
 .B(cont_iter_out),
 .Y(sh_exp_x)
 );
@@ -402,7 +404,7 @@ Simple_Subt #(.W(E)) shift_x
 ////Modulo de resta en punto fijo que le resta al exponente de y el valor de la iteracion actual, y con esto se realiza el desplazamiento en punto flotante.
 Simple_Subt #(.W(E)) shift_y
 (
-.A(d_ff2_Y[W-2:M]),
+.A(d_ff2_Y[exp_max:exp_min]),
 .B(cont_iter_out),
 .Y(sh_exp_y)
 );
@@ -454,9 +456,9 @@ d_ff_en	#(.W(1)) d_ff3_sign
 Mux_3x1 #(.W(W)) mux_3x1_var1
 (
 .select(sel_mux_2),
-.ch_0(d_ff2_Z),
+.ch_0(d_ff2_X),
 .ch_1(d_ff2_Y),
-.ch_2(d_ff2_X),
+.ch_2(d_ff2_Z),
 .data_out(add_subt_dataA)
 );
 
@@ -464,9 +466,9 @@ Mux_3x1 #(.W(W)) mux_3x1_var1
 Mux_3x1 #(.W(W)) mux_3x1_var2
 (
 .select(sel_mux_2),
-.ch_0(d_ff3_LUT_out),
+.ch_0(d_ff3_sh_y_out),
 .ch_1(d_ff3_sh_x_out),
-.ch_2(d_ff3_sh_y_out),
+.ch_2(d_ff3_LUT_out),
 .data_out(add_subt_dataB)
 );
 
@@ -528,7 +530,7 @@ d_ff_en	#(.W(W)) d_ff5
 (
 .clk(clk),
 .rst(reset_reg_cordic),
-.enable(enab_d_ff5),
+.enable(enab_dff_5),
 .D(mux_sal),
 .Q(data_output2)
 );
@@ -570,7 +572,7 @@ d_ff_en	#(.W(W)) d_ff5_data_out
 .q(cont_iter_out)
 );*/
 
-counter_d #(.W(3)) cont_iter
+counter_d #(.W(4)) cont_iter
 (
 .clk(clk),
 .rst(reset_reg_cordic),
@@ -647,7 +649,7 @@ CORDIC_FSM_v2 fsm_cordic
 .enab_d_ff_Yn(enab_d_ff4_Yn),
 .enab_d_ff_Zn(enab_d_ff4_Zn),
 .enab_d_ff_out(enab_d_ff5_data_out),
-.enab_dff5(enab_dff5),
+.enab_dff_5(enab_dff_5),
 .enab_dff_shifted_x(enab_d_ff3_sh_exp_x),
 .enab_dff_shifted_y(enab_d_ff3_sh_exp_y),
 .enab_dff_LUT(enab_d_ff3_LUT),
