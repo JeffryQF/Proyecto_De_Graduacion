@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="10" Path="C:/Users/Jeffry/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/proyecto_vivado_jeffry/sine_cosine_cordic/sine_cosine_cordic.xpr">
+<Project Version="7" Minor="10" Path="/home/jeffryqf/Dropbox/Proyecto_De_Graduacion/Proyecto_De_Graduacion_2/Proyecto_De_Graduacion/proyecto_vivado_jeffry/sine_cosine_cordic/sine_cosine_cordic.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="0b5b83e26f46491bbf4f514cbd60d3f5"/>
@@ -333,12 +333,18 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Sine_Cosine_CORDIC_tb_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="CORDIC_FSM_v2_tb"/>
+        <Option Name="TopModule" Val="Sine_Cosine_CORDIC_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/CORDIC_FSM_v2_tb_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/Sine_Cosine_CORDIC_tb_behav.wcfg"/>
       </Config>
     </FileSet>
   </FileSets>
@@ -361,9 +367,6 @@
     </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
-    </Simulator>
-    <Simulator Name="ActiveHDL">
-      <Option Name="Description" Val="Active-HDL Simulator"/>
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
