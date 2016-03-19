@@ -21,22 +21,23 @@
 
 
 module Full_Adder_PG
-	#(parameter	SW=26) (
-	input wire [SW-1:0] Op_A_i,
-    input wire [SW-1:0] Op_B_i,
+	#(parameter	SWR=26) (
+	input wire [SWR-1:0] Op_A_i,
+    input wire [SWR-1:0] Op_B_i,
     input wire C_i, //Carry in
-    output wire [SW-1:0] S_o, // Solution out
-    output wire C_o, //Carry out
-    output wire [SW-1:0] P_o, //Propagate (for LZA)
-    output wire [SW-1:0] G_o //Generate (For LZA)
+    ////////////////////////////////77
+    output wire [SWR-1:0] S_o, // Solution out
+    output reg [SWR-1:1] Cn_o, //Carry for each Full adder
+    output wire C_o, //Carry out for last full adder
+    output wire [SWR-1:0] P_o //Propagate (for LZA)
     
     );
 
-    wire [SW-1:1] C_n;
+    wire [SWR-1:1] C_n;
 
     genvar j;
 
-    generate for (j=0; j<SW ; j=j+1) begin
+    generate for (j=0; j<SWR ; j=j+1) begin
 
     	case (j)
     		0:begin
@@ -46,19 +47,17 @@ module Full_Adder_PG
     				.C_i(C_i),
     				.S_o(S_o[j]),
     				.C_o(C_n[j+1]),
-    				.P_o(P_o[j]),
-    				.G_o(G_o[j])
+    				.P_o(P_o[j])
     				);
     			end
-			SW-1:begin
+			SWR-1:begin
 				Full_Adder_PG_1b Last_FA1bit(
     				.Op_A_i(Op_A_i[j]),
     				.Op_B_i(Op_B_i[j]),
     				.C_i(C_n[j]),
     				.S_o(S_o[j]),
     				.C_o(C_o),
-    				.P_o(P_o[j]),
-    				.G_o(G_o[j])
+    				.P_o(P_o[j])
     				);
 				end
 			default:begin
@@ -68,12 +67,14 @@ module Full_Adder_PG
     				.C_i(C_n[j]),
     				.S_o(S_o[j]),
     				.C_o(C_n[j+1]),
-    				.P_o(P_o[j]),
-    				.G_o(G_o[j])
+    				.P_o(P_o[j])
     				);
 				end
 			endcase
 		end
 	endgenerate
+
+	always @(C_n)
+		Cn_o <= C_n;
 
 endmodule

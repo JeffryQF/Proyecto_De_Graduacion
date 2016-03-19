@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 03/15/2016 10:52:51 AM
+// Create Date: 03/07/2016 04:31:20 PM
 // Design Name: 
-// Module Name: Full_Adder_PG_1b
+// Module Name: Comparator
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module Full_Adder_PG_1b(
-    input wire Op_A_i,
-    input wire Op_B_i,
-    input wire C_i, //Carry in
-    output wire S_o, // Solution out
-    output wire C_o, //Carry out
-    output wire P_o //Propagate (for LZA)
+module Comparator
+    # (parameter W = 8) //Ignore this value, just for reference on the instantiation
+    (
+    input wire [W-1:0] Data_X_i,
+    input wire [W-1:0] Data_Y_i,
+    output wire gtXY_o,
+    output wire eqXY_o
     );
     
-    wire G_o;
-    assign P_o = Op_A_i ^ Op_B_i;
-    assign G_o = Op_A_i & Op_B_i;
-    assign S_o = P_o ^ C_i;
-    assign C_o = G_o | (P_o & C_i);
+    assign gtXY_o = (Data_X_i > Data_Y_i) ? 1'b1 : 1'b0;
+    assign eqXY_o = (Data_X_i == Data_Y_i) ? 1'b1 : 1'b0;
     
 endmodule

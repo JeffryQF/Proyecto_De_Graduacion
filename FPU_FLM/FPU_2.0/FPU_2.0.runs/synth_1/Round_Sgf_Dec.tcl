@@ -30,10 +30,15 @@ read_verilog -library xil_defaultlib {
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG_1b.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Add_Subt.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/LZA.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Combinational_Logic_LZA.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_32.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_64.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Round_Sgf_Dec.v
 }
 read_xdc /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc
 set_property used_in_implementation false [get_files /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc]
 
-synth_design -top Add_Subt -part xc7a100tcsg324-1
-write_checkpoint -noxdef Add_Subt.dcp
-catch { report_utilization -file Add_Subt_utilization_synth.rpt -pb Add_Subt_utilization_synth.pb }
+synth_design -top Round_Sgf_Dec -part xc7a100tcsg324-1
+write_checkpoint -noxdef Round_Sgf_Dec.dcp
+catch { report_utilization -file Round_Sgf_Dec_utilization_synth.rpt -pb Round_Sgf_Dec_utilization_synth.pb }

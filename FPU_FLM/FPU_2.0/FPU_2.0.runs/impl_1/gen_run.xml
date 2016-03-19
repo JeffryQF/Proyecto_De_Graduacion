@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1458340084">
-  <File Type="VDS-TIMING-PB" Name="Round_Sgf_Dec_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Round_Sgf_Dec_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="Round_Sgf_Dec.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Round_Sgf_Dec_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Round_Sgf_Dec_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Round_Sgf_Dec_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="Round_Sgf_Dec.vds"/>
-  <File Type="PA-TCL" Name="Round_Sgf_Dec.tcl"/>
-  <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
-  <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
-  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1458254208">
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="RDI-RDI" Name="Add_Subt.vdi"/>
+  <File Type="BG-DRC" Name="Add_Subt.drc"/>
+  <File Type="BG-BGN" Name="Add_Subt.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="Add_Subt.sysdef"/>
+  <File Type="BITSTR-MMI" Name="Add_Subt.mmi"/>
+  <File Type="BITSTR-BMM" Name="Add_Subt_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="Add_Subt.nky"/>
+  <File Type="BITSTR-RBT" Name="Add_Subt.rbt"/>
+  <File Type="BITSTR-MSK" Name="Add_Subt.msk"/>
+  <File Type="BG-BIN" Name="Add_Subt.bin"/>
+  <File Type="BG-BIT" Name="Add_Subt.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Add_Subt_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Add_Subt_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Add_Subt_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="Add_Subt_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="Add_Subt_incremental_reuse_routed.rpt"/>
+  <File Type="PLACE-CLK" Name="Add_Subt_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="Add_Subt_placed.dcp"/>
+  <File Type="PWROPT-DRC" Name="Add_Subt_drc_pwropted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Add_Subt_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-TCL" Name="Add_Subt.tcl"/>
+  <File Type="PWROPT-DCP" Name="Add_Subt_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="Add_Subt.hwdef"/>
+  <File Type="PWROPT-TIMING" Name="Add_Subt_timing_summary_pwropted.rpt"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="OPT-DRC" Name="Add_Subt_drc_opted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="Add_Subt_timing_summary_physopted.rpt"/>
+  <File Type="INIT-TIMING" Name="Add_Subt_timing_summary_init.rpt"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="OPT-TIMING" Name="Add_Subt_timing_summary_opted.rpt"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Add_Subt_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PLACE-IO" Name="Add_Subt_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Add_Subt_utilization_placed.rpt"/>
+  <File Type="OPT-DCP" Name="Add_Subt_opt.dcp"/>
+  <File Type="PLACE-UTIL-PB" Name="Add_Subt_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Add_Subt_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Add_Subt_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Add_Subt_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="Add_Subt_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Add_Subt_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="Add_Subt_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Add_Subt_drc_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="Add_Subt_routed.dcp"/>
+  <File Type="ROUTE-DRC" Name="Add_Subt_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Add_Subt_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="Add_Subt_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="Add_Subt_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="Add_Subt_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Add_Subt_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Add_Subt_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Add_Subt_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Add_Subt_timing_summary_routed.rpx"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../RTL/Add-Subt/RegisterAdd.v">
@@ -132,37 +175,9 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../RTL/Add-Subt/Combinational_Logic_LZA.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../RTL/Add-Subt/Priority_Codec_32.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../RTL/Add-Subt/Priority_Codec_64.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../RTL/Add-Subt/Round_Sgf_Dec.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Round_Sgf_Dec"/>
+      <Option Name="TopModule" Val="Add_Subt"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -179,7 +194,15 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2015"/>
-    <Step Id="synth_design"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
   </Strategy>
 </GenRun>

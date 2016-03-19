@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.runs/synth_1'
+HD_PWD='/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -36,4 +36,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Round_Sgf_Dec.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Round_Sgf_Dec.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log Add_Subt.vdi -applog -m64 -messageDb vivado.pb -mode batch -source Add_Subt.tcl -notrace
+
+
