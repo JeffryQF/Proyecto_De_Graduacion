@@ -25,6 +25,7 @@ module shift_mux_array
     (
     input wire [SWR-1:0] Data_i,
     input wire select_i,
+    input wire bit_shift_i,
     output wire [SWR-1:0] Data_o
     );
 
@@ -39,7 +40,7 @@ generate for (j=0; j<=SWR-1 ; j=j+1) begin
 			Multiplexer_AC #(.W(1)) rotate_mux(
 			    .ctrl(select_i),
 			    .D0 (Data_i[j]),
-			    .D1 (1'b0),
+			    .D1 (bit_shift_i),
 			    .S (Data_o[j])
 			    );
 			end

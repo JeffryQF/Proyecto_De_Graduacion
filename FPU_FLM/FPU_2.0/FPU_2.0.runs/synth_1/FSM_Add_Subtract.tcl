@@ -35,10 +35,13 @@ read_verilog -library xil_defaultlib {
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_32.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_64.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Round_Sgf_Dec.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Tenth_Phase.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v
+  /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FSM_Add_Subtract.v
 }
 read_xdc /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc
 set_property used_in_implementation false [get_files /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/constrs_1/new/Time_Constrains.xdc]
 
-synth_design -top Round_Sgf_Dec -part xc7a100tcsg324-1
-write_checkpoint -noxdef Round_Sgf_Dec.dcp
-catch { report_utilization -file Round_Sgf_Dec_utilization_synth.rpt -pb Round_Sgf_Dec_utilization_synth.pb }
+synth_design -top FSM_Add_Subtract -part xc7a100tcsg324-1
+write_checkpoint -noxdef FSM_Add_Subtract.dcp
+catch { report_utilization -file FSM_Add_Subtract_utilization_synth.rpt -pb FSM_Add_Subtract_utilization_synth.pb }

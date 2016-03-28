@@ -26,6 +26,7 @@ module Mux_Array
     input wire [SWR-1:0] Data_i,
     input wire FSM_left_right_i,
     input wire [EW-1:0] Shift_Value_i,
+    input wire bit_shift_i,
     output wire [SWR-1:0] Data_o
     );
 ////
@@ -42,6 +43,7 @@ generate for (k=0; k < EW; k=k+1) begin
 	shift_mux_array #(.SWR(SWR), .LEVEL(k)) shift_mux_array(
 		.Data_i(Data_array[k]),
 		.select_i(Shift_Value_i[k]),
+		.bit_shift_i(bit_shift_i),
 		.Data_o(Data_array[k+1])
 		);
 	end

@@ -27,7 +27,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log Round_Sgf_Dec.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Round_Sgf_Dec.tcl" );
+         "-log FSM_Add_Subtract.vds -m64 -mode batch -messageDb vivado.pb -notrace -source FSM_Add_Subtract.tcl" );
 
 
 

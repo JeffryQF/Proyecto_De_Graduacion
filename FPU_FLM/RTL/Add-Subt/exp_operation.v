@@ -25,51 +25,33 @@ module Exp_Operation
     (
         input wire clk, //system clock
         input wire rst, //reset of the module
-        input wire FSM_Load_i,
-        input wire [EW-1:0] Oper0_A_i,
-        input wire [EW-1:0] Oper0_B_i,
-        input wire [EW-1:0] Oper1_A_i,
-        input wire [EW-1:0] Oper1_B_i,
-        input wire FSM_Add_Subt_i,
-        input wire FSM_select_A_i,
-        input wire FSM_select_B_i,
+        input wire load_i,
+        input wire [EW-1:0] Data_A_i,
+        input wire [EW-1:0] PreData_B_i,
+        input wire Add_Subt_i,
+
         ///////////////////////////////////////////////////////////////////77
         output wire [EW-1:0] Data_Result_o,
         output wire Overflow_flag_o,
         output wire Underflow_flag_o
     );
 
-wire [EW-1:0] Data_A; //First exp operand ADDER/SUBT input
-wire [EW-1:0] PreData_B; //Second exp operand ADDER/SUBT input before the XOR
-wire [EW-1:0] Data_B;
-wire [EW-1:0] Data_S;
+
 wire anomaly;
+wire [EW-1:0] Data_B;
 
-Multiplexer_AC #(.W(EW)) Oper_A(
-    .ctrl(FSM_select_A_i),
-    .D0 (Oper0_A_i),
-    .D1 (Oper1_A_i),
-    .S (Data_A)
-    );
-
-Multiplexer_AC #(.W(EW)) Oper_B(
-    .ctrl(FSM_select_B_i),
-    .D0 (Oper0_B_i),
-    .D1 (Oper1_B_i),
-    .S (PreData_B)
-    );
 /////////////////////////////////////////7
 genvar j;
 for (j=0; j<EW; j=j+1)begin
 
-    assign Data_B[j] = PreData_B[j] ^ FSM_Add_Subt_i;
+    assign Data_B[j] = PreData_B_i[j] ^ FSM_Add_Subt_i;
 
 end
 /////////////////////////////////////////
 
 add_sub_carry_out #(.W(EW)) exp_add_subt(
     .op_mode (FSM_Add_Subt_i),
-    .Data_A (Data_A),
+    .Data_A (Data_A_i),
     .Data_B (Data_B),
     .Data_S ({anomaly, Data_S})
     );

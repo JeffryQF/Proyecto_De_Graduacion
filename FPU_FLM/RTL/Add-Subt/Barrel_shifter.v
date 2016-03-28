@@ -26,49 +26,32 @@ module Barrel_Shifter
     (
     input wire clk,
     input wire rst,
-    input wire ctrl_a_i,
-    input wire [EW-1:0] Shift_Value_0_i,
-    input wire [EW-1:0] Shift_Value_1_i,
-    input wire [SWR-1:0] Shift_Data_0_i,
-    input wire [SWR-1:0] Shift_Data_1_i,
-    input wire FSM_left_right_i,
-    input wire FSM_select_C_i,
+    input wire load_i,
+    input wire [EW-1:0] Shift_Value_i,
+    input wire [SWR-1:0] Shift_Data_i,
+    input wire Left_Right_i,
+    input wire Bit_Shift_i,
     /////////////////////////////////////////////7
     output wire [SWR-1:0] N_mant_o
     );
-
-    wire [SWR-1:0] Shift_Data_S;
-    wire [EW-1:0] Shift_Value_S;
     wire [SWR-1:0] Data_Reg;
 
 
     ////////////////////////////////////////////////////7
 
-    Multiplexer_AC #(.W(EW)) MuxSV(
-    .ctrl(FSM_select_C_i),
-    .D0 (Shift_Value_0_i),
-    .D1 (Shift_Value_1_i),
-    .S (Shift_Value_S)
-    );
-
-    Multiplexer_AC #(.W(SWR)) MuxSD(
-    .ctrl(FSM_select_C_i),
-    .D0 (Shift_Data_0_i),
-    .D1 (Shift_Data_1_i),
-    .S (Shift_Data_S)
-    );
-
+    
     Mux_Array #(.SWR(SWR),.EW(EW)) Mux_Array(
-        .Data_i(Shift_Data_S),
+        .Data_i(Shift_Data_i),
         .FSM_left_right_i(FSM_left_right_i),
-        .Shift_Value_i(Shift_Value_S),
+        .Shift_Value_i(Shift_Value_i),
+        .bit_shift_i(Bit_Shift_i),
         .Data_o(Data_Reg)
         );
 
     RegisterAdd #(.W(SWR)) Output_Reg(
         .clk(clk),
         .rst(rst),
-        .load(ctrl_a_i),
+        .load(load_i),
         .D(Data_Reg),
         .Q(N_mant_o)
         );

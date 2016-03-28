@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1458340084">
-  <File Type="VDS-TIMING-PB" Name="Round_Sgf_Dec_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Round_Sgf_Dec_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="Round_Sgf_Dec.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Round_Sgf_Dec_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Round_Sgf_Dec_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Round_Sgf_Dec_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="Round_Sgf_Dec.vds"/>
-  <File Type="PA-TCL" Name="Round_Sgf_Dec.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1459119970">
+  <File Type="VDS-TIMING-PB" Name="FSM_Add_Subtract_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FSM_Add_Subtract_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FSM_Add_Subtract.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FSM_Add_Subtract_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FSM_Add_Subtract_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FSM_Add_Subtract_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FSM_Add_Subtract.vds"/>
+  <File Type="PA-TCL" Name="FSM_Add_Subtract.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
@@ -160,9 +160,30 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Tenth_Phase.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Mux_3x1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/FSM_Add_Subtract.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Round_Sgf_Dec"/>
+      <Option Name="TopModule" Val="FSM_Add_Subtract"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

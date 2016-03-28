@@ -21,6 +21,7 @@
 
 
 module Round_Sgf_Dec(
+    input wire clk,
     input wire [1:0] Data_i,
     input wire [1:0] Round_type,
     input wire Sign_Result_i,
