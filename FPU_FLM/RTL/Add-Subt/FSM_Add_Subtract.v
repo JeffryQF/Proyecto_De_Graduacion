@@ -30,6 +30,7 @@ module FSM_Add_Subtract
 	//////////////////////////////////////////////////////////////////////////////
 		//Oper_Start_In evaluation signals
 		input wire zero_flag_i,
+		input wire real_op_i,
 		
 		//Exp_operation evaluation signals
 		input wire norm_iteration_i,
@@ -87,14 +88,14 @@ module FSM_Add_Subtract
 
 		output reg ctrl_a_o,
 
-		//Multiplexer selector for Exp_operation's OPER_B
+		//Multiplexer selector for Exp_operation's OPER_B & Barrel_Shifter's Shift value
 
 		output reg [1:0] ctrl_b_o,
+		output reg ctrl_b_load_o,
 
-		//Multiplexer selector for Barrel_Shifter's Shift value & Data shift
+		//Multiplexer selector for Data shift
 
 		output reg ctrl_c_o,
-		output reg [1:0] ctrl_e_o,
 
 		//Multiplexer selector for Add_Subt_Sgf's inputs
 
@@ -137,7 +138,9 @@ localparam [3:0]
 
 					 ready_flag = 4'd11, //Enable the ready flag with the final result
 
-					 overflow_add = 4'd12;
+					 overflow_add = 4'd12,
+
+					 load_exp_oper_over= 4'd13;
 					//**********************REVISADO
 	
 					
@@ -157,8 +160,8 @@ always @(posedge clk, posedge rst)
 always @*
 	begin
 	state_next = state_reg;
-	
-	//Oper_Start_In control signals
+	rst_int = 0;
+		//Oper_Start_In control signals
 	load_1_o=0;
 	load_2_o=0;
 
@@ -193,6 +196,7 @@ always @*
 	//Multiplexer selector for Exp_operation's OPER_B
 
 	ctrl_b_o=2'b00;
+	ctrl_b_load_o=0;
 
 	//Multiplexer selector for Barrel_Shifter's Data shift
 
@@ -200,7 +204,6 @@ always @*
 
 	//Multiplexer selector for Barrel_Shifter's Shift value
 
-	ctrl_e_o=2'b00;
 
 	//Multiplexer selector for Add_Subt_Sgf's inputs
 
@@ -211,11 +214,12 @@ always @*
 	ready = 0;
 	//**REVISADO
 	rst_int = 0;
-
+	
 	case(state_reg)
 //FPU reset 
 		start: begin
-			rst_int = 1;
+			rst_int=1;
+
 			if(beg_FSM) begin
 				state_next = load_oper;
 			end
@@ -242,6 +246,7 @@ always @*
 		begin
 			load_2_o = 0;
 			load_3_o = 1;
+            ctrl_b_load_o=0;
 			/*
 			if ()*/
 
@@ -254,9 +259,26 @@ always @*
 			load_3_o = 0;
 			load_4_o = 1;
 			if (norm_iteration_i)begin
-				state_next = round_sgf;end
-			else begin
-				state_next = add_subt;end
+				if(add_overflow_i)begin
+					if (~real_op_i)begin
+						left_right_o=0;
+						bit_shift_o=1;
+						state_next = round_sgf;
+					end
+					else begin
+						left_right_o=1;
+						bit_shift_o=0;
+						state_next = round_sgf;
+					end
+				end
+
+				else begin
+					left_right_o=1;
+					bit_shift_o=0;
+					state_next = round_sgf;end
+			end
+			else 
+				state_next = add_subt;
 		end
 
 		add_subt:
@@ -264,8 +286,6 @@ always @*
 			//Reg enables/Disables
 			load_4_o = 0;
 			load_5_o = 1;
-			load_6_o = 1;
-			ctrl_a_o = 1;
 			ctrl_c_o = 1;
 			state_next = overflow_add;
 		end
@@ -273,33 +293,54 @@ always @*
 		overflow_add:
 		begin
 			//Reg enables/Disables
-			load_5_o=0;
-			load_6_o=0;
-			load_2_o=1;
-			
+			load_5_o=1;
+			load_6_o=1;
+			if (~real_op_i)begin
 				if ( add_overflow_i)begin
-					A_S_op_o=0;
 					ctrl_b_o=2'b10;
-					ctrl_e_o=2'b10;
-					left_right_o=0;
-					bit_shift_o=1;
-
+					ctrl_b_load_o=1;
+					
 					end
 				else begin
 					A_S_op_o=1;
 					ctrl_b_o=2'b01;
-					ctrl_e_o=2'b01;
-					left_right_o=1;
-					bit_shift_o=0;
-					end
-				state_next = load_diff_exp;
+                    ctrl_b_load_o=1;
+
+				end
+			end
+			else begin
+				A_S_op_o=1;
+				ctrl_b_o=2'b01;
+                ctrl_b_load_o=1;
+            end	
+			state_next = load_exp_oper_over;
 		end
+
+		load_exp_oper_over:
+		begin
+		load_3_o=1;
+		if (~real_op_i)begin
+			if ( add_overflow_i)
+				A_S_op_o=0;
+				
+			else 
+				A_S_op_o=1;
+		end
+		else
+			A_S_op_o=1;
+
+			
+		state_next = norm_sgf_first;
+		end
+
+
 		round_sgf:
 		begin
 			load_4_o = 0;
-			load_5_o = 1;
+			
 				if(round_i) begin
 					ctrl_d_o =1;
+					ctrl_a_o = 1;
 					state_next = add_subt_r; end
 				else begin
 					state_next = load_final_result; end
@@ -312,13 +353,14 @@ always @*
 			if ( add_overflow_i)begin
 					A_S_op_o=0;
 					ctrl_b_o=2'b10;
-					ctrl_e_o=2'b10;
+					ctrl_b_load_o=1;
 					left_right_o=0;
 					bit_shift_o=1;
 					state_next = load_diff_exp_r;
 					end
 				else begin
-					ctrl_e_o=2'b11;
+					ctrl_b_o=2'b11;
+                    ctrl_b_load_o=1;
 					left_right_o=0;
 					bit_shift_o=0;
 					state_next = norm_sgf_r;
@@ -327,11 +369,13 @@ always @*
 		end
 		load_diff_exp_r:
 		begin
+            ctrl_b_load_o=0;
 			load_3_o = 1;
 			state_next = norm_sgf_r;			
 		end
 		norm_sgf_r:
 		begin
+		    ctrl_b_load_o=0;
 			load_3_o = 0;
 			load_4_o = 1;
 			state_next = load_final_result;
@@ -349,6 +393,10 @@ always @*
 				if(rst_FSM) begin
 					state_next = start;end
 		end
+
+		default:
+		begin
+			state_next =start;end
 	endcase
 end
 

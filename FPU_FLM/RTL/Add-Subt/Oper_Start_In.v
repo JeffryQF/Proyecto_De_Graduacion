@@ -107,7 +107,7 @@ sgn_result result_sign_bit (//Calculate the sign bit for the final result
     .sgn_Y_i(intDY[W-1]),
     .gtXY_i(gtXY),
     .eqXY_i(eqXY),
-    .sgn_result_o(sgn_final_result_o)
+    .sgn_result_o(sign_final_result_o)
     );
 
 MultiplexTxT #(.W(W-1)) MuxXY (//Classify in the registers the bigger value (M) and the smaller value (m)

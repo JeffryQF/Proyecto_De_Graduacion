@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1459119970">
-  <File Type="VDS-TIMING-PB" Name="FSM_Add_Subtract_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="FSM_Add_Subtract_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="FSM_Add_Subtract.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="FSM_Add_Subtract_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="FSM_Add_Subtract_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="FSM_Add_Subtract_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="FSM_Add_Subtract.vds"/>
-  <File Type="PA-TCL" Name="FSM_Add_Subtract.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1459535028">
+  <File Type="VDS-TIMING-PB" Name="FPU_Add_Subtract_Function_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="FPU_Add_Subtract_Function_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="FPU_Add_Subtract_Function.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="FPU_Add_Subtract_Function_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="FPU_Add_Subtract_Function_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="FPU_Add_Subtract_Function_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="FPU_Add_Subtract_Function.vds"/>
+  <File Type="PA-TCL" Name="FPU_Add_Subtract_Function.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_1/synth_1.psg"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_1/sources.xml"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_1/constrs_in.xml"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../RTL/Add-Subt/FPU_Add_Subtract_Function.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../RTL/Add-Subt/RegisterAdd.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -181,9 +188,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_B.txt"/>
+    <File Path="$PPRDIR/../../TXTVerification/ResultadoSumaXilinx.txt"/>
+    <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_A.txt"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="FSM_Add_Subtract"/>
+      <Option Name="TopModule" Val="FPU_Add_Subtract_Function"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

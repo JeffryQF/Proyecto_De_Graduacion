@@ -4,6 +4,8 @@
 
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a100tcsg324-3
 
 set_param project.compositeFile.enableAutoGeneration 0
@@ -59,6 +61,9 @@ read_verilog -library xil_defaultlib {
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_NE_Phase.v
   /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v
 }
+read_xdc {{/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.srcs/constrs_1/new/time_constrains.xdc}}
+set_property used_in_implementation false [get_files {{/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.srcs/constrs_1/new/time_constrains.xdc}}]
+
 synth_design -top FPU_Add_Subtract_Function -part xc7a100tcsg324-3
 write_checkpoint -noxdef FPU_Add_Subtract_Function.dcp
 catch { report_utilization -file FPU_Add_Subtract_Function_utilization_synth.rpt -pb FPU_Add_Subtract_Function_utilization_synth.pb }

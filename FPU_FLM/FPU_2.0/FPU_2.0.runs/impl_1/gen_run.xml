@@ -1,61 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1458254208">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1459535089">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="RDI-RDI" Name="Add_Subt.vdi"/>
-  <File Type="BG-DRC" Name="Add_Subt.drc"/>
-  <File Type="BG-BGN" Name="Add_Subt.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="Add_Subt.sysdef"/>
-  <File Type="BITSTR-MMI" Name="Add_Subt.mmi"/>
-  <File Type="BITSTR-BMM" Name="Add_Subt_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="Add_Subt.nky"/>
-  <File Type="BITSTR-RBT" Name="Add_Subt.rbt"/>
-  <File Type="BITSTR-MSK" Name="Add_Subt.msk"/>
-  <File Type="BG-BIN" Name="Add_Subt.bin"/>
-  <File Type="BG-BIT" Name="Add_Subt.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="Add_Subt_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="Add_Subt_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Add_Subt_postroute_physopt.dcp"/>
-  <File Type="ROUTE-CLK" Name="Add_Subt_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="Add_Subt_incremental_reuse_routed.rpt"/>
-  <File Type="PLACE-CLK" Name="Add_Subt_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="Add_Subt_placed.dcp"/>
-  <File Type="PWROPT-DRC" Name="Add_Subt_drc_pwropted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="Add_Subt_timing_summary_postroute_physopted.pb"/>
-  <File Type="PA-TCL" Name="Add_Subt.tcl"/>
-  <File Type="PWROPT-DCP" Name="Add_Subt_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="Add_Subt.hwdef"/>
-  <File Type="PWROPT-TIMING" Name="Add_Subt_timing_summary_pwropted.rpt"/>
-  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
-  <File Type="OPT-DRC" Name="Add_Subt_drc_opted.rpt"/>
-  <File Type="PHYSOPT-TIMING" Name="Add_Subt_timing_summary_physopted.rpt"/>
-  <File Type="INIT-TIMING" Name="Add_Subt_timing_summary_init.rpt"/>
-  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
-  <File Type="OPT-TIMING" Name="Add_Subt_timing_summary_opted.rpt"/>
+  <File Type="RDI-RDI" Name="FPU_Add_Subtract_Function.vdi"/>
+  <File Type="BG-DRC" Name="FPU_Add_Subtract_Function.drc"/>
+  <File Type="BG-BGN" Name="FPU_Add_Subtract_Function.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="FPU_Add_Subtract_Function.sysdef"/>
+  <File Type="BITSTR-MMI" Name="FPU_Add_Subtract_Function.mmi"/>
+  <File Type="BITSTR-BMM" Name="FPU_Add_Subtract_Function_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="FPU_Add_Subtract_Function.nky"/>
+  <File Type="BITSTR-RBT" Name="FPU_Add_Subtract_Function.rbt"/>
+  <File Type="BITSTR-MSK" Name="FPU_Add_Subtract_Function.msk"/>
+  <File Type="BG-BIN" Name="FPU_Add_Subtract_Function.bin"/>
+  <File Type="BG-BIT" Name="FPU_Add_Subtract_Function.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="FPU_Add_Subtract_Function_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="FPU_Add_Subtract_Function_postroute_physopt.dcp"/>
+  <File Type="ROUTE-CLK" Name="FPU_Add_Subtract_Function_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="FPU_Add_Subtract_Function_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="FPU_Add_Subtract_Function_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="FPU_Add_Subtract_Function_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="FPU_Add_Subtract_Function_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="FPU_Add_Subtract_Function_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="FPU_Add_Subtract_Function_route_status.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="FPU_Add_Subtract_Function_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="FPU_Add_Subtract_Function_power_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="FPU_Add_Subtract_Function_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="FPU_Add_Subtract_Function_drc_routed.rpt"/>
+  <File Type="ROUTE-DCP" Name="FPU_Add_Subtract_Function_routed.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="FPU_Add_Subtract_Function_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="FPU_Add_Subtract_Function_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="FPU_Add_Subtract_Function_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="FPU_Add_Subtract_Function_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="FPU_Add_Subtract_Function_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="FPU_Add_Subtract_Function_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="FPU_Add_Subtract_Function_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="FPU_Add_Subtract_Function_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="FPU_Add_Subtract_Function_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="FPU_Add_Subtract_Function_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="FPU_Add_Subtract_Function_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="FPU_Add_Subtract_Function_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="FPU_Add_Subtract_Function_pwropt.dcp"/>
+  <File Type="OPT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="FPU_Add_Subtract_Function.hwdef"/>
+  <File Type="OPT-DRC" Name="FPU_Add_Subtract_Function_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="FPU_Add_Subtract_Function_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="FPU_Add_Subtract_Function_timing_summary_init.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="FPU_Add_Subtract_Function_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-TCL" Name="FPU_Add_Subtract_Function.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="Add_Subt_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PLACE-IO" Name="Add_Subt_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="Add_Subt_utilization_placed.rpt"/>
-  <File Type="OPT-DCP" Name="Add_Subt_opt.dcp"/>
-  <File Type="PLACE-UTIL-PB" Name="Add_Subt_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="Add_Subt_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="Add_Subt_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="Add_Subt_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="Add_Subt_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="Add_Subt_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="Add_Subt_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="Add_Subt_drc_physopted.rpt"/>
-  <File Type="ROUTE-DCP" Name="Add_Subt_routed.dcp"/>
-  <File Type="ROUTE-DRC" Name="Add_Subt_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="Add_Subt_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="Add_Subt_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="Add_Subt_power_summary_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="Add_Subt_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="Add_Subt_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="Add_Subt_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="Add_Subt_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="Add_Subt_timing_summary_routed.rpx"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../RTL/Add-Subt/FPU_Add_Subtract_Function.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../RTL/Add-Subt/RegisterAdd.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -175,9 +182,61 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Combinational_Logic_LZA.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Priority_Codec_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Priority_Codec_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Round_Sgf_Dec.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Tenth_Phase.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/Mux_3x1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../RTL/Add-Subt/FSM_Add_Subtract.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_B.txt"/>
+    <File Path="$PPRDIR/../../TXTVerification/ResultadoSumaXilinx.txt"/>
+    <File Path="$PPRDIR/../../TXTVerification/Hexadecimal_A.txt"/>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Add_Subt"/>
+      <Option Name="TopModule" Val="FPU_Add_Subtract_Function"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Testbench_FPU_Add_Subt_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Testbench_FPU_Add_Subt" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="45933000000fs"></ZoomStartTime>
+      <ZoomEndTime time="46034600001fs"></ZoomEndTime>
+      <Cursor1Time time="45995000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="61" />
+   <wave_markers>
+      <marker label="" time="635000000" />
+   </wave_markers>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/beg_FSM">
+      <obj_property name="ElementShortName">beg_FSM</obj_property>
+      <obj_property name="ObjectShortName">beg_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/rst_FSM">
+      <obj_property name="ElementShortName">rst_FSM</obj_property>
+      <obj_property name="ObjectShortName">rst_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Data_X">
+      <obj_property name="ElementShortName">Data_X[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_X[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Data_Y">
+      <obj_property name="ElementShortName">Data_Y[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Y[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/add_subt">
+      <obj_property name="ElementShortName">add_subt</obj_property>
+      <obj_property name="ObjectShortName">add_subt</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/r_mode">
+      <obj_property name="ElementShortName">r_mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">r_mode[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/overflow_flag">
+      <obj_property name="ElementShortName">overflow_flag</obj_property>
+      <obj_property name="ObjectShortName">overflow_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/underflow_flag">
+      <obj_property name="ElementShortName">underflow_flag</obj_property>
+      <obj_property name="ObjectShortName">underflow_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/ready">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/final_result_ieee">
+      <obj_property name="ElementShortName">final_result_ieee[31:0]</obj_property>
+      <obj_property name="ObjectShortName">final_result_ieee[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/contador">
+      <obj_property name="ElementShortName">contador[31:0]</obj_property>
+      <obj_property name="ObjectShortName">contador[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/FileSaveData">
+      <obj_property name="ElementShortName">FileSaveData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">FileSaveData[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Cont_CLK">
+      <obj_property name="ElementShortName">Cont_CLK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Cont_CLK[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/FS_Module/state_reg">
+      <obj_property name="ElementShortName">state_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/load_a_i">
+      <obj_property name="ElementShortName">load_a_i</obj_property>
+      <obj_property name="ObjectShortName">load_a_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/load_b_i">
+      <obj_property name="ElementShortName">load_b_i</obj_property>
+      <obj_property name="ObjectShortName">load_b_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/add_subt_i">
+      <obj_property name="ElementShortName">add_subt_i</obj_property>
+      <obj_property name="ObjectShortName">add_subt_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/DMP_o">
+      <obj_property name="ElementShortName">DMP_o[30:0]</obj_property>
+      <obj_property name="ObjectShortName">DMP_o[30:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/DmP_o">
+      <obj_property name="ElementShortName">DmP_o[30:0]</obj_property>
+      <obj_property name="ObjectShortName">DmP_o[30:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/zero_flag_o">
+      <obj_property name="ElementShortName">zero_flag_o</obj_property>
+      <obj_property name="ObjectShortName">zero_flag_o</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/real_op_o">
+      <obj_property name="ElementShortName">real_op_o</obj_property>
+      <obj_property name="ObjectShortName">real_op_o</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/sign_final_result_o">
+      <obj_property name="ElementShortName">sign_final_result_o</obj_property>
+      <obj_property name="ObjectShortName">sign_final_result_o</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/intDX">
+      <obj_property name="ElementShortName">intDX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">intDX[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Oper_Start_in_module/intDY">
+      <obj_property name="ElementShortName">intDY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">intDY[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Oper_A_mux/ctrl">
+      <obj_property name="ElementShortName">ctrl</obj_property>
+      <obj_property name="ObjectShortName">ctrl</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Oper_A_mux/D0">
+      <obj_property name="ElementShortName">D0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Oper_A_mux/D1">
+      <obj_property name="ElementShortName">D1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D1[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Oper_A_mux/S">
+      <obj_property name="ElementShortName">S[7:0]</obj_property>
+      <obj_property name="ObjectShortName">S[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk1.Exp_Oper_B_mux /ctrl">
+      <obj_property name="ElementShortName">ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk1.Exp_Oper_B_mux /D0">
+      <obj_property name="ElementShortName">D0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk1.Exp_Oper_B_mux /D1">
+      <obj_property name="ElementShortName">D1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D1[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk1.Exp_Oper_B_mux /D2">
+      <obj_property name="ElementShortName">D2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">D2[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk1.Exp_Oper_B_mux /S">
+      <obj_property name="ElementShortName">S[7:0]</obj_property>
+      <obj_property name="ObjectShortName">S[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/load_i">
+      <obj_property name="ElementShortName">load_i</obj_property>
+      <obj_property name="ObjectShortName">load_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Data_A_i">
+      <obj_property name="ElementShortName">Data_A_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_A_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Data_B_i">
+      <obj_property name="ElementShortName">Data_B_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_B_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Add_Subt_i">
+      <obj_property name="ElementShortName">Add_Subt_i</obj_property>
+      <obj_property name="ObjectShortName">Add_Subt_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Data_Result_o">
+      <obj_property name="ElementShortName">Data_Result_o[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Result_o[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Overflow_flag_o">
+      <obj_property name="ElementShortName">Overflow_flag_o</obj_property>
+      <obj_property name="ObjectShortName">Overflow_flag_o</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Underflow_flag_o">
+      <obj_property name="ElementShortName">Underflow_flag_o</obj_property>
+      <obj_property name="ObjectShortName">Underflow_flag_o</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/anomaly">
+      <obj_property name="ElementShortName">anomaly</obj_property>
+      <obj_property name="ObjectShortName">anomaly</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Exp_Operation_Module/Data_S">
+      <obj_property name="ElementShortName">Data_S[7:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_S[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk2.Barrel_Shifter_S_V_mux /ctrl">
+      <obj_property name="ElementShortName">ctrl[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ctrl[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk2.Barrel_Shifter_S_V_mux /D0">
+      <obj_property name="ElementShortName">D0[4:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk2.Barrel_Shifter_S_V_mux /D1">
+      <obj_property name="ElementShortName">D1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">D1[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk2.Barrel_Shifter_S_V_mux /D2">
+      <obj_property name="ElementShortName">D2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">D2[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/\genblk2.Barrel_Shifter_S_V_mux /S">
+      <obj_property name="ElementShortName">S[4:0]</obj_property>
+      <obj_property name="ObjectShortName">S[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_D_I_mux/ctrl">
+      <obj_property name="ElementShortName">ctrl</obj_property>
+      <obj_property name="ObjectShortName">ctrl</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_D_I_mux/D0">
+      <obj_property name="ElementShortName">D0[25:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[25:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_D_I_mux/D1">
+      <obj_property name="ElementShortName">D1[25:0]</obj_property>
+      <obj_property name="ObjectShortName">D1[25:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_D_I_mux/S">
+      <obj_property name="ElementShortName">S[25:0]</obj_property>
+      <obj_property name="ObjectShortName">S[25:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_D_I_mux/W">
+      <obj_property name="ElementShortName">W[31:0]</obj_property>
+      <obj_property name="ObjectShortName">W[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/load_i">
+      <obj_property name="ElementShortName">load_i</obj_property>
+      <obj_property name="ObjectShortName">load_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/Shift_Value_i">
+      <obj_property name="ElementShortName">Shift_Value_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">Shift_Value_i[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/Shift_Data_i">
+      <obj_property name="ElementShortName">Shift_Data_i[25:0]</obj_property>
+      <obj_property name="ObjectShortName">Shift_Data_i[25:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/Left_Right_i">
+      <obj_property name="ElementShortName">Left_Right_i</obj_property>
+      <obj_property name="ObjectShortName">Left_Right_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/Bit_Shift_i">
+      <obj_property name="ElementShortName">Bit_Shift_i</obj_property>
+      <obj_property name="ObjectShortName">Bit_Shift_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/Barrel_Shifter_module/N_mant_o">
+      <obj_property name="ElementShortName">N_mant_o[25:0]</obj_property>
+      <obj_property name="ObjectShortName">N_mant_o[25:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/uut/Add_Subt_Sgf_module/FSM_C_o">
+      <obj_property name="ElementShortName">FSM_C_o</obj_property>
+      <obj_property name="ObjectShortName">FSM_C_o</obj_property>
+   </wvobject>
+</wave_config>

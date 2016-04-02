@@ -23,13 +23,13 @@
 module Round_Sgf_Dec(
     input wire clk,
     input wire [1:0] Data_i,
-    input wire [1:0] Round_type,
+    input wire [1:0] Round_Type_i,
     input wire Sign_Result_i,
     output reg Round_Flag_o
     );
     
     always @*
-    	case ({Sign_Result_i,Round_type,Data_i})
+    	case ({Sign_Result_i,Round_Type_i,Data_i})
     	//Round type=00; Towards zero / No round
     	//Round type=01; Towards - infinity
     	//Round type=10; Towards + infinity

@@ -26,6 +26,7 @@ module Priority_Codec_32(
     );
 
 	always @(Data_Dec_i)
+	begin
 		casex (Data_Dec_i)
 			26'b0xxxxxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00000;//0
 			26'b10xxxxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00001;//1
@@ -56,4 +57,5 @@ module Priority_Codec_32(
 			default: Data_Bin_o <= 8'bxxxxxxxx;//don't shift case
 		endcase
 		////26'b00001110100000000111110000;
+	end
 endmodule

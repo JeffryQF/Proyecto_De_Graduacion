@@ -28,6 +28,7 @@ module Mux_3x1
     input wire [1:0] ctrl,
     input wire [W-1:0] D0,
     input wire [W-1:0] D1,
+    input wire [W-1:0] D2,
     output reg [W-1:0] S
     );
 
@@ -35,7 +36,7 @@ module Mux_3x1
    	case (ctrl)
    		2'b00: S<=D0;
    		2'b01: S<=D1;
-   		2'b10: S<=1'b1;
+   		2'b10: S<=D2;
    		default: S<=0;
 	endcase
 endmodule

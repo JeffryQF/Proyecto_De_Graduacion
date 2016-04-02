@@ -22,10 +22,10 @@ module FPU_Add_Subtract_Function
 //Add/Subtract Function Parameters
 	
    # (parameter W = 32, parameter EW = 8, parameter SW = 23,
-		parameter SWR=26)  //Single Precision */
+		parameter SWR=26, parameter EWR = 5)  //Single Precision */
 		
 /*	# (parameter W = 64, parameter EW = 11, parameter SW = 52,
-		parameter SWR = 55) //-- Double Precision */
+		parameter SWR = 55, parameter EWR = 6) //-- Double Precision */
 	(
 		//FSM Signals 
 		input wire clk,
@@ -77,10 +77,10 @@ wire [EW-1:0] exp_oper_result;
 
 ///////////Mux S-> Barrel shifter shift_Value//////
 
-wire [1:0] FSM_selector_E;
+//ctrl = FSM_selector_B;
 //D0=exp_oper_result
 //D1=LZA_output
-wire [EW-1:0] S_Shift_Value;
+wire [EWR-1:0] S_Shift_Value;
 
 ///////////Mux S-> Barrel shifter Data_in//////
 
@@ -124,15 +124,22 @@ wire FSM_Add_Subt_Sgf_load, add_overflow_flag;
 wire [SWR-1:0] Add_Subt_result;
 wire [SWR-1:0] A_S_P;
 wire [SWR-1:1] A_S_C;
+//FSM_C_o=add_overflow_flag
 
 
 //////////LZA///////////////////////////////////////////
 
 wire FSM_LZA_load;
-wire LZA_output;
+//P_i=A_S_P
+//C_i=A_S_C
+//A_S_op_i=S_A_S_op
+wire [EWR-1:0] LZA_output;
 
 /////////Deco_round///////////////////////////////////////
 
+//Data_i=Sgf_normalized_result
+//Round_Type=r_mode
+//Sign_Result_i=sign_final_result
 wire round_flag;
 
 ////////Final_result//////////////////////////////////////
@@ -143,6 +150,14 @@ wire FSM_Final_Result_load;
 
 wire rst_int;
 
+
+//////////////////////////////////////////////////////////////////////////////////
+wire selector_A;
+wire [1:0] selector_B;
+wire load_b;
+wire selector_C;
+wire selector_D;
+
 ///////////////////////////////////////FSM/////////////////////////////////////////
 
 FSM_Add_Subtract FS_Module(
@@ -151,6 +166,7 @@ FSM_Add_Subtract FS_Module(
     .rst_FSM(rst_FSM),                                               //
     .beg_FSM(beg_FSM),                                               //
 	.zero_flag_i(zero_flag),                                         // 
+    .real_op_i(real_op),                                             //
     .norm_iteration_i(FSM_selector_C),                               //
     .add_overflow_i(add_overflow_flag),                              //
     .round_i(round_flag),                                            //
@@ -161,14 +177,14 @@ FSM_Add_Subtract FS_Module(
     .load_4_o(FSM_barrel_shifter_load),                              //
     .left_right_o(FSM_barrel_shifter_L_R),                           //
     .bit_shift_o(FSM_barrel_shifter_B_S),                            //
-    .load_5(FSM_Add_Subt_Sgf_load),                                  //
-    .load_6(FSM_LZA_load),                                           //
-    .load_7(FSM_Final_Result_load),                                  // 
-    .ctrl_a(FSM_selector_A),                                         //
-    .ctrl_b(FSM_selector_B),                                         //
-    .ctrl_c(FSM_selector_C),                                         //
-    .ctrl_e(FSM_selector_E),                                         //
-    .ctrl_d(FSM_selector_D),                                         //
+    .load_5_o(FSM_Add_Subt_Sgf_load),                                  //
+    .load_6_o(FSM_LZA_load),                                           //
+    .load_7_o(FSM_Final_Result_load),                                  // 
+    .ctrl_a_o(selector_A),                                         //
+    .ctrl_b_o(selector_B),                                         //
+    .ctrl_b_load_o(load_b),
+    .ctrl_c_o(selector_C),                                         //
+    .ctrl_d_o(selector_D),                                         //
 	.rst_int(rst_int),                                               //
 	.ready(ready)                                                    //
     );
@@ -176,8 +192,40 @@ FSM_Add_Subtract FS_Module(
 
 
 
+/////////////////////////////Selector's registers//////////////////////////////
 
+RegisterAdd #(.W(1)) Sel_A ( //Selector_A register
+    .clk(clk), 
+    .rst(rst_int), 
+    .load(selector_A), 
+    .D(1'b1), 
+    .Q(FSM_selector_A)
+    );
 
+RegisterAdd #(.W(1)) Sel_C ( //Selector_C register
+    .clk(clk), 
+    .rst(rst_int), 
+    .load(selector_C), 
+    .D(1'b1), 
+    .Q(FSM_selector_C)
+    );
+    
+RegisterAdd #(.W(1)) Sel_D ( //Selector_D register
+        .clk(clk), 
+        .rst(rst_int), 
+        .load(selector_D), 
+        .D(1'b1), 
+        .Q(FSM_selector_D)
+        );
+        
+RegisterAdd #(.W(2)) Sel_B ( //Selector_D register
+                .clk(clk), 
+                .rst(rst_int), 
+                .load(load_b), 
+                .D(selector_B), 
+                .Q(FSM_selector_B)
+                );
+                            
 ////////////////////////////////////////////////////////
 	 
 //MODULES///////////////////////////
@@ -188,7 +236,7 @@ FSM_Add_Subtract FS_Module(
 //in bigger and smaller magnitude, Calculate the result' Sign bit and calculate the real
 //operation for the execution///////////////////////////////
 
-Oper_Start_in #(.W(W)) Oper_Start_in_module (
+Oper_Start_In #(.W(W)) Oper_Start_in_module (
     .clk(clk), 
     .rst(rst_int),
     .load_a_i(FSM_op_start_in_load_a),
@@ -201,7 +249,7 @@ Oper_Start_in #(.W(W)) Oper_Start_in_module (
     .zero_flag_o(zero_flag),
     .real_op_o(real_op),
     .sign_final_result_o(sign_final_result)
-     );
+    );
 
 ///////////////////////////////////////////////////////////
 
@@ -209,20 +257,35 @@ Oper_Start_in #(.W(W)) Oper_Start_in_module (
 ///////////Mux exp_operation OPER_A_i//////////
 
 Multiplexer_AC #(.W(EW)) Exp_Oper_A_mux(
-    .ctrl(FSM_selector_A),
-    .D0 (DMP[W-2:W-EW-1]),
-    .D1 (exp_oper_result),
-    .S (S_Oper_A_exp)
+        .ctrl(FSM_selector_A),
+        .D0 (DMP[W-2:W-EW-1]),
+        .D1 (exp_oper_result),
+        .S (S_Oper_A_exp)
     );
 
 ///////////Mux exp_operation OPER_B_i//////////
-
-Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
-    .ctrl(FSM_selector_B),
-    .D0 (DmP[W-2:W-EW-1]),
-    .D1(LZA_output),
-    .S(S_Oper_B_exp)
-    );
+generate
+    case(EW)
+        8:begin
+            Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (DmP[W-2:W-EW-1]),
+                .D1 ({3'b000,LZA_output}),
+                .D2(8'd1),
+                .S(S_Oper_B_exp)
+            );
+        end
+        default:begin
+            Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (DmP[W-2:W-EW-1]),
+                .D1({5'b00000,LZA_output}),
+                .D2(11'd1),
+                .S(S_Oper_B_exp)
+            );
+        end
+    endcase
+endgenerate
 
 ///////////exp_operation///////////////////////////
 
@@ -231,7 +294,7 @@ Exp_Operation #(.EW(EW)) Exp_Operation_Module(
     .rst(rst_int),
     .load_i(FSM_exp_operation_load),
     .Data_A_i(S_Oper_A_exp),
-    .PreData_B_i(S_Oper_B_exp),
+    .Data_B_i(S_Oper_B_exp),
     .Add_Subt_i(FSM_exp_operation_A_S),
     .Data_Result_o(exp_oper_result),
     .Overflow_flag_o(overflow_flag),
@@ -241,31 +304,46 @@ Exp_Operation #(.EW(EW)) Exp_Operation_Module(
 
 //////////Mux Barrel shifter shift_Value/////////////////
 
-
-Mux_3x1 #(.W(EW)) Barrel_Shifter_S_V_mux(
-    .ctrl(FSM_selector_E),
-    .D0 (exp_oper_result),
-    .D1(LZA_output),
-    .S(S_Shift_Value)
-    );
+generate
+    case(EW)
+        8:begin
+            Mux_3x1 #(.W(EWR)) Barrel_Shifter_S_V_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (exp_oper_result[EWR-1:0]),
+                .D1 (LZA_output),
+                .D2 (5'd1),
+                .S(S_Shift_Value)
+            );
+        end
+        default:begin
+            Mux_3x1 #(.W(EWR)) Barrel_Shifter_S_V_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (exp_oper_result[EWR-1:0]),
+                .D1 (LZA_output),
+                .D2 (6'd1),
+                .S(S_Shift_Value)
+            );
+        end 
+    endcase
+endgenerate
 
 ///////////Mux Barrel shifter Data_in//////
 
 Multiplexer_AC #(.W(SWR)) Barrel_Shifter_D_I_mux(
     .ctrl(FSM_selector_C),
-    .D0 ({1'b1,DmP[SW-1:0].2'b00}),
+    .D0 ({1'b1,DmP[SW-1:0],2'b00}),
     .D1 (Add_Subt_result),
     .S (S_Data_Shift)
     );
 
 ///////////Barrel_Shifter//////////////////////////
 
-Barrel_Shifter #(.SWR(SWR),.EW(EW)) Barrel_Shifter_module (
+Barrel_Shifter #(.SWR(SWR),.EWR(EWR)) Barrel_Shifter_module (
     .clk(clk), 
     .rst(rst_int),
     .load_i(FSM_barrel_shifter_load),
     .Shift_Value_i(S_Shift_Value),
-    .Shift_Data_i(Shift_Data_i),
+    .Shift_Data_i(S_Data_Shift),
     .Left_Right_i(FSM_barrel_shifter_L_R),
     .Bit_Shift_i(FSM_barrel_shifter_B_S),
     .N_mant_o(Sgf_normalized_result)
@@ -291,144 +369,76 @@ Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
     );
 
 //////////Mux Add_Subt_Sgf oper B//////////////////
+generate
+    case (W)
+        32:begin
+            Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
+                .ctrl(FSM_selector_D),
+                .D0 (Sgf_normalized_result),
+                .D1 (26'd1),
+                .S (S_A_S_Oper_B)
+                );
+            end
+        default:begin
+             Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
+                       .ctrl(FSM_selector_D),
+                       .D0 (Sgf_normalized_result),
+                       .D1 (55'd1),
+                       .S (S_A_S_Oper_B)
+                       );
+            end
+       endcase
+endgenerate
 
-Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
-    .ctrl(FSM_selector_D),
-    .D0 (Sgf_normalized_result),
-    .D1 (SWR'd1),
-    .S (S_A_S_Oper_B)
-    );
+/////////ADD_Subt_sgf///////////////////////////////////
 
-
-
-
-Zero_InfAdd_Unit #(.W(W)) Zero_Except_Module (
+Add_Subt #(.SWR(SWR)) Add_Subt_Sgf_module(
     .clk(clk), 
-    .rst(rst_int), 
-    .load(load_0), 
-    .Data_A(QX), 
-    .Data_B(QY), 
-    .arit_op(add_subt), 
-    .zero(zero_flag)
+    .rst(rst_int),
+    .load_i(FSM_Add_Subt_Sgf_load),
+    .Add_Sub_op_i(S_A_S_op),
+    .Data_A_i(S_A_S_Oper_A),
+    .PreData_B_i(S_A_S_Oper_B),
+    .Data_Result_o(Add_Subt_result),
+    .P_o(A_S_P),
+    .Cn_o(A_S_C),
+    .FSM_C_o(add_overflow_flag)
     );
 
-//This module normalize the mantissa of the smallest operand//
-Second_Phase #(.W_Exp(W_Exp), .W_Sgf(W_Sgf)) Normalization_Smallest_Significand(
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .ctrl_a(load_4), //check
-    .ctrl_b(load_5), //check
-    .exp_M(DMP[W-2:W-S_Exp]), //check
-    .exp_m(DmP[W-2:W-S_Exp]), //check
-    .sgfm(DmP[W-S_Exp-1:0]), //check
-    .sgfm_n(sgfm_n) //check
-    );
-////////////////////////////////////////////////////////////////
+//////////LZA///////////////////////////////////////////
 
-//In this module occurs the add/subtract of significands
-Third_Phase #(.W_Sgf(W_Sgf)) Add_Sub_Significands (
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .ctrl(load_6), //check
-    .sgf_M({1'b1,DMP[W-S_Exp-1:0],2'b00}), //check
-    .sgf_m(sgfm_n), //check
-    .sgn_M(DMP[W-1]), //check
-    .sgn_m(DmP[W-1]), //check
-    .sgf_R(sgf_R) //check
-    );
-///////////////////////////////////////////////////////////////
-
-//Sequential Shifting Module
-Fourth_Phase #(.W_Sgf(W_Sgf)) Fourth_Module (
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .Sgf_R(sgf_R), //check 
-    .selector(selector_4_P_reg), //check 
-    .ctrl_b(load_7), //check 
-    .ctrl_c(load_8), //check 
-    .shift_left(sl), //check 
-    .shift_right(sr), //check 
-    .shift_in(1'b0), //check 
-    .Sgf_ncarry(Sgf_ncarry), //check 
-    .Sgf_nbit(Sgf_nbit), //check 
-    .Sgf_NF(Sgf_NF) //check 
+LZA #(.SWR(SWR),.EWR(EWR)) Leading_Zero_Anticipator_Module (
+    .clk(clk), 
+    .rst(rst_int),
+    .load_i(FSM_LZA_load),
+    .P_i(A_S_P),
+    .C_i(A_S_C),
+    .A_S_op_i(S_A_S_op),
+    .Shift_Value_o(LZA_output)
     );
 
+/////////Deco_round///////////////////////////////////////
 
-//Update Exponent 1
-Fifth_Phase #(.W_Exp(W_Exp)) Update_Exponent_First_Time (
-    .clk(clk), //check 
-    .rst(rst_int), //check 
-    .ctrl_a(load_9), //check 
-    .ctrl_b(load_10), //check 
-    .ctrl_c(load_11), //check 
-    .add_sub_ctrl(add_subt_5_P_reg), //check 
-    .selector_a(selector_5_P_reg), //check 
-    .selector_b(selector_5_P_exp_reg), //check 
-    .exp_M(DMP[W-2:W-S_Exp]), //check 
-    .exp_update_ieee(exp_update_ieee), //check 
-    .exp_update_uo(exp_update_uo)//check 
-    );
-	 
-
-
-//Looking for an underflow/overflow
-Sixth_Phase #(.W_Exp(W_Exp)) First_Und_Ov_Search(
-    .clk(clk), //check 
-    .rst(rst_int), //check 
-    .ctrl(load_12), //check
-    .exp(exp_update_uo), //check
-    .overflow(overflow), //check
-    .underflow(underflow) //check
+Round_Sgf_Dec Rounding_Decoder(
+    .clk(clk),
+    .Data_i(Sgf_normalized_result[1:0]),
+    .Round_Type_i(r_mode),
+    .Sign_Result_i(sign_final_result),
+    .Round_Flag_o(round_flag)
     );
 
-//Rounding the significand
-Seventh_Phase #(.W_Sgf(W_Sgf)) Round_Resultant_Significand (
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .ctrl_a(load_13), //check
-    .ctrl_b(load_14), //check
-    .Sgf_N(Sgf_NF[W_Sgf+2:0]), //check
-    .r_mode(r_mode), //check
-	 .Sgn_M(DMP[W-1]), 
-    .Sgf_Ready(Sgf_Ready) //check
-    );
+////////Final_result//////////////////////////////////////
 
-
-Eight_N_Phase #(.W_Sgf(W_Sgf)) Select_Final_Significand(
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .load(load_15), //check
-    .Sgf_Ready(Sgf_Ready), //check
-    .Sgf_R_ieee(Sgf_R_ieee), //check
-    .exp_na(exp_na) //check 
+Tenth_Phase #(.W(W),.EW(EW),.SW(SW)) final_result_ieee_Module(
+    .clk(clk), 
+    .rst(rst_int),
+    .load_i(FSM_Final_Result_load),
+    .sel_a_i(overflow_flag),
+    .sel_b_i(underflow_flag),
+    .sign_i(sign_final_result),
+    .exp_ieee_i(exp_oper_result),
+    .sgf_ieee_i(Sgf_normalized_result[SWR-2:2]),
+    .final_result_ieee_o(final_result_ieee)
     );
-
-Eight_NE_Phase #(.W_Exp(W_Exp)) Select_Final_Exponent (
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .load_a(load_16), //check
-    .load_b(load_17), //check
-    .exp_update(exp_update_ieee), //check
-    .selector(exp_na), //check
-    .exp_ieee_p(exp_ieee_p), //check
-    .overflow_pr(overflow_pr) //check
-    );
-	 
-Tenth_Phase #(.W(W), .W_Exp(W_Exp), .W_Sgf(W_Sgf)) Tenth_Module(
-    .clk(clk), //check
-    .rst(rst_int), //check
-    .sel_a(selector_10_P_a_reg), //check
-    .sel_b(selector_10_P_b_reg), //check
-    .ctrl_a(load_18), //check
-    .ctrl_b(load_19), //check
-    .sgn_M(DMP[W-1]),  
-    .exp_ieee_p(exp_ieee_p), 
-    .sgf_ieee_p(Sgf_R_ieee), 
-    .final_result_ieee(final_result_ieee)
-    );
-
-assign overflow_flag = (overflow_pr || overflow) ? 1'b1:1'b0;
-assign underflow_flag = underflow; 
 
 endmodule

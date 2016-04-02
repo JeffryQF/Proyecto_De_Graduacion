@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xelab -wto 8cfbd71f8c2244a4802a4668ad038820 -m64 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Testbench_Barrel_Shifter_behav xil_defaultlib.Testbench_Barrel_Shifter xil_defaultlib.glbl -log elaborate.log
+ExecStep $xv_path/bin/xelab -wto 8cfbd71f8c2244a4802a4668ad038820 -m64 --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Testbench_FPU_Add_Subt_behav xil_defaultlib.Testbench_FPU_Add_Subt xil_defaultlib.glbl -log elaborate.log

@@ -27,7 +27,7 @@ module Exp_Operation
         input wire rst, //reset of the module
         input wire load_i,
         input wire [EW-1:0] Data_A_i,
-        input wire [EW-1:0] PreData_B_i,
+        input wire [EW-1:0] Data_B_i,
         input wire Add_Subt_i,
 
         ///////////////////////////////////////////////////////////////////77
@@ -38,30 +38,34 @@ module Exp_Operation
 
 
 wire anomaly;
-wire [EW-1:0] Data_B;
-
+//wire [EW-1:0] Data_B;
+wire [EW-1:0] Data_S; 
 /////////////////////////////////////////7
-genvar j;
-for (j=0; j<EW; j=j+1)begin
+//genvar j;
+//for (j=0; j<EW; j=j+1)begin
 
-    assign Data_B[j] = PreData_B_i[j] ^ FSM_Add_Subt_i;
+//    assign Data_B[j] = PreData_B_i[j] ^ Add_Subt_i;
 
-end
+//end
 /////////////////////////////////////////
 
 add_sub_carry_out #(.W(EW)) exp_add_subt(
-    .op_mode (FSM_Add_Subt_i),
+    .op_mode (Add_Subt_i),
     .Data_A (Data_A_i),
-    .Data_B (Data_B),
+    .Data_B (Data_B_i),
     .Data_S ({anomaly, Data_S})
     );
-assign Overflow_flag_o = anomaly & ~FSM_Add_Subt_i;
-assign Underflow_flag_o = anomaly & FSM_Add_Subt_i;
+//assign Overflow_flag_o = 1'b0;
+//assign Underflow_flag_o = 1'b0;
+
+assign Overflow_flag_o = ~Add_Subt_i & anomaly;
+assign Underflow_flag_o = Add_Subt_i & ~anomaly;
+
 
 RegisterAdd #(.W(EW)) exp_result(
     .clk (clk),
     .rst (rst),
-    .load (FSM_Load_i),
+    .load (load_i),
     .D (Data_S),
     .Q (Data_Result_o)
     );

@@ -1,7 +1,3 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/sim_1/new/Testbench_Barrel_Shifter.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Testbench_Barrel_Shifter
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Invert_Sign.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Invert_Sign
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module RegisterAdd
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v" into library xil_defaultlib
@@ -22,5 +18,38 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/D
 INFO: [VRFC 10-311] analyzing module Barrel_Shifter
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Multiplexer_AC
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/add_sub_carry_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add_sub_carry_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/xor_tri.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xor_tri
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Priority_Codec_32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Combinational_Logic_LZA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Combinational_Logic_LZA
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Round_Sgf_Dec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Round_Sgf_Dec
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FPU_Add_Subtract_Function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FPU_Add_Subtract_Function
+INFO: [VRFC 10-2458] undeclared symbol zero_flag, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FPU_Add_Subtract_Function.v:168]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux_3x1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/LZA.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LZA
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG_1b.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Full_Adder_PG_1b
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_64.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Priority_Codec_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Tenth_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tenth_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Add_Subt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Add_Subt
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Full_Adder_PG
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FSM_Add_Subtract.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FSM_Add_Subtract
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.srcs/sim_1/new/Testbench_FPU_Add_Subt.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Testbench_FPU_Add_Subt
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/FPU_2.0.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl
