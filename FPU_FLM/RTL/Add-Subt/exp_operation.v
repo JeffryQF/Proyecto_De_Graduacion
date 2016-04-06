@@ -25,7 +25,8 @@ module Exp_Operation
     (
         input wire clk, //system clock
         input wire rst, //reset of the module
-        input wire load_i,
+        input wire load_a_i,
+        input wire load_b_i,
         input wire [EW-1:0] Data_A_i,
         input wire [EW-1:0] Data_B_i,
         input wire Add_Subt_i,
@@ -58,15 +59,31 @@ add_sub_carry_out #(.W(EW)) exp_add_subt(
 //assign Overflow_flag_o = 1'b0;
 //assign Underflow_flag_o = 1'b0;
 
-assign Overflow_flag_o = ~Add_Subt_i & anomaly;
-assign Underflow_flag_o = Add_Subt_i & ~anomaly;
+assign Overflow_flag = ~Add_Subt_i & anomaly;
+assign Underflow_flag = Add_Subt_i & anomaly;
 
 
 RegisterAdd #(.W(EW)) exp_result(
     .clk (clk),
     .rst (rst),
-    .load (load_i),
+    .load (load_a_i),
     .D (Data_S),
     .Q (Data_Result_o)
     );
+    
+RegisterAdd #(.W(1)) Overflow (
+    .clk(clk),
+    .rst(rst),
+    .load(load_a_i),
+    .D(Overflow_flag),
+    .Q(Overflow_flag_o)
+    );
+    
+RegisterAdd #(.W(1)) Underflowflow (
+        .clk(clk),
+        .rst(rst),
+        .load(load_b_i),
+        .D(Underflow_flag),
+        .Q(Underflow_flag_o)
+        );
 endmodule

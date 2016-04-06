@@ -6,8 +6,11 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/D
 INFO: [VRFC 10-311] analyzing module MultiplexTxT
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Oper_Start_In
+INFO: [VRFC 10-2458] undeclared symbol sign_result, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v:110]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Exp_Operation
+INFO: [VRFC 10-2458] undeclared symbol Overflow_flag, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v:61]
+INFO: [VRFC 10-2458] undeclared symbol Underflow_flag, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v:62]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Rotate_Mux_Array.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Rotate_Mux_Array
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/sgn_result.v" into library xil_defaultlib

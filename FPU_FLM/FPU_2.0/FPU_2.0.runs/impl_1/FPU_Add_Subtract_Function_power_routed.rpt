@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Fri Apr  1 12:25:59 2016
+| Date             : Tue Apr  5 06:52:19 2016
 | Host             : francis-Aspire-E1-570 running 64-bit unknown
 | Command          : report_power -file FPU_Add_Subtract_Function_power_routed.rpt -pb FPU_Add_Subtract_Function_power_summary_routed.pb
 | Design           : FPU_Add_Subtract_Function
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.109 |
-| Dynamic (W)              | 0.018 |
+| Total On-Chip Power (W)  | 0.117 |
+| Dynamic (W)              | 0.026 |
 | Device Static (W)        | 0.091 |
 | Effective TJA (C/W)      | 4.6   |
 | Max Ambient (C)          | 84.5  |
@@ -49,16 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |      787 |       --- |             --- |
-|   LUT as Logic |     0.003 |      442 |     63400 |            0.70 |
-|   Register     |    <0.001 |      232 |    126800 |            0.18 |
-|   CARRY4       |    <0.001 |       10 |     15850 |            0.06 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.006 |     1525 |       --- |             --- |
+|   LUT as Logic |     0.005 |      861 |     63400 |            1.36 |
+|   Register     |    <0.001 |      460 |    126800 |            0.36 |
+|   CARRY4       |    <0.001 |       17 |     15850 |            0.11 |
 |   Others       |     0.000 |        7 |       --- |             --- |
-| Signals        |     0.005 |      657 |       --- |             --- |
-| I/O            |     0.008 |      106 |       210 |           50.48 |
+| Signals        |     0.009 |     1289 |       --- |             --- |
+| I/O            |     0.010 |      202 |       210 |           96.19 |
 | Static Power   |     0.091 |          |           |                 |
-| Total          |     0.109 |          |           |                 |
+| Total          |     0.117 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,7 +68,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.010 |      0.015 |
+| Vccint    |       1.000 |     0.032 |       0.017 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -137,24 +137,27 @@ Table of Contents
 +-----------------------------------+-----------+
 | Name                              | Power (W) |
 +-----------------------------------+-----------+
-| FPU_Add_Subtract_Function         |     0.018 |
-|   Add_Subt_Sgf_module             |     0.002 |
-|     Add_Subt_Result               |     0.002 |
+| FPU_Add_Subtract_Function         |     0.026 |
+|   Add_Subt_Sgf_module             |    <0.001 |
+|     Add_Subt_Result               |    <0.001 |
 |   Barrel_Shifter_module           |    <0.001 |
 |     Output_Reg                    |    <0.001 |
 |   Exp_Operation_Module            |    <0.001 |
+|     Overflow                      |    <0.001 |
+|     Underflowflow                 |    <0.001 |
 |     exp_add_subt                  |    <0.001 |
 |     exp_result                    |    <0.001 |
 |   FS_Module                       |     0.001 |
 |   Leading_Zero_Anticipator_Module |    <0.001 |
 |     Output_Reg                    |    <0.001 |
-|   Oper_Start_in_module            |     0.004 |
+|   Oper_Start_in_module            |     0.009 |
 |     ASRegister                    |    <0.001 |
 |     YRegister                     |    <0.001 |
+|     SignRegister                  |    <0.001 |
 |     XRegister                     |     0.002 |
-|     MRegister                     |    <0.001 |
-|     mRegister                     |    <0.001 |
-|   Sel_B                           |    <0.001 |
+|     MRegister                     |     0.003 |
+|     mRegister                     |     0.003 |
+|   Sel_B                           |     0.002 |
 |   Sel_C                           |    <0.001 |
 |   Sel_D                           |    <0.001 |
 |   final_result_ieee_Module        |    <0.001 |

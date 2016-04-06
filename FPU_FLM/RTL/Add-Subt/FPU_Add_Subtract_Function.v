@@ -21,10 +21,10 @@
 module FPU_Add_Subtract_Function
 //Add/Subtract Function Parameters
 	
-   # (parameter W = 32, parameter EW = 8, parameter SW = 23,
+   /*#(parameter W = 32, parameter EW = 8, parameter SW = 23,
 		parameter SWR=26, parameter EWR = 5)  //Single Precision */
 		
-/*	# (parameter W = 64, parameter EW = 11, parameter SW = 52,
+	#(parameter W = 64, parameter EW = 11, parameter SW = 52,
 		parameter SWR = 55, parameter EWR = 6) //-- Double Precision */
 	(
 		//FSM Signals 
@@ -58,7 +58,7 @@ wire sign_final_result;
 ///////////Mux S-> exp_operation OPER_A_i//////////
 
 wire FSM_selector_A;
-//D0=DMP_o[W-2:W-EW-1] ?????????????????????????????????????
+//D0=DMP_o[W-2:W-EW-1] 
 //D1=exp_oper_result
 wire [EW-1:0] S_Oper_A_exp;
 
@@ -70,7 +70,7 @@ wire [1:0] FSM_selector_B;
 wire [EW-1:0] S_Oper_B_exp;
 
 ///////////exp_operation///////////////////////////
-wire FSM_exp_operation_load,FSM_exp_operation_A_S;
+wire FSM_exp_operation_load_diff, FSM_exp_operation_load_OU ,FSM_exp_operation_A_S;
 //oper_A= S_Oper_A_exp
 //oper_B= S_Oper_B_exp
 wire [EW-1:0] exp_oper_result;
@@ -172,7 +172,8 @@ FSM_Add_Subtract FS_Module(
     .round_i(round_flag),                                            //
 	.load_1_o(FSM_op_start_in_load_a),                               //
     .load_2_o(FSM_op_start_in_load_b),                               //
-    .load_3_o(FSM_exp_operation_load),                               //
+    .load_3_o(FSM_exp_operation_load_diff),                               //
+    .load_8_o(FSM_exp_operation_load_OU),
     .A_S_op_o(FSM_exp_operation_A_S),                                //
     .load_4_o(FSM_barrel_shifter_load),                              //
     .left_right_o(FSM_barrel_shifter_L_R),                           //
@@ -292,7 +293,8 @@ endgenerate
 Exp_Operation #(.EW(EW)) Exp_Operation_Module(
     .clk(clk), 
     .rst(rst_int),
-    .load_i(FSM_exp_operation_load),
+    .load_a_i(FSM_exp_operation_load_diff),
+    .load_b_i(FSM_exp_operation_load_OU),
     .Data_A_i(S_Oper_A_exp),
     .Data_B_i(S_Oper_B_exp),
     .Add_Subt_i(FSM_exp_operation_A_S),

@@ -14,13 +14,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:10 . Memory (MB): peak = 1014.879 ; gain = 170.668 ; free physical = 366 ; free virtual = 1671
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.883 ; gain = 170.672 ; free physical = 745 ; free virtual = 2097
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'FPU_Add_Subtract_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:21]
-	Parameter W bound to: 32 - type: integer 
-	Parameter W_Exp bound to: 8 - type: integer 
-	Parameter W_Sgf bound to: 23 - type: integer 
-	Parameter S_Exp bound to: 9 - type: integer 
+	Parameter W bound to: 64 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
+	Parameter S_Exp bound to: 12 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'FSM_Add_Subtract' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Add_Subtract.v:21]
 	Parameter zero bound to: 6'b000000 
 	Parameter load_oper bound to: 6'b000001 
@@ -77,166 +77,166 @@ INFO: [Synth 8-638] synthesizing module 'RegisterAdd' [/media/francis/Acer/Users
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'First_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase.v:24]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized0' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized1' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'Greater_Comparator' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
-	Parameter W bound to: 31 - type: integer 
+	Parameter W bound to: 63 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Greater_Comparator' (3#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
 INFO: [Synth 8-638] synthesizing module 'Invert_Sign' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Invert_Sign.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Invert_Sign' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Invert_Sign.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized2' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized3' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized4' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'First_Phase' (6#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase.v:24]
 INFO: [Synth 8-638] synthesizing module 'Zero_InfAdd_Unit' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfAdd_Unit.v:27]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Comparator_Equal' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
-	Parameter S bound to: 31 - type: integer 
+	Parameter S bound to: 63 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Comparator_Equal' (7#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
 INFO: [Synth 8-638] synthesizing module 'Zero_AS_Decoder' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_Decoder.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Zero_AS_Decoder' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_Decoder.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Zero_InfAdd_Unit' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfAdd_Unit.v:27]
 INFO: [Synth 8-638] synthesizing module 'Second_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase.v:24]
-	Parameter W_Exp bound to: 8 - type: integer 
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'add_subtract' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_subtract.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_subtract' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_subtract.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized5' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'Shift_Module_Param' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Shift_Module_Param.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Shift_Module_Param' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Shift_Module_Param.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
+	Parameter W bound to: 55 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized6' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Second_Phase' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase.v:24]
 INFO: [Synth 8-638] synthesizing module 'Third_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Comparator_Equal__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
 	Parameter S bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Comparator_Equal__parameterized0' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
 INFO: [Synth 8-638] synthesizing module 'add_sub_carry_out' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
-	Parameter W bound to: 26 - type: integer 
+	Parameter W bound to: 55 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized7' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 27 - type: integer 
+	Parameter W bound to: 56 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized7' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Third_Phase' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Fourth_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase.v:24]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 27 - type: integer 
+	Parameter W bound to: 56 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized0' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Universal_Shift_Register' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Universal_Shift_Register.v:21]
-	Parameter W bound to: 27 - type: integer 
+	Parameter W bound to: 56 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Universal_Shift_Register' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Universal_Shift_Register.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized8' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
+	Parameter W bound to: 55 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized8' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Fourth_Phase' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase.v:24]
 INFO: [Synth 8-638] synthesizing module 'Fifth_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase.v:21]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized1' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized9' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized9' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized10' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized10' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized2' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized11' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized11' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Fifth_Phase' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Sixth_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase.v:21]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Greater_Comparator__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Greater_Comparator__parameterized0' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
 INFO: [Synth 8-638] synthesizing module 'Comparator_Less' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Less.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Comparator_Less' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Less.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Sixth_Phase' (19#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Seventh_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Decoder_4_1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Decoder_4_1.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Decoder_4_1' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Decoder_4_1.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized12' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized12' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'add_sub_carry_out__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out__parameterized0' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 25 - type: integer 
+	Parameter W bound to: 54 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized3' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized13' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 25 - type: integer 
+	Parameter W bound to: 54 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized13' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Seventh_Phase' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Eight_N_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_N_Phase.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized4' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized14' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 23 - type: integer 
+	Parameter W bound to: 52 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized14' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Eight_N_Phase' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_N_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Eight_NE_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_NE_Phase.v:21]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized15' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized15' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized5' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Greater_Comparator__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Greater_Comparator__parameterized1' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized16' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized16' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Eight_NE_Phase' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_NE_Phase.v:21]
 INFO: [Synth 8-638] synthesizing module 'Tenth_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Tenth_Phase.v:21]
-	Parameter W bound to: 32 - type: integer 
-	Parameter W_Exp bound to: 8 - type: integer 
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W bound to: 64 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized6' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized17' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized17' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized18' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized18' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Tenth_Phase' (24#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Tenth_Phase.v:21]
 INFO: [Synth 8-256] done synthesizing module 'FPU_Add_Subtract_Function' (25#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 1054.262 ; gain = 210.051 ; free physical = 323 ; free virtual = 1630
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1054.266 ; gain = 210.055 ; free physical = 702 ; free virtual = 2056
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -246,7 +246,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1054.262 ; gain = 210.051 ; free physical = 321 ; free virtual = 1630
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1054.266 ; gain = 210.055 ; free physical = 700 ; free virtual = 2056
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -260,24 +260,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1357.699 ; gain = 0.000 ; free physical = 127 ; free virtual = 1451
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1360.703 ; gain = 0.000 ; free physical = 516 ; free virtual = 1872
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10839 
+INFO: Helper process launched with PID 10311 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1357.703 ; gain = 513.492 ; free physical = 125 ; free virtual = 1448
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1360.707 ; gain = 516.496 ; free physical = 511 ; free virtual = 1868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1357.703 ; gain = 513.492 ; free physical = 125 ; free virtual = 1448
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1360.707 ; gain = 516.496 ; free physical = 511 ; free virtual = 1868
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:21 . Memory (MB): peak = 1357.703 ; gain = 513.492 ; free physical = 125 ; free virtual = 1448
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1360.707 ; gain = 516.496 ; free physical = 511 ; free virtual = 1868
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'FSM_Add_Subtract'
 INFO: [Synth 8-5546] ROM "ready" won't be mapped to RAM because it is too sparse
@@ -372,7 +372,7 @@ INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'FSM_Add_Subtract'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.703 ; gain = 513.492 ; free physical = 104 ; free virtual = 1428
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1360.707 ; gain = 516.496 ; free physical = 490 ; free virtual = 1847
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -385,24 +385,24 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     27 Bit       Adders := 1     
-	   3 Input     25 Bit       Adders := 1     
-	   3 Input      8 Bit       Adders := 3     
+	   3 Input     56 Bit       Adders := 1     
+	   3 Input     54 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 3     
 +---Registers : 
-	               32 Bit    Registers := 7     
-	               27 Bit    Registers := 2     
-	               26 Bit    Registers := 2     
-	               25 Bit    Registers := 1     
-	               24 Bit    Registers := 1     
-	               23 Bit    Registers := 1     
-	                8 Bit    Registers := 6     
+	               64 Bit    Registers := 7     
+	               56 Bit    Registers := 2     
+	               55 Bit    Registers := 2     
+	               54 Bit    Registers := 1     
+	               53 Bit    Registers := 1     
+	               52 Bit    Registers := 1     
+	               11 Bit    Registers := 6     
 	                1 Bit    Registers := 13    
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 4     
-	   2 Input     27 Bit        Muxes := 4     
-	   2 Input     25 Bit        Muxes := 2     
-	   2 Input     24 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 7     
+	   2 Input     64 Bit        Muxes := 4     
+	   2 Input     56 Bit        Muxes := 4     
+	   2 Input     54 Bit        Muxes := 2     
+	   2 Input     53 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 7     
 	  55 Input      6 Bit        Muxes := 1     
 	  49 Input      1 Bit        Muxes := 28    
 	   2 Input      1 Bit        Muxes := 3     
@@ -426,31 +426,31 @@ Detailed RTL Component Info :
 Module RegisterAdd__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module RegisterAdd__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module Invert_Sign 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
 Module RegisterAdd__parameterized2 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module Multiplexer_AC 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
 Module RegisterAdd__parameterized3 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module RegisterAdd__parameterized4 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module Zero_AS_Decoder 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -459,112 +459,112 @@ Detailed RTL Component Info :
 Module add_subtract 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      8 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterAdd__parameterized5 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterAdd__parameterized6 
 Detailed RTL Component Info : 
 +---Registers : 
-	               26 Bit    Registers := 1     
+	               55 Bit    Registers := 1     
 Module add_sub_carry_out 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     27 Bit       Adders := 1     
+	   3 Input     56 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     56 Bit        Muxes := 1     
 Module RegisterAdd__parameterized7 
 Detailed RTL Component Info : 
 +---Registers : 
-	               27 Bit    Registers := 1     
+	               56 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized0 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     56 Bit        Muxes := 1     
 Module Universal_Shift_Register 
 Detailed RTL Component Info : 
 +---Registers : 
-	               27 Bit    Registers := 1     
+	               56 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input     27 Bit        Muxes := 2     
+	   2 Input     56 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 2     
 Module RegisterAdd__parameterized8 
 Detailed RTL Component Info : 
 +---Registers : 
-	               26 Bit    Registers := 1     
+	               55 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized1 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterAdd__parameterized9 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterAdd__parameterized10 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized2 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterAdd__parameterized11 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterAdd__parameterized12 
 Detailed RTL Component Info : 
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               53 Bit    Registers := 1     
 Module add_sub_carry_out__parameterized0 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     25 Bit       Adders := 1     
+	   3 Input     54 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     54 Bit        Muxes := 1     
 Module Multiplexer_AC__parameterized3 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     54 Bit        Muxes := 1     
 Module RegisterAdd__parameterized13 
 Detailed RTL Component Info : 
 +---Registers : 
-	               25 Bit    Registers := 1     
+	               54 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized4 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     53 Bit        Muxes := 1     
 Module RegisterAdd__parameterized14 
 Detailed RTL Component Info : 
 +---Registers : 
-	               23 Bit    Registers := 1     
+	               52 Bit    Registers := 1     
 Module RegisterAdd__parameterized15 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized5 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterAdd__parameterized16 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized6 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterAdd__parameterized17 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module RegisterAdd__parameterized18 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -577,16 +577,16 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 104 ; free virtual = 1428
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 490 ; free virtual = 1847
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-4471] merging register 'Sel_5_P/Q_reg[0:0]' into 'Sel_4_P/Q_reg[0:0]' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:33]
 INFO: [Synth 8-4471] merging register 'Sel_5_P_exp/Q_reg[0:0]' into 'Sel_4_P/Q_reg[0:0]' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:33]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 100 ; free virtual = 1423
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 484 ; free virtual = 1841
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 100 ; free virtual = 1423
+Finished Parallel Reinference  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 484 ; free virtual = 1841
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -612,9 +612,9 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 90 ; free virtual = 1416
+Finished Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 483 ; free virtual = 1840
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 90 ; free virtual = 1416
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 483 ; free virtual = 1840
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -628,10 +628,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 50 ; free virtual = 1383
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1360.711 ; gain = 516.500 ; free physical = 432 ; free virtual = 1793
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 39 ; free virtual = 1371
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 404 ; free virtual = 1765
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -643,16 +643,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 401 ; free virtual = 1762
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 401 ; free virtual = 1762
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 401 ; free virtual = 1762
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -669,7 +669,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -682,7 +682,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -694,25 +694,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -729,82 +729,83 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    25|
-|3     |LUT1   |    32|
-|4     |LUT2   |    51|
-|5     |LUT3   |   163|
-|6     |LUT4   |    66|
-|7     |LUT5   |    30|
+|2     |CARRY4 |    51|
+|3     |LUT1   |    74|
+|4     |LUT2   |    90|
+|5     |LUT3   |   351|
+|6     |LUT4   |   192|
+|7     |LUT5   |   104|
 |8     |LUT6   |   142|
 |9     |MUXF7  |     4|
-|10    |FDCE   |   467|
-|11    |IBUF   |    71|
-|12    |OBUF   |    35|
+|10    |FDCE   |   912|
+|11    |IBUF   |   135|
+|12    |OBUF   |    67|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------+----------------------------------+------+
 |      |Instance                             |Module                            |Cells |
 +------+-------------------------------------+----------------------------------+------+
-|1     |top                                  |                                  |  1087|
-|2     |  Add_Sub_Significands               |Third_Phase                       |    27|
-|3     |    R_Sgf                            |RegisterAdd__parameterized7       |    27|
-|4     |  FS_Module                          |FSM_Add_Subtract                  |    94|
+|1     |top                                  |                                  |  2123|
+|2     |  Add_Sub_Significands               |Third_Phase                       |    56|
+|3     |    R_Sgf                            |RegisterAdd__parameterized7       |    56|
+|4     |  FS_Module                          |FSM_Add_Subtract                  |    69|
 |5     |  First_Und_Ov_Search                |Sixth_Phase                       |     3|
 |6     |    R_Overflow                       |RegisterAdd_10                    |     2|
 |7     |    R_Underflow                      |RegisterAdd_11                    |     1|
-|8     |  Fourth_Module                      |Fourth_Phase                      |    84|
-|9     |    SgfRegister_F                    |RegisterAdd__parameterized8       |    28|
-|10    |    SgfShift                         |Universal_Shift_Register          |    56|
-|11    |  Normalization_Smallest_Significand |Second_Phase                      |   117|
-|12    |    ESRegister                       |RegisterAdd__parameterized5       |    90|
-|13    |    SGFmRegister                     |RegisterAdd__parameterized6       |    27|
-|14    |  Operands_Classification            |First_Phase                       |   354|
+|8     |  Fourth_Module                      |Fourth_Phase                      |   225|
+|9     |    SgfRegister_F                    |RegisterAdd__parameterized8       |    57|
+|10    |    SgfShift                         |Universal_Shift_Register          |   168|
+|11    |  Normalization_Smallest_Significand |Second_Phase                      |   147|
+|12    |    ESRegister                       |RegisterAdd__parameterized5       |    91|
+|13    |    SGFmRegister                     |RegisterAdd__parameterized6       |    56|
+|14    |  Operands_Classification            |First_Phase                       |   843|
 |15    |    DY_Inv                           |Invert_Sign                       |     1|
-|16    |    Dir_M                            |Multiplexer_AC_8                  |    32|
-|17    |    Dir_m                            |Multiplexer_AC_9                  |    32|
+|16    |    Dir_M                            |Multiplexer_AC_8                  |    64|
+|17    |    Dir_m                            |Multiplexer_AC_9                  |    64|
 |18    |    ASRegister                       |RegisterAdd_6                     |     1|
 |19    |    CMPRegister                      |RegisterAdd_7                     |     1|
-|20    |    DMC                              |RegisterAdd__parameterized3       |    89|
-|21    |    DYP                              |RegisterAdd__parameterized2       |    32|
-|22    |    DmC                              |RegisterAdd__parameterized4       |    51|
-|23    |    XRegister                        |RegisterAdd__parameterized0       |    81|
-|24    |    YRegister                        |RegisterAdd__parameterized1       |    34|
-|25    |  Round_Resultant_Significand        |Seventh_Phase                     |    79|
-|26    |    Round_Adder                      |add_sub_carry_out__parameterized0 |     7|
-|27    |    Round_Sgf_N                      |RegisterAdd__parameterized12      |    47|
-|28    |    Sgf_Ready_Reg                    |RegisterAdd__parameterized13      |    25|
+|20    |    DMC                              |RegisterAdd__parameterized3       |   186|
+|21    |    DYP                              |RegisterAdd__parameterized2       |    64|
+|22    |    DmC                              |RegisterAdd__parameterized4       |   234|
+|23    |    XRegister                        |RegisterAdd__parameterized0       |   163|
+|24    |    YRegister                        |RegisterAdd__parameterized1       |    65|
+|25    |  Round_Resultant_Significand        |Seventh_Phase                     |   173|
+|26    |    Round_Adder                      |add_sub_carry_out__parameterized0 |    14|
+|27    |    Round_Sgf_N                      |RegisterAdd__parameterized12      |   105|
+|28    |    Sgf_Ready_Reg                    |RegisterAdd__parameterized13      |    54|
 |29    |  Sel_10_P_a                         |RegisterAdd                       |     1|
-|30    |  Sel_10_P_b                         |RegisterAdd_0                     |    24|
+|30    |  Sel_10_P_b                         |RegisterAdd_0                     |    53|
 |31    |  Sel_4_P                            |RegisterAdd_1                     |     1|
-|32    |  Select_Final_Exponent              |Eight_NE_Phase                    |    27|
-|33    |    exp_fp_reg                       |RegisterAdd__parameterized16      |     8|
-|34    |    exp_u_register                   |RegisterAdd__parameterized15      |    18|
-|35    |    overflow_am                      |RegisterAdd_5                     |     1|
-|36    |  Select_Final_Significand           |Eight_N_Phase                     |    48|
-|37    |    Dir_Sgf_iee                      |Multiplexer_AC__parameterized4    |    23|
-|38    |    Exp_na_Reg                       |RegisterAdd_4                     |     2|
-|39    |    Sgf_ieee_Register                |RegisterAdd__parameterized14      |    23|
-|40    |  Tenth_Module                       |Tenth_Phase                       |    73|
-|41    |    Cresult_Reg                      |RegisterAdd__parameterized17      |    32|
-|42    |    Final_Result_IEEE                |RegisterAdd__parameterized18      |    32|
-|43    |    Final_Result_Mux_Reg             |Multiplexer_AC                    |     9|
-|44    |  Update_Exponent_First_Time         |Fifth_Phase                       |    37|
-|45    |    Exp_F_ieee                       |RegisterAdd__parameterized11      |     8|
-|46    |    RExp                             |RegisterAdd__parameterized9       |     9|
-|47    |    UExp                             |RegisterAdd__parameterized10      |    20|
-|48    |  Zero_Except_Module                 |Zero_InfAdd_Unit                  |     1|
-|49    |    Zero_Info_Register               |RegisterAdd_3                     |     1|
-|50    |  as_5_P_Reg                         |RegisterAdd_2                     |    10|
+|32    |  Select_Final_Exponent              |Eight_NE_Phase                    |    39|
+|33    |    dir_exp_up                       |Multiplexer_AC__parameterized5    |     6|
+|34    |    exp_fp_reg                       |RegisterAdd__parameterized16      |    11|
+|35    |    exp_u_register                   |RegisterAdd__parameterized15      |    21|
+|36    |    overflow_am                      |RegisterAdd_5                     |     1|
+|37    |  Select_Final_Significand           |Eight_N_Phase                     |   105|
+|38    |    Dir_Sgf_iee                      |Multiplexer_AC__parameterized4    |    52|
+|39    |    Exp_na_Reg                       |RegisterAdd_4                     |     1|
+|40    |    Sgf_ieee_Register                |RegisterAdd__parameterized14      |    52|
+|41    |  Tenth_Module                       |Tenth_Phase                       |   140|
+|42    |    Cresult_Reg                      |RegisterAdd__parameterized17      |    64|
+|43    |    Final_Result_IEEE                |RegisterAdd__parameterized18      |    64|
+|44    |    Final_Result_Mux_Reg             |Multiplexer_AC                    |    12|
+|45    |  Update_Exponent_First_Time         |Fifth_Phase                       |    49|
+|46    |    Exp_F_ieee                       |RegisterAdd__parameterized11      |    11|
+|47    |    RExp                             |RegisterAdd__parameterized9       |    12|
+|48    |    UExp                             |RegisterAdd__parameterized10      |    26|
+|49    |  Zero_Except_Module                 |Zero_InfAdd_Unit                  |     1|
+|50    |    Zero_Info_Register               |RegisterAdd_3                     |     1|
+|51    |  as_5_P_Reg                         |RegisterAdd_2                     |    15|
 +------+-------------------------------------+----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:35 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1357.707 ; gain = 84.391 ; free physical = 35 ; free virtual = 1361
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:36 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 35 ; free virtual = 1361
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1368.715 ; gain = 92.395 ; free physical = 400 ; free virtual = 1761
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1368.715 ; gain = 524.504 ; free physical = 400 ; free virtual = 1761
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 96 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 186 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -814,6 +815,6 @@ No Unisim elements were transformed.
 INFO: [Common 17-83] Releasing license: Synthesis
 163 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1357.707 ; gain = 442.160 ; free physical = 35 ; free virtual = 1361
-report_utilization: Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1389.719 ; gain = 0.000 ; free physical = 43 ; free virtual = 1360
-INFO: [Common 17-206] Exiting Vivado at Tue Mar 29 09:25:07 2016...
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1368.715 ; gain = 453.168 ; free physical = 400 ; free virtual = 1761
+report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.17 . Memory (MB): peak = 1400.730 ; gain = 0.000 ; free physical = 396 ; free virtual = 1760
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  4 06:22:38 2016...

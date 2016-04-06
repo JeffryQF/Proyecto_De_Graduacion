@@ -107,7 +107,7 @@ sgn_result result_sign_bit (//Calculate the sign bit for the final result
     .sgn_Y_i(intDY[W-1]),
     .gtXY_i(gtXY),
     .eqXY_i(eqXY),
-    .sgn_result_o(sign_final_result_o)
+    .sgn_result_o(sign_result)
     );
 
 MultiplexTxT #(.W(W-1)) MuxXY (//Classify in the registers the bigger value (M) and the smaller value (m)
@@ -132,6 +132,14 @@ RegisterAdd #(.W(W-1)) mRegister ( //Data_m register
     .load(load_b_i), 
     .D(intm), 
     .Q(DmP_o)
+    );
+    
+RegisterAdd #(.W(1)) SignRegister (
+    .clk(clk),
+    .rst(rst),
+    .load(load_b_i),
+    .D(sign_result),
+    .Q(sign_final_result_o)
     );
 
 assign zero_flag_o = real_op_o & eqXY;

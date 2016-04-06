@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Tue Mar 29 09:26:18 2016
-| Host             : francis-Aspire-E1-570 running 64-bit unknown
+| Date             : Mon Apr  4 06:23:47 2016
+| Host             : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
 | Command          : report_power -file FPU_Add_Subtract_Function_power_routed.rpt -pb FPU_Add_Subtract_Function_power_summary_routed.pb
 | Design           : FPU_Add_Subtract_Function
 | Device           : xc7a100tcsg324-3
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.098 |
-| Dynamic (W)              | 0.007 |
+| Total On-Chip Power (W)  | 0.106 |
+| Dynamic (W)              | 0.015 |
 | Device Static (W)        | 0.091 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 99.6  |
-| Junction Temperature (C) | 25.4  |
+| Max Ambient (C)          | 99.5  |
+| Junction Temperature (C) | 25.5  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,17 +49,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      971 |       --- |             --- |
-|   LUT as Logic |     0.001 |      326 |     63400 |            0.51 |
-|   CARRY4       |    <0.001 |       25 |     15850 |            0.16 |
-|   Register     |    <0.001 |      467 |    126800 |            0.37 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1873 |       --- |             --- |
+|   LUT as Logic |     0.002 |      571 |     63400 |            0.90 |
+|   CARRY4       |    <0.001 |       51 |     15850 |            0.32 |
+|   Register     |    <0.001 |      912 |    126800 |            0.72 |
 |   F7/F8 Muxes  |    <0.001 |        4 |     63400 |           <0.01 |
-|   Others       |     0.000 |       15 |       --- |             --- |
-| Signals        |     0.002 |      705 |       --- |             --- |
-| I/O            |     0.003 |      106 |       210 |           50.48 |
+|   Others       |     0.000 |       16 |       --- |             --- |
+| Signals        |     0.004 |     1400 |       --- |             --- |
+| I/O            |     0.005 |      202 |       210 |           96.19 |
 | Static Power   |     0.091 |          |           |                 |
-| Total          |     0.098 |          |           |                 |
+| Total          |     0.106 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,11 +69,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.020 |       0.005 |      0.015 |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
+| Vccint    |       1.000 |     0.025 |       0.010 |      0.015 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.005 |       0.001 |      0.004 |
+| Vcco18    |       1.800 |     0.006 |       0.002 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -138,10 +138,10 @@ Table of Contents
 +--------------------------------------+-----------+
 | Name                                 | Power (W) |
 +--------------------------------------+-----------+
-| FPU_Add_Subtract_Function            |     0.007 |
+| FPU_Add_Subtract_Function            |     0.015 |
 |   Add_Sub_Significands               |    <0.001 |
 |     R_Sgf                            |    <0.001 |
-|   FS_Module                          |     0.001 |
+|   FS_Module                          |     0.002 |
 |   First_Und_Ov_Search                |    <0.001 |
 |     R_Overflow                       |    <0.001 |
 |     R_Underflow                      |    <0.001 |
@@ -151,7 +151,7 @@ Table of Contents
 |   Normalization_Smallest_Significand |    <0.001 |
 |     ESRegister                       |    <0.001 |
 |     SGFmRegister                     |    <0.001 |
-|   Operands_Classification            |    <0.001 |
+|   Operands_Classification            |     0.002 |
 |     ASRegister                       |    <0.001 |
 |     CMPRegister                      |    <0.001 |
 |     Dir_M                            |    <0.001 |
@@ -170,6 +170,7 @@ Table of Contents
 |   Sel_10_P_b                         |    <0.001 |
 |   Sel_4_P                            |    <0.001 |
 |   Select_Final_Exponent              |    <0.001 |
+|     dir_exp_up                       |    <0.001 |
 |     exp_fp_reg                       |    <0.001 |
 |     exp_u_register                   |    <0.001 |
 |     overflow_am                      |    <0.001 |

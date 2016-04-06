@@ -60,6 +60,7 @@ module FSM_Add_Subtract
 
 		//Exp_operation control signals
 		output reg load_3_o, //Enable Output registers
+		output reg load_8_o,
 		output reg A_S_op_o, //Select operation for exponent normalization(Subt for left shift, Add for right shift)
 	
 		
@@ -140,7 +141,11 @@ localparam [3:0]
 
 					 overflow_add = 4'd12,
 
-					 load_exp_oper_over= 4'd13;
+					 load_exp_oper_over= 4'd13,
+					 
+					 extra1_64= 4'd14,
+					 
+					 extra2_64= 4'd15;
 					//**********************REVISADO
 	
 					
@@ -167,6 +172,7 @@ always @*
 
 	//Exp_operation control signals
 	load_3_o=0;
+	load_8_o=0;
 	A_S_op_o=1;
 
 	//Barrel shifter control signals
@@ -250,10 +256,35 @@ always @*
 			/*
 			if ()*/
 
-			state_next = norm_sgf_first;
+			state_next = extra1_64;
 		end
 
-
+        extra1_64:
+        begin
+            if (norm_iteration_i)begin
+                if(add_overflow_i)begin
+                    if (~real_op_i)begin
+                        left_right_o=0;
+                        bit_shift_o=1;
+                        state_next = norm_sgf_first;
+                    end
+                    else begin
+                        left_right_o=1;
+                        bit_shift_o=0;
+                        state_next = norm_sgf_first;
+                    end
+                end
+    
+                else begin
+                    left_right_o=1;
+                    bit_shift_o=0;
+                    state_next = norm_sgf_first;end
+            end
+            else 
+                state_next = norm_sgf_first;
+            
+        end
+        
 		norm_sgf_first: //
 		begin
 			load_3_o = 0;
@@ -319,6 +350,7 @@ always @*
 		load_exp_oper_over:
 		begin
 		load_3_o=1;
+		load_8_o=1;
 		if (~real_op_i)begin
 			if ( add_overflow_i)
 				A_S_op_o=0;
@@ -330,7 +362,7 @@ always @*
 			A_S_op_o=1;
 
 			
-		state_next = norm_sgf_first;
+		state_next = extra1_64;
 		end
 
 
@@ -363,21 +395,46 @@ always @*
                     ctrl_b_load_o=1;
 					left_right_o=0;
 					bit_shift_o=0;
-					state_next = norm_sgf_r;
+					state_next = extra2_64;
 					end
 			
 		end
 		load_diff_exp_r:
 		begin
-            ctrl_b_load_o=0;
+		
 			load_3_o = 1;
-			state_next = norm_sgf_r;			
+			load_8_o = 1;
+			state_next = extra2_64;			
 		end
+		
+		extra2_64:
+		
+		begin
+		  load_4_o=1;
+		if ( add_overflow_i)begin
+            left_right_o=0;
+            bit_shift_o=1;
+            end
+        else begin
+            left_right_o=0;
+            bit_shift_o=0;
+        end
+		
+		state_next = norm_sgf_r;
+		  
+        end
+      
 		norm_sgf_r:
 		begin
-		    ctrl_b_load_o=0;
-			load_3_o = 0;
 			load_4_o = 1;
+			if ( add_overflow_i)begin
+                        left_right_o=0;
+                        bit_shift_o=1;
+                        end
+                    else begin
+                        left_right_o=0;
+                        bit_shift_o=0;
+                    end
 			state_next = load_final_result;
 		end
 		load_final_result:

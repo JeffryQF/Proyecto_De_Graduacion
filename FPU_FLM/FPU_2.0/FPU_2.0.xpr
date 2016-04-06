@@ -425,7 +425,6 @@
         <Option Name="SrcSet" Val=""/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/Testbench_FPU_Add_Subt_behav.wcfg"/>
         <Option Name="xsim.simulate.saif_all_signals" Val="true"/>
-        <Option Name="NLNetlistMode" Val="funcsim"/>
       </Config>
     </FileSet>
   </FileSets>

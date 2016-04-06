@@ -23,17 +23,19 @@
 module Testbench_FPU_Add_Subt();
 
 parameter PERIOD = 10;
-parameter W = 32;
+
+
+/*parameter W = 32;
 parameter EW = 8;
 parameter SW = 23;
 parameter SWR = 26;
-parameter EWR = 5;
+parameter EWR = 5;// */
 
-/*parameter W = 64;
+parameter W = 64;
 parameter EW = 11;
 parameter SW = 52;
 parameter SWR = 55;
-parameter EWR = 6;*/
+parameter EWR = 6;// */
 
         reg clk;
 
@@ -72,8 +74,8 @@ parameter EWR = 6;*/
 			);
 
 
-		reg [31:0] Array_IN [0:((2**PERIOD)-1)];
-               reg [31:0] Array_IN_2 [0:((2**PERIOD)-1)];
+		          reg [W-1:0] Array_IN [0:((2**PERIOD)-1)];
+               reg [W-1:0] Array_IN_2 [0:((2**PERIOD)-1)];
                 integer contador;
                integer FileSaveData;
                integer Cont_CLK;
@@ -171,7 +173,7 @@ parameter EWR = 6;*/
                 always @(posedge clk) begin
                     if(ready) begin
                         if(Recept == 1) begin
-                            $fwrite(FileSaveData,"%b %\n",final_result_ieee);
+                            $fwrite(FileSaveData,"%b ",final_result_ieee);
                             Recept = 0;
                         end
                     end

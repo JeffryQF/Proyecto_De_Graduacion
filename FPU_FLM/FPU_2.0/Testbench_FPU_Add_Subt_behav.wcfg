@@ -11,13 +11,14 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="45933000000fs"></ZoomStartTime>
-      <ZoomEndTime time="46034600001fs"></ZoomEndTime>
-      <Cursor1Time time="45995000000fs"></Cursor1Time>
+      <ZoomStartTime time="200000000fs"></ZoomStartTime>
+      <ZoomEndTime time="377893385fs"></ZoomEndTime>
+      <Cursor1Time time="245000000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="61" />
    <wave_markers>
       <marker label="" time="635000000" />
+      <marker label="" time="315000000" />
    </wave_markers>
    <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_Add_Subt/clk">
       <obj_property name="ElementShortName">clk</obj_property>
@@ -38,6 +39,7 @@
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Data_X">
       <obj_property name="ElementShortName">Data_X[31:0]</obj_property>
       <obj_property name="ObjectShortName">Data_X[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Data_Y">
       <obj_property name="ElementShortName">Data_Y[31:0]</obj_property>
@@ -70,6 +72,7 @@
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/contador">
       <obj_property name="ElementShortName">contador[31:0]</obj_property>
       <obj_property name="ObjectShortName">contador[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/FileSaveData">
       <obj_property name="ElementShortName">FileSaveData[31:0]</obj_property>
@@ -78,6 +81,7 @@
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/Cont_CLK">
       <obj_property name="ElementShortName">Cont_CLK[31:0]</obj_property>
       <obj_property name="ObjectShortName">Cont_CLK[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_Add_Subt/uut/FS_Module/state_reg">
       <obj_property name="ElementShortName">state_reg[3:0]</obj_property>
