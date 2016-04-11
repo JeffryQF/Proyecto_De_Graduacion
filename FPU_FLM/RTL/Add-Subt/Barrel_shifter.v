@@ -41,6 +41,9 @@ module Barrel_Shifter
 
     
     Mux_Array #(.SWR(SWR),.EWR(EWR)) Mux_Array(
+        .clk(clk),
+        .rst(rst),
+        .load_i(load_i),
         .Data_i(Shift_Data_i),
         .FSM_left_right_i(Left_Right_i),
         .Shift_Value_i(Shift_Value_i),

@@ -30,11 +30,11 @@ import string
 #print y;
 	
 
-def Call_Values(op,n): #Guarda en un txt numeros aleatorios en punto flotante
+def Call_Values(op,n,typ): #Guarda en un txt numeros aleatorios en punto flotante
 	oc = Oct2Py();
-	oc.call_values("Decimal_A.txt","Decimal_B.txt", n, op); #Ejecuta en Octave la funcion Call Values
+	oc.call_values("Decimal_A.txt","Decimal_B.txt", n, op, typ); #Ejecuta en Octave la funcion Call Valu0es00
 
-def float_to_hex (name,typ):#conversion a hexadecimal y binario
+def float_to_hex (name,typ):#conversion a hexadecimal
 	dec_file=open("Decimal_"+name+".txt");
 	hex_file=open("Hexadecimal_" + name + ".txt", 'w');
 	for line in dec_file:
@@ -58,38 +58,79 @@ def float_to_hex (name,typ):#conversion a hexadecimal y binario
 	dec_file.close();
 	hex_file.close();
 
-#def result_error(name, typ, n):
-#	bin_file=open(name+".txt");
-#	dec_file=open(name+"_result_dec.txt",'w');
-#	for line in bin_file:
-#		value=bin(line);
-#		if typ==0:#Conversion a formato simple
-#			float value_dec = GetFloat32(value);
-#		elif typ==1:#Conversion a formato doble
-#			hx = hex(int(value, 2))   
-#    		float value_dec=struct.unpack("d", struct.pack("q", int(hx, 16)))[0];
+def result_error(typ, n):
 
-#		dec_file.write(value_dec);
-#		hex_file.write("\n");
+	oc = Oct2Py();
+	oc.finalresult(n,typ)
 
+def simpdob(oper):
 
-#	dec_file.close();
-#	bin_file.close();
+	if oper == 1:
+		oper = 0;
 
-#	oc =Oct2Py();
-#	oc.finalresult(name+"_result_dec.txt", "DecimalResult.txt", n)
+	else:
+		oper =1;
 
+	return oper;
+
+def addsubt(oper):
+	selection=raw_input("Please Select(0: add, 1: subt, 2: mult):") 
+	if selection == '0':
+		oper = 0;
+
+	elif selection == '1':
+		oper =1;
+
+	elif selection == '2':
+		oper =2;
+
+	return oper;
 
 def main():
+
 	oper=0;#Suma=0;Resta=1
-	typ=1#Formato simple=0;Formato doble=1
+	typ=0#Formato simple=0;Formato doble=1
 	n=1200;#Cantidad de datos
-	Call_Values(oper,n);
-	float_to_hex("A", typ);
-	float_to_hex("B", typ);
+
+	menu = {}
+	menu['1']="Cambiar Operacion a realizar" 
+	menu['2']="Formato simple/Formato doble"
+	menu['3']="Crear valores aleatorios en hexadecimal"
+	menu['4']="(Postsimulacion) Calcular y graficar error"
+	menu['5']="Exit"
+	while True: 
+		
+		options=menu.keys()
+		options.sort()
+		print "Operacion %d" %oper;
+		print "Formato %d" %typ;
+		print "Cantidad %d" %n;
+		for entry in options: 
+			print entry, menu[entry]
+
+		selection=raw_input("Please Select:") 
+		if selection =='1':
+			oper=addsubt(oper);
+
+		elif selection == '2':
+			typ=simpdob(typ);
+
+		elif selection == '3':
+			Call_Values(oper,n,typ);
+			float_to_hex("A", typ);
+			float_to_hex("B", typ);
+
+		elif selection == '4': 
+			result_error(typ, n);
+
+		elif selection == '5': 
+			break
+
+		else: 
+			print "Unknown Option Selected!" 
+		os.system('clear')
+		print
+  
 	########Simulacion en Verilog(vivado o otra herramienta)
-	#result_error("Data_Y", typ, n);
 
 main();
-
-

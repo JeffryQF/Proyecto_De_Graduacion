@@ -21,10 +21,10 @@
 module FPU_Add_Subtract_Function
 //Add/Subtract Function Parameters
 	
-   /*#(parameter W = 32, parameter EW = 8, parameter SW = 23,
+   #(parameter W = 32, parameter EW = 8, parameter SW = 23,
 		parameter SWR=26, parameter EWR = 5)  //Single Precision */
 		
-	#(parameter W = 64, parameter EW = 11, parameter SW = 52,
+	/*#(parameter W = 64, parameter EW = 11, parameter SW = 52,
 		parameter SWR = 55, parameter EWR = 6) //-- Double Precision */
 	(
 		//FSM Signals 

@@ -25,13 +25,13 @@ module Testbench_FPU_Add_Subt();
 parameter PERIOD = 10;
 
 
-/*parameter W = 32;
+parameter W = 32;
 parameter EW = 8;
 parameter SW = 23;
 parameter SWR = 26;
 parameter EWR = 5;// */
 
-parameter W = 64;
+/*parameter W = 64;
 parameter EW = 11;
 parameter SW = 52;
 parameter SWR = 55;
@@ -90,8 +90,8 @@ parameter EWR = 6;// */
                     rst_FSM = 0;
                     Data_X = 0;
                     Data_Y = 0;
-                    r_mode = 2'b00;
-                    add_subt = 0;
+                    r_mode = 2'b01;
+                    add_subt = 1;
             
             //        // Wait 100 ns for global reset to finish
             //        #100 rst = 0;
@@ -134,6 +134,7 @@ parameter EWR = 6;// */
                         end
                         else begin
                             if(Cont_CLK ==1) begin
+                                contador = contador + 1;
                                 beg_FSM = 0;
                                 Data_X = Array_IN[contador];
                                 Data_Y = Array_IN_2[contador];
@@ -141,6 +142,7 @@ parameter EWR = 6;// */
                                 rst_FSM = 0;
                             end
                             else if(Cont_CLK ==2) begin
+                                  
                                 rst_FSM = 0;
                                 beg_FSM = 1;
                                 Cont_CLK = Cont_CLK +1 ;
@@ -152,17 +154,15 @@ parameter EWR = 6;// */
                             end
                             if(ready==1) begin
                                 
-                                contador = contador + 1;
                                 rst_FSM = 1;
             
                                 Cont_CLK = 0;
                             end
                             
                             if(ready==1 && rst_FSM) begin
-                                                            
-                                contador = contador;
-                                rst_FSM = 1;
-            
+                                                          
+                                
+                                
                                 Cont_CLK = 0;
                             end
                         end
@@ -173,7 +173,7 @@ parameter EWR = 6;// */
                 always @(posedge clk) begin
                     if(ready) begin
                         if(Recept == 1) begin
-                            $fwrite(FileSaveData,"%b ",final_result_ieee);
+                            $fwrite(FileSaveData,"%h\n",final_result_ieee);
                             Recept = 0;
                         end
                     end

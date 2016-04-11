@@ -1,7 +1,8 @@
-function call_values(name1, name2, n, oper)
+function call_values(name1, name2, n, oper, typ)
   file_id1=fopen(name1, 'w');
   file_id2=fopen(name2, 'w');
-  file_id3=fopen("DecimalResult.txt", 'w');
+  file_id3=fopen("Decimal_R.txt", 'w');
+  file_id4=fopen("Hexadecimal_R.txt", 'w');
   for i=0:n
   #Calculo valor 1
     num1=rand(1);
@@ -30,11 +31,20 @@ function call_values(name1, name2, n, oper)
       result=value1+value2;
     elseif oper==1
       result=value1-value2;
+    elseif oper==2
+      result=value1*value2;  
     endif
+    if typ==0
+      A=num2hex (single (result));
+    elseif typ==1
+      A=num2hex (result); 
+    endif
+    
     #Carga a archivos txt
-    fprintf(file_id1, "%f \n", value1);
-    fprintf(file_id2, "%f \n", value2);
-    fprintf(file_id3, "%f \n", result);
+    fprintf(file_id1, "%f\n", value1);
+    fprintf(file_id2, "%f\n", value2);
+    fprintf(file_id3, "%f\n", result);
+    fprintf(file_id4, "%s\n", A); 
   endfor
   fclose("all");
 end  

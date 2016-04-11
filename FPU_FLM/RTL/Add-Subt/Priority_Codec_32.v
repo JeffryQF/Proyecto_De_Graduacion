@@ -27,35 +27,34 @@ module Priority_Codec_32(
 
 	always @(Data_Dec_i)
 	begin
-		casex (Data_Dec_i)
-			26'b0xxxxxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00000;//0
-			26'b10xxxxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00001;//1
-			26'b110xxxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00010;//2
-			26'b1110xxxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00011;//3
-			26'b11110xxxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00100;//4
-			26'b111110xxxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00101;//5
-			26'b1111110xxxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00110;//6
-			26'b11111110xxxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b00111;//7
-			26'b111111110xxxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b01000;//8
-			26'b1111111110xxxxxxxxxxxxxxxx: Data_Bin_o <= 5'b01001;//9
-			26'b11111111110xxxxxxxxxxxxxxx: Data_Bin_o <= 5'b01010;//10
-			26'b111111111110xxxxxxxxxxxxxx: Data_Bin_o <= 5'b01011;//11
-			26'b1111111111110xxxxxxxxxxxxx: Data_Bin_o <= 5'b01100;//12
-			26'b11111111111110xxxxxxxxxxxx: Data_Bin_o <= 5'b01101;//13
-			26'b111111111111110xxxxxxxxxxx: Data_Bin_o <= 5'b01110;//14
-			26'b1111111111111110xxxxxxxxxx: Data_Bin_o <= 5'b01111;//15
-			26'b11111111111111110xxxxxxxxx: Data_Bin_o <= 5'b10000;//16
-			26'b111111111111111110xxxxxxxx: Data_Bin_o <= 5'b10001;//17
-			26'b1111111111111111110xxxxxxx: Data_Bin_o <= 5'b10010;//18
-			26'b11111111111111111110xxxxxx: Data_Bin_o <= 5'b10011;//19
-			26'b111111111111111111110xxxxx: Data_Bin_o <= 5'b10100;//20
-			26'b1111111111111111111110xxxx: Data_Bin_o <= 5'b10101;//21
-			26'b11111111111111111111110xxx: Data_Bin_o <= 5'b10110;//22
-			26'b111111111111111111111110xx: Data_Bin_o <= 5'b10111;//23
-			26'b1111111111111111111111110x: Data_Bin_o <= 5'b11000;//24
-			26'b11111111111111111111111110: Data_Bin_o <= 5'b10101;//25
-			default: Data_Bin_o <= 8'bxxxxxxxx;//don't shift case
-		endcase
-		////26'b00001110100000000111110000;
+		if(~Data_Dec_i[25]) begin Data_Bin_o = 5'b00000;//0
+		end else if(~Data_Dec_i[24]) begin Data_Bin_o = 5'b00001;//1
+		end else if(~Data_Dec_i[23]) begin Data_Bin_o = 5'b00010;//2
+		end else if(~Data_Dec_i[22]) begin Data_Bin_o = 5'b00011;//3
+		end else if(~Data_Dec_i[21]) begin Data_Bin_o = 5'b00100;//4
+		end else if(~Data_Dec_i[20]) begin Data_Bin_o = 5'b00101;//5
+		end else if(~Data_Dec_i[19]) begin Data_Bin_o = 5'b00110;//6
+		end else if(~Data_Dec_i[18]) begin Data_Bin_o = 5'b00111;//7
+		end else if(~Data_Dec_i[17]) begin Data_Bin_o = 5'b01000;//8
+		end else if(~Data_Dec_i[16]) begin Data_Bin_o = 5'b01001;//9
+		end else if(~Data_Dec_i[15]) begin Data_Bin_o = 5'b01010;//10
+		end else if(~Data_Dec_i[14]) begin Data_Bin_o = 5'b01011;//11
+		end else if(~Data_Dec_i[13]) begin Data_Bin_o = 5'b01100;//12
+		end else if(~Data_Dec_i[12]) begin Data_Bin_o = 5'b01101;//13
+		end else if(~Data_Dec_i[11]) begin Data_Bin_o = 5'b01110;//14
+		end else if(~Data_Dec_i[10]) begin Data_Bin_o = 5'b01111;//15
+		end else if(~Data_Dec_i[9])  begin Data_Bin_o = 5'b10000;//16
+		end else if(~Data_Dec_i[8])  begin Data_Bin_o = 5'b10001;//17
+		end else if(~Data_Dec_i[7])  begin Data_Bin_o = 5'b10010;//18
+		end else if(~Data_Dec_i[6])  begin Data_Bin_o = 5'b10011;//19
+		end else if(~Data_Dec_i[5])  begin Data_Bin_o = 5'b10100;//20
+		end else if(~Data_Dec_i[4])  begin Data_Bin_o = 5'b10101;//21
+		end else if(~Data_Dec_i[3])  begin Data_Bin_o = 5'b10110;//22
+		end else if(~Data_Dec_i[2])  begin Data_Bin_o = 5'b10111;//23
+		end else if(~Data_Dec_i[1])  begin Data_Bin_o = 5'b11000;//24
+		end else if(~Data_Dec_i[0])  begin Data_Bin_o = 5'b10101;//25
+		end
+		else Data_Bin_o = 5'b00000;//zero value
+	
 	end
 endmodule

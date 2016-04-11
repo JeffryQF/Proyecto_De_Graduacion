@@ -5,6 +5,7 @@ INFO: [VRFC 10-311] analyzing module Exp_Operation
 INFO: [VRFC 10-311] analyzing module FPU_Add_Subtract_Function
 INFO: [VRFC 10-311] analyzing module FSM_Add_Subtract
 INFO: [VRFC 10-311] analyzing module LZA
+INFO: [VRFC 10-311] analyzing module Mux_Array
 INFO: [VRFC 10-311] analyzing module Oper_Start_In
 INFO: [VRFC 10-311] analyzing module RegisterAdd
 INFO: [VRFC 10-311] analyzing module RegisterAdd_0
@@ -12,8 +13,12 @@ INFO: [VRFC 10-311] analyzing module RegisterAdd_1
 INFO: [VRFC 10-311] analyzing module RegisterAdd_2
 INFO: [VRFC 10-311] analyzing module RegisterAdd_3
 INFO: [VRFC 10-311] analyzing module RegisterAdd_4
+INFO: [VRFC 10-311] analyzing module RegisterAdd_5
 INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized0
 INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized1
+INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized10
+INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized11
+INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized12
 INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized2
 INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized3
 INFO: [VRFC 10-311] analyzing module RegisterAdd__parameterized4
@@ -30,6 +35,7 @@ INFO: [VRFC 10-311] analyzing module RegisterAdd
 WARNING: [VRFC 10-1195] overwriting previous definition of module RegisterAdd [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Mux_Array
+WARNING: [VRFC 10-1195] overwriting previous definition of module Mux_Array [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v:23]
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/MultiplexTxT.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module MultiplexTxT
 INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v" into library xil_defaultlib

@@ -113,43 +113,49 @@ module FSM_Add_Subtract
 	 );
 
 
-localparam [3:0] 
+localparam [4:0] 
 //First I'm going to declarate the registers of the first phase of execution
-					 start = 4'd0, //This state evaluates the beg_FSM to begin operations
+					 start = 5'd0, //This state evaluates the beg_FSM to begin operations
 
-				     load_oper = 4'd1, //This state enables the registers that contains
+				     load_oper = 5'd1, //This state enables the registers that contains
 											 //both operands and the operator
-					 zero_info_state = 4'd2, //Evaluate zero condition
+					 zero_info_state = 5'd2, //Evaluate zero condition
 
-					 load_diff_exp = 4'd3, //Enable registers for the exponent on the small value normalization and for the first
+					 load_diff_exp = 5'd3, //Enable registers for the exponent on the small value normalization and for the first
 					 						//result normalization
-					 norm_sgf_first= 4'd4, //Enable the barrel shifter's registers and evaluate if it's the first time (small operand) or the
+					 norm_sgf_first= 5'd4, //Enable the barrel shifter's registers and evaluate if it's the first time (small operand) or the
 					 					  //second time (result normalization)	
-					 add_subt = 4'd5, //Enable the add_subt_sgf's registers
+					 add_subt = 5'd5, //Enable the add_subt_sgf's registers
 
-					 round_sgf = 4'd6, //Evaluate the significand round condition  
+					 round_sgf = 5'd6, //Evaluate the significand round condition  
 
-					 add_subt_r = 4'd7, //Enable the add_subt_sgf's registers for round condition
+					 add_subt_r = 5'd7, //Enable the add_subt_sgf's registers for round condition
 	
-					 load_diff_exp_r = 4'd8, //Enable registers for the exponent normalization on round condition
+					 load_diff_exp_r = 5'd8, //Enable registers for the exponent normalization on round condition
 					 
-					 norm_sgf_r = 4'd9, //Enable the barrel shifter's registers for round condition
+					 norm_sgf_r = 5'd9, //Enable the barrel shifter's registers for round condition
 
-					 load_final_result  = 4'd10, //Load the final_result's register with the result
+					 load_final_result  = 5'd10, //Load the final_result's register with the result
 
-					 ready_flag = 4'd11, //Enable the ready flag with the final result
+					 ready_flag = 5'd11, //Enable the ready flag with the final result
 
-					 overflow_add = 4'd12,
+					 overflow_add = 5'd12,
 
-					 load_exp_oper_over= 4'd13,
+					 load_exp_oper_over= 5'd13,
 					 
-					 extra1_64= 4'd14,
+					 extra1_64= 5'd14,
 					 
-					 extra2_64= 4'd15;
+					 extra2_64= 5'd15,
+
+					 extra3_64= 5'd16,
+
+					 extra4_64= 5'd17,
+					 
+					 overflow_add_r = 5'd18;
 					//**********************REVISADO
 	
 					
-reg [3:0] state_reg, state_next ; //state registers declaration
+reg [4:0] state_reg, state_next ; //state registers declaration
 		 
 
 ////
@@ -230,7 +236,9 @@ always @*
 				state_next = load_oper;
 			end
 		end
+
 		load_oper: //Load input registers for  Oper_star in evaluation
+		
 		begin
 			rst_int = 0;
 			load_1_o = 1;
@@ -275,11 +283,11 @@ always @*
                     end
                 end
     
-                else begin
-                    left_right_o=1;
-                    bit_shift_o=0;
-                    state_next = norm_sgf_first;end
-            end
+	            else begin
+	                left_right_o=1;
+	                bit_shift_o=0;
+	                state_next = norm_sgf_first;end
+	   		    end
             else 
                 state_next = norm_sgf_first;
             
@@ -309,8 +317,15 @@ always @*
 					state_next = round_sgf;end
 			end
 			else 
-				state_next = add_subt;
+				state_next = extra3_64;
 		end
+
+		extra3_64: begin
+
+			state_next=add_subt;
+
+		end
+
 
 		add_subt:
 		begin
@@ -324,7 +339,6 @@ always @*
 		overflow_add:
 		begin
 			//Reg enables/Disables
-			load_5_o=1;
 			load_6_o=1;
 			if (~real_op_i)begin
 				if ( add_overflow_i)begin
@@ -349,20 +363,20 @@ always @*
 
 		load_exp_oper_over:
 		begin
-		load_3_o=1;
-		load_8_o=1;
-		if (~real_op_i)begin
-			if ( add_overflow_i)
-				A_S_op_o=0;
-				
-			else 
+			load_3_o=1;
+			load_8_o=1;
+			if (~real_op_i)begin
+				if ( add_overflow_i)
+					A_S_op_o=0;
+					
+				else 
+					A_S_op_o=1;
+			end
+			else
 				A_S_op_o=1;
-		end
-		else
-			A_S_op_o=1;
 
-			
-		state_next = extra1_64;
+				
+			state_next = extra1_64;
 		end
 
 
@@ -373,35 +387,43 @@ always @*
 				if(round_i) begin
 					ctrl_d_o =1;
 					ctrl_a_o = 1;
-					state_next = add_subt_r; end
+					state_next = extra4_64; end
 				else begin
 					state_next = load_final_result; end
 		end
 
+		extra4_64: begin
 
+			state_next = add_subt_r;
+
+		end
 		add_subt_r:
 		begin
-			load_5_o = 0;
-			if ( add_overflow_i)begin
-					A_S_op_o=0;
-					ctrl_b_o=2'b10;
-					ctrl_b_load_o=1;
-					left_right_o=0;
-					bit_shift_o=1;
-					state_next = load_diff_exp_r;
-					end
-				else begin
-					ctrl_b_o=2'b11;
-                    ctrl_b_load_o=1;
-					left_right_o=0;
-					bit_shift_o=0;
-					state_next = extra2_64;
-					end
+			load_5_o = 1;
+			state_next = overflow_add_r;
 			
 		end
+		
+		overflow_add_r:
+		begin
+			load_6_o=1;		
+			if ( add_overflow_i)begin
+
+                ctrl_b_o=2'b10;
+                ctrl_b_load_o=1;
+                state_next = load_diff_exp_r;
+                end
+            else begin
+                ctrl_b_o=2'b11;
+                ctrl_b_load_o=1;
+                state_next = extra2_64;
+                end		
+		
+		end
+		
 		load_diff_exp_r:
 		begin
-		
+			A_S_op_o=0;		
 			load_3_o = 1;
 			load_8_o = 1;
 			state_next = extra2_64;			
@@ -410,17 +432,17 @@ always @*
 		extra2_64:
 		
 		begin
-		  load_4_o=1;
-		if ( add_overflow_i)begin
-            left_right_o=0;
-            bit_shift_o=1;
+
+			if ( add_overflow_i)begin
+	            left_right_o=0;
+	            bit_shift_o=1;
             end
-        else begin
-            left_right_o=0;
-            bit_shift_o=0;
-        end
+	        else begin
+	            left_right_o=0;
+	            bit_shift_o=0;
+	        end
 		
-		state_next = norm_sgf_r;
+			state_next = norm_sgf_r;
 		  
         end
       

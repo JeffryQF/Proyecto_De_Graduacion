@@ -32,10 +32,10 @@ module Combinational_Logic_LZA
     generate for (j=0; j<SWR; j=j+1) begin
     	case (j)
     		0: begin
-    			assign S_o[j] = ((P_i[j] | ~A_S_i) & (A_S_i | ~P_i[j]));
+    			assign S_o[0] = ~(A_S_i ^ P_i[0]);
 				end
 			default: begin
-    			assign S_o[j] = ((P_i[j] | ~C_i[j]) & (A_S_i | ~P_i[j]));
+    			assign S_o[j] = ~(P_i[j] ^ C_i[j]);
 				end
 			endcase
 		end
