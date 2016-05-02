@@ -25,62 +25,65 @@ module Exp_Operation
     (
         input wire clk, //system clock
         input wire rst, //reset of the module
-        input wire FSM_Load_i,
-        input wire [EW-1:0] Oper0_A_i,
-        input wire [EW-1:0] Oper0_B_i,
-        input wire [EW-1:0] Oper1_A_i,
-        input wire [EW-1:0] Oper1_B_i,
-        input wire FSM_Add_Subt_i,
-        input wire FSM_select_A_i,
-        input wire FSM_select_B_i,
+        input wire load_a_i,
+        input wire load_b_i,
+        input wire [EW-1:0] Data_A_i,
+        input wire [EW-1:0] Data_B_i,
+        input wire Add_Subt_i,
+
         ///////////////////////////////////////////////////////////////////77
         output wire [EW-1:0] Data_Result_o,
         output wire Overflow_flag_o,
         output wire Underflow_flag_o
     );
 
-wire [EW-1:0] Data_A; //First exp operand ADDER/SUBT input
-wire [EW-1:0] PreData_B; //Second exp operand ADDER/SUBT input before the XOR
-wire [EW-1:0] Data_B;
-wire [EW-1:0] Data_S;
+
 wire anomaly;
-
-Multiplexer_AC #(.W(EW)) Oper_A(
-    .ctrl(FSM_select_A_i),
-    .D0 (Oper0_A_i),
-    .D1 (Oper1_A_i),
-    .S (Data_A)
-    );
-
-Multiplexer_AC #(.W(EW)) Oper_B(
-    .ctrl(FSM_select_B_i),
-    .D0 (Oper0_B_i),
-    .D1 (Oper1_B_i),
-    .S (PreData_B)
-    );
+//wire [EW-1:0] Data_B;
+wire [EW-1:0] Data_S; 
 /////////////////////////////////////////7
-genvar j;
-for (j=0; j<EW; j=j+1)begin
+//genvar j;
+//for (j=0; j<EW; j=j+1)begin
 
-    assign Data_B[j] = PreData_B[j] ^ FSM_Add_Subt_i;
+//    assign Data_B[j] = PreData_B_i[j] ^ Add_Subt_i;
 
-end
+//end
 /////////////////////////////////////////
 
 add_sub_carry_out #(.W(EW)) exp_add_subt(
-    .op_mode (FSM_Add_Subt_i),
-    .Data_A (Data_A),
-    .Data_B (Data_B),
+    .op_mode (Add_Subt_i),
+    .Data_A (Data_A_i),
+    .Data_B (Data_B_i),
     .Data_S ({anomaly, Data_S})
     );
-assign Overflow_flag_o = anomaly & ~FSM_Add_Subt_i;
-assign Underflow_flag_o = anomaly & FSM_Add_Subt_i;
+//assign Overflow_flag_o = 1'b0;
+//assign Underflow_flag_o = 1'b0;
+
+assign Overflow_flag = ~Add_Subt_i & anomaly;
+assign Underflow_flag = Add_Subt_i & anomaly;
+
 
 RegisterAdd #(.W(EW)) exp_result(
     .clk (clk),
     .rst (rst),
-    .load (FSM_Load_i),
+    .load (load_a_i),
     .D (Data_S),
     .Q (Data_Result_o)
     );
+    
+RegisterAdd #(.W(1)) Overflow (
+    .clk(clk),
+    .rst(rst),
+    .load(load_a_i),
+    .D(Overflow_flag),
+    .Q(Overflow_flag_o)
+    );
+    
+RegisterAdd #(.W(1)) Underflowflow (
+        .clk(clk),
+        .rst(rst),
+        .load(load_b_i),
+        .D(Underflow_flag),
+        .Q(Underflow_flag_o)
+        );
 endmodule

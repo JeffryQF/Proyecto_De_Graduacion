@@ -36,4 +36,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Add_Subt.vds -m64 -mode batch -messageDb vivado.pb -notrace -source Add_Subt.tcl
+EAStep vivado -log FPU_Multiplication_Function.vds -m64 -mode batch -messageDb vivado.pb -notrace -source FPU_Multiplication_Function.tcl

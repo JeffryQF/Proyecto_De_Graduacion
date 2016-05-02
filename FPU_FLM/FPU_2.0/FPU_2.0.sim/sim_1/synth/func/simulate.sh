@@ -9,4 +9,4 @@ then
 exit $RETVAL
 fi
 }
-ExecStep $xv_path/bin/xsim Testbench_Barrel_Shifter_func_synth -key {Post-Synthesis:sim_1:Functional:Testbench_Barrel_Shifter} -tclbatch Testbench_Barrel_Shifter.tcl -log simulate.log
+ExecStep $xv_path/bin/xsim Testbench_FPU_Add_Subt_func_synth -key {Post-Synthesis:sim_1:Functional:Testbench_FPU_Add_Subt} -tclbatch Testbench_FPU_Add_Subt.tcl -view /media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/FPU_2.0/Testbench_FPU_Add_Subt_behav.wcfg -log simulate.log

@@ -20,16 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 module FPU_Multiplication_Function
 	//SINGLE PRECISION PARAMETERS
-	# (parameter W = 32, parameter W_Exp = 8, parameter W_Sgf = 23,
-		parameter S_Exp = 9) // */
+	# (parameter W = 32, parameter EW = 8, parameter SW = 23) // */
 	//DOUBLE PRECISION PARAMETERS
-/*	# (parameter W = 64, parameter W_Exp = 11, parameter W_Sgf = 52,
-		parameter S_Exp = 12) // */
+/*	# (parameter W = 64, parameter W_Exp = 11, parameter W_Sgf = 52) // */
 	(
 		input wire clk,
 		input wire rst,
 		input wire beg_FSM,
-		input wire rst_FSM,
+		input wire ack_FSM,
 		
 		input wire [W-1:0] Data_MX,
 		input wire [W-1:0] Data_MY,
@@ -37,8 +35,8 @@ module FPU_Multiplication_Function
 		
 		output wire overflow_flag,
 		output wire underflow_flag,
-		output wire ready_flag,
-		output wire [W-1:0] F_ieee_result
+		output wire ready,
+		output wire [W-1:0] final_result_ieee
     );
 
 
@@ -47,121 +45,150 @@ module FPU_Multiplication_Function
 //GENERAL
 wire rst_int; //**
 
-//ZERO PHASE
-wire load_0;
-wire zero_m_flag;
+
+//FSM_load_signals
+
+wire FSM_first_phase_load; //**
+wire FSM_load_first_step; /*Zero flag, Exp operation underflow, Sgf operation first reg,
+sign result reg*/
+wire FSM_exp_operation_load_result; //Exp operation result,
+wire FSM_load_second_step; //Exp operation Overflow, Sgf operation second reg
+wire FSM_barrel_shifter_load;
+wire FSM_adder_round_norm_load;
+wire FSM_final_result_load;
+
+
+
+//ZERO FLAG
+//Op_MX;
+//Op_MY
+wire zero_flag;
 
 //FIRST PHASE
-wire load_1; //**
 wire [W-1:0] Op_MX;
 wire [W-1:0] Op_MY;
-//SECOND PHASE
-wire load_2;
-wire [W_Exp:0] exp_pr;
-//THIRD PHASE
-wire load_3;
-wire overflow_cout;
-wire overflow_comp_a;
-wire [W_Exp-1:0] exp_r;
 
-//FOURTH PHASE
-wire load_4_A;
-wire load_4;
-wire [2*W_Sgf+1:0] P_Sgf;
+//Mux S-> exp_operation OPER_A_i//////////
 
-//FIFTH PHASE
-wire load_5;
-wire selector_a;
-wire [W_Sgf+1:0] Sgf_P_Round; //post round significand
-wire [W_Sgf:0] Sgf_F; //Final result of significand
-wire exp_nu; //Brings info about an update of the exponent
+wire FSM_selector_A;
+//D0=Op_MX[W-2:W-EW-1] 
+//D1=exp_oper_result
+wire [EW:0] S_Oper_A_exp;
 
-//SIXTH PHASE
-wire load_6;
-wire load_7;
-wire selector_b;
-wire overflow_comp_b;
-wire [W_Exp-1:0] exp_act;
+//Mux S-> exp_operation OPER_B_i//////////
 
-//SEVENTH PHASE
-wire load_8;
-wire Sgn_Info;
+wire [1:0] FSM_selector_B;
+//D0=Op_MY[W-2:W-EW-1]
+//D1=LZA_output
+//D2=1
+wire [EW-1:0] S_Oper_B_exp;
 
-//EIGHT PHASE
-wire load_9;
-wire load_10;
-wire selector_c;
-wire selector_d;
+///////////exp_operation///////////////////////////
 
-//NINTH PHASE
-wire [W_Exp:0] Exp_Add;
-wire load_11;
-wire load_12;
-wire underflow_f;
+wire FSM_exp_operation_A_S;
+//oper_A= S_Oper_A_exp
+//oper_B= S_Oper_B_exp
+wire [EW:0] exp_oper_result;
 
-//////New Clock Wire
-wire new_clk;
 
-///////////////////////////////////////////////////////////
-`define Freq_DivA
-`ifdef Freq_Div
+//Sgf operation//////////////////
+//Op_A={1'b1, Op_MX[SW-1:0]}
+//Op_B={1'b1, Op_MY[SW-1:0]}
+wire [2*SW+1:0] P_Sgf;
 
-	wire clk_toogle;
-	
-	FF_T Div_Clk_T (
-		.clk(clk), 
-		.rst(rst), 
-		.Q(clk_toogle)
-		);
+//Sign Operation
 
-	BUFG BUFG_inst (
-		.O(new_clk), // 1-bit output: Clock output
-		.I(clk_toogle)  // 1-bit input: Clock input
-		);
-`else
-	assign new_clk = clk;
-	
-`endif
-/////////////////////////////////////////////////////////////////////////
+wire sign_final_result;
 
-FSM_Mult_Function FSM_FPU_Multiplication (
-    .clk(new_clk), //** 
+//barrel shifter multiplexers
+
+wire [SW:0] S_Data_Shift;
+
+//barrel shifter
+
+wire [SW:0] Sgf_normalized_result;
+
+//adder rounding
+
+wire FSM_add_overflow_flag;
+//Oper_A_i=norm result
+//Oper_B_i=1
+wire [SW:0] Add_result;
+
+//round decoder
+
+wire FSM_round_flag;
+
+//Selecto moltiplexers
+wire selector_A;
+wire [1:0] selector_B;
+wire load_b;
+wire selector_C;
+
+//Barrel shifter multiplexer
+
+
+/////////////////////////////////////////FSM////////////////////////////////////////////
+
+FSM_Mult_Function FS_Module (
+    .clk(clk), //** 
     .rst(rst), //**
     .beg_FSM(beg_FSM), //** 
-    .rst_FSM(rst_FSM), //**
-	 .zero_flag(zero_m_flag), 
-    .overflow_cout(overflow_cout), 
-    .overflow_comp_a(overflow_comp_a), 
-    .overflow_comp_b(overflow_comp_b),
-	 .underflow_f(underflow_f), 	 
-    .rst_int(rst_int), 
-	 .load_0(load_0),
-    .load_1(load_1), 
-    .load_2(load_2), 
-    .load_3(load_3), 
-	 .load_4_A(load_4_A), 
-    .load_4(load_4), 
-    .selector_a(selector_a), 
-    .load_5(load_5), 
-    .selector_b(selector_b), 
-    .load_6(load_6), 
-    .load_7(load_7), 
-    .load_8(load_8), 
-    .load_9(load_9), 
-    .load_10(load_10), 
-    .ready(ready_flag), 
-    .selector_c(selector_c),
-	 .selector_d(selector_d), 
-    .load_11(load_11), 
-    .load_12(load_12)
+    .ack_FSM(ack_FSM), //**
+	.zero_flag_i(zero_flag), 
+    .Mult_shift_i(P_Sgf[2*SW+1]),
+	.round_flag_i(FSM_round_flag), 	 
+    .Add_Overflow_i(FSM_add_overflow_flag), 
+	.load_0_o(FSM_first_phase_load),
+    .load_1_o(FSM_load_first_step), 
+    .load_2_o(FSM_exp_operation_load_result), 
+    .load_3_o(FSM_load_second_step), 
+    .load_4_o(FSM_adder_round_norm_load),
+    .load_5_o(FSM_final_result_load),
+    .load_6_o(FSM_barrel_shifter_load), 
+    .ctrl_select_a_o(selector_A), 
+    .ctrl_select_b_o(load_b), 
+    .selector_b_o(selector_B), 
+    .ctrl_select_c_o(selector_C), 
+    .exp_op_o(FSM_exp_operation_A_S), 
+    .shift_value_o(FSM_Shift_Value),
+    .rst_int(rst_int),                                               //
+    .ready(ready)
     );
 
+///////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////Selector's registers//////////////////////////////
 
+RegisterAdd #(.W(1)) Sel_A ( //Selector_A register
+    .clk(clk), 
+    .rst(rst_int), 
+    .load(selector_A), 
+    .D(1'b1), 
+    .Q(FSM_selector_A)
+    );
 
-First_Phase_M #(.W(W)) Exponent_load_reg (
-    .clk(new_clk), //**
+RegisterAdd #(.W(1)) Sel_C ( //Selector_C register
+    .clk(clk), 
+    .rst(rst_int), 
+    .load(selector_C), 
+    .D(1'b1), 
+    .Q(FSM_selector_C)
+    );
+    
+        
+RegisterAdd #(.W(2)) Sel_B ( //Selector_B register
+                .clk(clk), 
+                .rst(rst_int), 
+                .load(load_b), 
+                .D(selector_B), 
+                .Q(FSM_selector_B)
+                );
+
+///////////////////////////////////////////////////////////////////////////////////////////
+First_Phase_M #(.W(W)) Operands_load_reg (                          //
+    .clk(clk), //**
     .rst(rst_int), //**
-    .load(load_1), //** 
+    .load(FSM_first_phase_load), //** 
     .Data_MX(Data_MX), //** 
     .Data_MY(Data_MY), //**
     .Op_MX(Op_MX), 
@@ -171,103 +198,151 @@ First_Phase_M #(.W(W)) Exponent_load_reg (
 Zero_InfMult_Unit #(.W(W)) Zero_Result_Detect (
     .clk(clk), 
     .rst(rst_int), 
-    .load(load_0), 
-    .Data_A(Op_MX), 
-    .Data_B(Op_MY), 
-    .zero_m_flag(zero_m_flag)
+    .load(FSM_load_first_step), 
+    .Data_A(Op_MX [W-2:0]), 
+    .Data_B(Op_MY [W-2:0]), 
+    .zero_m_flag(zero_flag)
     );
 
-Ninth_Phase_M #(.W_Exp(W_Exp)) Underflow_Management_State (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load_a(load_11), 
-    .load_b(load_12), 
-    .Exp_X(Op_MX[W-2:W-S_Exp]), 
-    .Exp_Y(Op_MY[W-2:W-S_Exp]), 
-    .Exp_Add(Exp_Add), 
-    .underflow_f(underflow_f)
+///////////Mux exp_operation OPER_A_i//////////
+
+Multiplexer_AC #(.W(EW+1)) Exp_Oper_A_mux(
+        .ctrl(FSM_selector_A),
+        .D0 ({1'b0,Op_MX[W-2:W-EW-1]}),
+        .D1 (exp_oper_result),
+        .S (S_Oper_A_exp)
     );
 
-Second_Phase_M #(.W_Exp(W_Exp)) AddSub_ExpBias_Funct (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load(load_2), 
-    .exp_add(Exp_Add), 
-    .exp_pr(exp_pr)
+///////////Mux exp_operation OPER_B_i//////////
+wire [EW-1:0] Exp_oper_B_D1, Exp_oper_B_D2;
+
+Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (Op_MY[W-2:W-EW-1]),
+                .D1 (Exp_oper_B_D1),
+                .D2 (Exp_oper_B_D2),
+                .S(S_Oper_B_exp)
+            );
+            
+
+generate
+    case(EW)
+        8:begin
+            assign Exp_oper_B_D1 = 8'd127; 
+            assign Exp_oper_B_D2 = 8'd1;
+        end
+        default:begin
+             assign Exp_oper_B_D1 = 11'd1023;
+             assign Exp_oper_B_D2 = 11'd1;
+        end
+    endcase
+endgenerate
+
+
+///////////exp_operation///////////////////////////
+
+
+Exp_Operation_m #(.EW(EW)) Exp_module (
+    .clk(clk),
+    .rst(rst_int),
+    .load_a_i(FSM_load_first_step),
+    .load_b_i(FSM_load_second_step),
+    .load_c_i(FSM_exp_operation_load_result),
+    .Data_A_i(S_Oper_A_exp),
+    .Data_B_i({1'b0,S_Oper_B_exp}),
+    .Add_Subt_i(FSM_exp_operation_A_S),
+    .Data_Result_o(exp_oper_result),
+    .Overflow_flag_o(overflow_flag),
+    .Underflow_flag_o(underflow_flag)
     );
 
-Third_Phase_M #(.W_Exp(W_Exp)) FT_exp_info (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load(load_3), 
-    .exp(exp_pr[W_Exp-1:0]), 
-    .cout_exp(exp_pr[W_Exp]), 
-    .exp_r(exp_r), 
-    .overflow_cout(overflow_cout), 
-    .overflow_comp(overflow_comp_a)
-    );
+////////Sign_operation//////////////////////////////
 
-Fourth_Phase_M #(.W_Sgf(W_Sgf)) Significands_Multiplication_Funct (
-    .clk(new_clk), 
-    .rst(rst_int), 
-	 .load_a(load_4_A), 
-    .load_b(load_4), 
-    .Sgf_X({1'b1,Op_MX[W-S_Exp-1:0]}),//Leading bit concatenation 
-    .Sgf_Y({1'b1,Op_MY[W-S_Exp-1:0]}), 
-    .P_Sgf(P_Sgf) //48 BITS
-    );
-
-
-Fifth_Phase_M #(.W_Sgf(W_Sgf)) First_Normalization_RSignificand (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load(load_5), 
-    .selector(selector_a), 
-    .Sgf_FP(P_Sgf[2*W_Sgf+1:W_Sgf]), 
-    .Sgf_PR(Sgf_P_Round), 
-    .exp_nu(exp_nu), //to the sixth phase
-    .Sgf_F(Sgf_F)
-    );
-
-Sixth_Phase_M #(.W_Exp(W_Exp)) Exp_Update_Function (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load_a(load_6), 
-    .load_b(load_7), 
-    .exp_pr(exp_r), 
-    .exp_na(exp_nu), 
-    .selector(selector_b), 
-    .exp_act(exp_act), //FINAL EXPONENT
-    .overflow_b(overflow_comp_b)
-    );
-
-Seventh_Phase_M #(.W_Sgf(W_Sgf)) Round_Significand_Function (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load(load_8), 
-    .round_mode(round_mode), 
-    .Sgf_round_bits(P_Sgf[W_Sgf-1:0]), 
-    .Sgn_X(Op_MX[W-1]), 
-    .Sgn_Y(Op_MY[W-1]), 
-    .Sgf_PR(Sgf_F), 
-    .Sgn_Info(Sgn_Info), 
-    .Sgf_P_Round(Sgf_P_Round)
-    );
-
-Eight_Phase_M #(.W(W)) Final_Result_Module (
-    .clk(new_clk), 
-    .rst(rst_int), 
-    .load_a(load_9), 
-    .load_b(load_10), 
-	 .selector_a(selector_d), 
-    .selector_b(selector_c), 
-    .ieee_result({Sgn_Info,exp_act,Sgf_F[W_Sgf-1:0]}), 
-    .F_ieee_result(F_ieee_result)
+XOR_M Sign_operation (
+    .Sgn_X(Op_MX[W-1]),
+    .Sgn_Y(Op_MY[W-1]),
+    .Sgn_Info(sign_final_result)
     );
 
 
+/////Significant_Operation//////////////////////////
 
-assign overflow_flag = overflow_cout || overflow_comp_a || overflow_comp_b;
-assign underflow_flag = underflow_f;
+Sgf_Multiplication #(.SW(SW+1)) Sgf_operation (
+    .clk(clk),
+    .rst(rst),
+    .load_a_i(FSM_load_first_step),
+    .load_b_i(FSM_load_second_step),
+    .Data_A_i({1'b1,Op_MX[SW-1:0]}),
+    .Data_B_i({1'b1,Op_MY[SW-1:0]}),
+    .sgf_result_o(P_Sgf)
+    );
+    
+    //////////Mux Barrel shifter shift_Value/////////////////
+    
+    
+
+    ///////////Mux Barrel shifter Data_in//////
+    
+    Multiplexer_AC #(.W(SW+1)) Barrel_Shifter_D_I_mux(
+        .ctrl(FSM_selector_C),
+        .D0 (P_Sgf[2*SW:SW]),
+        .D1 (Add_result),
+        .S (S_Data_Shift)
+    );
+    
+    ///////////Barrel_Shifter//////////////////////////
+    
+    Barrel_Shifter_M #(.SW(SW+1)) Barrel_Shifter_module (
+        .clk(clk), 
+        .rst(rst_int),
+        .load_i(FSM_barrel_shifter_load),
+        .Shift_Value_i(FSM_Shift_Value),
+        .Shift_Data_i(S_Data_Shift),
+        .N_mant_o(Sgf_normalized_result)
+        );
+        
+        
+   
+////Round decoder/////////////////////////////////
+
+Round_decoder_M #(.SW(SW)) Round_Decoder (
+    .Round_Bits_i(P_Sgf[SW-1:0]),
+    .Round_Mode_i(round_mode),
+    .Sign_Result_i(sign_final_result),
+    .Round_Flag_o(FSM_round_flag)
+    );
+
+//rounding_adder
+
+wire [SW:0] Add_Sgf_Oper_B;
+
+assign Add_Sgf_Oper_B = (SW)*1'b1;
+
+Adder_Round #(.SW(SW+1)) Adder_M (
+    .clk(clk), 
+    .rst(rst_int),
+    .load_i(FSM_adder_round_norm_load),
+    .Data_A_i(Sgf_normalized_result),
+    .Data_B_i(Add_Sgf_Oper_B),
+    .Data_Result_o(Add_result),
+    .FSM_C_o(FSM_add_overflow_flag)
+    );
+
+////Final Result///////////////////////////////
+
+Tenth_Phase #(.W(W),.EW(EW),.SW(SW)) final_result_ieee_Module(
+    .clk(clk), 
+    .rst(rst_int),
+    .load_i(FSM_final_result_load),
+    .sel_a_i(overflow_flag),
+    .sel_b_i(underflow_flag),
+    .sign_i(sign_final_result),
+    .exp_ieee_i(exp_oper_result[EW-1:0]),
+    .sgf_ieee_i(Sgf_normalized_result[SW-1:0]),
+    .final_result_ieee_o(final_result_ieee)
+    );
+
+    
+
 
 endmodule

@@ -26,10 +26,10 @@ module Full_Adder_PG_1b(
     input wire C_i, //Carry in
     output wire S_o, // Solution out
     output wire C_o, //Carry out
-    output wire P_o, //Propagate (for LZA)
-    output wire G_o //Generate (For LZA)
+    output wire P_o //Propagate (for LZA)
     );
     
+    wire G_o;
     assign P_o = Op_A_i ^ Op_B_i;
     assign G_o = Op_A_i & Op_B_i;
     assign S_o = P_o ^ C_i;

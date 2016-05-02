@@ -1,0 +1,154 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.sim/sim_1/impl/timing/TB32_ZDetector_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Eight_Phase_M
+INFO: [VRFC 10-311] analyzing module FPU_Multiplication_Function
+INFO: [VRFC 10-311] analyzing module FSM_Mult_Function
+INFO: [VRFC 10-311] analyzing module Fifth_Phase_M
+INFO: [VRFC 10-311] analyzing module First_Phase_M
+INFO: [VRFC 10-311] analyzing module Fourth_Phase_M
+INFO: [VRFC 10-311] analyzing module Multiplexer_AC__parameterized1
+INFO: [VRFC 10-311] analyzing module Multiplier_P
+INFO: [VRFC 10-311] analyzing module Ninth_Phase_M
+INFO: [VRFC 10-311] analyzing module RegisterAdd
+INFO: [VRFC 10-311] analyzing module RegisterMult
+INFO: [VRFC 10-311] analyzing module RegisterMult_0
+INFO: [VRFC 10-311] analyzing module RegisterMult_1
+INFO: [VRFC 10-311] analyzing module RegisterMult_2
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized0
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized1
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized10
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized11
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized12
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized13
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized14
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized15
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized2
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized3
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized4
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized5
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized6
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized7
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized8
+INFO: [VRFC 10-311] analyzing module RegisterMult__parameterized9
+INFO: [VRFC 10-311] analyzing module Second_Phase_M
+INFO: [VRFC 10-311] analyzing module Seventh_Phase_M
+INFO: [VRFC 10-311] analyzing module Sixth_Phase_M
+INFO: [VRFC 10-311] analyzing module Third_Phase_M
+INFO: [VRFC 10-311] analyzing module Zero_InfMult_Unit
+INFO: [VRFC 10-311] analyzing module add_sub_carry_out
+INFO: [VRFC 10-311] analyzing module add_sub_carry_out__parameterized0
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TestBench_32_New.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TestBench_32_New
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TBMULTZERO32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TBMULTZERO32
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/TB32_ZDetector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TB32_ZDetector
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FPU_Add_Subtract_Function
+INFO: [VRFC 10-2458] undeclared symbol load_9, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:149]
+INFO: [VRFC 10-2458] undeclared symbol load_10, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:150]
+INFO: [VRFC 10-2458] undeclared symbol load_11, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:153]
+INFO: [VRFC 10-2458] undeclared symbol load_18, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:161]
+INFO: [VRFC 10-2458] undeclared symbol load_19, assumed default net type wire [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Add_Subtract_Function.v:163]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fifth_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Fifth_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase_M.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sixth_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Sixth_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase_M.v:26]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Deco_Round_Mult.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Deco_Round_Mult
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fifth_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Multiplication_Function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FPU_Multiplication_Function
+WARNING: [VRFC 10-1195] overwriting previous definition of module FPU_Multiplication_Function [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Multiplication_Function.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Greater_Comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Third_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Third_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase_M.v:24]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Add_Subtract_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Add_Subtract_M
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_N_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Eight_N_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Zero_AS_Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Second_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Second_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase_M.v:24]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplier_P.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiplier_P
+WARNING: [VRFC 10-1195] overwriting previous definition of module Multiplier_P [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplier_P.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fourth_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FF_T.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FF_T
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Eight_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Eight_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_Phase_M.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Third_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module First_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module First_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase_M.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfMult_Unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Zero_InfMult_Unit
+WARNING: [VRFC 10-1195] overwriting previous definition of module Zero_InfMult_Unit [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfMult_Unit.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/XOR_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module XOR_M
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterMult
+WARNING: [VRFC 10-1195] overwriting previous definition of module RegisterMult [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_NE_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Eight_NE_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Seventh_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfAdd_Unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Zero_InfAdd_Unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add_sub_carry_out
+WARNING: [VRFC 10-1195] overwriting previous definition of module add_sub_carry_out [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Ninth_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Ninth_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Ninth_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Ninth_Phase_M.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Second_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiplexer_AC
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Shift_Module_Param.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Shift_Module_Param
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Invert_Sign.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Invert_Sign
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Mult_Function.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FSM_Mult_Function
+WARNING: [VRFC 10-1195] overwriting previous definition of module FSM_Mult_Function [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Mult_Function.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Universal_Shift_Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Universal_Shift_Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_subtract.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module add_subtract
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Add_Subtract.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FSM_Add_Subtract
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Tenth_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Tenth_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator_Equal
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Decoder_4_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder_4_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Fourth_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Fourth_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase_M.v:24]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/OR_Module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module OR_Module
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sixth_Phase
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RegisterAdd
+WARNING: [VRFC 10-1195] overwriting previous definition of module RegisterAdd [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase_M.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Seventh_Phase_M
+WARNING: [VRFC 10-1195] overwriting previous definition of module Seventh_Phase_M [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase_M.v:21]
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Less.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator_Less
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module First_Phase

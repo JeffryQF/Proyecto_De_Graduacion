@@ -30,8 +30,8 @@ module Oper_Start_In
 	(
         input wire clk, //system clock
 		input wire rst, //reset of the module
-		input wire ctrl_a_i,//The ctrl_x signals are used to load certain registers within the module
-		input wire ctrl_b_i,
+		input wire load_a_i,//The ctrl_x signals are used to load certain registers within the module
+		input wire load_b_i,
 		input wire add_subt_i, //This signal selects if the operations is an add o subtract operation
 		input wire [W-1:0] Data_X_i, //Data_X and Data_y are both operands of the module
 		//they are expected in ieee 754 format
@@ -40,9 +40,9 @@ module Oper_Start_In
 		//////////////////////////////////////////////////////////////////////
 		output wire [W-2:0] DMP_o, //Because the algorithm these outputs contain the largest and smallest operand
         output wire [W-2:0] DmP_o,
-        output wire zero_flag_o,
-        output wire real_op_o,
-        output wire sgn_final_result_o
+        output wire zero_flag_o, //Flag for FSM when the subt result is zero
+        output wire real_op_o, //bit for real add/subt operation in case for -DataY
+        output wire sign_final_result_o //bit for sign result
 		
     );
 
@@ -66,7 +66,7 @@ wire [W-2:0] intm;  //Output of MuxXY for small value
 RegisterAdd #(.W(W)) XRegister ( //Data X input register
     .clk(clk), 
     .rst(rst), 
-    .load(ctrl_a_i), 
+    .load(load_a_i), 
     .D(Data_X_i), 
     .Q(intDX)
     );
@@ -74,7 +74,7 @@ RegisterAdd #(.W(W)) XRegister ( //Data X input register
 RegisterAdd #(.W(W)) YRegister ( //Data Y input register
     .clk(clk), 
     .rst(rst), 
-    .load(ctrl_a_i), 
+    .load(load_a_i), 
     .D(Data_Y_i), 
     .Q(intDY)
     );
@@ -82,7 +82,7 @@ RegisterAdd #(.W(W)) YRegister ( //Data Y input register
 RegisterAdd #(.W(1)) ASRegister ( //Data Add_Subtract input register
     .clk(clk), 
     .rst(rst), 
-    .load(ctrl_a_i), 
+    .load(load_a_i), 
     .D(add_subt_i), 
     .Q(intAS)
     );
@@ -107,7 +107,7 @@ sgn_result result_sign_bit (//Calculate the sign bit for the final result
     .sgn_Y_i(intDY[W-1]),
     .gtXY_i(gtXY),
     .eqXY_i(eqXY),
-    .sgn_result_o(sgn_final_result_o)
+    .sgn_result_o(sign_result)
     );
 
 MultiplexTxT #(.W(W-1)) MuxXY (//Classify in the registers the bigger value (M) and the smaller value (m)
@@ -121,7 +121,7 @@ MultiplexTxT #(.W(W-1)) MuxXY (//Classify in the registers the bigger value (M) 
 RegisterAdd #(.W(W-1)) MRegister ( //Data_M register
     .clk(clk), 
     .rst(rst), 
-    .load(ctrl_b_i), 
+    .load(load_b_i), 
     .D(intM), 
     .Q(DMP_o)
     );
@@ -129,9 +129,17 @@ RegisterAdd #(.W(W-1)) MRegister ( //Data_M register
 RegisterAdd #(.W(W-1)) mRegister ( //Data_m register
     .clk(clk), 
     .rst(rst), 
-    .load(ctrl_b_i), 
+    .load(load_b_i), 
     .D(intm), 
     .Q(DmP_o)
+    );
+    
+RegisterAdd #(.W(1)) SignRegister (
+    .clk(clk),
+    .rst(rst),
+    .load(load_b_i),
+    .D(sign_result),
+    .Q(sign_final_result_o)
     );
 
 assign zero_flag_o = real_op_o & eqXY;

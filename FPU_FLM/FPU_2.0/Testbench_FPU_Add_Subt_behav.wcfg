@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Testbench_FPU_multiplication_time_impl.wdb" id="1">
+         <top_modules>
+            <top_module name="Testbench_FPU_multiplication" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="102916666fs"></ZoomStartTime>
+      <ZoomEndTime time="333416667fs"></ZoomEndTime>
+      <Cursor1Time time="315000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="28" />
+   <wave_markers>
+      <marker label="" time="245000000" />
+      <marker label="" time="295000000" />
+   </wave_markers>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/beg_FSM">
+      <obj_property name="ElementShortName">beg_FSM</obj_property>
+      <obj_property name="ObjectShortName">beg_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/ack_FSM">
+      <obj_property name="ElementShortName">ack_FSM</obj_property>
+      <obj_property name="ObjectShortName">ack_FSM</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/Data_MX">
+      <obj_property name="ElementShortName">Data_MX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_MX[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/Data_MY">
+      <obj_property name="ElementShortName">Data_MY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_MY[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/final_result_ieee">
+      <obj_property name="ElementShortName">final_result_ieee[31:0]</obj_property>
+      <obj_property name="ObjectShortName">final_result_ieee[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/contador">
+      <obj_property name="ElementShortName">contador[31:0]</obj_property>
+      <obj_property name="ObjectShortName">contador[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/FS_Module/state_reg">
+      <obj_property name="ElementShortName">state_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Operands_load_reg/Data_MX">
+      <obj_property name="ElementShortName">Data_MX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_MX[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Operands_load_reg/Data_MY">
+      <obj_property name="ElementShortName">Data_MY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_MY[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Operands_load_reg/Op_MX">
+      <obj_property name="ElementShortName">Op_MX[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Op_MX[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Operands_load_reg/Op_MY">
+      <obj_property name="ElementShortName">Op_MY[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Op_MY[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Exp_module/Data_A_i">
+      <obj_property name="ElementShortName">Data_A_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_A_i[8:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Exp_module/Data_B_i">
+      <obj_property name="ElementShortName">Data_B_i[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_B_i[8:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/uut/Exp_module/Add_Subt_i">
+      <obj_property name="ElementShortName">Add_Subt_i</obj_property>
+      <obj_property name="ObjectShortName">Add_Subt_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Exp_module/Data_Result_o">
+      <obj_property name="ElementShortName">Data_Result_o[8:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Result_o[8:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/uut/Exp_module/underflow_exp_reg">
+      <obj_property name="ElementShortName">underflow_exp_reg</obj_property>
+      <obj_property name="ObjectShortName">underflow_exp_reg</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Sgf_operation/Data_A_i">
+      <obj_property name="ElementShortName">Data_A_i[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_A_i[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Sgf_operation/Data_B_i">
+      <obj_property name="ElementShortName">Data_B_i[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_B_i[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Sgf_operation/sgf_result_o">
+      <obj_property name="ElementShortName">sgf_result_o[47:0]</obj_property>
+      <obj_property name="ObjectShortName">sgf_result_o[47:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Barrel_Shifter_D_I_mux/D0">
+      <obj_property name="ElementShortName">D0[23:0]</obj_property>
+      <obj_property name="ObjectShortName">D0[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Barrel_Shifter_D_I_mux/S">
+      <obj_property name="ElementShortName">S[23:0]</obj_property>
+      <obj_property name="ObjectShortName">S[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Barrel_Shifter_module/Shift_Data_i">
+      <obj_property name="ElementShortName">Shift_Data_i[23:0]</obj_property>
+      <obj_property name="ObjectShortName">Shift_Data_i[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/Barrel_Shifter_module/N_mant_o">
+      <obj_property name="ElementShortName">N_mant_o[23:0]</obj_property>
+      <obj_property name="ObjectShortName">N_mant_o[23:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="logic" fp_name="/Testbench_FPU_multiplication/uut/final_result_ieee_Module/sign_i">
+      <obj_property name="ElementShortName">sign_i</obj_property>
+      <obj_property name="ObjectShortName">sign_i</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/final_result_ieee_Module/exp_ieee_i">
+      <obj_property name="ElementShortName">exp_ieee_i[7:0]</obj_property>
+      <obj_property name="ObjectShortName">exp_ieee_i[7:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" type="array" fp_name="/Testbench_FPU_multiplication/uut/final_result_ieee_Module/sgf_ieee_i">
+      <obj_property name="ElementShortName">sgf_ieee_i[22:0]</obj_property>
+      <obj_property name="ObjectShortName">sgf_ieee_i[22:0]</obj_property>
+   </wvobject>
+</wave_config>
