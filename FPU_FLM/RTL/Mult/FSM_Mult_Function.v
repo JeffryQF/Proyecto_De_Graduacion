@@ -22,143 +22,100 @@ module FSM_Mult_Function(
 	//INPUTS
 	input wire clk,
 	input wire rst,
-	input wire beg_FSM, //Begin the multiply operation
-	input wire rst_FSM, //Is used in the last state, is an aknowledge signal
+	input wire beg_FSM, //Be gin the multiply operation
+	input wire ack_FSM, //Is used in the last state, is an aknowledge signal
 	
 	//ZERO PHASE EVALUATION SIGNALS
-	input wire zero_flag,
+	input wire zero_flag_i,
 	
-	//THIRD PHASE INPUT SIGNALS *EVALUATION SIGNALS
-	input wire overflow_cout,
-	input wire overflow_comp_a,
+	//Sgf_Operation *EVALUATION SIGNALS
+	input wire Mult_shift_i,
 	
-	//SIXTH PHASE INPUT SIGNALS *EVALUATION SIGNALS
-	input wire overflow_comp_b,
+	//round decoder EVALUATION SIGNALS
+	input wire round_flag_i,
 	
-	//NINTH PHASE EVALUATION SIGNALS
-	input wire underflow_f,
+	//Adder round EV LUATION Signals
+	input wire Add_Overflow_i,
+
+	///////////////////////Load Signals/////////////////////////////////////7
+
+	//Oper Start_in load signal
+	output reg load_0_o, 
+
+	/*Zero flag, Exp operation underflow, Sgf operation first reg, sign result reg*/
+	output reg load_1_o, 
+
+	//Exp operation result,
+	output reg load_2_o, 
 	
-	//Zero phase control signals
-	output reg rst_int, //Internal reset for the modules that forms part of the multiplication module
-	output reg load_0, //Load of register that contains info about zero result
-	//First phase control signals
-	output reg load_1, //Controls the load signal from the registers of this stage
-	//Registers 1---2
+	//Exp operation Overflow, Sgf operation second reg
+	output reg load_3_o, 
 	
-	//Second phase control signals
-	output reg load_2, //Load Signal for register 3
+	//Adder round register
+	output reg load_4_o,
 	
-	//Third phase control signals
-	output reg load_3, //Load signal for registers 4,5,6
-	
-	//Fourth phase control signals
-	output reg load_4_A, //load signal of additional registers
-	output reg load_4, //Load signal for register 7
-	
-	//Fifth Phase control signals
-	output reg selector_a, //Controls the mux which selects the significands of the fifth and seventh phase
-	output reg load_5,
+	//Final result registers
+	output reg load_5_o,
+
+	//Barrel shifter registers
+	output reg load_6_o,
+
+	/////////////////////Multiplexers selector control signals////////////
 
 	//Sixth Phase control signals
-	output reg selector_b,
-	output reg load_6,
-	output reg load_7,
+	output reg ctrl_select_a_o,
+	output reg ctrl_select_b_o,
+	output reg [1:0] selector_b_o,
+	output reg ctrl_select_c_o,
+	
 
-	//Seventh Phase control signals
-	output reg load_8,
-	
-	//Eight Phase control signals
-	output reg load_9,
-	output reg load_10,
-	output reg ready,
-	output reg selector_c,
-	output reg selector_d,
-	
-	//Ninth Phase control signals
-	output reg load_11,
-	output reg load_12
+	//////////////////////Module's control signals/////////////////////////
+	//Exp operation control signals
+	output reg exp_op_o,
+
+	//Barrel shifter control signals
+	output reg shift_value_o,
+
+	//Internal reset signal
+		output reg rst_int,
+		//Ready  Signal
+		output reg ready
     );
 
 
 ////////States///////////
 //Zero Phase
-parameter [5:0] zero = 6'd0,
-//First Phase
-load_operands = 6'd1, //loads both operands to registers
+parameter [3:0] start = 4'd0,//A
 
-//Zero Phase
-zero_check_a = 6'd2,
-zero_check_b = 6'd3,
-zero_check_c = 6'd4,
+load_operands = 4'd1, //B) loads both operands to registers
 
+add_exp = 4'd2, //C) Add both operands, evaluate underflow
 
-//Second Phase
-addsub_exp_bias = 6'd5, //It's a "giving time" state for some combinational logic to work
-load_addsubexpbias = 6'd6, //Loads the register which contains the result of the second state
+subt_bias = 4'd3, //D) Subtract bias to the result, evaluate overflow, evaluate zero
 
-//Third Phase
-info_exp_a = 6'd7, //Gives time to the comparator of this phase to execute
-load_exp_ovflow_info =  6'd8, //Loads the registers with relevant info about
-first_ov_ccout = 6'd9, //Ask if exist overflow looking on the carry out bit of the exponet
-first_ov_ccomp = 6'd10, //Ask for overflow comparing with the parameter h'fe
+mult_overf= 4'd4, //E) Evaluate overflow in Sgf multiplication for normalization case
 
-//Fourth Phase
-load_pre_mult_sgfs = 6'd11,
-pre_mult_time = 6'd12,
-load_mult_sgfs = 6'd13,//Loads the register which contains the product of the significands
+mult_norn = 4'd5, //F) Overflow normalization, right shift significant and increment exponent
 
-//Fifth Phase
-r_sgf_selection_a = 6'd14, //Loads off the register of the state 8, the selector does not change the value
-r_sgf_selection_b = 6'd15, //both the a and b selection are thinking to give time to the multiplexers of this stage
-r_sgf_selection_c = 6'd16, //Loads a first version of the resultant significand also brings information of an update required by the exponent
+mult_no_norn = 4'd6, //G)No_normalization sgf
 
-//Sixth Phase
-exp_update_a = 6'd17,
-exp_update_b = 6'd18,
-exp_update_c = 6'd19,
-exp_update_d = 6'd20,
-exp_update_e = 6'd21,
-second_ov_ccomp = 6'd22,
+round_case = 4'd7, //H) Rounding evaluation. Positive= adder rounding, Negative,=Final load
 
-//Seventh Phase
-round_state_a = 6'd23,
-update_sgf_a = 6'd24, //Again to the fifth phase to update the significand
-update_sgf_b = 6'd25,
-update_sgf_c = 6'd26,
-new_update_exp_a = 6'd27, //Again to the sixth phase
-new_update_exp_b = 6'd28,
-new_update_exp_c = 6'd29,
-new_update_exp_d = 6'd30,
-new_update_exp_e = 6'd31,
-f_overflow_q = 6'd32,
+adder_round =  4'd8, //I) add a 1 to the significand in case of rounding
 
-//Eight Phase
-final_result_a = 6'd33,
-final_result_b = 6'd34,
-final_result_c = 6'd35,
-final_result_d = 6'd36,
+round_norm = 4'd9, //J) Evaluate overflow in adder for normalization, Positive = normalization, same that F
 
-//Overflow management states
-overflow_management_a = 6'd37,
-overflow_management_b = 6'd38,
+final_load = 4'd10, //K) Load output registers 
 
-//Underflow management states
-underflow_check_a = 6'd39,
-underflow_check_b = 6'd40,
-underflow_check_c = 6'd41,
-underflow_check_d = 6'd42,
-underflow_info =  6'd43,
-underflow_management_a = 6'd44,
-underflow_management_b = 6'd45;
-
+ready_flag = 4'd11; //L) Ready flag, wait for ack signal
 
 //State registers
-reg [5:0] state_reg, state_next;
+reg [3:0] state_reg, state_next;
 
 //State registers reset and standby logic
 always @(posedge clk, posedge rst)
 	if(rst)
-		state_reg <= zero;
+		state_reg <= start;
 	else
 		state_reg <= state_next;
 
@@ -168,49 +125,47 @@ always @*
 	//STATE DEFAULT BEHAVIOR
 	state_next = state_reg; //If no changes, keep the value of the register unaltered
 	
-	//ZERO PHASE DEFAULT SIGNALS
-	rst_int = 0; //The internal reset is zero but in the zero state
-	load_0 = 0;
+	 load_0_o=0;
+
+	/*Zero flag, Exp operation underflow, Sgf operation first reg, sign result reg*/
+	 load_1_o=0;
+
+	//Exp operation result,
+	 load_2_o=0; 
 	
-	//FIRST PHASE DEFAULT SIGNALS
-	load_1 = 0; //Default value of this signal, it does not change unless you do it in an state
-	//but this value comes back to the default when you exit 
+	//Exp operation Overflow, Sgf operation second reg
+	 load_3_o=0; 
 	
-	//SECOND PHASE DEFAULT SIGNALS
-	load_2 = 0;
+	//Adder round register
+	 load_4_o=0;
 	
-	//THIRD PHASE DEFAULT SIGNALS
-	load_3 = 0;
+	//Final result registers
+	 load_5_o=0;
+
+	 load_6_o=0;
+	//////////////////////Multiplexers selector control signals////////////
+
+	//Sixth Phase control signals
+	 ctrl_select_a_o=0;
+	 ctrl_select_b_o=0;
+	 selector_b_o=2'b0;
+	 ctrl_select_c_o=0;
 	
-	//FOURTH PHASE DEFAULT SIGNALS
-	load_4_A = 0;
-	load_4 = 0;
-	
-	//FIFTH PHASE DEFAULT SIGNALS
-	selector_a = 0;
-	load_5 = 0;
-	
-	//SIXTH PHASE DEFAULT SIGNALS
-	selector_b = 0;
-	load_6 = 0;
-	load_7 = 0;
-	
-	//SEVENTH PHASE DEFAULT SIGNALS
-	load_8 = 0;
-	
-	//EIGHT PHASE DEFAULT SIGNALS
-	load_9 = 0;
-	load_10 = 0;
-	selector_c = 0;
-	selector_d = 0;
-	ready = 0;
-	
-	//NINTH PHASE DEFAULT SIGNALS
-	load_11 = 0;
-	load_12 = 0;
+
+	//////////////////////Module's control signals/////////////////////////
+	//Exp operation control signals
+	 exp_op_o=0;
+
+	//Barrel shifter control signals
+	 shift_value_o=0;
+
+	//Internal reset signal
+		 rst_int=0;
+		//Ready  Signal
+		 ready=0;
 	
 	case(state_reg)
-		zero:
+		start:
 		begin
 			rst_int = 1;
 			if(beg_FSM)
@@ -219,289 +174,106 @@ always @*
 		//First Phase 
 		load_operands:
 		begin
-			load_1 = 1;
-			state_next = zero_check_a;
+			load_0_o = 1;
+			state_next = add_exp;
 		end
 		
 		//Zero Check
-		zero_check_a:
+		add_exp:
 		begin
-			load_1 = 0;
-			state_next = zero_check_b;
+			load_1_o = 1;
+			load_2_o = 1;
+			ctrl_select_a_o = 1;
+			ctrl_select_b_o = 1;
+			selector_b_o = 2'b01;
+			state_next = subt_bias;
 		end
-		zero_check_b:
+		subt_bias:
 		begin
-			load_0 = 1;
-			state_next = zero_check_c;
-		end
-		zero_check_c:
-		begin
-			if(zero_flag)
-				state_next = final_result_d;
+			load_2_o = 1;
+			load_3_o = 1;
+			exp_op_o = 1;
+
+			if(zero_flag_i)
+				state_next = ready_flag;
 			else
-				state_next = underflow_check_a;
+				state_next = mult_overf;
+
+		end
+		mult_overf:
+		begin
+			if(Mult_shift_i) begin
+				ctrl_select_b_o =1;
+				selector_b_o =2'b10;
+				state_next = mult_norn;
+			end
+			else
+				state_next = mult_no_norn;
 		end
 		//Ninth Phase
-		underflow_check_a:
+		mult_norn:
 		begin
-			state_next = underflow_check_b;
+			shift_value_o =1;
+			load_6_o = 1;
+			load_2_o = 1;
+			load_3_o = 1;
+			//exp_op_o = 1;
+			state_next = round_case;
 		end
-		underflow_check_b:
+		mult_no_norn:
 		begin
-			load_11 = 1; //Loads the add result of the exponents
-			state_next = underflow_check_c;
+			shift_value_o =0;
+			load_6_o = 1;
+			state_next = round_case;
 		end
-		underflow_check_c:
+		round_case:
 		begin
-			load_11 = 0;
-			state_next = underflow_check_d;
-		end
-		underflow_check_d:
-		begin
-			load_12 = 1;
-			state_next = underflow_info;
-		end
-		underflow_info:
-		begin
-			load_12 = 0;
-			if(underflow_f)
-				state_next = underflow_management_a;
-			else
-				state_next = addsub_exp_bias;
-		end
-		
-		//Second Phase
-		addsub_exp_bias: //This state gives time to combinational logic 
-		begin
-			state_next = load_addsubexpbias ;
-		end
-		load_addsubexpbias:
-		begin
-			load_2 = 1;
-			state_next = info_exp_a; 
-		end
-		
-		//Third phase
-		info_exp_a: //Gives time to a combinational logic to execute
-		begin
-			load_2 = 0;
-			state_next = load_exp_ovflow_info;
-		end
-		load_exp_ovflow_info: //Loads info about the exponent and overflow status
-		begin
-			load_3 = 1;
-			state_next = first_ov_ccout;
-		end
-		first_ov_ccout:
-		begin
-			load_3 = 0;
-			if(overflow_cout) begin
-				selector_d = 1; //Selects the overflow code
-				state_next = overflow_management_a; //Ends the process with the exception handling
+			if(round_flag_i) begin
+				ctrl_select_c_o =1;
+				state_next = adder_round;
 			end
 			else
-				state_next = first_ov_ccomp;
+				state_next = final_load;
 		end
-		first_ov_ccomp:
-			if(overflow_comp_a) begin
-				selector_d = 1;
-				state_next = overflow_management_a;
+		adder_round:
+		begin
+			load_4_o = 1;
+			ctrl_select_b_o = 1;
+			selector_b_o = 2'b01;
+			state_next = round_norm;
+		end
+		round_norm:
+		begin
+			load_6_o = 1;
+			if(Add_Overflow_i)begin
+				shift_value_o =1;
+				load_2_o = 1;
+				load_3_o = 1;
+				state_next = final_load;
 			end
-			else
-				state_next = load_pre_mult_sgfs;
-		/////////////////////////////////////////**
-		//Fourth Phase
-		//****************************CORRECCION CLK SKEW*******
-		load_pre_mult_sgfs:
-		begin
-			load_4_A = 1;
-			state_next = pre_mult_time;
-		end
-		pre_mult_time:
-		begin
-			load_4_A = 0;
-			state_next = load_mult_sgfs;
-		end
-		load_mult_sgfs:
-		begin
-			load_4 = 1;
-			state_next = r_sgf_selection_a;
-		end
-		
-		//Fifth Phase
-		r_sgf_selection_a: // Gives time to combinational logic to execute
-		begin
-			load_4 = 0;
-			state_next = r_sgf_selection_b;
-		end
-		r_sgf_selection_b:
-		begin
-			state_next = r_sgf_selection_c;
-		end
-		r_sgf_selection_c:
-		begin
-			load_5 = 1;
-//			selector_b = 0;
-			state_next = exp_update_a;
-		end
-		
-		//Sixth Phase
-		exp_update_a:
-		begin
-			load_5 = 0;
-			state_next = exp_update_b;
-		end
-		exp_update_b:
-		begin
-			load_6 = 1;
-			state_next = exp_update_c;
-		end
-		exp_update_c: //Time to combinational logic
-		begin
-			load_6 = 0;
-			state_next = exp_update_d;
-		end
-		exp_update_d:
-		begin
-			state_next = exp_update_e;
-		end
-		exp_update_e:
-		begin
-			load_7 = 1;
-			state_next = second_ov_ccomp;
-		end
-		second_ov_ccomp:
-		begin
-			load_7 = 0;
-			if(overflow_comp_b) begin
-				selector_d = 1;
-				state_next = overflow_management_a;
+			else begin
+				shift_value_o =0;
+				state_next = final_load;
 			end
-			else
-				state_next = round_state_a;
 		end
 		
-		//SEVENTH PHASE
-		round_state_a:
+		final_load: 
 		begin
-			load_8 = 1; //Loads the rounded significand
-			selector_a = 1; //Prepares the mux of the fifth phase to reprocess the significand
-			state_next = update_sgf_a;
+			load_5_o =1;
+			state_next = ready_flag;
 		end
-		update_sgf_a: //time to combinational logic
-		begin	
-			load_8 = 0;
-			selector_a = 1;
-			state_next = update_sgf_b;
-		end
-		update_sgf_b: //time to combinational logic
+		ready_flag:
 		begin
-			selector_a = 1;
-			state_next = update_sgf_c;
-		end
-		update_sgf_c:
-		begin
-			selector_a = 1;
-			load_5 = 1;
-			selector_b = 1;
-			state_next = new_update_exp_a;
-		end
-		new_update_exp_a:
-		begin
-			load_5 = 0;
-			selector_a = 0;
-			selector_b = 1;
-			state_next = new_update_exp_b;
-		end
-		new_update_exp_b:
-		begin
-			selector_b = 1;
-			load_6 = 1;
-			state_next = new_update_exp_c;
-		end
-		new_update_exp_c:
-		begin
-			selector_b = 0;
-			load_6 = 0;
-			state_next = new_update_exp_d;
-		end
-		new_update_exp_d:
-		begin
-			state_next = new_update_exp_e;
-		end
-		new_update_exp_e:
-		begin
-			load_7 = 1;
-			state_next = f_overflow_q;
-		end
-		f_overflow_q:
-		begin
-			load_7 = 0;
-			selector_c = 1;
-			if(overflow_comp_b) begin
-				selector_d = 1;
-				state_next = overflow_management_a;
-			end
-			else
-				state_next = final_result_a;
-		end
-		
-		//EIGTH PHASE
-		final_result_a:
-		begin
-			selector_c = 1;
-			load_9 = 1;
-			state_next = final_result_b;
-		end
-		final_result_b:
-		begin
-			selector_c = 1;
-			load_9 = 0;
-			state_next = final_result_c;
-		end
-		final_result_c:
-		begin
-			selector_c = 1;
-			load_10 = 1;
-			state_next = final_result_d;
-		end
-		final_result_d:
-		begin
-			selector_c = 0;
-			load_10 = 0;
 			ready = 1;
-			if(rst_FSM)
-				state_next = zero;
+				if(ack_FSM) begin
+					state_next = start;end
 		end
 		
-		overflow_management_a:
+		default:
 		begin
-			selector_d = 1;
-			load_9 = 1;
-			state_next = overflow_management_b;
-		end
-		overflow_management_b:
-		begin
-			selector_d = 1;
-			load_9 = 0;
-			load_10 = 1;
-			state_next = final_result_d;
-		end
-		underflow_management_a:
-		begin
-			load_9 = 1;
-			state_next = underflow_management_b;
-		end
-		underflow_management_b:
-		begin
-			load_9 = 0;
-			load_10 = 1;
-			state_next = final_result_d;
-		end
-		
-			
-		endcase
-	end
-			
+			state_next =start;end
+	endcase
+end
+				
 		
 endmodule

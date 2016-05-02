@@ -45,6 +45,7 @@ module Add_Subt
     wire [SWR-1:0] P_to_D;
     wire [SWR-1:1] C_to_D;
     wire Co_to_D;
+    wire Co_to_gate;
 
      
     /////////////////////////////////////////7
@@ -63,9 +64,12 @@ module Add_Subt
         .C_i(Add_Sub_op_i), //Carry in
         .S_o(S_to_D), // Solution out
         .Cn_o(C_to_D),
-        .C_o(Co_to_D), //Carry out
+        .C_o(Co_to_gate), //Carry out
         .P_o(P_to_D) //Propagate (for LZA)
     );
+
+    assign Co_to_D = Co_to_gate & ~Add_Sub_op_i;
+
 
     RegisterAdd #(.W(SWR)) Add_Subt_Result(
         .clk (clk),

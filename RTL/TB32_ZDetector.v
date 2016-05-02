@@ -22,8 +22,8 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module TB32_ZDetector();
-parameter width = 10;
+module TB32_ZDetector;
+parameter PERIOD = 10;
 	// Inputs 
 	reg clk;
 	reg rst;
@@ -56,8 +56,8 @@ parameter width = 10;
 		.final_result_ieee(final_result_ieee)
 	);
 
-   reg [31:0] Array_IN [0:((2**width)-1)];
-   reg [31:0] Array_IN_2 [0:((2**width)-1)];
+   reg [31:0] Array_IN [0:((2**PERIOD)-1)];
+   reg [31:0] Array_IN_2 [0:((2**PERIOD)-1)];
 	integer contador;
    integer FileSaveData;
    integer Cont_CLK;
@@ -79,7 +79,7 @@ parameter width = 10;
 //		#100 rst = 0;
 
 		//Abre el archivo testbench
-      FileSaveData = $fopen("ResultadoSumaXilinx.txt","w");
+      FileSaveData = $fopen("ResultadoXilinxDRV.txt","w");
 		
 		//Inicializa las variables del testbench
 		contador = 0;
@@ -105,64 +105,69 @@ parameter width = 10;
 		
 		
     always @(posedge clk) begin
-        if(rst) begin
-            contador = 0;
-            Cont_CLK = 0; 
-        end
-        else begin
-            if (contador == (2**width)) begin
-                $fclose(FileSaveData);
-                $finish;
-            end
-            else begin
-                if(Cont_CLK ==1) begin
-					beg_FSM = 0;
-                    Data_X = Array_IN[contador];
-                    Data_Y = Array_IN_2[contador];
-                    Cont_CLK = Cont_CLK + 1;
-					rst_FSM = 0;
+                    if(rst) begin
+                        contador = 0;
+                        Cont_CLK = 0; 
+                    end
+                    else begin
+                        if (contador == (2**PERIOD)) begin
+                            $fclose(FileSaveData);
+                            $finish;
+                        end
+                        else begin
+                            if(Cont_CLK ==1) begin
+                                contador = contador + 1;
+                                beg_FSM = 0;
+                                Data_X = Array_IN[contador];
+                                Data_Y = Array_IN_2[contador];
+                                Cont_CLK = Cont_CLK + 1;
+                                rst_FSM = 0;
+                            end
+                            else if(Cont_CLK ==2) begin
+                                  
+                                rst_FSM = 0;
+                                beg_FSM = 1;
+                                Cont_CLK = Cont_CLK +1 ;
+                            end 
+                            else begin
+                                rst_FSM = 0;
+                                Cont_CLK = Cont_CLK + 1;
+                                beg_FSM = 0;
+                            end
+                            if(ready==1) begin
+                                
+                                rst_FSM = 1;
+            
+                                Cont_CLK = 0;
+                            end
+                            
+                            if(ready==1 && rst_FSM) begin
+                                                          
+                                
+                                
+                                Cont_CLK = 0;
+                            end
+                        end
+                    end
                 end
-                else if(Cont_CLK ==2) begin
-					rst_FSM = 0;
-					beg_FSM = 1;
-					Cont_CLK = Cont_CLK +1 ;
-				end 
-                else if(Cont_CLK ==200) begin
-                    
-                    contador = contador + 1;
-                    rst_FSM = 1;
-
-					Cont_CLK = 0;
-                end
- 
-                else begin
-					rst_FSM = 0;
-                    Cont_CLK = Cont_CLK + 1;
-                    beg_FSM = 0;
-                end
-            end
-        end
-    end
- 
-    // Recepción de datos y almacenamiento en archivo*************
-    always @(posedge clk) begin
-        if(ready) begin
-			if(Recept == 1) begin
-				$fwrite(FileSaveData,"%b %\n",final_result_ieee);
-				Recept = 0;
-			end
-		end
-        else begin
-			Recept = 1; 
-		end	
-    end 
-
-
- //******************************* Se ejecuta el CLK ************************
-
-    initial forever #5 clk = ~clk;
-
-
-endmodule
-
-
+             
+                // Recepción de datos y almacenamiento en archivo*************
+                always @(posedge clk) begin
+                    if(ready) begin
+                        if(Recept == 1) begin
+                            $fwrite(FileSaveData,"%h\n",final_result_ieee);
+                            Recept = 0;
+                        end
+                    end
+                    else begin
+                        Recept = 1; 
+                    end    
+                end 
+            
+            
+             //******************************* Se ejecuta el CLK ************************
+            
+                initial forever #5 clk = ~clk;
+            
+            
+            endmodule

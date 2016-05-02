@@ -21,10 +21,10 @@
 module FPU_Add_Subtract_Function
 //Add/Subtract Function Parameters
 	
-  /* # (parameter W = 32, parameter W_Exp = 8, parameter W_Sgf = 23,
+  # (parameter W = 32, parameter W_Exp = 8, parameter W_Sgf = 23,
 		parameter S_Exp = 9)  //Single Precision */
 		
-	# (parameter W = 64, parameter W_Exp = 11, parameter W_Sgf = 52,
+	/*# (parameter W = 64, parameter W_Exp = 11, parameter W_Sgf = 52,
 		parameter S_Exp = 12) //-- Double Precision */
 	(
 		//FSM Signals 
@@ -120,17 +120,20 @@ wire zero_flag;
 
 wire rst_int;
 
-FSM_Add_Subtract FS_Module(
+
+
+
+FSM_Add_Subtract FS_Module (
     .clk(clk), //check
     .rst(rst), //check
     .rst_FSM(rst_FSM), //check 
     .beg_FSM(beg_FSM), //check
-	 .zero_flag(zero_flag), //check -- 0
+	.zero_flag(zero_flag), //check -- 0
     .Sgfn_R_MSBs({Sgf_ncarry,Sgf_nbit}), //check -- 4
     .overflow_a(overflow_a), //check -- 6
     .underflow(underflow), //check -- 6
     .ovflow_post_round(overflow_pr), //check -- 9
-	 .load_0(load_0), //check -- 0
+	.load_0(load_0), //check -- 0
     .load_1(load_1), //check -- 1
     .load_2(load_2), //check -- 1
     .load_3(load_3), //check -- 1
@@ -158,9 +161,9 @@ FSM_Add_Subtract FS_Module(
     .load_18(load_18), 
     .selector_10_P_b(selector_10_P_b), 
     .load_19(load_19),
-	 .rst_int(rst_int),
-	 .ready(ready)
-    );
+	.rst_int(rst_int),
+	.ready(ready)
+);
 	 
 
 

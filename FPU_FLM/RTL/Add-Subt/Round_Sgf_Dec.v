@@ -37,35 +37,35 @@ module Round_Sgf_Dec(
 
     	//Op=0;Round type=00
 
-    	5'b00000: Round_Flag_o <=0;  
+    	/*5'b00000: Round_Flag_o <=0;  
     	5'b00001: Round_Flag_o <=0;  
     	5'b00010: Round_Flag_o <=0;  
-    	5'b00011: Round_Flag_o <=0;
+    	5'b00011: Round_Flag_o <=0;*/
 
 		//Op=1;Round type=00
 
-    	5'b10000: Round_Flag_o <=0;  
+    	/*5'b10000: Round_Flag_o <=0;  
     	5'b10001: Round_Flag_o <=0;  
     	5'b10010: Round_Flag_o <=0;  
-    	5'b10011: Round_Flag_o <=0;  
+    	5'b10011: Round_Flag_o <=0;  */
 
     	//Op=0;Round type=01
 
-    	5'b00100: Round_Flag_o <=0;  
+    	/*5'b00100: Round_Flag_o <=0;  
     	5'b00101: Round_Flag_o <=0;  
     	5'b00110: Round_Flag_o <=0;  
-    	5'b00111: Round_Flag_o <=0;  
+    	5'b00111: Round_Flag_o <=0;  */
 
     	//Op=1;Round type=01
 
-    	5'b10100: Round_Flag_o <=0;  
+    	//5'b10100: Round_Flag_o <=0;  
     	5'b10101: Round_Flag_o <=1;  
     	5'b10110: Round_Flag_o <=1;  
     	5'b10111: Round_Flag_o <=1;  
 
     	//Op=0;Round type=10
 
-    	5'b01000: Round_Flag_o <=0;  
+    	//5'b01000: Round_Flag_o <=0;  
     	5'b01001: Round_Flag_o <=1;  
     	5'b01010: Round_Flag_o <=1;  
     	5'b01011: Round_Flag_o <=1;  
@@ -73,10 +73,10 @@ module Round_Sgf_Dec(
 
     	//Op=1;Round type=10
 
-    	5'b11000: Round_Flag_o <=0;  
+    	/*5'b11000: Round_Flag_o <=0;  
     	5'b11001: Round_Flag_o <=0;  
     	5'b11010: Round_Flag_o <=0;  
-    	5'b11011: Round_Flag_o <=0;  
+    	5'b11011: Round_Flag_o <=0;  */
 
     	default: Round_Flag_o <=0;
 

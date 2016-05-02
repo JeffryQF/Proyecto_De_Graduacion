@@ -90,7 +90,7 @@ def main():
 
 	oper=0;#Suma=0;Resta=1
 	typ=0#Formato simple=0;Formato doble=1
-	n=1200;#Cantidad de datos
+	n=1024;#Cantidad de datos
 
 	menu = {}
 	menu['1']="Cambiar Operacion a realizar" 

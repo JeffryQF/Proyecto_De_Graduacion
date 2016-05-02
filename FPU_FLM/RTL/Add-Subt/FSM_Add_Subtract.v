@@ -30,7 +30,6 @@ module FSM_Add_Subtract
 	//////////////////////////////////////////////////////////////////////////////
 		//Oper_Start_In evaluation signals
 		input wire zero_flag_i,
-		input wire real_op_i,
 		
 		//Exp_operation evaluation signals
 		input wire norm_iteration_i,
@@ -271,18 +270,11 @@ always @*
         begin
             if (norm_iteration_i)begin
                 if(add_overflow_i)begin
-                    if (~real_op_i)begin
-                        left_right_o=0;
-                        bit_shift_o=1;
-                        state_next = norm_sgf_first;
-                    end
-                    else begin
-                        left_right_o=1;
-                        bit_shift_o=0;
-                        state_next = norm_sgf_first;
-                    end
+                    left_right_o=0;
+                    bit_shift_o=1;
+                    state_next = norm_sgf_first;
                 end
-    
+                        
 	            else begin
 	                left_right_o=1;
 	                bit_shift_o=0;
@@ -299,18 +291,10 @@ always @*
 			load_4_o = 1;
 			if (norm_iteration_i)begin
 				if(add_overflow_i)begin
-					if (~real_op_i)begin
-						left_right_o=0;
-						bit_shift_o=1;
-						state_next = round_sgf;
-					end
-					else begin
-						left_right_o=1;
-						bit_shift_o=0;
-						state_next = round_sgf;
-					end
-				end
-
+                    left_right_o=0;
+                    bit_shift_o=1;
+                    state_next = round_sgf;
+                end
 				else begin
 					left_right_o=1;
 					bit_shift_o=0;
@@ -340,23 +324,16 @@ always @*
 		begin
 			//Reg enables/Disables
 			load_6_o=1;
-			if (~real_op_i)begin
-				if ( add_overflow_i)begin
-					ctrl_b_o=2'b10;
-					ctrl_b_load_o=1;
-					
-					end
-				else begin
-					A_S_op_o=1;
-					ctrl_b_o=2'b01;
-                    ctrl_b_load_o=1;
-
-				end
-			end
-			else begin
-				A_S_op_o=1;
-				ctrl_b_o=2'b01;
+            if ( add_overflow_i)begin
+                ctrl_b_o=2'b10;
                 ctrl_b_load_o=1;
+                
+                end
+            else begin
+                A_S_op_o=1;
+                ctrl_b_o=2'b01;
+                ctrl_b_load_o=1;
+
             end	
 			state_next = load_exp_oper_over;
 		end
@@ -365,16 +342,12 @@ always @*
 		begin
 			load_3_o=1;
 			load_8_o=1;
-			if (~real_op_i)begin
-				if ( add_overflow_i)
-					A_S_op_o=0;
-					
-				else 
-					A_S_op_o=1;
-			end
-			else
-				A_S_op_o=1;
-
+            if ( add_overflow_i)
+                A_S_op_o=0;
+                
+            else 
+                A_S_op_o=1;
+			
 				
 			state_next = extra1_64;
 		end
@@ -450,13 +423,13 @@ always @*
 		begin
 			load_4_o = 1;
 			if ( add_overflow_i)begin
-                        left_right_o=0;
-                        bit_shift_o=1;
-                        end
-                    else begin
-                        left_right_o=0;
-                        bit_shift_o=0;
-                    end
+                left_right_o=0;
+                bit_shift_o=1;
+            end
+            else begin
+                left_right_o=0;
+                bit_shift_o=0;
+            end
 			state_next = load_final_result;
 		end
 		load_final_result:

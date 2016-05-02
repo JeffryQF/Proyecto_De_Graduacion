@@ -42,7 +42,7 @@ parameter EWR = 6;// */
         //INPUT signals
 		reg rst;
 		reg beg_FSM;
-		reg rst_FSM;
+		reg ack_FSM;
 		
 		//Oper_Start_in signals
 		reg [W-1:0] Data_X;
@@ -62,7 +62,7 @@ parameter EWR = 6;// */
 			.clk(clk),
 			.rst(rst),
 			.beg_FSM(beg_FSM),
-			.rst_FSM(rst_FSM),
+			.ack_FSM(ack_FSM),
 			.Data_X(Data_X),
 			.Data_Y(Data_Y),
 			.add_subt(add_subt),
@@ -74,12 +74,12 @@ parameter EWR = 6;// */
 			);
 
 
-		          reg [W-1:0] Array_IN [0:((2**PERIOD)-1)];
-               reg [W-1:0] Array_IN_2 [0:((2**PERIOD)-1)];
-                integer contador;
-               integer FileSaveData;
-               integer Cont_CLK;
-                integer Recept;
+        reg [W-1:0] Array_IN [0:((2**PERIOD)-1)];
+        reg [W-1:0] Array_IN_2 [0:((2**PERIOD)-1)];
+        integer contador;
+        integer FileSaveData;
+        integer Cont_CLK;
+        integer Recept;
             
                 
                 initial begin
@@ -87,17 +87,17 @@ parameter EWR = 6;// */
                     clk = 0;
                     rst = 1;
                     beg_FSM = 0;
-                    rst_FSM = 0;
+                    ack_FSM = 0;
                     Data_X = 0;
                     Data_Y = 0;
-                    r_mode = 2'b01;
+                    r_mode = 2'b00;
                     add_subt = 1;
             
             //        // Wait 100 ns for global reset to finish
             //        #100 rst = 0;
             
                     //Abre el archivo testbench
-                  FileSaveData = $fopen("ResultadoSumaXilinx.txt","w");
+                  FileSaveData = $fopen("ResultadoXilinxFLM.txt","w");
                     
                     //Inicializa las variables del testbench
                     contador = 0;
@@ -139,27 +139,27 @@ parameter EWR = 6;// */
                                 Data_X = Array_IN[contador];
                                 Data_Y = Array_IN_2[contador];
                                 Cont_CLK = Cont_CLK + 1;
-                                rst_FSM = 0;
+                                ack_FSM = 0;
                             end
                             else if(Cont_CLK ==2) begin
                                   
-                                rst_FSM = 0;
+                                ack_FSM = 0;
                                 beg_FSM = 1;
                                 Cont_CLK = Cont_CLK +1 ;
                             end 
                             else begin
-                                rst_FSM = 0;
+                                ack_FSM = 0;
                                 Cont_CLK = Cont_CLK + 1;
                                 beg_FSM = 0;
                             end
                             if(ready==1) begin
                                 
-                                rst_FSM = 1;
+                                ack_FSM = 1;
             
                                 Cont_CLK = 0;
                             end
                             
-                            if(ready==1 && rst_FSM) begin
+                            if(ready==1 && ack_FSM) begin
                                                           
                                 
                                 

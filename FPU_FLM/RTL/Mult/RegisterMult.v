@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module RegisterMult
-	# (parameter W = 32)
+	# (parameter W = 16)
 	(
 		input wire clk, //system clock
 		input wire rst, //system reset

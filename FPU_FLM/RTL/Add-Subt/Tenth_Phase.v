@@ -53,6 +53,8 @@ wire [EW-1:0] Exp_S_mux;
 wire Sign_S_mux;
 wire [W-1:0] final_result_reg;
 wire overunder;
+wire [EW-1:0] exp_mux_D1;
+wire [SW-1:0] sgf_mux_D1;
 
 //////////////////////////////////////////////////////////
 
@@ -66,37 +68,30 @@ Mux_3x1 #(.W(1)) Sign_Mux (
     .S(Sign_S_mux)
     );
 
+Multiplexer_AC #(.W(EW)) Exp_Mux (
+    .ctrl(overunder), 
+    .D0(exp_ieee_i), 
+    .D1(exp_mux_D1), 
+    .S(Exp_S_mux)
+    );
+    
+Multiplexer_AC #(.W(SW)) Sgf_Mux (
+        .ctrl(overunder), 
+        .D0(sgf_ieee_i), 
+        .D1(sgf_mux_D1), 
+        .S(Sgf_S_mux)
+        );
 /////////////////////////////////////////////////////////
 generate
 if(W == 32) begin
-Multiplexer_AC #(.W(EW)) Exp_Mux (
-    .ctrl(overunder), 
-    .D0(exp_ieee_i), 
-    .D1(8'hff), 
-    .S(Exp_S_mux)
-    );
-
-Multiplexer_AC #(.W(SW)) Sgf_Mux (
-    .ctrl(overunder), 
-    .D0(sgf_ieee_i), 
-    .D1(23'd0), 
-    .S(Sgf_S_mux)
-    );   	 
+    assign exp_mux_D1 =8'hff;
+    assign sgf_mux_D1 =23'd0;
 end
 else begin
-Multiplexer_AC #(.W(EW)) Exp_Mux (
-    .ctrl(overunder), 
-    .D0(exp_ieee_i), 
-    .D1(11'hfff), 
-    .S(Exp_S_mux)
-    );	
 
-Multiplexer_AC #(.W(SW)) Sgf_Mux (
-    .ctrl(overunder), 
-    .D0(sgf_ieee_i), 
-    .D1(52'd0), 
-    .S(Sgf_S_mux)
-    ); 
+    assign exp_mux_D1 =11'hfff;
+    assign sgf_mux_D1 =52'd0;
+
 end
 endgenerate
 ////////////////////////////////////////////////////////////////

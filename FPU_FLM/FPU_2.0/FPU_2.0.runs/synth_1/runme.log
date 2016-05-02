@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log FPU_Add_Subtract_Function.vds -m64 -mode batch -messageDb vivado.pb -notrace -source FPU_Add_Subtract_Function.tcl
+    with args -log FPU_Multiplication_Function.vds -m64 -mode batch -messageDb vivado.pb -notrace -source FPU_Multiplication_Function.tcl
 
 
 ****** Vivado v2015.4 (64-bit)
@@ -8,653 +8,228 @@
   **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
     ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 
-source FPU_Add_Subtract_Function.tcl -notrace
-Command: synth_design -top FPU_Add_Subtract_Function -part xc7a100tcsg324-1
+source FPU_Multiplication_Function.tcl -notrace
+Command: synth_design -top FPU_Multiplication_Function -part xc7a100tcsg324-1 -keep_equivalent_registers
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.887 ; gain = 170.672 ; free physical = 402 ; free virtual = 2459
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1014.891 ; gain = 170.672 ; free physical = 88 ; free virtual = 1576
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'FPU_Add_Subtract_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FPU_Add_Subtract_Function.v:21]
+INFO: [Synth 8-638] synthesizing module 'FPU_Multiplication_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/FPU_Multiplication_Function.v:21]
 	Parameter W bound to: 32 - type: integer 
 	Parameter EW bound to: 8 - type: integer 
 	Parameter SW bound to: 23 - type: integer 
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter EWR bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Mux_3x1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
-	Parameter W bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Mux_3x1' (1#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
-INFO: [Synth 8-638] synthesizing module 'Mux_3x1__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
-	Parameter W bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Mux_3x1__parameterized0' (1#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'FSM_Add_Subtract' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FSM_Add_Subtract.v:21]
-	Parameter start bound to: 5'b00000 
-	Parameter load_oper bound to: 5'b00001 
-	Parameter zero_info_state bound to: 5'b00010 
-	Parameter load_diff_exp bound to: 5'b00011 
-	Parameter norm_sgf_first bound to: 5'b00100 
-	Parameter add_subt bound to: 5'b00101 
-	Parameter round_sgf bound to: 5'b00110 
-	Parameter add_subt_r bound to: 5'b00111 
-	Parameter load_diff_exp_r bound to: 5'b01000 
-	Parameter norm_sgf_r bound to: 5'b01001 
-	Parameter load_final_result bound to: 5'b01010 
-	Parameter ready_flag bound to: 5'b01011 
-	Parameter overflow_add bound to: 5'b01100 
-	Parameter load_exp_oper_over bound to: 5'b01101 
-	Parameter extra1_64 bound to: 5'b01110 
-	Parameter extra2_64 bound to: 5'b01111 
-	Parameter extra3_64 bound to: 5'b10000 
-	Parameter extra4_64 bound to: 5'b10001 
-	Parameter overflow_add_r bound to: 5'b10010 
-INFO: [Synth 8-256] done synthesizing module 'FSM_Add_Subtract' (3#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FSM_Add_Subtract.v:21]
+INFO: [Synth 8-638] synthesizing module 'FSM_Mult_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/FSM_Mult_Function.v:21]
+	Parameter start bound to: 4'b0000 
+	Parameter load_operands bound to: 4'b0001 
+	Parameter add_exp bound to: 4'b0010 
+	Parameter subt_bias bound to: 4'b0011 
+	Parameter mult_overf bound to: 4'b0100 
+	Parameter mult_norn bound to: 4'b0101 
+	Parameter mult_no_norn bound to: 4'b0110 
+	Parameter round_case bound to: 4'b0111 
+	Parameter adder_round bound to: 4'b1000 
+	Parameter round_norm bound to: 4'b1001 
+	Parameter final_load bound to: 4'b1010 
+	Parameter ready_flag bound to: 4'b1011 
+INFO: [Synth 8-256] done synthesizing module 'FSM_Mult_Function' (1#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/FSM_Mult_Function.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 	Parameter W bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized0' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'Oper_Start_In' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v:23]
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized0' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-638] synthesizing module 'First_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/First_Phase_M.v:21]
 	Parameter W bound to: 32 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-638] synthesizing module 'RegisterMult' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
 	Parameter W bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized1' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'RegisterMult' (3#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+INFO: [Synth 8-256] done synthesizing module 'First_Phase_M' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/First_Phase_M.v:21]
+INFO: [Synth 8-638] synthesizing module 'Zero_InfMult_Unit' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Zero_InfMult_Unit.v:21]
 	Parameter W bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized2' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'Comparator' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Comparator.v:23]
-	Parameter W bound to: 31 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Comparator' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Comparator.v:23]
-INFO: [Synth 8-638] synthesizing module 'xor_tri' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/xor_tri.v:23]
-	Parameter W bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'xor_tri' (6#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/xor_tri.v:23]
-INFO: [Synth 8-638] synthesizing module 'sgn_result' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/sgn_result.v:23]
-INFO: [Synth 8-256] done synthesizing module 'sgn_result' (7#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/sgn_result.v:23]
-INFO: [Synth 8-638] synthesizing module 'MultiplexTxT' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/MultiplexTxT.v:23]
-	Parameter W bound to: 31 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'MultiplexTxT' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/MultiplexTxT.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 31 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized3' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 31 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized4' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Oper_Start_In' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Oper_Start_In.v:23]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-638] synthesizing module 'Comparator_Equal' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Comparator_Equal.v:26]
+	Parameter S bound to: 31 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Comparator_Equal' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Comparator_Equal.v:26]
+INFO: [Synth 8-256] done synthesizing module 'Zero_InfMult_Unit' (6#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Zero_InfMult_Unit.v:21]
+INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+	Parameter W bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC' (7#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-638] synthesizing module 'Mux_3x1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
 	Parameter W bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized0' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Exp_Operation' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Mux_3x1' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
+INFO: [Synth 8-638] synthesizing module 'Exp_Operation_m' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Exp_operation_m.v:23]
 	Parameter EW bound to: 8 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'add_sub_carry_out' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/add_sub_carry_out.v:23]
-	Parameter W bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/add_sub_carry_out.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized5' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Exp_Operation' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/exp_operation.v:23]
-INFO: [Synth 8-638] synthesizing module 'Barrel_Shifter' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Barrel_shifter.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter EWR bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Mux_Array' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter EWR bound to: 5 - type: integer 
+	Parameter W bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/add_sub_carry_out.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+	Parameter W bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized0' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+	Parameter W bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized1' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+INFO: [Synth 8-638] synthesizing module 'Comparator_Less' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Comparator_Less.v:21]
+	Parameter W bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Comparator_Less' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Comparator_Less.v:21]
+INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+	Parameter W bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized2' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Exp_Operation_m' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Exp_operation_m.v:23]
+INFO: [Synth 8-638] synthesizing module 'XOR_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/XOR_M.v:21]
+INFO: [Synth 8-256] done synthesizing module 'XOR_M' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/XOR_M.v:21]
+INFO: [Synth 8-638] synthesizing module 'Sgf_Multiplication' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Sgf_Multiplication.v:23]
+	Parameter SW bound to: 24 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'multiplier' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/multiplier.v:23]
+	Parameter W bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'multiplier' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/multiplier.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized1' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized2' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-638] synthesizing module 'adder' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+	Parameter W bound to: 12 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adder' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+INFO: [Synth 8-638] synthesizing module 'multiplier__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/multiplier.v:23]
+	Parameter W bound to: 13 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'multiplier__parameterized0' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/multiplier.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+	Parameter W bound to: 26 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized3' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-638] synthesizing module 'substractor' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/substractor.v:23]
+	Parameter W bound to: 26 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'substractor' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/substractor.v:23]
+INFO: [Synth 8-638] synthesizing module 'adder__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+	Parameter W bound to: 48 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adder__parameterized0' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+	Parameter W bound to: 48 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized4' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Sgf_Multiplication' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Sgf_Multiplication.v:23]
+INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized0' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-638] synthesizing module 'Barrel_Shifter_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Barrel_Shifter_M.v:23]
+	Parameter SW bound to: 24 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'shift_mux_array' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-	Parameter SWR bound to: 26 - type: integer 
+	Parameter SWR bound to: 24 - type: integer 
 	Parameter LEVEL bound to: 0 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized1' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized1' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized2' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized2' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized3' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized3' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized4' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized4' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized5' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized5' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized6' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized6' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized7' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized7' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized7' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized8' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized8' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized8' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized9' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized9' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized9' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized10' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized10' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized10' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized11' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized11' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized11' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized12' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized12' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized12' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized13' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized13' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized13' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized14' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized14' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized14' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized15' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized15' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized15' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized16' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized16' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized16' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized17' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized17' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized17' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized18' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized18' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized18' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized19' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized19' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized19' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized20' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized20' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized20' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized21' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized21' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized21' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized22' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized22' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized22' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized23' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized23' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized23' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized24' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized24' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized25' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized25' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized26' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized26' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'shift_mux_array' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-INFO: [Synth 8-638] synthesizing module 'shift_mux_array__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter LEVEL bound to: 1 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized27' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized27' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized28' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized28' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized29' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized29' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized30' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized30' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized31' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized31' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized32' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized32' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized33' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized33' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized34' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized34' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized35' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized35' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized36' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized36' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized37' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized37' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized38' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized38' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized39' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized39' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized40' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized40' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized41' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized41' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized42' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized42' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized43' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized43' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized44' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized44' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized45' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized45' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized46' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized46' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized47' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized47' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized48' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized48' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized49' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized49' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized50' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized50' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized51' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized51' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized52' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized52' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'shift_mux_array__parameterized0' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-INFO: [Synth 8-638] synthesizing module 'shift_mux_array__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter LEVEL bound to: 2 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized53' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized53' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized54' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized54' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized55' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized55' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized56' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized56' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized57' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized57' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized58' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized58' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized59' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized59' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized60' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized60' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized61' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized61' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized62' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized62' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized63' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized63' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized64' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized64' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized65' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized65' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized66' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized66' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized67' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized67' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized68' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized68' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized69' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized69' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized70' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized70' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized71' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized71' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized72' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized72' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized73' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized73' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized74' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized74' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized75' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized75' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized76' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized76' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized77' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized77' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized78' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized78' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'shift_mux_array__parameterized1' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-INFO: [Synth 8-638] synthesizing module 'shift_mux_array__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter LEVEL bound to: 3 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized79' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized79' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized80' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized80' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized81' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized81' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized82' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized82' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized83' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized83' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized84' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized84' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized85' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized85' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized86' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized86' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized87' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized87' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized88' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized88' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized89' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized89' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized90' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized90' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized91' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized91' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized92' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized92' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized93' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized93' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized94' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized94' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized95' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized95' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized96' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized96' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized97' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized97' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized98' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized98' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized99' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized99' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized100' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized100' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized101' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized101' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized102' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized102' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized103' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized103' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized104' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized104' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'shift_mux_array__parameterized2' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-INFO: [Synth 8-638] synthesizing module 'shift_mux_array__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter LEVEL bound to: 4 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized105' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized105' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized106' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized106' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized107' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized107' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized108' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized108' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized109' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized109' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized110' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized110' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized111' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized111' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized112' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized112' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized113' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized113' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized114' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized114' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized115' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized115' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized116' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized116' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized117' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized117' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized118' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized118' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized119' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized119' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized120' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized120' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized121' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized121' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized122' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized122' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized123' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized123' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized124' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized124' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized125' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized125' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized126' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized126' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized127' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized127' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized128' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized128' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized129' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized129' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized130' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized130' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'shift_mux_array__parameterized3' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
-INFO: [Synth 8-638] synthesizing module 'Rotate_Mux_Array' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Rotate_Mux_Array.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized131' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized131' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized132' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized132' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized133' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized133' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized134' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized134' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized135' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized135' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized136' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized136' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized137' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized137' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized138' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized138' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized139' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized139' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized140' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized140' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized141' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized141' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized142' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized142' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized143' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized143' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized144' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized144' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized145' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized145' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized146' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized146' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized147' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized147' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized148' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized148' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized149' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized149' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized150' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized150' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized151' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized151' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized152' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized152' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized153' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized153' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized154' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized154' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized155' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized155' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized156' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized156' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Rotate_Mux_Array' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Rotate_Mux_Array.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized6' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Mux_Array' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_Array.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized7' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized7' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Barrel_Shifter' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Barrel_shifter.v:23]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized157' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized157' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Add_Subt' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Add_Subt.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Full_Adder_PG' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Full_Adder_PG_1b' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG_1b.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Full_Adder_PG_1b' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG_1b.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Full_Adder_PG' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Full_Adder_PG.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized8' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized8' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized9' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized9' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized10' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 25 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized10' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'Add_Subt' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Add_Subt.v:23]
-INFO: [Synth 8-638] synthesizing module 'LZA' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/LZA.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-	Parameter EWR bound to: 5 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Priority_Codec_32' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_32.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Priority_Codec_32' (19#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Priority_Codec_32.v:23]
-INFO: [Synth 8-638] synthesizing module 'Combinational_Logic_LZA' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Combinational_Logic_LZA.v:23]
-	Parameter SWR bound to: 26 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Combinational_Logic_LZA' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Combinational_Logic_LZA.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized11' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-	Parameter W bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized11' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
-INFO: [Synth 8-256] done synthesizing module 'LZA' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/LZA.v:23]
-INFO: [Synth 8-638] synthesizing module 'Round_Sgf_Dec' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Round_Sgf_Dec.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Round_Sgf_Dec' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Round_Sgf_Dec.v:23]
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized24' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-256] done synthesizing module 'shift_mux_array' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/shift_mux.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized3' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/RegisterMult.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Barrel_Shifter_M' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Barrel_Shifter_M.v:23]
+INFO: [Synth 8-638] synthesizing module 'Round_decoder_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Round_decoder_M.v:23]
+	Parameter SW bound to: 23 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'OR_Module' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/OR_Module.v:21]
+	Parameter W bound to: 23 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'OR_Module' (19#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/OR_Module.v:21]
+INFO: [Synth 8-638] synthesizing module 'Deco_Round_Mult' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Deco_Round_Mult.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Deco_Round_Mult' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Deco_Round_Mult.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Round_decoder_M' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Round_decoder_M.v:23]
+INFO: [Synth 8-638] synthesizing module 'Adder_Round' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Adder_Round.v:23]
+	Parameter SW bound to: 24 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'adder__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'adder__parameterized1' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/adder.v:23]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+	Parameter W bound to: 24 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized5' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Adder_Round' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/Adder_Round.v:23]
 INFO: [Synth 8-638] synthesizing module 'Tenth_Phase' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Tenth_Phase.v:21]
 	Parameter W bound to: 32 - type: integer 
 	Parameter EW bound to: 8 - type: integer 
 	Parameter SW bound to: 23 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized158' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized158' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized159' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-	Parameter W bound to: 23 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized159' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
-INFO: [Synth 8-638] synthesizing module 'Mux_3x1__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
+INFO: [Synth 8-638] synthesizing module 'Mux_3x1__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
 	Parameter W bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Mux_3x1__parameterized1' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
-INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized12' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'Mux_3x1__parameterized0' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Mux_3x1.v:23]
+INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized25' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+	Parameter W bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized25' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized26' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+	Parameter W bound to: 23 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized26' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Multiplexer_AC.v:21]
+INFO: [Synth 8-638] synthesizing module 'RegisterAdd__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 	Parameter W bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized12' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
+INFO: [Synth 8-256] done synthesizing module 'RegisterAdd__parameterized6' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Tenth_Phase' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/Tenth_Phase.v:21]
-INFO: [Synth 8-256] done synthesizing module 'FPU_Add_Subtract_Function' (24#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/FPU_Add_Subtract_Function.v:21]
+INFO: [Synth 8-256] done synthesizing module 'FPU_Multiplication_Function' (24#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Mult/FPU_Multiplication_Function.v:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1054.270 ; gain = 210.055 ; free physical = 357 ; free virtual = 2418
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1054.273 ; gain = 210.055 ; free physical = 44 ; free virtual = 1535
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -664,7 +239,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1054.270 ; gain = 210.055 ; free physical = 355 ; free virtual = 2418
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1054.273 ; gain = 210.055 ; free physical = 43 ; free virtual = 1535
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -678,67 +253,58 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1359.715 ; gain = 0.000 ; free physical = 178 ; free virtual = 2242
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1354.711 ; gain = 0.000 ; free physical = 31 ; free virtual = 1347
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5242 
+INFO: Helper process launched with PID 10250 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1359.719 ; gain = 515.504 ; free physical = 173 ; free virtual = 2238
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1354.715 ; gain = 510.496 ; free physical = 47 ; free virtual = 1339
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1359.719 ; gain = 515.504 ; free physical = 173 ; free virtual = 2238
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1354.715 ; gain = 510.496 ; free physical = 47 ; free virtual = 1339
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1359.719 ; gain = 515.504 ; free physical = 173 ; free virtual = 2238
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1354.715 ; gain = 510.496 ; free physical = 47 ; free virtual = 1339
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'FSM_Add_Subtract'
-INFO: [Synth 8-5546] ROM "ready" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "rst_int" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "ctrl_c_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_7_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "ctrl_b_load_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_5_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_4_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_8_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_3_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "load_1_o" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'FSM_Mult_Function'
+INFO: [Synth 8-5544] ROM "ready" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rst_int" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "exp_op_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_6_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_5_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_4_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_1_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "load_0_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state_next" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/add_sub_carry_out.v:33]
+INFO: [Synth 8-5544] ROM "ctrl" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                   start |                            00000 |                            00000
-               load_oper |                            00001 |                            00001
-         zero_info_state |                            00010 |                            00010
-           load_diff_exp |                            00011 |                            00011
-               extra1_64 |                            00100 |                            01110
-          norm_sgf_first |                            00101 |                            00100
-               round_sgf |                            00110 |                            00110
-               extra4_64 |                            00111 |                            10001
-              add_subt_r |                            01000 |                            00111
-          overflow_add_r |                            01001 |                            10010
-         load_diff_exp_r |                            01010 |                            01000
-               extra2_64 |                            01011 |                            01111
-              norm_sgf_r |                            01100 |                            01001
-       load_final_result |                            01101 |                            01010
-              ready_flag |                            01110 |                            01011
-               extra3_64 |                            01111 |                            10000
-                add_subt |                            10000 |                            00101
-            overflow_add |                            10001 |                            01100
-      load_exp_oper_over |                            10010 |                            01101
+                   start |                             0000 |                             0000
+           load_operands |                             0001 |                             0001
+                 add_exp |                             0010 |                             0010
+               subt_bias |                             0011 |                             0011
+              mult_overf |                             0100 |                             0100
+               mult_norn |                             0101 |                             0101
+            mult_no_norn |                             0110 |                             0110
+              round_case |                             0111 |                             0111
+             adder_round |                             1000 |                             1000
+              round_norm |                             1001 |                             1001
+              final_load |                             1010 |                             1010
+              ready_flag |                             1011 |                             1011
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'FSM_Add_Subtract'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'FSM_Mult_Function'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1359.719 ; gain = 515.504 ; free physical = 160 ; free virtual = 2225
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1354.715 ; gain = 510.496 ; free physical = 40 ; free virtual = 1332
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -751,36 +317,33 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      9 Bit       Adders := 1     
+	   2 Input     49 Bit       Adders := 1     
+	   3 Input     26 Bit       Adders := 2     
+	   2 Input     25 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 2     
+	   3 Input     10 Bit       Adders := 1     
 +---XORs : 
-	   3 Input      1 Bit         XORs := 1     
-	   2 Input      1 Bit         XORs := 104   
+	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
+	               48 Bit    Registers := 1     
 	               32 Bit    Registers := 3     
-	               31 Bit    Registers := 2     
-	               26 Bit    Registers := 4     
-	               25 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                5 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
+	               24 Bit    Registers := 4     
+	                9 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 8     
+	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 2     
-	   2 Input     26 Bit        Muxes := 3     
+	   2 Input     24 Bit        Muxes := 1     
 	   2 Input     23 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
 	   2 Input      9 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 2     
-	   4 Input      5 Bit        Muxes := 1     
-	  23 Input      5 Bit        Muxes := 1     
-	   8 Input      5 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 19    
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	  19 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 185   
-	  19 Input      1 Bit        Muxes := 16    
-	  25 Input      1 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 24    
+	   5 Input      1 Bit        Muxes := 1     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -789,27 +352,12 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module Mux_3x1 
+Module FSM_Mult_Function 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   4 Input      8 Bit        Muxes := 1     
-Module Mux_3x1__parameterized0 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      5 Bit        Muxes := 1     
-Module Multiplexer_AC 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     26 Bit        Muxes := 1     
-Module FSM_Add_Subtract 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  23 Input      5 Bit        Muxes := 1     
-	   3 Input      2 Bit        Muxes := 1     
-	   2 Input      2 Bit        Muxes := 1     
-	  19 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-	  19 Input      1 Bit        Muxes := 16    
+	  15 Input      4 Bit        Muxes := 1     
+	  12 Input      2 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 14    
 Module RegisterAdd 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -818,152 +366,72 @@ Module RegisterAdd__parameterized0
 Detailed RTL Component Info : 
 +---Registers : 
 	                2 Bit    Registers := 1     
-Module RegisterAdd__parameterized1 
+Module RegisterMult 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
-Module RegisterAdd__parameterized2 
-Detailed RTL Component Info : 
-+---Registers : 
-	               32 Bit    Registers := 1     
-Module xor_tri 
-Detailed RTL Component Info : 
-+---XORs : 
-	   3 Input      1 Bit         XORs := 1     
-Module MultiplexTxT 
+Module Multiplexer_AC 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     31 Bit        Muxes := 2     
-Module RegisterAdd__parameterized3 
-Detailed RTL Component Info : 
-+---Registers : 
-	               31 Bit    Registers := 1     
-Module RegisterAdd__parameterized4 
-Detailed RTL Component Info : 
-+---Registers : 
-	               31 Bit    Registers := 1     
-Module Multiplexer_AC__parameterized0 
+	   2 Input      9 Bit        Muxes := 1     
+Module Mux_3x1 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
 Module add_sub_carry_out 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      9 Bit       Adders := 1     
+	   3 Input     10 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input      9 Bit        Muxes := 1     
-Module RegisterAdd__parameterized5 
+	   2 Input     10 Bit        Muxes := 1     
+Module RegisterMult__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
-Module Multiplexer_AC__parameterized131 
+	                9 Bit    Registers := 1     
+Module RegisterMult__parameterized1 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized132 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module RegisterMult__parameterized2 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized133 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module XOR_M 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized134 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+Module RegisterAdd__parameterized1 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized135 
++---Registers : 
+	               24 Bit    Registers := 1     
+Module RegisterAdd__parameterized2 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized136 
++---Registers : 
+	               24 Bit    Registers := 1     
+Module adder 
 Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized137 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized138 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized139 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized140 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized141 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized142 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized143 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized144 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized145 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized146 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized147 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized148 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized149 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized150 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized151 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized152 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized153 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized154 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized155 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized156 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module RegisterAdd__parameterized6 
++---Adders : 
+	   2 Input     13 Bit       Adders := 1     
+Module RegisterAdd__parameterized3 
 Detailed RTL Component Info : 
 +---Registers : 
 	               26 Bit    Registers := 1     
+Module substractor 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     26 Bit       Adders := 1     
+Module adder__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     49 Bit       Adders := 1     
+Module RegisterAdd__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	               48 Bit    Registers := 1     
+Module Multiplexer_AC__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
 Module Multiplexer_AC__parameterized1 
 Detailed RTL Component Info : 
 +---Muxes : 
@@ -1060,488 +528,35 @@ Module Multiplexer_AC__parameterized24
 Detailed RTL Component Info : 
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized25 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized26 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized27 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized28 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized29 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized30 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized31 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized32 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized33 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized34 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized35 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized36 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized37 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized38 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized39 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized40 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized41 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized42 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized43 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized44 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized45 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized46 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized47 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized48 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized49 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized50 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized51 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized52 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized53 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized54 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized55 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized56 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized57 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized58 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized59 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized60 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized61 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized62 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized63 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized64 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized65 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized66 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized67 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized68 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized69 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized70 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized71 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized72 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized73 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized74 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized75 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized76 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized77 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized78 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized79 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized80 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized81 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized82 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized83 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized84 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized85 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized86 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized87 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized88 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized89 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized90 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized91 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized92 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized93 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized94 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized95 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized96 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized97 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized98 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized99 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized100 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized101 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized102 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized103 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized104 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized105 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized106 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized107 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized108 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized109 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized110 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized111 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized112 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized113 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized114 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized115 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized116 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized117 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized118 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized119 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized120 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized121 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized122 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized123 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized124 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized125 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized126 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized127 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized128 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized129 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized130 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module RegisterAdd__parameterized7 
+Module RegisterMult__parameterized3 
 Detailed RTL Component Info : 
 +---Registers : 
-	               26 Bit    Registers := 1     
-Module Multiplexer_AC__parameterized157 
+	               24 Bit    Registers := 1     
+Module Deco_Round_Mult 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
-Module Full_Adder_PG_1b 
+	   5 Input      1 Bit        Muxes := 1     
+Module adder__parameterized1 
 Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 2     
-Module RegisterAdd__parameterized8 
++---Adders : 
+	   2 Input     25 Bit       Adders := 1     
+Module RegisterAdd__parameterized5 
 Detailed RTL Component Info : 
 +---Registers : 
-	               26 Bit    Registers := 1     
-Module RegisterAdd__parameterized9 
-Detailed RTL Component Info : 
-+---Registers : 
-	               26 Bit    Registers := 1     
-Module RegisterAdd__parameterized10 
-Detailed RTL Component Info : 
-+---Registers : 
-	               25 Bit    Registers := 1     
-Module Add_Subt 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 26    
-Module Priority_Codec_32 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   8 Input      5 Bit        Muxes := 1     
-	   2 Input      5 Bit        Muxes := 19    
-Module Combinational_Logic_LZA 
-Detailed RTL Component Info : 
-+---XORs : 
-	   2 Input      1 Bit         XORs := 26    
-Module RegisterAdd__parameterized11 
-Detailed RTL Component Info : 
-+---Registers : 
-	                5 Bit    Registers := 1     
-Module Round_Sgf_Dec 
-Detailed RTL Component Info : 
-+---Muxes : 
-	  25 Input      1 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized158 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
-Module Multiplexer_AC__parameterized159 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   2 Input     23 Bit        Muxes := 1     
-Module Mux_3x1__parameterized1 
+	               24 Bit    Registers := 1     
+Module Mux_3x1__parameterized0 
 Detailed RTL Component Info : 
 +---Muxes : 
 	   4 Input      1 Bit        Muxes := 1     
-Module RegisterAdd__parameterized12 
+Module Multiplexer_AC__parameterized25 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module Multiplexer_AC__parameterized26 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     23 Bit        Muxes := 1     
+Module RegisterAdd__parameterized6 
 Detailed RTL Component Info : 
 +---Registers : 
 	               32 Bit    Registers := 1     
@@ -1557,15 +572,21 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1359.723 ; gain = 515.508 ; free physical = 160 ; free virtual = 2225
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1354.719 ; gain = 510.500 ; free physical = 40 ; free virtual = 1332
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'Sel_A/Q_reg[0:0]' into 'Sel_D/Q_reg[0:0]' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/FPU_FLM/RTL/Add-Subt/RegisterAdd.v:33]
+DSP Report: Generating DSP Sgf_operation/left/Data_S_o, operation Mode is: A*B.
+DSP Report: operator Sgf_operation/left/Data_S_o is absorbed into DSP Sgf_operation/left/Data_S_o.
+DSP Report: Generating DSP Sgf_operation/middle/Data_S_o, operation Mode is: (D+A)*B.
+DSP Report: operator Sgf_operation/middle/Data_S_o is absorbed into DSP Sgf_operation/middle/Data_S_o.
+DSP Report: operator Sgf_operation/A_operation/Data_S_o0 is absorbed into DSP Sgf_operation/middle/Data_S_o.
+DSP Report: Generating DSP Sgf_operation/right/Data_S_o, operation Mode is: A*B.
+DSP Report: operator Sgf_operation/right/Data_S_o is absorbed into DSP Sgf_operation/right/Data_S_o.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1359.723 ; gain = 515.508 ; free physical = 161 ; free virtual = 2226
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1354.719 ; gain = 510.500 ; free physical = 34 ; free virtual = 1326
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1359.723 ; gain = 515.508 ; free physical = 161 ; free virtual = 2226
+Finished Parallel Reinference  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1354.719 ; gain = 510.500 ; free physical = 34 ; free virtual = 1326
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1573,12 +594,29 @@ Report RTL Partitions:
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP:
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|multiplier  | A*B         | No           | 12     | 12     | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|multiplier  | (D+A)*B     | No           | 12     | 13     | 48     | 12     | 26     | 0    | 0    | 1    | 0    | 0     | 0    | 0    | 
+|multiplier  | A*B         | No           | 12     | 12     | 48     | 25     | 24     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
++------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1359.723 ; gain = 515.508 ; free physical = 135 ; free virtual = 2201
+Finished Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1354.719 ; gain = 510.500 ; free physical = 33 ; free virtual = 1308
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1359.723 ; gain = 515.508 ; free physical = 135 ; free virtual = 2201
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1354.719 ; gain = 510.500 ; free physical = 33 ; free virtual = 1308
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -1592,10 +630,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1363.719 ; gain = 519.504 ; free physical = 76 ; free virtual = 2142
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1367.711 ; gain = 523.492 ; free physical = 31 ; free virtual = 1238
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1467.316 ; gain = 623.102 ; free physical = 29 ; free virtual = 2033
+Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1368.711 ; gain = 524.492 ; free physical = 32 ; free virtual = 1237
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1606,17 +644,91 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[23] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[22] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[21] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[20] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[19] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[18] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[17] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[16] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[15] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[14] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[13] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[12] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[11] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[10] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[9] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[8] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[7] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[6] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[5] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[4] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[3] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[2] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[1] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/leftreg/Q_reg[0] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[25] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[24] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[23] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[22] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[21] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[20] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[19] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[18] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[17] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[16] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[15] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[14] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[13] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[12] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[11] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[10] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[9] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[8] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[7] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[6] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[5] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[4] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[3] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[2] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[1] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/midreg/Q_reg[0] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[23] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[22] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[21] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[20] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[19] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[18] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[17] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[16] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[15] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[14] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[13] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[12] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[11] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[10] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[9] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[8] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[7] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[6] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[5] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[4] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[3] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[2] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[1] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Sgf_operation/rightreg/Q_reg[0] ) is unused and will be removed from module FPU_Multiplication_Function.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 37 ; free virtual = 1214
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 37 ; free virtual = 1214
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 37 ; free virtual = 1214
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1633,7 +745,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 37 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1646,7 +758,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 37 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1658,25 +770,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1689,64 +801,64 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    10|
-|3     |LUT2   |    24|
-|4     |LUT3   |   128|
-|5     |LUT4   |    61|
-|6     |LUT5   |    93|
-|7     |LUT6   |   226|
-|8     |FDCE   |   314|
-|9     |IBUF   |    71|
-|10    |OBUF   |    35|
-+------+-------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     1|
+|2     |CARRY4    |    37|
+|3     |DSP48E1   |     2|
+|4     |DSP48E1_1 |     1|
+|5     |LUT1      |    27|
+|6     |LUT2      |    92|
+|7     |LUT3      |    53|
+|8     |LUT4      |    81|
+|9     |LUT5      |     9|
+|10    |LUT6      |    55|
+|11    |FDCE      |   216|
+|12    |IBUF      |    70|
+|13    |OBUF      |    35|
++------+----------+------+
 
 Report Instance Areas: 
-+------+----------------------------------+-----------------------------+------+
-|      |Instance                          |Module                       |Cells |
-+------+----------------------------------+-----------------------------+------+
-|1     |top                               |                             |   963|
-|2     |  Add_Subt_Sgf_module             |Add_Subt                     |   223|
-|3     |    Add_Subt_Result               |RegisterAdd__parameterized8  |   115|
-|4     |    Add_overflow_Result           |RegisterAdd_5                |     1|
-|5     |    C_Result                      |RegisterAdd__parameterized10 |    42|
-|6     |    P_Result                      |RegisterAdd__parameterized9  |    65|
-|7     |  Barrel_Shifter_module           |Barrel_Shifter               |   100|
-|8     |    Mux_Array                     |Mux_Array                    |    46|
-|9     |      Mid_Reg                     |RegisterAdd__parameterized6  |    46|
-|10    |    Output_Reg                    |RegisterAdd__parameterized7  |    54|
-|11    |  Exp_Operation_Module            |Exp_Operation                |    55|
-|12    |    Overflow                      |RegisterAdd_3                |     1|
-|13    |    Underflowflow                 |RegisterAdd_4                |    25|
-|14    |    exp_add_subt                  |add_sub_carry_out            |    12|
-|15    |    exp_result                    |RegisterAdd__parameterized5  |    17|
-|16    |  FS_Module                       |FSM_Add_Subtract             |    41|
-|17    |  Leading_Zero_Anticipator_Module |LZA                          |     5|
-|18    |    Output_Reg                    |RegisterAdd__parameterized11 |     5|
-|19    |  Oper_Start_in_module            |Oper_Start_In                |   350|
-|20    |    ASRegister                    |RegisterAdd_1                |    16|
-|21    |    MRegister                     |RegisterAdd__parameterized3  |    72|
-|22    |    SignRegister                  |RegisterAdd_2                |     1|
-|23    |    XRegister                     |RegisterAdd__parameterized1  |   181|
-|24    |    YRegister                     |RegisterAdd__parameterized2  |    49|
-|25    |    mRegister                     |RegisterAdd__parameterized4  |    31|
-|26    |  Sel_B                           |RegisterAdd__parameterized0  |    48|
-|27    |  Sel_C                           |RegisterAdd                  |     1|
-|28    |  Sel_D                           |RegisterAdd_0                |     1|
-|29    |  final_result_ieee_Module        |Tenth_Phase                  |    32|
-|30    |    Final_Result_IEEE             |RegisterAdd__parameterized12 |    32|
-+------+----------------------------------+-----------------------------+------+
++------+---------------------------+-----------------------------+------+
+|      |Instance                   |Module                       |Cells |
++------+---------------------------+-----------------------------+------+
+|1     |top                        |                             |   679|
+|2     |  Adder_M                  |Adder_Round                  |    48|
+|3     |    Add_Subt_Result        |RegisterAdd__parameterized5  |    47|
+|4     |    Add_overflow_Result    |RegisterAdd_4                |     1|
+|5     |  Barrel_Shifter_module    |Barrel_Shifter_M             |    54|
+|6     |    Output_Reg             |RegisterMult__parameterized3 |    54|
+|7     |  Exp_module               |Exp_Operation_m              |    47|
+|8     |    Oflow_A_m              |RegisterMult__parameterized1 |     3|
+|9     |    Underflow_m            |RegisterMult__parameterized2 |    26|
+|10    |    exp_result_m           |RegisterMult__parameterized0 |    18|
+|11    |  FS_Module                |FSM_Mult_Function            |    26|
+|12    |  Operands_load_reg        |First_Phase_M                |    96|
+|13    |    XMRegister             |RegisterMult                 |    40|
+|14    |    YMRegister             |RegisterMult_3               |    56|
+|15    |  Sel_A                    |RegisterAdd                  |     4|
+|16    |  Sel_B                    |RegisterAdd__parameterized0  |    21|
+|17    |  Sel_C                    |RegisterAdd_0                |     1|
+|18    |  Sgf_operation            |Sgf_Multiplication           |   240|
+|19    |    Final                  |adder__parameterized0        |    38|
+|20    |    finalreg               |RegisterAdd__parameterized4  |    61|
+|21    |    left                   |multiplier                   |    25|
+|22    |    middle                 |multiplier__parameterized0   |    59|
+|23    |    right                  |multiplier_2                 |    57|
+|24    |  Zero_Result_Detect       |Zero_InfMult_Unit            |     1|
+|25    |    Zero_Info_Mult         |RegisterAdd_1                |     1|
+|26    |  final_result_ieee_Module |Tenth_Phase                  |    32|
+|27    |    Final_Result_IEEE      |RegisterAdd__parameterized6  |    32|
++------+---------------------------+-----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1475.324 ; gain = 199.992 ; free physical = 38 ; free virtual = 2031
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.324 ; gain = 631.109 ; free physical = 38 ; free virtual = 2031
+Synthesis finished with 0 errors, 0 critical warnings and 74 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1395.750 ; gain = 125.422 ; free physical = 36 ; free virtual = 1213
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:37 . Memory (MB): peak = 1395.750 ; gain = 551.531 ; free physical = 36 ; free virtual = 1213
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 81 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 110 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -1754,8 +866,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-435 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+158 Infos, 74 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1475.328 ; gain = 559.777 ; free physical = 38 ; free virtual = 2031
-report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.14 . Memory (MB): peak = 1507.344 ; gain = 0.000 ; free physical = 44 ; free virtual = 2028
-INFO: [Common 17-206] Exiting Vivado at Fri Apr  8 05:39:44 2016...
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1395.754 ; gain = 480.199 ; free physical = 34 ; free virtual = 1213
+report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.65 . Memory (MB): peak = 1427.770 ; gain = 0.000 ; free physical = 42 ; free virtual = 1210
+INFO: [Common 17-206] Exiting Vivado at Sun May  1 14:58:06 2016...

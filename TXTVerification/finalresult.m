@@ -1,40 +1,62 @@
 function finalresult(n,typ)
-  file_id1=fopen("Hexadecimal_R.txt");
-  file_id2=fopen("ResultadoSumaXilinx.txt");
-  file_id3=fopen("error.txt","w");
-
-  #n=1200;
+  #n=1023;
   #typ=0;
- 
-  result_t_hex=fgets(file_id1);
-  #perc_error=cell(n)
-  for i=1:n-1
-    result_t_hex=fgets(file_id1);
-    result_exp_hex=fgets(file_id2);
-    #disp(typeinfo(result_exp_hex));
-    result_exp_hex = result_exp_hex(1:end-1);
+#Llamar los valores teoricos y practicos
+  file_id1=fopen("Hexadecimal_R.txt"); #Valor teorico
+  file_id2=fopen("ResultadoXilinxFLM.txt"); #Resultado segunda iteracion
+  file_id3=fopen("error.txt","w"); #Error teorico vs segunda iteracion
+  file_id4=fopen("ResultadoXilinxDRV.txt"); #Resultado primera iteracion
+
+  
+  result_t_hex=fgets(file_id1); #Valor cero - pimera fila- no calculado
+  #Calculo de error
+  for i=1:n
+    result_t_hex=fgets(file_id1); #Valor hexadecimal teorico
+    result_FLM_hex=fgets(file_id2); #Valor hexadecimal FLM
+    result_DRV_hex=fgets(file_id4);
+    result_FLM_hex = result_FLM_hex(1:end-1); #Elimina \n en la linea cargada
     result_t_hex= result_t_hex(1:end-1);
-    #disp(length(result_exp_hex));
-    if typ==0
+    result_DRV_hex = result_DRV_hex(1:end-1);
+
+    if typ==0 #Conversion a formato simple
       result_t_dec=hex2num(result_t_hex, "single");
-      result_exp_dec=hex2num(result_exp_hex, "single");
-    elseif typ==1
+      result_FLM_dec=hex2num(result_FLM_hex, "single");
+      result_DRV_dec=hex2num(result_DRV_hex, "single");
+    elseif typ==1 #Conversion a formato doble
       result_t_dec=hex2num(result_t_hex);
-      result_exp_dec=hex2num(result_exp_hex);
+      result_FLM_dec=hex2num(result_FLM_hex);
+      result_DRV_dec=hex2num(result_DRV_hex);
     endif  
-    #disp(result_exp_dec);
-    #disp(result_t_dec);
-    A=(abs(abs(result_t_dec)-abs(result_exp_dec)));
-    disp(A);
-    disp("");
-    perc_error{n}=(A/abs(result_t_dec))*100;
-    fprintf(file_id3, "%f \n", perc_error{n});
-    endfor
     
+    ######################################################
+    #Calculo error teorico VS FLM 
+    
+    A=(abs(abs(result_t_dec)-abs(result_FLM_dec))); 
+    perc_errorT=(A/abs(result_t_dec))*100; 
+    array_percT(n)=perc_errorT;
+    ######################################################
+    #Calculo error DRV VS FLM
+    
+    B=(abs(abs(result_DRV_dec)-abs(result_FLM_dec))); 
+    perc_errorDRV=(B/abs(result_DRV_dec))*100; 
+    array_percDRV(n)=perc_errorDRV;   
+    ######################################################
+    #Guardar valores
+    fprintf(file_id3, "%f\n", perc_errorT);
+
+    #disp(array_percT(n));
+    #plot(X,array_percT,'.');
+  endfor
+  
+  
+  #celldisp(perc_errorT);
+  #plot(X,array_percT,'.');
+  #print("ErrorTeorico",'png');
+  
+  #plot(X,perc_errorDRV{X},'-Q');
+  #print("ErrorFPU",'png');
     
   
-  #result_exp_hex=dec2hex(bin2dec(result_exp_bin));
-  #disp(result_exp_hex);
   fclose("all");
 end
     

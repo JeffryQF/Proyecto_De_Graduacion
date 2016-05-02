@@ -31,7 +31,7 @@ module FPU_Add_Subtract_Function
 		input wire clk,
 		input wire rst,
 		input wire beg_FSM,
-		input wire rst_FSM,
+		input wire ack_FSM,
 		
 		//Oper_Start_in signals
 		input wire [W-1:0] Data_X,
@@ -163,10 +163,9 @@ wire selector_D;
 FSM_Add_Subtract FS_Module(
     .clk(clk),                                                       //
     .rst(rst),                                                       //
-    .rst_FSM(rst_FSM),                                               //
+    .rst_FSM(ack_FSM),                                               //
     .beg_FSM(beg_FSM),                                               //
 	.zero_flag_i(zero_flag),                                         // 
-    .real_op_i(real_op),                                             //
     .norm_iteration_i(FSM_selector_C),                               //
     .add_overflow_i(add_overflow_flag),                              //
     .round_i(round_flag),                                            //
@@ -219,7 +218,7 @@ RegisterAdd #(.W(1)) Sel_D ( //Selector_D register
         .Q(FSM_selector_D)
         );
         
-RegisterAdd #(.W(2)) Sel_B ( //Selector_D register
+RegisterAdd #(.W(2)) Sel_B ( //Selector_B register
                 .clk(clk), 
                 .rst(rst_int), 
                 .load(load_b), 
@@ -265,25 +264,27 @@ Multiplexer_AC #(.W(EW)) Exp_Oper_A_mux(
     );
 
 ///////////Mux exp_operation OPER_B_i//////////
+wire [EW-EWR-1:0] Exp_oper_B_D1;
+wire [EW-1:0] Exp_oper_B_D2;
+
+Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (DmP[W-2:W-EW-1]),
+                .D1 ({Exp_oper_B_D1,LZA_output}),
+                .D2 (Exp_oper_B_D2),
+                .S(S_Oper_B_exp)
+            );
+            
+
 generate
     case(EW)
         8:begin
-            Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
-                .ctrl(FSM_selector_B),
-                .D0 (DmP[W-2:W-EW-1]),
-                .D1 ({3'b000,LZA_output}),
-                .D2(8'd1),
-                .S(S_Oper_B_exp)
-            );
+            assign Exp_oper_B_D1 =3'd0;
+            assign Exp_oper_B_D2 = 8'd1;
         end
         default:begin
-            Mux_3x1 #(.W(EW)) Exp_Oper_B_mux(
-                .ctrl(FSM_selector_B),
-                .D0 (DmP[W-2:W-EW-1]),
-                .D1({5'b00000,LZA_output}),
-                .D2(11'd1),
-                .S(S_Oper_B_exp)
-            );
+            assign Exp_oper_B_D1 =5'd0;
+             assign Exp_oper_B_D2 = 11'd1;
         end
     endcase
 endgenerate
@@ -306,25 +307,23 @@ Exp_Operation #(.EW(EW)) Exp_Operation_Module(
 
 //////////Mux Barrel shifter shift_Value/////////////////
 
+wire [EWR-1:0] Barrel_Shifter_S_V_D2;
+
+Mux_3x1 #(.W(EWR)) Barrel_Shifter_S_V_mux(
+                .ctrl(FSM_selector_B),
+                .D0 (exp_oper_result[EWR-1:0]),
+                .D1 (LZA_output),
+                .D2 (Barrel_Shifter_S_V_D2),
+                .S  (S_Shift_Value)
+            );
+
 generate
     case(EW)
         8:begin
-            Mux_3x1 #(.W(EWR)) Barrel_Shifter_S_V_mux(
-                .ctrl(FSM_selector_B),
-                .D0 (exp_oper_result[EWR-1:0]),
-                .D1 (LZA_output),
-                .D2 (5'd1),
-                .S(S_Shift_Value)
-            );
+            assign Barrel_Shifter_S_V_D2 = 5'd1;
         end
         default:begin
-            Mux_3x1 #(.W(EWR)) Barrel_Shifter_S_V_mux(
-                .ctrl(FSM_selector_B),
-                .D0 (exp_oper_result[EWR-1:0]),
-                .D1 (LZA_output),
-                .D2 (6'd1),
-                .S(S_Shift_Value)
-            );
+            assign Barrel_Shifter_S_V_D2 = 6'd1;
         end 
     endcase
 endgenerate
@@ -371,23 +370,22 @@ Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
     );
 
 //////////Mux Add_Subt_Sgf oper B//////////////////
+
+wire [SWR-1:0] Add_Sub_Sgf_Oper_A_D1;
+
+Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_B_mux(
+                .ctrl(FSM_selector_D),
+                .D0 (Sgf_normalized_result),
+                .D1 (Add_Sub_Sgf_Oper_A_D1),
+                .S (S_A_S_Oper_B)
+                );
 generate
     case (W)
         32:begin
-            Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
-                .ctrl(FSM_selector_D),
-                .D0 (Sgf_normalized_result),
-                .D1 (26'd1),
-                .S (S_A_S_Oper_B)
-                );
+            assign Add_Sub_Sgf_Oper_A_D1 = 26'd4;
             end
         default:begin
-             Multiplexer_AC #(.W(SWR)) Add_Sub_Sgf_Oper_A_mux(
-                       .ctrl(FSM_selector_D),
-                       .D0 (Sgf_normalized_result),
-                       .D1 (55'd1),
-                       .S (S_A_S_Oper_B)
-                       );
+             assign Add_Sub_Sgf_Oper_A_D1 =55'd4;
             end
        endcase
 endgenerate
