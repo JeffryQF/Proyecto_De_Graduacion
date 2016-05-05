@@ -1,1 +1,39 @@
 \chapter{Resultados y análisis}
+
+En este capítulo se presentan y discuten los resultados obtenidos en el desarrollo de los módulos de cálculo trigonométrico. El capítulo se divide en tres partes\explain{definir si aqui se debe especificar una subseccion acerca de consumo de potencia, hardware y timing}, las cuales describen el ambiente de verificación, los resultados obtenidos al implementar en hardware las operaciones trigonométricas, y los resultados obtenidos en hardware al conectar los módulos de las operaciones con el procesador de aplicación específica, desarrollado por el Ingeniero Carlos Salazar \boxcomment{REALIZAR BIBLIOGRAFIA DE LA TESIS DE CARLOS}, como proyecto para optar por el grado de maestría.\explain{revisar como se pone que es proyecto para optar por un grado}
+
+\section{Metodología de Verificación.}
+
+Para la verificación del funcionamiento de los módulos trigonométricos, se generó un vector pruebas de 1024 datos, los cuáles se obtuvieron a partir de una rutina implementada en \textit{Octave}, en la cuál se especifíca la cantidad de valores que se desean. Dentro de la rutina se define el rango de los valores para el vector, el cuál se determina de $[-\dfrac{\pi}{2} ,\dfrac{\pi}{2}]$. La rutina genera primero una matriz con los 1024 diferentes valores tomados dentro del rango especificado.
+
+Una vez creada la matriz con los datos de prueba, esta es aplicada a las operaciones trigonométricas implementadas a nivel de software, con el fin de obtener el vector de datos correspondiente a los resultados teóricos.
+
+La generación de los resultados teóricos se realiza en la misma rutina de \textit{Octave} que crea los vectores de prueba, realizando el cálculo del seno y el coseno, y guardando en archivos de texto, tanto los vectores de prueba, como los resultados teóricos obtenidos en cada una de las operaciones, para los formatos de precisión de 32 y 64 bits.
+
+Los resultados experimentales se obtienen de dos formas:
+\begin{itemize}
+	\item	Mediante simulación utilizando la herramienta \textit{Vivado Simulator} proporcionada por \textit{Xilinx.}
+	\item	Mediante la implementación en hardware de las operaciones trigonométricas y capturando los resultados en una computadora.
+\end{itemize}
+
+Para la obtención de los valores experimentales mediante simulación en la herramienta \textit{Vivado Simulator}, se desarrolló una rutina que cumplía las siguientes funciones:
+\begin{itemize}
+	\item	Realizar el proceso de lectura del vector de datos de prueba.
+	\item	Generar las señales de estímulo que inicializan y finalizan la ejecución del algoritmo \textit{CORDIC}.
+	\item	Almacenar en un archivo de texto los resultados obtenidos de la ejecución de la operación seno y coseno, en los formatos de precisión de 32 y 64 bits.
+\end{itemize}
+
+Para asegurar el correcto funcionamiento de los módulos de cálculo trigonométrico, se realizaron las cinco diferentes simulaciones que se pueden realizar en el software \textit{Vivado}: 1) Behavioral, 2) Post-Sinthesys Functional, 3) Post-Sinthesys Timing, 4) Post-Implementation Functional y 5) Post-Implementation Timing Simulation, cada una de estas para las operaciones seno y coseno, en los dos formatos de precisión implementados.
+
+En el caso de los resultados experimentales obtenidos de la implementación de las operaciones en hardware, específicamente en la FPGA \textit{Nexys 4}, se tuvo que implementar hardware extra, que permitiera realizar las mismas funciones que realiza un testbench de simulación.
+
+Para esto, a parte del módulo de cálculo de seno y coseno, se implementó 2 contadores, una memoria ROM que contiene los valores del vector de prueba antes generados, un módulo de comunicación UART que permite conectar la FPGA con una computadora, la cuál captura los datos correspondientes a los resultados de las operaciones, un multiplexor de 4 u 8 entradas, dependiendo del formato de precisión especificado en la síntesis, que en cada una de sus entradas toma 8 bits del resultado de las operaciones y los direcciona a la entrada del módulo UART para ser enviados, y por último, una máquina de control que permite controlar el flujo de los datos, además de iniciar la transmisión de datos una vez que se obtiene un resultado en el módulo de cálculo, e iniciar una nueva operación de cálculo cuando se ha completado la transmisión de todos los paquetes de datos, esto hasta que se hayan recorrido todos los valores presentes en la ROM.
+
+Por último, se desarrolló una rutina en \textit{Octave}, encargada de graficar los resultados obtenidos de las simulaciones y de la implementación en hardware, además del porcentaje de error, el cuál se calcula con la siguiente ecuación:
+\begin{equation}\label{eq:error_porc}
+\% error = \dfrac{\vert Teorico - Experimental \vert}{Teorico}
+\end{equation}
+
+Las gráficas generadas son utilizadas compo punto de referencia, para realizar la verificación de la funcionalidad de los módulos, definir un rango valores que puede procesar el módulo, definir un rango de precisión y discutir la aceptabilidad de los resultados obtenidos.
+
+La aceptabilidad de los resultados se discutió al inicio del proyecto, definiéndose que el porcentaje de error entre los resultados teóricos y experimentales no podía exceder un 1\%.
