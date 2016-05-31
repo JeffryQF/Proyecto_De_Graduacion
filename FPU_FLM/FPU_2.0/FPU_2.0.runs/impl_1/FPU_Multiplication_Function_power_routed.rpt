@@ -1,8 +1,8 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Sun May  1 14:59:29 2016
-| Host             : francis-Aspire-E1-570 running 64-bit unknown
+| Date             : Sat May 28 15:00:35 2016
+| Host             : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
 | Command          : report_power -file FPU_Multiplication_Function_power_routed.rpt -pb FPU_Multiplication_Function_power_summary_routed.pb
 | Design           : FPU_Multiplication_Function
 | Device           : xc7a100tcsg324-1
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.105 |
-| Dynamic (W)              | 0.014 |
+| Total On-Chip Power (W)  | 0.126 |
+| Dynamic (W)              | 0.035 |
 | Device Static (W)        | 0.091 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 84.5  |
-| Junction Temperature (C) | 25.5  |
+| Max Ambient (C)          | 84.4  |
+| Junction Temperature (C) | 25.6  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,17 +49,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      574 |       --- |             --- |
-|   LUT as Logic |     0.002 |      224 |     63400 |            0.35 |
-|   CARRY4       |    <0.001 |       37 |     15850 |            0.23 |
-|   Register     |    <0.001 |      216 |    126800 |            0.17 |
-|   Others       |     0.000 |       24 |       --- |             --- |
-| Signals        |     0.003 |      518 |       --- |             --- |
-| DSPs           |     0.003 |        3 |       240 |            1.25 |
-| I/O            |     0.005 |      105 |       210 |           50.00 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.004 |     1211 |       --- |             --- |
+|   LUT as Logic |     0.003 |      516 |     63400 |            0.81 |
+|   CARRY4       |    <0.001 |      109 |     15850 |            0.69 |
+|   Register     |    <0.001 |      530 |    126800 |            0.42 |
+|   Others       |     0.000 |       25 |       --- |             --- |
+| Signals        |     0.009 |     1720 |       --- |             --- |
+| DSPs           |     0.010 |       12 |       240 |            5.00 |
+| I/O            |     0.009 |      201 |       210 |           95.71 |
 | Static Power   |     0.091 |          |           |                 |
-| Total          |     0.105 |          |           |                 |
+| Total          |     0.126 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -69,11 +69,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.025 |       0.010 |      0.015 |
-| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |
+| Vccint    |       1.000 |     0.042 |       0.027 |      0.015 |
+| Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.006 |       0.002 |      0.004 |
+| Vcco18    |       1.800 |     0.008 |       0.004 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -138,7 +138,7 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| FPU_Multiplication_Function |     0.014 |
+| FPU_Multiplication_Function |     0.035 |
 |   Adder_M                   |    <0.001 |
 |     Add_Subt_Result         |    <0.001 |
 |     Add_overflow_Result     |    <0.001 |
@@ -149,18 +149,18 @@ Table of Contents
 |     Underflow_m             |    <0.001 |
 |     exp_result_m            |    <0.001 |
 |   FS_Module                 |    <0.001 |
-|   Operands_load_reg         |    <0.001 |
-|     XMRegister              |    <0.001 |
-|     YMRegister              |    <0.001 |
+|   Operands_load_reg         |     0.002 |
+|     XMRegister              |     0.001 |
+|     YMRegister              |     0.001 |
 |   Sel_A                     |    <0.001 |
 |   Sel_B                     |    <0.001 |
 |   Sel_C                     |    <0.001 |
-|   Sgf_operation             |     0.005 |
-|     Final                   |    <0.001 |
-|     finalreg                |    <0.001 |
-|     left                    |     0.001 |
-|     middle                  |     0.002 |
-|     right                   |     0.002 |
+|   Sgf_operation             |     0.019 |
+|     genblk1_0.Final         |    <0.001 |
+|     genblk1_0.finalreg      |    <0.001 |
+|     genblk1_0.left          |     0.006 |
+|     genblk1_0.middle        |     0.005 |
+|     genblk1_0.right         |     0.006 |
 |   Zero_Result_Detect        |    <0.001 |
 |     Zero_Info_Mult          |    <0.001 |
 |   final_result_ieee_Module  |    <0.001 |

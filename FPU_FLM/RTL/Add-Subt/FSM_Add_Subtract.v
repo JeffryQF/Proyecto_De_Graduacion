@@ -54,8 +54,8 @@ module FSM_Add_Subtract
 	
 ////////////////////////////////////////////////////////////////////////////////////	
 		//Oper_Start_In control signals
-		output reg load_1_o,//Enable input registers
-		output reg load_2_o,//Enable output registers
+		output wire load_1_o,//Enable input registers
+		output wire load_2_o,//Enable output registers
 
 		//Exp_operation control signals
 		output reg load_3_o, //Enable Output registers
@@ -112,50 +112,56 @@ module FSM_Add_Subtract
 	 );
 
 
-localparam [4:0] 
+localparam [3:0] 
 //First I'm going to declarate the registers of the first phase of execution
-					 start = 5'd0, //This state evaluates the beg_FSM to begin operations
+					 start = 4'd0, //This state evaluates the beg_FSM to begin operations
 
-				     load_oper = 5'd1, //This state enables the registers that contains
+				     load_oper = 4'd1, //This state enables the registers that contains
 											 //both operands and the operator
-					 zero_info_state = 5'd2, //Evaluate zero condition
+					 zero_info_state = 4'd2, //Evaluate zero condition
 
-					 load_diff_exp = 5'd3, //Enable registers for the exponent on the small value normalization and for the first
+					 load_diff_exp = 4'd3, //Enable registers for the exponent on the small value normalization and for the first
 					 						//result normalization
-					 norm_sgf_first= 5'd4, //Enable the barrel shifter's registers and evaluate if it's the first time (small operand) or the
+					 						
+					 extra1_64= 4'd4,					
+					 
+					 norm_sgf_first= 4'd5, //Enable the barrel shifter's registers and evaluate if it's the first time (small operand) or the
 					 					  //second time (result normalization)	
-					 add_subt = 5'd5, //Enable the add_subt_sgf's registers
+                      
+					 add_subt = 4'd6, //Enable the add_subt_sgf's registers  
 
-					 round_sgf = 5'd6, //Evaluate the significand round condition  
-
-					 add_subt_r = 5'd7, //Enable the add_subt_sgf's registers for round condition
-	
-					 load_diff_exp_r = 5'd8, //Enable registers for the exponent normalization on round condition
+					 add_subt_r = 4'd7, //Enable the add_subt_sgf's registers for round condition
 					 
-					 norm_sgf_r = 5'd9, //Enable the barrel shifter's registers for round condition
-
-					 load_final_result  = 5'd10, //Load the final_result's register with the result
-
-					 ready_flag = 5'd11, //Enable the ready flag with the final result
-
-					 overflow_add = 5'd12,
-
-					 load_exp_oper_over= 5'd13,
+					 overflow_add = 4'd8,
 					 
-					 extra1_64= 5'd14,
-					 
-					 extra2_64= 5'd15,
+					 round_sgf = 4'd9, //Evaluate the significand round condition
+                                          
+                      overflow_add_r = 4'd10,
+     
+                      extra2_64= 4'd11, //Enable registers for the exponent normalization on round condition
+                                                                
+                      norm_sgf_r = 4'd12, //Enable the barrel shifter's registers for round condition
+ 
+                      load_final_result  = 4'd13, //Load the final_result's register with the result
+ 
+                      ready_flag = 4'd14; //Enable the ready flag with the final result
 
-					 extra3_64= 5'd16,
-
-					 extra4_64= 5'd17,
+                     
+                     
 					 
-					 overflow_add_r = 5'd18;
+					 
+
+
+					 
 					//**********************REVISADO
 	
 					
-reg [4:0] state_reg, state_next ; //state registers declaration
+reg [3:0] state_reg, state_next ; //state registers declaration
 		 
+////////////////////////Logic outputs///////////////77
+
+assign load_1_o= (state_reg==load_oper);
+assign load_2_o= (state_reg==zero_info_state);
 
 ////
 always @(posedge clk, posedge rst)
@@ -172,8 +178,8 @@ always @*
 	state_next = state_reg;
 	rst_int = 0;
 		//Oper_Start_In control signals
-	load_1_o=0;
-	load_2_o=0;
+	//load_1_o=0;
+	//load_2_o=0;
 
 	//Exp_operation control signals
 	load_3_o=0;
@@ -239,27 +245,24 @@ always @*
 		load_oper: //Load input registers for  Oper_star in evaluation
 		
 		begin
-			rst_int = 0;
-			load_1_o = 1;
+			
+		//	load_1_o = 1;
 			state_next = zero_info_state;
 		end
 
 		zero_info_state: //In case of zero condition, go to final result for ready flag. Else, continue with the calculation
 		begin
-			load_1_o = 0;
 			if (zero_flag_i)begin
 				state_next = ready_flag;end
 			else begin
-				load_2_o = 1;
+				//load_2_o = 1;
 				state_next = load_diff_exp;end
 		end
 		
 
 		load_diff_exp: //in first instance, Calculate DMP - DmP exponents, in other iteration, evaluation in
 		begin
-			load_2_o = 0;
 			load_3_o = 1;
-            ctrl_b_load_o=0;
 			/*
 			if ()*/
 
@@ -268,26 +271,26 @@ always @*
 
         extra1_64:
         begin
+        load_3_o = 1;
             if (norm_iteration_i)begin
+                load_8_o=1;
                 if(add_overflow_i)begin
+                    A_S_op_o=0;
                     left_right_o=0;
                     bit_shift_o=1;
-                    state_next = norm_sgf_first;
                 end
                         
 	            else begin
+	                A_S_op_o=1;
 	                left_right_o=1;
 	                bit_shift_o=0;
-	                state_next = norm_sgf_first;end
-	   		    end
-            else 
-                state_next = norm_sgf_first;
-            
+                end
+            end               
+            state_next = norm_sgf_first;
         end
         
 		norm_sgf_first: //
 		begin
-			load_3_o = 0;
 			load_4_o = 1;
 			if (norm_iteration_i)begin
 				if(add_overflow_i)begin
@@ -301,20 +304,13 @@ always @*
 					state_next = round_sgf;end
 			end
 			else 
-				state_next = extra3_64;
-		end
-
-		extra3_64: begin
-
-			state_next=add_subt;
-
+				state_next = add_subt;
 		end
 
 
 		add_subt:
 		begin
-			//Reg enables/Disables
-			load_4_o = 0;
+			//Reg enables
 			load_5_o = 1;
 			ctrl_c_o = 1;
 			state_next = overflow_add;
@@ -324,33 +320,21 @@ always @*
 		begin
 			//Reg enables/Disables
 			load_6_o=1;
+			ctrl_b_load_o=1;
             if ( add_overflow_i)begin
                 ctrl_b_o=2'b10;
-                ctrl_b_load_o=1;
                 
                 end
             else begin
                 A_S_op_o=1;
                 ctrl_b_o=2'b01;
-                ctrl_b_load_o=1;
+                
 
             end	
-			state_next = load_exp_oper_over;
+            //state_next = load_exp_oper_over;
+            state_next = extra1_64;
 		end
 
-		load_exp_oper_over:
-		begin
-			load_3_o=1;
-			load_8_o=1;
-            if ( add_overflow_i)
-                A_S_op_o=0;
-                
-            else 
-                A_S_op_o=1;
-			
-				
-			state_next = extra1_64;
-		end
 
 
 		round_sgf:
@@ -360,16 +344,12 @@ always @*
 				if(round_i) begin
 					ctrl_d_o =1;
 					ctrl_a_o = 1;
-					state_next = extra4_64; end
+					state_next = add_subt_r; end
 				else begin
 					state_next = load_final_result; end
 		end
 
-		extra4_64: begin
-
-			state_next = add_subt_r;
-
-		end
+		
 		add_subt_r:
 		begin
 			load_5_o = 1;
@@ -379,42 +359,27 @@ always @*
 		
 		overflow_add_r:
 		begin
-			load_6_o=1;		
+            ctrl_b_load_o=1;	
 			if ( add_overflow_i)begin
-
                 ctrl_b_o=2'b10;
-                ctrl_b_load_o=1;
-                state_next = load_diff_exp_r;
                 end
             else begin
                 ctrl_b_o=2'b11;
-                ctrl_b_load_o=1;
-                state_next = extra2_64;
                 end		
-		
+		    state_next = extra2_64;
 		end
 		
-		load_diff_exp_r:
-		begin
-			A_S_op_o=0;		
-			load_3_o = 1;
-			load_8_o = 1;
-			state_next = extra2_64;			
-		end
-		
+
 		extra2_64:
 		
 		begin
-
+  			load_3_o = 1;
+            load_8_o = 1;
 			if ( add_overflow_i)begin
-	            left_right_o=0;
+                A_S_op_o=0;
 	            bit_shift_o=1;
             end
-	        else begin
-	            left_right_o=0;
-	            bit_shift_o=0;
-	        end
-		
+	
 			state_next = norm_sgf_r;
 		  
         end
@@ -426,21 +391,16 @@ always @*
                 left_right_o=0;
                 bit_shift_o=1;
             end
-            else begin
-                left_right_o=0;
-                bit_shift_o=0;
-            end
 			state_next = load_final_result;
 		end
+		
 		load_final_result:
 		begin
-			load_4_o = 0;
 			load_7_o = 1;
 			state_next = ready_flag;
 		end
 		ready_flag:
 		begin
-			load_7_o = 0;
 			ready = 1;
 				if(rst_FSM) begin
 					state_next = start;end
@@ -453,5 +413,4 @@ always @*
 end
 
 	
-endmodule		 
-
+endmodule	

@@ -61,7 +61,8 @@ def float_to_hex (name,typ):#conversion a hexadecimal
 def result_error(typ, n):
 
 	oc = Oct2Py();
-	oc.finalresult(n,typ)
+	oc.finalresult(n,typ);
+	oc.grapgresult(0);
 
 def simpdob(oper):
 
@@ -72,6 +73,16 @@ def simpdob(oper):
 		oper =1;
 
 	return oper;
+
+def error_FPGA(typ,n):
+	oc = Oct2Py();
+	print "Presionar botón en la FPGA para ejecutar";
+	#if typ==0:#Formato simple
+	#	oc.serialcom32("/dev/ttyUSB1",9600,4096);
+
+	#elif typ==1:#Formato doble
+	#	oc.serialcom("/dev/ttyUSB1",9600,8192);
+	oc.grapgresult(1);
 
 def addsubt(oper):
 	selection=raw_input("Please Select(0: add, 1: subt, 2: mult):") 
@@ -97,7 +108,8 @@ def main():
 	menu['2']="Formato simple/Formato doble"
 	menu['3']="Crear valores aleatorios en hexadecimal"
 	menu['4']="(Postsimulacion) Calcular y graficar error"
-	menu['5']="Exit"
+	menu['5']="(Resultado FPGA) Calcular y graficar error"
+	menu['6']="Exit"
 	while True: 
 		
 		options=menu.keys()
@@ -124,6 +136,9 @@ def main():
 			result_error(typ, n);
 
 		elif selection == '5': 
+			error_FPGA(typ,n)
+
+		elif selection == '6': 
 			break
 
 		else: 

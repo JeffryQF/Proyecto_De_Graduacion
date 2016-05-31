@@ -59,6 +59,7 @@ module FSM_Mult_Function(
 
 	//Barrel shifter registers
 	output reg load_6_o,
+	
 
 	/////////////////////Multiplexers selector control signals////////////
 
@@ -89,25 +90,29 @@ parameter [3:0] start = 4'd0,//A
 
 load_operands = 4'd1, //B) loads both operands to registers
 
-add_exp = 4'd2, //C) Add both operands, evaluate underflow
+extra64_1 = 4'd2,
 
-subt_bias = 4'd3, //D) Subtract bias to the result, evaluate overflow, evaluate zero
+add_exp = 4'd3, //C) Add both operands, evaluate underflow
 
-mult_overf= 4'd4, //E) Evaluate overflow in Sgf multiplication for normalization case
+subt_bias = 4'd4, //D) Subtract bias to the result, evaluate overflow, evaluate zero
 
-mult_norn = 4'd5, //F) Overflow normalization, right shift significant and increment exponent
+mult_overf= 4'd5, //E) Evaluate overflow in Sgf multiplication for normalization case
 
-mult_no_norn = 4'd6, //G)No_normalization sgf
+mult_norn = 4'd6, //F) Overflow normalization, right shift significant and increment exponent
 
-round_case = 4'd7, //H) Rounding evaluation. Positive= adder rounding, Negative,=Final load
+mult_no_norn = 4'd7, //G)No_normalization sgf
 
-adder_round =  4'd8, //I) add a 1 to the significand in case of rounding
+round_case = 4'd8, //H) Rounding evaluation. Positive= adder rounding, Negative,=Final load
 
-round_norm = 4'd9, //J) Evaluate overflow in adder for normalization, Positive = normalization, same that F
+adder_round =  4'd9, //I) add a 1 to the significand in case of rounding
 
-final_load = 4'd10, //K) Load output registers 
+round_norm = 4'd10, //J) Evaluate overflow in adder for normalization, Positive = normalization, same that F
 
-ready_flag = 4'd11; //L) Ready flag, wait for ack signal
+final_load = 4'd11, //K) Load output registers 
+
+ready_flag = 4'd12; //L) Ready flag, wait for ack signal
+
+
 
 //State registers
 reg [3:0] state_reg, state_next;
@@ -143,6 +148,7 @@ always @*
 	 load_5_o=0;
 
 	 load_6_o=0;
+	 
 	//////////////////////Multiplexers selector control signals////////////
 
 	//Sixth Phase control signals
@@ -175,8 +181,13 @@ always @*
 		load_operands:
 		begin
 			load_0_o = 1;
-			state_next = add_exp;
+			state_next = extra64_1;
 		end
+		
+		extra64_1:
+		begin
+		  state_next = add_exp;
+        end
 		
 		//Zero Check
 		add_exp:

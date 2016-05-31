@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date             : Sat Apr 30 19:21:03 2016
+| Date             : Sat May 28 14:45:36 2016
 | Host             : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
 | Command          : report_power -file FPU_Multiplication_Function_power_routed.rpt -pb FPU_Multiplication_Function_power_summary_routed.pb
 | Design           : FPU_Multiplication_Function
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 0.098 |
-| Dynamic (W)              | 0.007 |
+| Total On-Chip Power (W)  | 0.110 |
+| Dynamic (W)              | 0.019 |
 | Device Static (W)        | 0.091 |
 | Effective TJA (C/W)      | 4.6   |
-| Max Ambient (C)          | 99.6  |
-| Junction Temperature (C) | 25.4  |
+| Max Ambient (C)          | 99.5  |
+| Junction Temperature (C) | 25.5  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,18 +49,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      517 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      173 |     63400 |            0.27 |
-|   CARRY4       |    <0.001 |       10 |     15850 |            0.06 |
-|   Register     |    <0.001 |      297 |    126800 |            0.23 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.003 |     1109 |       --- |             --- |
+|   LUT as Logic |     0.003 |      358 |     63400 |            0.56 |
+|   CARRY4       |    <0.001 |       48 |     15850 |            0.30 |
+|   Register     |    <0.001 |      594 |    126800 |            0.47 |
 |   F7/F8 Muxes  |    <0.001 |        3 |     63400 |           <0.01 |
-|   Others       |     0.000 |       12 |       --- |             --- |
-| Signals        |     0.001 |      562 |       --- |             --- |
-| DSPs           |     0.002 |        2 |       240 |            0.83 |
-| I/O            |     0.001 |      105 |       210 |           50.00 |
+|   Others       |     0.000 |       14 |       --- |             --- |
+| Signals        |     0.004 |     1460 |       --- |             --- |
+| DSPs           |     0.007 |        9 |       240 |            3.75 |
+| I/O            |     0.002 |      201 |       210 |           95.71 |
 | Static Power   |     0.091 |          |           |                 |
-| Total          |     0.098 |          |           |                 |
+| Total          |     0.110 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,11 +70,11 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |
+| Vccint    |       1.000 |     0.032 |       0.017 |      0.015 |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
-| Vcco18    |       1.800 |     0.004 |       0.000 |      0.004 |
+| Vcco18    |       1.800 |     0.005 |       0.001 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
@@ -139,7 +139,7 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| FPU_Multiplication_Function         |     0.007 |
+| FPU_Multiplication_Function         |     0.019 |
 |   AddSub_ExpBias_Funct              |    <0.001 |
 |     Result_Exp                      |    <0.001 |
 |   Exp_Update_Function               |    <0.001 |
@@ -147,11 +147,12 @@ Table of Contents
 |     Exp_NA_Register                 |    <0.001 |
 |     Exp_Selection_Register          |    <0.001 |
 |     Mux_Exponent_Selection          |    <0.001 |
+|     Mux_Selection_Final_Exponent    |    <0.001 |
 |     PROverflow_Register             |    <0.001 |
 |   Exponent_load_reg                 |    <0.001 |
 |     XMRegister                      |    <0.001 |
 |     YMRegister                      |    <0.001 |
-|   FSM_FPU_Multiplication            |    <0.001 |
+|   FSM_FPU_Multiplication            |     0.001 |
 |   FT_exp_info                       |    <0.001 |
 |     Exp_R_Reg                       |    <0.001 |
 |     Ov_Register_FComp               |    <0.001 |
@@ -162,13 +163,13 @@ Table of Contents
 |   First_Normalization_RSignificand  |    <0.001 |
 |     EXNU_REG                        |    <0.001 |
 |     SGF_RP_REG                      |    <0.001 |
-|   Round_Significand_Function        |    <0.001 |
+|   Round_Significand_Function        |     0.001 |
 |     Sgf_Add_Cout                    |    <0.001 |
 |     Sgf_PRound_Reg                  |    <0.001 |
-|   Significands_Multiplication_Funct |     0.003 |
+|   Significands_Multiplication_Funct |     0.011 |
 |     P_SgfX_Register                 |    <0.001 |
 |     P_SgfY_Register                 |    <0.001 |
-|     P_Sgf_Mult                      |     0.002 |
+|     P_Sgf_Mult                      |     0.010 |
 |     P_Sgf_Register                  |    <0.001 |
 |   Underflow_Management_State        |    <0.001 |
 |     EXP_Add_Reg                     |    <0.001 |

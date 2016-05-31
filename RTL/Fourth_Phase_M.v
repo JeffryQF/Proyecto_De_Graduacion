@@ -23,9 +23,9 @@
 
 module Fourth_Phase_M
 	//SINGLE PRECISION PARAMETER
-	# (parameter W_Sgf = 23)
+	//# (parameter W_Sgf = 24)
 	//DOUBLE PRECISION PARAMETER
-/* # (parameter W_Sgf = 52) */
+    # (parameter W_Sgf = 53) 
 	(
 
 		input wire clk,

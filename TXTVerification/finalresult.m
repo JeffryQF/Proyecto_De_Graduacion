@@ -4,8 +4,11 @@ function finalresult(n,typ)
 #Llamar los valores teoricos y practicos
   file_id1=fopen("Hexadecimal_R.txt"); #Valor teorico
   file_id2=fopen("ResultadoXilinxFLM.txt"); #Resultado segunda iteracion
-  file_id3=fopen("error.txt","w"); #Error teorico vs segunda iteracion
+  file_id3=fopen("FLMvsTeorico.txt","w"); #Error teorico vs segunda iteracion
   file_id4=fopen("ResultadoXilinxDRV.txt"); #Resultado primera iteracion
+  file_id5=fopen("Decimal_FLM.txt","w");
+  file_id6=fopen("Decimal_DRV.txt","w");
+  file_id7=fopen("FLMvsDRV.txt","w");
 
   
   result_t_hex=fgets(file_id1); #Valor cero - pimera fila- no calculado
@@ -33,17 +36,19 @@ function finalresult(n,typ)
     
     A=(abs(abs(result_t_dec)-abs(result_FLM_dec))); 
     perc_errorT=(A/abs(result_t_dec))*100; 
-    array_percT(n)=perc_errorT;
+    array_percT(i)=perc_errorT;
     ######################################################
     #Calculo error DRV VS FLM
     
     B=(abs(abs(result_DRV_dec)-abs(result_FLM_dec))); 
     perc_errorDRV=(B/abs(result_DRV_dec))*100; 
-    array_percDRV(n)=perc_errorDRV;   
+    array_percDRV(i)=perc_errorDRV;   
     ######################################################
     #Guardar valores
     fprintf(file_id3, "%f\n", perc_errorT);
-
+    fprintf(file_id7, "%f\n", perc_errorDRV);
+    fprintf(file_id5, "%f\n", result_FLM_dec);
+    fprintf(file_id6, "%f\n", result_DRV_dec);
     #disp(array_percT(n));
     #plot(X,array_percT,'.');
   endfor

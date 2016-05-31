@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 module FPU_Multiplication_Function
 	//SINGLE PRECISION PARAMETERS
-	# (parameter W = 32, parameter EW = 8, parameter SW = 23) // */
+	/*# (parameter W = 32, parameter EW = 8, parameter SW = 23) // */
 	//DOUBLE PRECISION PARAMETERS
-/*	# (parameter W = 64, parameter W_Exp = 11, parameter W_Sgf = 52) // */
+	# (parameter W = 64, parameter EW = 11, parameter SW = 52) // */
 	(
 		input wire clk,
 		input wire rst,
@@ -96,6 +96,8 @@ wire [EW:0] exp_oper_result;
 //Op_B={1'b1, Op_MY[SW-1:0]}
 wire [2*SW+1:0] P_Sgf;
 
+wire[SW:0] significand;
+wire[SW:0] non_significand;
 //Sign Operation
 
 wire sign_final_result;
@@ -145,7 +147,7 @@ FSM_Mult_Function FS_Module (
     .load_3_o(FSM_load_second_step), 
     .load_4_o(FSM_adder_round_norm_load),
     .load_5_o(FSM_final_result_load),
-    .load_6_o(FSM_barrel_shifter_load), 
+    .load_6_o(FSM_barrel_shifter_load),
     .ctrl_select_a_o(selector_A), 
     .ctrl_select_b_o(load_b), 
     .selector_b_o(selector_B), 
@@ -270,7 +272,6 @@ XOR_M Sign_operation (
 Sgf_Multiplication #(.SW(SW+1)) Sgf_operation (
     .clk(clk),
     .rst(rst),
-    .load_a_i(FSM_load_first_step),
     .load_b_i(FSM_load_second_step),
     .Data_A_i({1'b1,Op_MX[SW-1:0]}),
     .Data_B_i({1'b1,Op_MY[SW-1:0]}),
@@ -279,13 +280,14 @@ Sgf_Multiplication #(.SW(SW+1)) Sgf_operation (
     
     //////////Mux Barrel shifter shift_Value/////////////////
     
-    
-
+    assign significand = P_Sgf [2*SW:SW];
+    assign non_significand = P_Sgf [SW-1:0];
+            
     ///////////Mux Barrel shifter Data_in//////
     
     Multiplexer_AC #(.W(SW+1)) Barrel_Shifter_D_I_mux(
         .ctrl(FSM_selector_C),
-        .D0 (P_Sgf[2*SW:SW]),
+        .D0 (significand),
         .D1 (Add_result),
         .S (S_Data_Shift)
     );
@@ -306,7 +308,7 @@ Sgf_Multiplication #(.SW(SW+1)) Sgf_operation (
 ////Round decoder/////////////////////////////////
 
 Round_decoder_M #(.SW(SW)) Round_Decoder (
-    .Round_Bits_i(P_Sgf[SW-1:0]),
+    .Round_Bits_i(non_significand),
     .Round_Mode_i(round_mode),
     .Sign_Result_i(sign_final_result),
     .Round_Flag_o(FSM_round_flag)

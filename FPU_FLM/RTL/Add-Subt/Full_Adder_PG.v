@@ -79,7 +79,7 @@ module Full_Adder_PG
             end
             
             default: begin
-                for (j=0; j<26 ; j=j+1) begin
+                for (j=0; j<27 ; j=j+1) begin
                     case (j)
                         0:begin
                             Full_Adder_PG_1b FA1bit(
@@ -109,20 +109,20 @@ module Full_Adder_PG
                     .clk(clk), 
                     .rst(rst), 
                     .load(1'b1), 
-                    .D(C_n[26]), 
+                    .D(C_n[27]), 
                     .Q(reg_to_carry)
                 );
                         
-                for (j=26; j<SWR ; j=j+1) begin
+                for (j=27; j<SWR ; j=j+1) begin
                     case (j)
-                        26:begin
+                        27:begin
                             Full_Adder_PG_1b FA1bit(
-                                .Op_A_i(Op_A_i[26]),
-                                .Op_B_i(Op_B_i[26]),
+                                .Op_A_i(Op_A_i[27]),
+                                .Op_B_i(Op_B_i[27]),
                                 .C_i(reg_to_carry),
-                                .S_o(S_o[26]),
-                                .C_o(C_n[27]),
-                                .P_o(P_o[26])
+                                .S_o(S_o[27]),
+                                .C_o(C_n[28]),
+                                .P_o(P_o[27])
                             );
                         end
                         SWR-1:begin

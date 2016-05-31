@@ -1,4 +1,4 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.sim/sim_1/impl/timing/TB32_ZDetector_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/Proyecto_version_inicial_Diego/Iteracion 1/Iteracion 1.sim/sim_1/impl/timing/TBMULTZERO32_time_impl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Eight_Phase_M
 INFO: [VRFC 10-311] analyzing module FPU_Multiplication_Function
 INFO: [VRFC 10-311] analyzing module FSM_Mult_Function

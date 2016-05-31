@@ -1,7 +1,0 @@
-Running: xsim.dir/Testbench_FPU_multiplication_behav/xsimk -simmode gui -wdb Testbench_FPU_multiplication_behav.wdb -simrunnum 0 -socket 51157
-Design successfully loaded
-Design Loading Memory Usage: 129312 KB (Peak: 129380 KB)
-Design Loading CPU Usage: 40 ms
-Simulation completed
-Simulation Memory Usage: 268584 KB (Peak: 334120 KB)
-Simulation CPU Usage: 80 ms

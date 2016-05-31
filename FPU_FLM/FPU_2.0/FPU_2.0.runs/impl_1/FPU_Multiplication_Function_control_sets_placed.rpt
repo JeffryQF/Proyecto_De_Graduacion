@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Sun May  1 14:58:59 2016
+| Date         : Sat May 28 14:59:45 2016
 | Host         : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
 | Command      : report_control_sets -verbose -file FPU_Multiplication_Function_control_sets_placed.rpt
 | Design       : FPU_Multiplication_Function
@@ -22,8 +22,8 @@ Table of Contents
 +-------------------------------------------------------------------+-------+
 |                               Status                              | Count |
 +-------------------------------------------------------------------+-------+
-| Number of unique control sets                                     |    10 |
-| Minimum Number of register sites lost to control set restrictions |    32 |
+| Number of unique control sets                                     |    12 |
+| Minimum Number of register sites lost to control set restrictions |    46 |
 +-------------------------------------------------------------------+-------+
 
 
@@ -33,11 +33,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |               6 |            4 |
+| No           | No                    | No                     |             102 |           37 |
+| No           | No                    | Yes                    |               6 |            5 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             210 |           68 |
+| Yes          | No                    | Yes                    |             422 |          144 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -45,19 +45,21 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
-|  Clock Signal  |                 Enable Signal                 | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0][0]                         | FS_Module/AR[0]  |                1 |              1 |
-|  clk_IBUF_BUFG | FS_Module/selector_A                          | rst_IBUF         |                2 |              3 |
-|  clk_IBUF_BUFG | FS_Module/FSM_sequential_state_reg[3]_i_1_n_0 | rst_IBUF         |                2 |              4 |
-|  clk_IBUF_BUFG |                                               | FS_Module/AR[0]  |                4 |              6 |
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_0[0]                       | FS_Module/AR[0]  |                3 |              9 |
-|  clk_IBUF_BUFG | FS_Module/E[0]                                | FS_Module/AR[0]  |                7 |             24 |
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_1[0]                       | FS_Module/AR[0]  |                7 |             25 |
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_2[0]                       | FS_Module/AR[0]  |                8 |             32 |
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0][0]                         | rst_IBUF         |               13 |             48 |
-|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_3[0]                       | FS_Module/AR[0]  |               25 |             64 |
-+----------------+-----------------------------------------------+------------------+------------------+----------------+
++----------------+-----------------------------------------------+------------------------+------------------+----------------+
+|  Clock Signal  |                 Enable Signal                 |    Set/Reset Signal    | Slice Load Count | Bel Load Count |
++----------------+-----------------------------------------------+------------------------+------------------+----------------+
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_6[0]                       | FS_Module/Q_reg[63][0] |                1 |              1 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_5[0]                       | FS_Module/Q_reg[63][1] |                1 |              2 |
+|  clk_IBUF_BUFG | FS_Module/E[0]                                | FS_Module/Q_reg[63][0] |                2 |              3 |
+|  clk_IBUF_BUFG | FS_Module/FSM_sequential_state_reg[3]_i_1_n_0 | rst_IBUF               |                3 |              4 |
+|  clk_IBUF_BUFG |                                               | FS_Module/Q_reg[63][0] |                5 |              6 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_7[0]                       | FS_Module/Q_reg[63][0] |                3 |             12 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_5[0]                       | FS_Module/Q_reg[63][0] |               14 |             52 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_4[0]                       | FS_Module/Q_reg[63][0] |               15 |             53 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_8[0]                       | FS_Module/AR[0]        |               15 |             64 |
+|  clk_IBUF_BUFG |                                               |                        |               37 |            102 |
+|  clk_IBUF_BUFG | FS_Module/Q_reg[0]_6[0]                       | rst_IBUF               |               29 |            106 |
+|  clk_IBUF_BUFG | FS_Module/E[0]                                | FS_Module/Q_reg[63][1] |               61 |            125 |
++----------------+-----------------------------------------------+------------------------+------------------+----------------+
 
 

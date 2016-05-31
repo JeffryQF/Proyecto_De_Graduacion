@@ -24,13 +24,15 @@
 
 module TB32_ZDetector;
 parameter PERIOD = 10;
+parameter W=64;
+
 	// Inputs 
 	reg clk;
 	reg rst;
 	reg beg_FSM;
 	reg rst_FSM;
-	reg [31:0] Data_X;
-	reg [31:0] Data_Y;
+	reg [W-1:0] Data_X;
+	reg [W-1:0] Data_Y;
 	reg add_subt;
 	reg [1:0] r_mode;
 
@@ -38,7 +40,7 @@ parameter PERIOD = 10;
 	wire overflow_flag;
 	wire underflow_flag;
 	wire ready;
-	wire [31:0] final_result_ieee;
+	wire [W-1:0] final_result_ieee;
 
 	// Instantiate the Unit Under Test (UUT)
 	FPU_Add_Subtract_Function uut (
@@ -56,8 +58,8 @@ parameter PERIOD = 10;
 		.final_result_ieee(final_result_ieee)
 	);
 
-   reg [31:0] Array_IN [0:((2**PERIOD)-1)];
-   reg [31:0] Array_IN_2 [0:((2**PERIOD)-1)];
+   reg [W-1:0] Array_IN [0:((2**PERIOD)-1)];
+   reg [W-1:0] Array_IN_2 [0:((2**PERIOD)-1)];
 	integer contador;
    integer FileSaveData;
    integer Cont_CLK;
@@ -73,7 +75,7 @@ parameter PERIOD = 10;
 		Data_X = 0;
 		Data_Y = 0;
 		r_mode = 2'b00;
-		add_subt = 1;
+		add_subt = 0;
 
 //		// Wait 100 ns for global reset to finish
 //		#100 rst = 0;

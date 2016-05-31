@@ -27,7 +27,7 @@ module Testbench_FPU_multiplication();
 
 	parameter W = 32;
 	parameter EW = 8;
-	parameter SW = 23;
+	parameter SW = 23;//*/
 
 	/*parameter W = 64;
 	parameter EW = 11;
