@@ -29,7 +29,7 @@ eval( EAInclude(ISEJScriptLib) );
 // pre-commands:
 ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log FPU_Multiplication_Function.vdi -applog -m64 -messageDb vivado.pb -mode batch -source FPU_Multiplication_Function.tcl -notrace" );
+         "-log FPU_Add_Subtract_Function.vdi -applog -m64 -messageDb vivado.pb -mode batch -source FPU_Add_Subtract_Function.tcl -notrace" );
 
 
 

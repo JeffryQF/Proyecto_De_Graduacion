@@ -38,9 +38,8 @@ module Exp_Operation
     );
 
 
-wire anomaly;
 //wire [EW-1:0] Data_B;
-wire [EW-1:0] Data_S; 
+wire [EW:0] Data_S; 
 /////////////////////////////////////////7
 //genvar j;
 //for (j=0; j<EW; j=j+1)begin
@@ -54,20 +53,23 @@ add_sub_carry_out #(.W(EW)) exp_add_subt(
     .op_mode (Add_Subt_i),
     .Data_A (Data_A_i),
     .Data_B (Data_B_i),
-    .Data_S ({anomaly, Data_S})
+    .Data_S (Data_S)
     );
 //assign Overflow_flag_o = 1'b0;
 //assign Underflow_flag_o = 1'b0;
 
-assign Overflow_flag = ~Add_Subt_i & anomaly;
-assign Underflow_flag = Add_Subt_i & anomaly;
+Comparators #(.W_Exp(EW+1)) array_comparators(
+    .exp(Data_S),
+    .overflow(Overflow_flag),
+    .underflow(Underflow_flag)
+    );
 
 
 RegisterAdd #(.W(EW)) exp_result(
     .clk (clk),
     .rst (rst),
     .load (load_a_i),
-    .D (Data_S),
+    .D (Data_S[EW-1:0]),
     .Q (Data_Result_o)
     );
     
@@ -79,7 +81,7 @@ RegisterAdd #(.W(1)) Overflow (
     .Q(Overflow_flag_o)
     );
     
-RegisterAdd #(.W(1)) Underflowflow (
+RegisterAdd #(.W(1)) Underflow (
         .clk(clk),
         .rst(rst),
         .load(load_b_i),
