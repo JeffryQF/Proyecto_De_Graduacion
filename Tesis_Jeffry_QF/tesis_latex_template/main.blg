@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
+A level-1 auxiliary file: titlepage.aux
+A level-1 auxiliary file: disclaimer.aux
+A level-1 auxiliary file: tribunal.aux
+A level-1 auxiliary file: acta.aux
+A level-1 auxiliary file: resumen.aux
+A level-1 auxiliary file: dedicatoria.aux
+A level-1 auxiliary file: agradecimientos.aux
+A level-1 auxiliary file: notation.aux
+A level-1 auxiliary file: glosario.aux
+A level-1 auxiliary file: intro.aux
+A level-1 auxiliary file: teoria.aux
+A level-1 auxiliary file: solucion.aux
+A level-1 auxiliary file: resultados.aux
+A level-1 auxiliary file: conclusiones.aux
+The style file: sty/plainurl.bst
+A level-1 auxiliary file: apendice.aux
+Database file #1: literatura.bib
+You're missing a field name---line 162 of file literatura.bib
+ : 
+ : %keywords={Algorithms;Analog computers;Arithmetic;Computer aided instruction;Instruments;Polynomials;Programming profession;Registers;Resumes;Switches},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "Tesis_Diego" isn't style-file defined
+--line 169 of file literatura.bib
+Too many commas in name 1 of "Chacón Rodríguez, A., Alvarado Moya, J.P" for entry SIRPA
+while executing---line 1221 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1221 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1221 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1221 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1221 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1221 of file sty/plainurl.bst
+Warning--to sort, need author or key in IEEE754
+Warning--empty author in IEEE754
+Too many commas in name 1 of "Chacón Rodríguez, A., Alvarado Moya, J.P" for entry SIRPA
+while executing---line 1262 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1262 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1262 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1262 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1262 of file sty/plainurl.bst
+Too many commas in name 1 of "Waterman, A., Lee, Y., Patterson, D., Asanovic, K" for entry RISCV
+while executing---line 1262 of file sty/plainurl.bst
+(There were 13 error messages)

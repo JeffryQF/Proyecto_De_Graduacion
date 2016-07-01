@@ -1,0 +1,77 @@
+%% ---------------------------------------------------------------------------
+%% intro.tex
+%%
+%% Introduction
+%%
+%% $Id: intro.tex 1477 2010-07-28 21:34:43Z palvarado $
+%% ---------------------------------------------------------------------------
+
+\chapter{Introducción}
+\label{chp:intro}
+
+\section{Entorno del Proyecto.}
+
+El Laboratorio de Diseño de Circuitos Integrados, DCILab, es un laboratorio que es parte de la Escuela de Ingeniería Electrónica, del Instituto Tecnológico de Costa Rica, el cual está liderado por el Dr. Ing. Alfonso Chacón Rodríguez. En este laboratorio se han impulsado y desarrollado diversos proyectos, entre los cuáles se encuentra el Sistema de Reconocimiento de Patrones Acústicos, SiRPA.
+
+El SiRPA forma parte de un proyecto de la Escuela de Ingeniería en Electrónica denominado  "Sistema Electrónico Integrado en Chip (SoC)", cuya finalidad es detectar disparos de armas de fuego y de motosierras, a partir del análisis de patrones de audio en una red inalámbrica de sensores, para monitorizar zonas protegidas a lo largo del territorio nacional. El SiRPA, entonces, es básicamente la implementación algorítmica software-hardware del proceso de clasificación de señales, una vez que este sistema ha sido entrenado para reconocer señales específicas \cite{SIRPA}. Debido a que el SiRPA se encarga de la extracción e identificación de las características de la señal, el cálculo de probabilidades y la toma de decisiones, es que se necesita la implementación una unidad de punto flotante, dado que el algoritmo matemático, Modelos Ocultos de Markov \cite{HMM} \cite{HMM2} (HMM por sus siglas en inglés), que se escogió para la implementación del SiRPA, requiere procesar datos en punto flotante.
+
+En el contexto de este proyecto se va a implementar un procesador de aplicación específica (ASP por sus siglas en inglés) cuya arquitectura está basada en el set de instrucciones (ISA, por sus siglas en ingle s) RISC-V \cite{RISCV}, este ISA fue desarrollado por la División de Ciencias de Computación de la Universidad de California, Berkeley. El objetivo del procesador es ejecutar el HMM, para esto es necesario que sea capaz de manejar aritmética en punto flotante. Cabe mencionar que el ASP es un proyecto de maestría a cargo del Ing. Carlos Salazar García. La implementación de la FPU dependerá meramente de adecuarse a una arquitectura que disminuya el consumo de potencia a la hora de ejecutar el HMM.
+
+El desarrollo de la Unidad de Punto Flotante, es un proyecto que se viene implementando desde el primer semestre del 2015, y en el que en la primera etapa del mismo, se implementaron las operaciones suma, resta y multiplicación, así como el manejo de excepciones cuando se presentan resultados que tiendan al infinito, y el redondeo. Debido a las limitantes de tiempo que conlleva el realizar un proyecto de graduación en el lapso de un semestre, y también la complejidad que conlleva el desarrollo de dicha unidad, es que se procede a continuar con su implementación.
+
+Un aspecto importante que se debe tener en cuenta, es que la FPU que se está implementando toma como referencia el estándar IEEE 754-2008 \cite{IEEE_aritm} \cite{754_bfp} y el ISA RISC-V, por lo que estos dos temas se deberán de investigar y estudiar para la realización del proyecto.
+
+
+\section{Descripción del problema y justificación.}
+
+En una primera etapa, se han diseñado e implementado algunas operaciones aritméticas como lo son la suma, resta y multiplicación, así como formatos de redondeo y excepciones de operaciones inválidas.
+
+Dada la necesidad de desarrollar una FPU, debido a falta de presupuesto para adquirir un coprocesador numérico de este tipo, es que se procede a continuar con la implementación de esta unidad.
+
+La FPU se utilizará para trabajar con el ASP, así como para futuros proyectos que requieran procesar aritmética de punto flotante. Es por eso que esta unidad quedará una vez finalizada, a disposición del DCILab y de la Escuela de Ingeniería en Electrónica, por lo que deberá quedar debidamente documentada, para poder ser utilizada por un usuario que requiera el desarrollo de algún proyecto con la FPU.
+
+Al ser una continuación de un proyecto, se considera desarrollar aspectos como la optimización del timing de algunos bloques desarrollados en la etapa anterior, el manejo de la excepción NaN (Not a Number), así como también la implementación de las operaciones trigonométricas seno y coseno, además de la escalabilidad de la unidad para etapas posteriores de desarrollo.
+
+Para la implementación de la FPU, se tomará el estándar IEEE 754-2008 como referencia para el manejo de operaciones en punto flotante, pero este no se va a implementar como tal, sino que se tomará como punto de partida para definir un estándar propio para el módulo a diseñar.
+Esta unidad tendrá una arquitectura de 64 bits y se diseñó para poder ejecutar instrucciones del ISA RISC-V.
+
+
+\section{Síntesis del problema.}
+
+Inexistencia de operaciones aritméticas básicas seno y coseno en la primera etapa de implementación de la FPU, así como la operación de manejo de excepción \textit{NaN, Not a Number}.
+
+\section{Enfoque de la solución.}
+
+En primer lugar,  estudiara acerca de la aritmética de punto flotante basada en el estándar IEEE 754-2008. Seguidamente, se investigará posibles formas o algoritmos que permitan implementar las operaciones trigonométricas que se desean desarrollar.
+
+Una vez investigado lo anterior, se procederá desarrollar los módulos utilizando una estrategia de diseño modular, a través de la cual se definirá la interfaz de entrada-salida, y la estrategia de interconexión de los bloques que constituyen las diferentes operaciones trigonométricas.
+
+Seguidamente, los módulos se implementaran utilizando el lenguaje de descripción de hardware Verilog, y se verificarán utilizando un proceso de comparación entre los resultados obtenidos de simulaciones Post Place and Route, y los resultados obtenidos del software GNU Octave.
+
+Por último se integrarán los módulos diseñados y desarrollados al procesador de aplicación específica, sobre el cual se ejecutarán rutinas matemáticas complejas para corroborar el funcionamiento conjunto de ambas unidades.
+
+\section{Meta.}
+
+Desarrollar un procesador de aplicación específica con soporte de operaciones de coma flotante en formato basado en IEEE 754-2008, compatible con la arquitectura de juego de instrucciones abierto (ISA) del proyecto RISC-V, para resolver problemas de procesamiento de sonido aplicados a la protección ambiental.
+
+\section{Objetivos y estructura.}
+
+\subsection{Objetivo General.}
+
+Incorporar al mínimo dos operaciones aritméticas complejas y capacidades de tratamiento de la excepción NaN a la versión actual de unidad de coma flotante (FPU) compatible con un procesador de aplicación específica (ASP) basado en el ISA RISC-V.
+
+\subsection{Objetivos Específicos.}
+
+\begin{itemize}
+\item[-]	Optimizar el temporizado de los módulos suma y multiplicación de la versión preliminar de la FPU.
+\item[-]	Implementar las funciones lógico-aritméticas seno y coseno basadas en el formato de representación de números flotantes IEEE 754-2008 y el ISA RISC-V.
+\item[-]	Implementar la excepción \textit{NaN} de una operación aritmética inválida, basada en el formato de representación de números flotantes IEEE 754-2008 y el ISA RISC-V.
+
+\end{itemize}
+
+\subsection{Estructura de la tesis.}
+
+
+
+
+

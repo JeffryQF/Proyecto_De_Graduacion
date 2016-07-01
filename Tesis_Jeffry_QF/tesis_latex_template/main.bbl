@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+
+\bibitem{IEEE754}
+Ieee standard for floating-point arithmetic.
+\newblock {\em IEEE Std 754-2008}, pages 13--21, Aug 2008.
+
+\bibitem{scalable_CORDIC}
+T.~Adiono and R.~S. Purba.
+\newblock Scalable pipelined cordic architecture design and implementation in
+  fpga.
+\newblock In {\em Electrical Engineering and Informatics, 2009. ICEEI '09.
+  International Conference on}, volume~02, pages 646--649, 2009.
+\newblock ID: 1.
+
+\bibitem{HMM}
+Matthew Butler.
+\newblock Hidden markov model clustering of acoustic data [online].
+\newblock 2003 [visitado el 15 de Octubre del 2015].
+\newblock URL
+  \url{http://www.inf.ed.ac.uk/publications/thesis/online/IM030057.pdf}.
+
+\bibitem{IEEE_aritm}
+ORACLE~Help Center.
+\newblock Chapter 2. ieee arithmetic [online].
+\newblock 2015 [visitado el \today].
+\newblock URL \url{http://docs.oracle.com/cd/E19957-01/806-3568/ncg_math.html}.
+
+\bibitem{IEEE754_WEB}
+The Oxford~Math Center.
+\newblock Ieee 754 format [online].
+\newblock 2015 [visitado el \today].
+\newblock URL \url{http://www.oxfordmathcenter.com/drupal7/node/43}.
+
+\bibitem{SIRPA}
+Alvarado Moya~J.P Chacón~Rodríguez, A.
+\newblock Sistema electrónico integrado en chip (soc) para el reconocimiento
+  de patrones de disparos y motosierras en una red inalámbrica de sensores
+  para la protección ambiental (documento i) [online].
+\newblock 2014 [visitado el 11 de Octubre del 2015].
+\newblock URL \url{http://www.ie.itcr.ac.cr/achacon/VIE/sirpa-doc1.pdf}.
+
+\bibitem{HMM2}
+Z~Ghahramani.
+\newblock An introduction to hidden markov models and bayesian networks
+  [online].
+\newblock 2001 [visitado el 13 de Octubre del 2015].
+\newblock URL \url{http://mlg.eng.cam.ac.uk/zoubin/papers/ijprai.pdf}.
+
+\bibitem{754_bfp}
+W~Kahan.
+\newblock Ieee standard 754 for binary floating-point arithmetic [online].
+\newblock 1997 [visitado el 15 de Octubre del 2015].
+\newblock URL
+  \url{http://www.eecs.berkeley.edu/wkahan/ieee754status/IEEE754.pdf}.
+
+\bibitem{Tesis_Diego}
+Diego Andrés~Rodríguez Valverde.
+\newblock Diseño e implementación de una unidad aritmético-lógica de coma
+  flotante para un procesador de aplicación específica., 2016.
+
+\bibitem{CORDIC}
+J.~E. Volder.
+\newblock The cordic trigonometric computing technique.
+\newblock {\em IRE Transactions on Electronic Computers}, EC-8(3):330--334,
+  1959.
+
+\bibitem{RISCV}
+Lee Y. Patterson D. Asanovic~K Waterman, A.
+\newblock The risc-v instruction set manual, volume i: User- level isa, version
+  2.0 [online].
+\newblock 2014 [visitado el 10 de Octubre del 2015].
+\newblock URL
+  \url{http://www.eecs.berkeley.edu/Pubs/TechRpts/2014/EECS-2014-54.pdf}.
+
+\bibitem{DoubleCordic}
+Jie Zhou, Yong Dou, Yuanwu Lei, Jinbo Xu, and Yazhuo Dong.
+\newblock Double precision hybrid-mode floating-point fpga cordic co-processor.
+\newblock In {\em High Performance Computing and Communications, 2008. HPCC
+  '08. 10th IEEE International Conference on}, pages 182--189, 2008.
+\newblock ID: 1.
+
+\end{thebibliography}

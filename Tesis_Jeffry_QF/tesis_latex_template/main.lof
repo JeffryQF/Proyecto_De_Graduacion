@@ -1,0 +1,15 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Acomodo de bits para la representaci\IeC {\'o}n binaria de un n\IeC {\'u}mero en punto flotante utilizando el est\IeC {\'a}ndar IEEE 754-2008.\relax }}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Ordenamiento de bits en el formato de Precisi\IeC {\'o}n Simple.\relax }}{8}{figure.caption.10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Ordenamiento de bits en el formato de Precisi\IeC {\'o}n Doble.\relax }}{9}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Vector bidimensional antes y despu\IeC {\'e}s de ser rotado.\relax }}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Pseudorotaci\IeC {\'o}n de un vector bidimensional.\relax }}{11}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Arquitectura Bit-Paralela Iterativa para la implementaci\IeC {\'o}n en hardware del algoritmo \textbf {CORDIC}.\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Arquitectura Bit-Paralela Desplegada para la implementaci\IeC {\'o}n en hardware del algoritmo \textbf {CORDIC}.\relax }}{16}{figure.caption.16}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Arquitectura Bit-Serie Iterativa para la implementaci\IeC {\'o}n en hardware del algoritmo \textbf {CORDIC}.\relax }}{17}{figure.caption.17}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
