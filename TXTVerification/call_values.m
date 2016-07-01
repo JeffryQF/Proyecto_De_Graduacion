@@ -3,7 +3,7 @@ function call_values(name1, name2, n, oper, typ)
   file_id2=fopen(name2, 'w');
   file_id3=fopen("Decimal_R.txt", 'w');
   file_id4=fopen("Hexadecimal_R.txt", 'w');
-  for i=0:n
+  for i=0:n-1
   #Calculo valor 1
     num1=rand(1);
     num2=rand(1)*i;

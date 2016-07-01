@@ -91,7 +91,7 @@ parameter EWR = 6;// */
                     Data_X = 0;
                     Data_Y = 0;
                     r_mode = 2'b00;
-                    add_subt = 1;
+                    add_subt = 0;
             
             //        // Wait 100 ns for global reset to finish
             //        #100 rst = 0;

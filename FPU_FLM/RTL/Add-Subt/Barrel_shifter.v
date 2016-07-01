@@ -23,6 +23,7 @@
 module Barrel_Shifter
     #(parameter SWR=26, parameter EWR=5) //Implicit bit + Significand Width (23 bits for simple format, 52 bits for Double format) 
     //+ guard Bit +  round bit
+    /*#(parameter SWR=55, parameter EWR=6)*/
     (
     input wire clk,
     input wire rst,

@@ -22,7 +22,7 @@
 
 module Testbench_Sgf_multiplication();
     parameter PERIOD = 10;
-    parameter SW=8;
+    parameter SW=4;
     
     reg clk;
     reg rst;
@@ -31,7 +31,6 @@ module Testbench_Sgf_multiplication();
     reg [SW-1:0] Data_A_i;
     reg [SW-1:0] Data_B_i;
     wire [2*SW-1:0] sgf_result_o;
-    wire Overflow_mult_o;
     
     
     Sgf_Multiplication #(.SW(SW)) uut (
@@ -41,8 +40,7 @@ module Testbench_Sgf_multiplication();
         .load_b_i(load_b_i),
         .Data_A_i(Data_A_i),
         .Data_B_i(Data_B_i),
-        .sgf_result_o(sgf_result_o),
-        .Overflow_mult_o(Overflow_mult_o)
+        .sgf_result_o(sgf_result_o)
         );
         
         
@@ -51,8 +49,8 @@ module Testbench_Sgf_multiplication();
                     rst = 1;
                     load_a_i = 1;
                     load_b_i = 1;
-                    Data_A_i = 8'b11111111;
-                    Data_B_i = 8'b11111111;
+                    Data_A_i = 4'b1111;
+                    Data_B_i = 4'b1111;
                     
                     
                     

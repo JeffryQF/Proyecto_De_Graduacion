@@ -14,13 +14,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1014.887 ; gain = 170.672 ; free physical = 81 ; free virtual = 2273
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.883 ; gain = 170.672 ; free physical = 29 ; free virtual = 2282
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'FPU_Multiplication_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Multiplication_Function.v:21]
-	Parameter W bound to: 32 - type: integer 
-	Parameter W_Exp bound to: 8 - type: integer 
-	Parameter W_Sgf bound to: 23 - type: integer 
-	Parameter S_Exp bound to: 9 - type: integer 
+	Parameter W bound to: 64 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
+	Parameter S_Exp bound to: 12 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'FSM_Mult_Function' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Mult_Function.v:21]
 	Parameter zero bound to: 6'b000000 
 	Parameter load_operands bound to: 6'b000001 
@@ -71,48 +71,48 @@ INFO: [Synth 8-638] synthesizing module 'FSM_Mult_Function' [/media/francis/Acer
 INFO: [Synth 8-155] case statement is not full and has no default [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Mult_Function.v:212]
 INFO: [Synth 8-256] done synthesizing module 'FSM_Mult_Function' (1#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FSM_Mult_Function.v:21]
 INFO: [Synth 8-638] synthesizing module 'First_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase_M.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'RegisterMult' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult' (2#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'First_Phase_M' (3#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/First_Phase_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'Zero_InfMult_Unit' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfMult_Unit.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Comparator_Equal' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
-	Parameter S bound to: 32 - type: integer 
+	Parameter S bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Comparator_Equal' (4#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Equal.v:26]
 INFO: [Synth 8-638] synthesizing module 'RegisterAdd' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterAdd' (5#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterAdd.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Zero_InfMult_Unit' (6#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Zero_InfMult_Unit.v:21]
 INFO: [Synth 8-638] synthesizing module 'Ninth_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Ninth_Phase_M.v:21]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'add_sub_carry_out' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out' (7#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 9 - type: integer 
+	Parameter W bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized0' (7#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'Comparator_Less' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Less.v:21]
-	Parameter W bound to: 9 - type: integer 
+	Parameter W bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Comparator_Less' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Comparator_Less.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized1' (8#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Ninth_Phase_M' (9#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Ninth_Phase_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'Second_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase_M.v:24]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Add_Subtract_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Add_Subtract_M.v:21]
-	Parameter W bound to: 9 - type: integer 
+	Parameter W bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Add_Subtract_M' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Add_Subtract_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 9 - type: integer 
+	Parameter W bound to: 12 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized2' (10#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Second_Phase_M' (11#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Second_Phase_M.v:24]
 INFO: [Synth 8-638] synthesizing module 'Third_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase_M.v:24]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Greater_Comparator' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Greater_Comparator' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Greater_Comparator.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 	Parameter W bound to: 1 - type: integer 
@@ -121,91 +121,91 @@ INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized4' [/media/f
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized4' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized5' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized5' (12#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Third_Phase_M' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Third_Phase_M.v:24]
 INFO: [Synth 8-638] synthesizing module 'Fourth_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase_M.v:24]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized6' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized6' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized7' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized7' (13#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplier_P' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplier_P.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplier_P' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplier_P.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized8' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 48 - type: integer 
+	Parameter W bound to: 106 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized8' (14#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Fourth_Phase_M' (15#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fourth_Phase_M.v:24]
 INFO: [Synth 8-638] synthesizing module 'Fifth_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase_M.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 25 - type: integer 
+	Parameter W bound to: 54 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized0' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized9' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized9' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized10' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized10' (16#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Fifth_Phase_M' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Fifth_Phase_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'Sixth_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase_M.v:26]
-	Parameter W_Exp bound to: 8 - type: integer 
+	Parameter W_Exp bound to: 11 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized1' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized1' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized11' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized11' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized12' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized12' (17#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'add_subtract' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_subtract.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_subtract' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_subtract.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized2' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized2' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized13' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 8 - type: integer 
+	Parameter W bound to: 11 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized13' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized14' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 	Parameter W bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized14' (18#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Sixth_Phase_M' (19#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Sixth_Phase_M.v:26]
 INFO: [Synth 8-638] synthesizing module 'Seventh_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase_M.v:21]
-	Parameter W_Sgf bound to: 23 - type: integer 
+	Parameter W_Sgf bound to: 52 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'OR_Module' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/OR_Module.v:21]
-	Parameter W bound to: 23 - type: integer 
+	Parameter W bound to: 52 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'OR_Module' (20#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/OR_Module.v:21]
 INFO: [Synth 8-638] synthesizing module 'XOR_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/XOR_M.v:21]
 INFO: [Synth 8-256] done synthesizing module 'XOR_M' (21#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/XOR_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'Deco_Round_Mult' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Deco_Round_Mult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Deco_Round_Mult' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Deco_Round_Mult.v:21]
 INFO: [Synth 8-638] synthesizing module 'add_sub_carry_out__parameterized0' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
-	Parameter W bound to: 24 - type: integer 
+	Parameter W bound to: 53 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'add_sub_carry_out__parameterized0' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/add_sub_carry_out.v:23]
 INFO: [Synth 8-638] synthesizing module 'RegisterMult__parameterized15' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
-	Parameter W bound to: 25 - type: integer 
+	Parameter W bound to: 54 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'RegisterMult__parameterized15' (22#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/RegisterMult.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Seventh_Phase_M' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Seventh_Phase_M.v:21]
 INFO: [Synth 8-638] synthesizing module 'Eight_Phase_M' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_Phase_M.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized3' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized3' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-638] synthesizing module 'Multiplexer_AC__parameterized4' [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
-	Parameter W bound to: 32 - type: integer 
+	Parameter W bound to: 64 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Multiplexer_AC__parameterized4' (23#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Multiplexer_AC.v:21]
 INFO: [Synth 8-256] done synthesizing module 'Eight_Phase_M' (24#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/Eight_Phase_M.v:21]
 INFO: [Synth 8-256] done synthesizing module 'FPU_Multiplication_Function' (25#1) [/media/francis/Acer/Users/Francis/Documents/GitHub/Proyecto_De_Graduacion/RTL/FPU_Multiplication_Function.v:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 1054.270 ; gain = 210.055 ; free physical = 44 ; free virtual = 2233
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1054.266 ; gain = 210.055 ; free physical = 31 ; free virtual = 2237
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -215,7 +215,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 1054.270 ; gain = 210.055 ; free physical = 42 ; free virtual = 2233
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1054.266 ; gain = 210.055 ; free physical = 30 ; free virtual = 2237
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-3
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -229,24 +229,24 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 1356.707 ; gain = 0.000 ; free physical = 31 ; free virtual = 2066
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1357.703 ; gain = 0.000 ; free physical = 34 ; free virtual = 1999
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6068 
+INFO: Helper process launched with PID 4500 
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1356.711 ; gain = 512.496 ; free physical = 455 ; free virtual = 2120
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 49 ; free virtual = 2004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1356.711 ; gain = 512.496 ; free physical = 455 ; free virtual = 2120
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 49 ; free virtual = 2004
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1356.711 ; gain = 512.496 ; free physical = 455 ; free virtual = 2120
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 49 ; free virtual = 2004
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'FSM_Mult_Function'
 INFO: [Synth 8-5546] ROM "load_12" won't be mapped to RAM because it is too sparse
@@ -330,7 +330,7 @@ INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'FSM_Mult_Function'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1356.711 ; gain = 512.496 ; free physical = 440 ; free virtual = 2105
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1357.707 ; gain = 513.496 ; free physical = 37 ; free virtual = 1992
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -343,25 +343,27 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     25 Bit       Adders := 1     
-	   3 Input      9 Bit       Adders := 2     
-	   3 Input      8 Bit       Adders := 1     
+	   3 Input     54 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 2     
+	   3 Input     11 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	               48 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               25 Bit    Registers := 1     
-	               24 Bit    Registers := 3     
-	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 3     
+	              106 Bit    Registers := 1     
+	               64 Bit    Registers := 4     
+	               54 Bit    Registers := 1     
+	               53 Bit    Registers := 3     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
 	                1 Bit    Registers := 7     
++---Multipliers : 
+	                53x53  Multipliers := 1     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 2     
-	   2 Input     25 Bit        Muxes := 3     
-	   2 Input     24 Bit        Muxes := 1     
-	   2 Input      9 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 3     
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input     54 Bit        Muxes := 3     
+	   2 Input     53 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 3     
 	  52 Input      6 Bit        Muxes := 1     
 	  46 Input      1 Bit        Muxes := 21    
 	   5 Input      1 Bit        Muxes := 1     
@@ -380,7 +382,7 @@ Detailed RTL Component Info :
 Module RegisterMult 
 Detailed RTL Component Info : 
 +---Registers : 
-	               32 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
 Module RegisterAdd 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -388,13 +390,13 @@ Detailed RTL Component Info :
 Module add_sub_carry_out 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      9 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input      9 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 1     
 Module RegisterMult__parameterized0 
 Detailed RTL Component Info : 
 +---Registers : 
-	                9 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
 Module RegisterMult__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -402,11 +404,11 @@ Detailed RTL Component Info :
 Module Add_Subtract_M 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      9 Bit       Adders := 1     
+	   3 Input     12 Bit       Adders := 1     
 Module RegisterMult__parameterized2 
 Detailed RTL Component Info : 
 +---Registers : 
-	                9 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
 Module RegisterMult__parameterized3 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -418,31 +420,35 @@ Detailed RTL Component Info :
 Module RegisterMult__parameterized5 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterMult__parameterized6 
 Detailed RTL Component Info : 
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               53 Bit    Registers := 1     
 Module RegisterMult__parameterized7 
 Detailed RTL Component Info : 
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               53 Bit    Registers := 1     
+Module Multiplier_P 
+Detailed RTL Component Info : 
++---Multipliers : 
+	                53x53  Multipliers := 1     
 Module RegisterMult__parameterized8 
 Detailed RTL Component Info : 
 +---Registers : 
-	               48 Bit    Registers := 1     
+	              106 Bit    Registers := 1     
 Module Multiplexer_AC 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     54 Bit        Muxes := 1     
 Module Multiplexer_AC__parameterized0 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     24 Bit        Muxes := 1     
+	   2 Input     53 Bit        Muxes := 1     
 Module RegisterMult__parameterized9 
 Detailed RTL Component Info : 
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               53 Bit    Registers := 1     
 Module RegisterMult__parameterized10 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -450,11 +456,11 @@ Detailed RTL Component Info :
 Module Multiplexer_AC__parameterized1 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterMult__parameterized11 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterMult__parameterized12 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -462,17 +468,17 @@ Detailed RTL Component Info :
 Module add_subtract 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input      8 Bit       Adders := 1     
+	   3 Input     11 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module Multiplexer_AC__parameterized2 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
 Module RegisterMult__parameterized13 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
 Module RegisterMult__parameterized14 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -488,21 +494,21 @@ Detailed RTL Component Info :
 Module add_sub_carry_out__parameterized0 
 Detailed RTL Component Info : 
 +---Adders : 
-	   3 Input     25 Bit       Adders := 1     
+	   3 Input     54 Bit       Adders := 1     
 +---Muxes : 
-	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     54 Bit        Muxes := 1     
 Module RegisterMult__parameterized15 
 Detailed RTL Component Info : 
 +---Registers : 
-	               25 Bit    Registers := 1     
+	               54 Bit    Registers := 1     
 Module Multiplexer_AC__parameterized3 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
 Module Multiplexer_AC__parameterized4 
 Detailed RTL Component Info : 
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     64 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -515,20 +521,41 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1356.715 ; gain = 512.500 ; free physical = 440 ; free virtual = 2105
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1357.711 ; gain = 513.500 ; free physical = 36 ; free virtual = 1992
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
 DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: A*B.
 DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
 DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: PCIN+A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
 DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
 DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: PCIN+A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: PCIN+A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: Generating DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result, operation Mode is: PCIN+A*B.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
+DSP Report: operator Significands_Multiplication_Funct/P_Sgf_Mult/Result is absorbed into DSP Significands_Multiplication_Funct/P_Sgf_Mult/Result.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1356.715 ; gain = 512.500 ; free physical = 441 ; free virtual = 2106
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.711 ; gain = 513.500 ; free physical = 37 ; free virtual = 1993
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1356.715 ; gain = 512.500 ; free physical = 441 ; free virtual = 2106
+Finished Parallel Reinference  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1357.711 ; gain = 513.500 ; free physical = 37 ; free virtual = 1993
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -540,12 +567,19 @@ Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 DSP:
-+-------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping    | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Multiplier_P | A*B            | No           | 25     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|Multiplier_P | (PCIN>>17)+A*B | No           | 25     | 8      | 31     | 25     | 31     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-+-------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++----------------------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                 | DSP Mapping    | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|FPU_Multiplication_Function | A*B            | No           | 20     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | PCIN+A*B       | No           | 20     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | (PCIN>>17)+A*B | No           | 20     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | A*B            | No           | 20     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | PCIN+A*B       | No           | 18     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | PCIN+A*B       | No           | 20     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | A*B            | No           | 18     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | (PCIN>>17)+A*B | No           | 18     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
+|FPU_Multiplication_Function | PCIN+A*B       | No           | 18     | 18     | 48     | 25     | 48     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
++----------------------------+----------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -554,39 +588,7 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3886] merging instance '\Significands_Multiplication_Funct/P_SgfY_Register/Q_reg[23] ' (FDCE) to '\Significands_Multiplication_Funct/P_SgfX_Register/Q_reg[23] '
-WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_SgfY_Register/Q_reg[23] ) is unused and will be removed from module FPU_Multiplication_Function.
----------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 1356.715 ; gain = 512.500 ; free physical = 423 ; free virtual = 2090
----------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 1356.715 ; gain = 512.500 ; free physical = 423 ; free virtual = 2090
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Applying XDC Timing Constraints
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:38 . Memory (MB): peak = 1362.707 ; gain = 518.492 ; free physical = 335 ; free virtual = 2019
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1362.707 ; gain = 518.492 ; free physical = 335 ; free virtual = 2019
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance '\Significands_Multiplication_Funct/P_SgfY_Register/Q_reg[52] ' (FDCE) to '\Significands_Multiplication_Funct/P_SgfX_Register/Q_reg[52] '
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[47] ) is unused and will be removed from module FPU_Multiplication_Function.
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[46] ) is unused and will be removed from module FPU_Multiplication_Function.
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[45] ) is unused and will be removed from module FPU_Multiplication_Function.
@@ -614,21 +616,124 @@ WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[23] ) is unused and will be removed from module FPU_Multiplication_Function.
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[22] ) is unused and will be removed from module FPU_Multiplication_Function.
 WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[21] ) is unused and will be removed from module FPU_Multiplication_Function.
-WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[20] ) is unused and will be removed from module FPU_Multiplication_Function.
-WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[19] ) is unused and will be removed from module FPU_Multiplication_Function.
-WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[18] ) is unused and will be removed from module FPU_Multiplication_Function.
-WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[17] ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[47]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[46]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[45]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[44]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[43]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[42]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[41]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[40]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[39]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[38]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[37]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[36]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[35]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[34]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[33]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[32]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[31]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[30]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[29]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[28]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[27]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[26]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[25]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[24]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[23]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[22]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[21]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[20]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[19]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[18]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[17]__0 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[47]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[46]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[45]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[44]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[43]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[42]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[41]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[40]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[39]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[38]__1 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[47]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[46]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[45]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[44]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[43]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[42]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[41]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[40]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[39]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[38]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[37]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[36]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[35]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[34]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[33]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[32]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[31]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[30]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[29]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[28]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[27]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[26]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[25]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[24]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[23]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[22]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[21]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[20]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[19]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[18]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_Sgf_Register/Q_reg[17]__3 ) is unused and will be removed from module FPU_Multiplication_Function.
+WARNING: [Synth 8-3332] Sequential element (\Significands_Multiplication_Funct/P_SgfY_Register/Q_reg[52] ) is unused and will be removed from module FPU_Multiplication_Function.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 317 ; free virtual = 2001
+Finished Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1357.711 ; gain = 513.500 ; free physical = 33 ; free virtual = 1977
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 317 ; free virtual = 2001
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1357.711 ; gain = 513.500 ; free physical = 33 ; free virtual = 1977
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:32 ; elapsed = 00:00:39 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 317 ; free virtual = 2001
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1369.703 ; gain = 525.492 ; free physical = 30 ; free virtual = 1890
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1370.703 ; gain = 526.492 ; free physical = 29 ; free virtual = 1888
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'i_1128' (FDCE) to 'i_1079'
+INFO: [Synth 8-3886] merging instance 'i_1079' (FDCE) to 'i_1040'
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 32 ; free virtual = 1863
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 32 ; free virtual = 1863
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 32 ; free virtual = 1863
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -645,7 +750,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -658,7 +763,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -670,25 +775,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -705,70 +810,71 @@ Report Cell Usage:
 |      |Cell    |Count |
 +------+--------+------+
 |1     |BUFG    |     1|
-|2     |CARRY4  |    10|
-|3     |DSP48E1 |     2|
-|4     |LUT1    |    24|
-|5     |LUT2    |    37|
-|6     |LUT3    |    15|
-|7     |LUT4    |    35|
-|8     |LUT5    |    13|
-|9     |LUT6    |    94|
+|2     |CARRY4  |    48|
+|3     |DSP48E1 |     9|
+|4     |LUT1    |    75|
+|5     |LUT2    |   108|
+|6     |LUT3    |    71|
+|7     |LUT4    |    59|
+|8     |LUT5    |    74|
+|9     |LUT6    |   135|
 |10    |MUXF7   |     3|
-|11    |FDCE    |   297|
-|12    |IBUF    |    70|
-|13    |OBUF    |    35|
+|11    |FDCE    |   594|
+|12    |IBUF    |   134|
+|13    |OBUF    |    67|
 +------+--------+------+
 
 Report Instance Areas: 
 +------+------------------------------------+----------------------------------+------+
 |      |Instance                            |Module                            |Cells |
 +------+------------------------------------+----------------------------------+------+
-|1     |top                                 |                                  |   636|
-|2     |  AddSub_ExpBias_Funct              |Second_Phase_M                    |    11|
-|3     |    Result_Exp                      |RegisterMult__parameterized2      |    11|
-|4     |  Exp_Update_Function               |Sixth_Phase_M                     |    37|
-|5     |    Exp_F_Register                  |RegisterMult__parameterized13     |     8|
-|6     |    Exp_NA_Register                 |RegisterMult__parameterized12     |     2|
-|7     |    Exp_Selection_Register          |RegisterMult__parameterized11     |    18|
-|8     |    Mux_Exponent_Selection          |Multiplexer_AC__parameterized1    |     8|
-|9     |    PROverflow_Register             |RegisterMult__parameterized14     |     1|
-|10    |  Exponent_load_reg                 |First_Phase_M                     |    86|
-|11    |    XMRegister                      |RegisterMult_1                    |    42|
-|12    |    YMRegister                      |RegisterMult_2                    |    44|
-|13    |  FSM_FPU_Multiplication            |FSM_Mult_Function                 |    85|
-|14    |  FT_exp_info                       |Third_Phase_M                     |    11|
-|15    |    Exp_R_Reg                       |RegisterMult__parameterized5      |     8|
-|16    |    Ov_Register_FComp               |RegisterMult__parameterized4      |     2|
-|17    |    Ov_Register_FCout               |RegisterMult__parameterized3      |     1|
-|18    |  Final_Result_Module               |Eight_Phase_M                     |    64|
-|19    |    IEEE_BitStream_Reg              |RegisterMult                      |    32|
-|20    |    IEEE_F_R_Reg                    |RegisterMult_0                    |    32|
-|21    |  First_Normalization_RSignificand  |Fifth_Phase_M                     |    48|
-|22    |    EXNU_REG                        |RegisterMult__parameterized10     |     1|
-|23    |    SGF_RP_REG                      |RegisterMult__parameterized9      |    47|
-|24    |  Round_Significand_Function        |Seventh_Phase_M                   |    79|
-|25    |    Sgf_Add_Cout                    |add_sub_carry_out__parameterized0 |     8|
-|26    |    Sgf_PRound_Reg                  |RegisterMult__parameterized15     |    71|
-|27    |  Significands_Multiplication_Funct |Fourth_Phase_M                    |    75|
-|28    |    P_SgfX_Register                 |RegisterMult__parameterized6      |    24|
-|29    |    P_SgfY_Register                 |RegisterMult__parameterized7      |    23|
-|30    |    P_Sgf_Mult                      |Multiplier_P                      |     5|
-|31    |    P_Sgf_Register                  |RegisterMult__parameterized8      |    23|
-|32    |  Underflow_Management_State        |Ninth_Phase_M                     |    32|
-|33    |    EXP_Add_Reg                     |add_sub_carry_out                 |    11|
-|34    |    ExpAdd_Register                 |RegisterMult__parameterized0      |    20|
-|35    |    ExpUnderflow_Register           |RegisterMult__parameterized1      |     1|
-|36    |  Zero_Result_Detect                |Zero_InfMult_Unit                 |     1|
-|37    |    Zero_Info_Mult                  |RegisterAdd                       |     1|
+|1     |top                                 |                                  |  1378|
+|2     |  AddSub_ExpBias_Funct              |Second_Phase_M                    |    14|
+|3     |    Result_Exp                      |RegisterMult__parameterized2      |    14|
+|4     |  Exp_Update_Function               |Sixth_Phase_M                     |    51|
+|5     |    Exp_F_Register                  |RegisterMult__parameterized13     |    11|
+|6     |    Exp_NA_Register                 |RegisterMult__parameterized12     |     1|
+|7     |    Exp_Selection_Register          |RegisterMult__parameterized11     |    21|
+|8     |    Mux_Exponent_Selection          |Multiplexer_AC__parameterized1    |    11|
+|9     |    Mux_Selection_Final_Exponent    |Multiplexer_AC__parameterized2    |     6|
+|10    |    PROverflow_Register             |RegisterMult__parameterized14     |     1|
+|11    |  Exponent_load_reg                 |First_Phase_M                     |   165|
+|12    |    XMRegister                      |RegisterMult_1                    |    83|
+|13    |    YMRegister                      |RegisterMult_2                    |    82|
+|14    |  FSM_FPU_Multiplication            |FSM_Mult_Function                 |   121|
+|15    |  FT_exp_info                       |Third_Phase_M                     |    14|
+|16    |    Exp_R_Reg                       |RegisterMult__parameterized5      |    11|
+|17    |    Ov_Register_FComp               |RegisterMult__parameterized4      |     2|
+|18    |    Ov_Register_FCout               |RegisterMult__parameterized3      |     1|
+|19    |  Final_Result_Module               |Eight_Phase_M                     |   128|
+|20    |    IEEE_BitStream_Reg              |RegisterMult                      |    64|
+|21    |    IEEE_F_R_Reg                    |RegisterMult_0                    |    64|
+|22    |  First_Normalization_RSignificand  |Fifth_Phase_M                     |   106|
+|23    |    EXNU_REG                        |RegisterMult__parameterized10     |     1|
+|24    |    SGF_RP_REG                      |RegisterMult__parameterized9      |   105|
+|25    |  Round_Significand_Function        |Seventh_Phase_M                   |   125|
+|26    |    Sgf_Add_Cout                    |add_sub_carry_out__parameterized0 |    15|
+|27    |    Sgf_PRound_Reg                  |RegisterMult__parameterized15     |   110|
+|28    |  Significands_Multiplication_Funct |Fourth_Phase_M                    |   405|
+|29    |    P_SgfX_Register                 |RegisterMult__parameterized6      |    72|
+|30    |    P_SgfY_Register                 |RegisterMult__parameterized7      |    53|
+|31    |    P_Sgf_Mult                      |Multiplier_P                      |   196|
+|32    |    P_Sgf_Register                  |RegisterMult__parameterized8      |    84|
+|33    |  Underflow_Management_State        |Ninth_Phase_M                     |    45|
+|34    |    EXP_Add_Reg                     |add_sub_carry_out                 |    14|
+|35    |    ExpAdd_Register                 |RegisterMult__parameterized0      |    30|
+|36    |    ExpUnderflow_Register           |RegisterMult__parameterized1      |     1|
+|37    |  Zero_Result_Detect                |Zero_InfMult_Unit                 |     1|
+|38    |    Zero_Info_Mult                  |RegisterAdd                       |     1|
 +------+------------------------------------+----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 32 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:28 . Memory (MB): peak = 1383.746 ; gain = 111.422 ; free physical = 316 ; free virtual = 2000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 1383.746 ; gain = 539.531 ; free physical = 316 ; free virtual = 2000
+Synthesis finished with 0 errors, 0 critical warnings and 236 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1394.742 ; gain = 121.422 ; free physical = 31 ; free virtual = 1862
+Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1394.742 ; gain = 550.531 ; free physical = 31 ; free virtual = 1862
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 82 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 191 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -776,8 +882,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-138 Infos, 32 Warnings, 0 Critical Warnings and 0 Errors encountered.
+141 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 1383.750 ; gain = 468.199 ; free physical = 312 ; free virtual = 1999
-report_utilization: Time (s): cpu = 00:00:00.18 ; elapsed = 00:00:00.78 . Memory (MB): peak = 1415.766 ; gain = 0.000 ; free physical = 301 ; free virtual = 1997
-INFO: [Common 17-206] Exiting Vivado at Sat Apr 30 19:19:51 2016...
+synth_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 1394.746 ; gain = 479.199 ; free physical = 30 ; free virtual = 1862
+report_utilization: Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.20 . Memory (MB): peak = 1426.762 ; gain = 0.000 ; free physical = 44 ; free virtual = 1857
+INFO: [Common 17-206] Exiting Vivado at Sat May 28 14:44:10 2016...

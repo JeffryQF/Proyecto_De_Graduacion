@@ -38,6 +38,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log FPU_Multiplication_Function.vdi -applog -m64 -messageDb vivado.pb -mode batch -source FPU_Multiplication_Function.tcl -notrace
+EAStep vivado -log FPU_Add_Subtract_Function.vdi -applog -m64 -messageDb vivado.pb -mode batch -source FPU_Add_Subtract_Function.tcl -notrace
 
 

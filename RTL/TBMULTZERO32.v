@@ -26,20 +26,21 @@ module TBMULTZERO32;
 
 	
 parameter width = 10;
+parameter W=32;
 	// Inputs 
 	reg clk;
 	reg rst;
 	reg beg_FSM;
 	reg rst_FSM;
-	reg [31:0] Data_MX;
-	reg [31:0] Data_MY;
+	reg [W-1:0] Data_MX;
+	reg [W-1:0] Data_MY;
 	reg [1:0] round_mode;
 
 	// Outputs
 	wire underflow_flag;
 	wire overflow_flag;
 	wire ready_flag;
-	wire [31:0] F_ieee_result;
+	wire [W-1:0] F_ieee_result;
 
 	// Instantiate the Unit Under Test (UUT)
 	FPU_Multiplication_Function uut (
@@ -57,8 +58,8 @@ parameter width = 10;
 	);
 
 
-   reg [31:0] Array_IN [0:((2**width)-1)];
-   reg [31:0] Array_IN_2 [0:((2**width)-1)];
+   reg [W-1:0] Array_IN [0:((2**width)-1)];
+   reg [W-1:0] Array_IN_2 [0:((2**width)-1)];
 	integer contador;
    integer FileSaveData;
    integer Cont_CLK;
@@ -73,13 +74,13 @@ parameter width = 10;
 		rst_FSM = 0;
 		Data_MX = 0;
 		Data_MY = 0;
-		round_mode = 2'b10;
+		round_mode = 2'b00;
 
 //		// Wait 100 ns for global reset to finish
 //		#100 rst = 0;
 
 		//Abre el archivo testbench
-      FileSaveData = $fopen("ResultadoProductoXilinx.txt","w");
+      FileSaveData = $fopen("ResultadoXilinxDRV.txt","w");
 		
 		//Inicializa las variables del testbench
 		contador = 0;
@@ -116,6 +117,7 @@ parameter width = 10;
             end
             else begin
                 if(Cont_CLK ==1) begin
+                    contador = contador + 1;
 					beg_FSM = 0;
                     Data_MX = Array_IN[contador];
                     Data_MY = Array_IN_2[contador];
@@ -127,9 +129,8 @@ parameter width = 10;
 					beg_FSM = 1;
 					Cont_CLK = Cont_CLK +1 ;
 				end
-                else if(Cont_CLK ==50) begin
+                else if(ready_flag ==1) begin
                     
-                    contador = contador + 1;
                     rst_FSM = 1;
 
 					Cont_CLK = 0;
@@ -148,7 +149,7 @@ parameter width = 10;
     always @(posedge clk) begin
         if(ready_flag) begin
 			if(Recept == 1) begin
-				$fwrite(FileSaveData,"%b %\n",F_ieee_result);
+				$fwrite(FileSaveData,"%h\n",F_ieee_result);
 				Recept = 0;
 			end
 		end

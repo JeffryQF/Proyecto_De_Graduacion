@@ -21,10 +21,10 @@
 module FPU_Add_Subtract_Function
 //Add/Subtract Function Parameters
 	
-   #(parameter W = 32, parameter EW = 8, parameter SW = 23,
+   /*#(parameter W = 32, parameter EW = 8, parameter SW = 23,
 		parameter SWR=26, parameter EWR = 5)  //Single Precision */
 		
-	/*#(parameter W = 64, parameter EW = 11, parameter SW = 52,
+	#(parameter W = 64, parameter EW = 11, parameter SW = 52,
 		parameter SWR = 55, parameter EWR = 6) //-- Double Precision */
 	(
 		//FSM Signals 
@@ -400,10 +400,24 @@ Add_Subt #(.SWR(SWR)) Add_Subt_Sgf_module(
     .Data_A_i(S_A_S_Oper_A),
     .PreData_B_i(S_A_S_Oper_B),
     .Data_Result_o(Add_Subt_result),
-    .P_o(A_S_P),
-    .Cn_o(A_S_C),
+    //.P_o(A_S_P),
+    //.Cn_o(A_S_C),
     .FSM_C_o(add_overflow_flag)
     );
+
+/*
+//Test Comb LZA//
+
+Test_comb_LZA #(.SWR(SWR)) comb(
+        .clk(clk),
+        .rst(rst),
+        .Op_A_i(S_A_S_Oper_A),
+        .Pre_Op_B_i(S_A_S_Oper_B),
+        .op(S_A_S_op), //Carry in
+        .Cn_o(A_S_C),
+        .P_o(A_S_P) //Propagate (for LZA)
+    );
+
 
 //////////LZA///////////////////////////////////////////
 
@@ -414,6 +428,17 @@ LZA #(.SWR(SWR),.EWR(EWR)) Leading_Zero_Anticipator_Module (
     .P_i(A_S_P),
     .C_i(A_S_C),
     .A_S_op_i(S_A_S_op),
+    .Shift_Value_o(LZA_output)
+    );
+*/
+wire [SWR-1:0] Add_Subt_LZD;
+assign Add_Subt_LZD = ~Add_Subt_result;
+
+LZD #(.SWR(SWR),.EWR(EWR)) Leading_Zero_Detector_Module (
+    .clk(clk), 
+    .rst(rst_int),
+    .load_i(FSM_LZA_load),
+    .Add_subt_result_i(Add_Subt_LZD),
     .Shift_Value_o(LZA_output)
     );
 

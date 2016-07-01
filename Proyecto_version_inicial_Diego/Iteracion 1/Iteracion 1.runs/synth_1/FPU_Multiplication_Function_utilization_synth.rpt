@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (lin64) Build 1412921 Wed Nov 18 09:44:32 MST 2015
-| Date         : Sat Apr 30 19:19:51 2016
+| Date         : Sat May 28 14:44:09 2016
 | Host         : francis-Aspire-E1-570 running 64-bit Ubuntu 15.10
 | Command      : report_utilization -file FPU_Multiplication_Function_utilization_synth.rpt -pb FPU_Multiplication_Function_utilization_synth.pb
 | Design       : FPU_Multiplication_Function
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  196 |     0 |     63400 |  0.31 |
-|   LUT as Logic          |  196 |     0 |     63400 |  0.31 |
+| Slice LUTs*             |  430 |     0 |     63400 |  0.68 |
+|   LUT as Logic          |  430 |     0 |     63400 |  0.68 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |  297 |     0 |    126800 |  0.23 |
-|   Register as Flip Flop |  297 |     0 |    126800 |  0.23 |
+| Slice Registers         |  594 |     0 |    126800 |  0.47 |
+|   Register as Flip Flop |  594 |     0 |    126800 |  0.47 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                |    3 |     0 |     31700 | <0.01 |
 | F8 Muxes                |    0 |     0 |     15850 |  0.00 |
@@ -55,7 +55,7 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 297   |          Yes |           - |        Reset |
+| 594   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
 | 0     |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -80,8 +80,8 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |    2 |     0 |       240 |  0.83 |
-|   DSP48E1 only |    2 |       |           |       |
+| DSPs           |    9 |     0 |       240 |  3.75 |
+|   DSP48E1 only |    9 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
 
@@ -91,7 +91,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |  105 |     0 |       210 | 50.00 |
+| Bonded IOB                  |  201 |     0 |       210 | 95.71 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -148,18 +148,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |  297 |        Flop & Latch |
-| LUT6     |   94 |                 LUT |
-| IBUF     |   70 |                  IO |
-| LUT2     |   37 |                 LUT |
-| OBUF     |   35 |                  IO |
-| LUT4     |   35 |                 LUT |
-| LUT1     |   24 |                 LUT |
-| LUT3     |   15 |                 LUT |
-| LUT5     |   13 |                 LUT |
-| CARRY4   |   10 |          CarryLogic |
+| FDCE     |  594 |        Flop & Latch |
+| LUT6     |  135 |                 LUT |
+| IBUF     |  134 |                  IO |
+| LUT2     |  108 |                 LUT |
+| LUT1     |   75 |                 LUT |
+| LUT5     |   74 |                 LUT |
+| LUT3     |   71 |                 LUT |
+| OBUF     |   67 |                  IO |
+| LUT4     |   59 |                 LUT |
+| CARRY4   |   48 |          CarryLogic |
+| DSP48E1  |    9 |    Block Arithmetic |
 | MUXF7    |    3 |               MuxFx |
-| DSP48E1  |    2 |    Block Arithmetic |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
